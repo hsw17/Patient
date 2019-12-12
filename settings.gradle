@@ -1,2 +1,2 @@
-include ':app', ':mvplibrary', ':mymainmodule'
+include ':app', ':mvplibrary', ':mymainmodule', ':he_home'
 rootProject.name='Partig'
