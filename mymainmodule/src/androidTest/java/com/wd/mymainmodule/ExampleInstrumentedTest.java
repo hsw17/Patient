@@ -1,4 +1,4 @@
-package com.wd.mymain;
+package com.wd.mymainmodule;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.wd.mymain", appContext.getPackageName());
+        assertEquals("com.wd.mymainmodule", appContext.getPackageName());
     }
 }

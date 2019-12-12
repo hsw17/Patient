@@ -2,7 +2,7 @@ ext {
     //有重用的地方写在这里面，保证代码一致
     android = [compileSdkVersion       : 29,
                buildToolsVersion       : "29.0.2",
-               minSdkVersion           : 21,
+               minSdkVersion           : 26,
                targetSdkVersion        : 29,
                versionCode             : 1,
                versionName             : "1.0",
@@ -21,21 +21,22 @@ ext {
             "annotations"            : "com.android.support:support-annotations:${android["androidSupportSdkVersion"]}",
             "recyclerview-v7"        : "com.android.support:recyclerview-v7:${android["androidSupportSdkVersion"]}",
             //网络框架
-            "retrofit"               : "com.squareup.retrofit2:retrofit:2.0.0",
-            "retrofit-converter-gson": "com.squareup.retrofit2:converter-gson:2.0.0",
-            "retrofit-adapter-rxjava": "com.squareup.retrofit2:adapter-rxjava:2.0.0",
+            "retrofit"               : "com.squareup.retrofit2:retrofit:+",
+            "eretrofit-convertr-gson": "com.squareup.retrofit2:converter-gson:+",
+            "retrofit-adapter-rxjava": "com.squareup.retrofit2:adapter-rxjava:+",
             "converter-scalars"      : "com.squareup.retrofit2:converter-scalars:2.0.0",
-            "okhttp3"                : "com.squareup.okhttp3:okhttp:3.2.0",
+            "okhttp3"                : "com.squareup.okhttp3:logging-interceptor:3.12.0",
             "gson"                   : "com.google.code.gson:gson:2.6.2",
 
             //dagger2
             "dagger2"                : "com.google.dagger:dagger:${android["dagger2SdkVersion"]}",
             "dagger2-apt-compiler"   : "com.google.dagger:dagger-compiler:${android["dagger2SdkVersion"]}",
-            "rxandroid"              : "io.reactivex:rxandroid:1.1.0",
-            "rxjava"                 : "io.reactivex:rxjava:1.1.0",
+            "rxandroid"              : "io.reactivex.rxjava2:rxandroid:+",
+            "rxjava2"                : "com.squareup.retrofit2:adapter-rxjava2:+",
+            "rxjava"                 : "io.reactivex.rxjava2:rxjava:+",
             "autolayout"             : "com.zhy:autolayout:1.4.5",
-            "butterknife"            : "com.jakewharton:butterknife:8.4.0",
-            "butterknife-apt"        : "com.jakewharton:butterknife-compiler:8.4.0",
+            "butterknife"            : "com.jakewharton:butterknife:10.0.0",
+            "butterknife-apt"        : "com.jakewharton:butterknife-compiler:10.0.0",
 
             "rxpermissions"          : "com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar",
             //图片处理框架

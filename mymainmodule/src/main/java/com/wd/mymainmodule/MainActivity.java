@@ -1,4 +1,4 @@
-package com.wd.mymain;
+package com.wd.mymainmodule;
 
 import androidx.appcompat.app.AppCompatActivity;
 
