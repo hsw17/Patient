@@ -1,2 +1,2 @@
-include ':app', ':mymain'
+include ':app', ':mymain', ':home'
 rootProject.name='Partig'
