@@ -60,6 +60,7 @@ ext {
             "recyclercoverflow"      : 'com.chenlittleping:recyclercoverflow:1.0.5',//类似旋转木马的效果图的RV
             "materialtabstrip"       : 'com.jpardogo.materialtabstrip:library:1.1.0',
             "kenburnsview"           : 'com.flaviofaria:kenburnsview:1.0.7',
+            "XBanner"           : 'com.github.xiaohaibin:XBanner:1.7.0',
             "materialviewpager"      : 'com.github.florent37:materialviewpager:1.2.3',
             "avi"                    : 'com.wang.avi:library:2.1.3',//一个酷炫的加载动画
             "vcharts"                : 'com.vinctor:vcharts:1.0.0',//一个环形统计图

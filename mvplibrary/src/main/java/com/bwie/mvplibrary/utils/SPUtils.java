@@ -1,4 +1,4 @@
-package com.bwei.example.mylibrary.Test;
+package com.bwie.mvplibrary.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
