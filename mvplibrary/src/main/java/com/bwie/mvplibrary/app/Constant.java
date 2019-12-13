@@ -6,7 +6,7 @@ package com.bwie.mvplibrary.app;
  * @Description:
  */
 public interface Constant {
-    String BASE_URL="http://172.17.8.100/small/";
-    String WAI_URL="http://mobile.bwstudent.com/small/";
+    String BASE_URL="http://172.17.8.100/";
+    String WAI_URL="http://mobile.bwstudent.com/";
     String SUCCESS_CODE="0000";
 }
