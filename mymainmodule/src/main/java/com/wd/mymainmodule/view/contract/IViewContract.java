@@ -1,6 +1,7 @@
 package com.wd.mymainmodule.view.contract;
 
 import com.bwie.mvplibrary.base.BasePresenter;
+import com.bwie.mvplibrary.base.IBaseView;
 import com.wd.mymainmodule.view.IBasesView;
 
 import java.util.Map;
@@ -11,10 +12,5 @@ import java.util.Map;
  * function: 契约类
  */
 public interface IViewContract {
-    interface doView extends IBasesView{}
 
-    abstract class doData extends BasePresenter{
-//   登录
-        public abstract void doRegister(Map<String,String> map);
-    }
 }
