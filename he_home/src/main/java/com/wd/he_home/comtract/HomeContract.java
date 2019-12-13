@@ -1,5 +1,6 @@
 package com.wd.he_home.comtract;
 
+import com.bwie.mvplibrary.base.IBaseView;
 import com.wd.he_home.bean.BannerBean;
 
 /**
@@ -9,9 +10,27 @@ import com.wd.he_home.bean.BannerBean;
  */
 public interface HomeContract {
     //view
-    interface HomeView{
+    interface HomeView extends IBaseView {
         void HomeViewBannerSuccess(Object obj);
         void HomeViewBannerError(String e);
+    }
+    //imodel
+    interface HomeModel{
+        //轮播
+        void HomeModelBannerSuccess();
+        //轮播接口
+        interface HomeModelBannerCallBack{
+            void HomeViewBannerSuccess(Object obj);
+            void HomeViewBannerError(String e);
+
+        }
+    }
+    //ipresenter
+    interface HomePresenter{
+        void HomePresenterAttach(HomeContract.HomeView homeView);
+        void HomePresenterDeach();
+        //轮播
+        void HomePresenterBanner();
 
     }
 }
