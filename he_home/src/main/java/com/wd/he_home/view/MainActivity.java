@@ -1,8 +1,10 @@
-package com.wd.he_home;
+package com.wd.he_home.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.wd.he_home.R;
 
 public class MainActivity extends AppCompatActivity {
 
