@@ -13,37 +13,23 @@ public interface HomeContract {
     //view
     interface HomeView extends IBaseView {
         //轮播图
-        void HomeViewBannerSuccess(Object obj);
-        void HomeViewBannerError(String e);
-        //查询科室
-        void HomeViewChaXunKeShiSuccess(EnquirySectionBean enquirySectionBean);
-        void HomeViewChaXunKeShiError(String e);
+        void HomeViewSuccess(Object obj);
+        void HomeViewError(String e);
     }
     //imodel
     interface HomeModel{
         //轮播
-        void HomeModelBannerSuccess(HomeModelBannerCallBack homeModelBannerCallBack);
+        void HomeModelBannerSuccess(HomeModelCallBack homeModelCallBack);
         //查询科室
-        void HomeModelChaXunKeshiSuccess(HomeModelChaXunKeShiCallBack homeModelChaXunKeShiCallBack);
+        void HomeModelChaXunKeshiSuccess(HomeModelCallBack homeModelCallBack);
         //健康咨询
-        void HomeModelJianKangZiXunData(HomeModelJianKangZiXunCallBack homeModelJianKangZiXunCallBack);
-        //轮播接口
-        interface HomeModelBannerCallBack{
-            void HomeViewBannerSuccess(Object obj);
-            void HomeViewBannerError(String e);
+        void HomeModelJianKangZiXunData(HomeModelCallBack homeModelCallBack);
+        //接口回调
+        interface HomeModelCallBack{
+            void HomeViewSuccess(Object obj);
+            void HomeViewError(String e);
         }
-        //查询科室
-        interface HomeModelChaXunKeShiCallBack{
-            //查询科室
-            void HomeViewChaXunKeShiSuccess(EnquirySectionBean enquirySectionBean);
-            void HomeViewChaXunKeShiError(String e);
-        }
-        //健康咨询
-        interface HomeModelJianKangZiXunCallBack{
-             //健康咨询
-            void HomeModelJianKangZiXunSuccess(Object obj);
-            void HomeModelJianKangZiXunError(String e);
-        }
+
     }
     //ipresenter
     interface HomePresenter{

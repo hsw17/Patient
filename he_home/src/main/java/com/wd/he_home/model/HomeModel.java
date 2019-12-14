@@ -20,60 +20,55 @@ import com.wd.he_home.comtract.HomeContract;
  **/
 public class HomeModel implements HomeContract.HomeModel {
     @Override
-    public void HomeModelBannerSuccess(HomeModelBannerCallBack homeModelBannerCallBack) {
-        ApiServer apiServer = RetrofitManager.getInstance().create(ApiServer.class);
-        apiServer.getBanner().compose(CommonSchedulers.io2main()).subscribe(new CommonObserver<BannerBean>() {
+    public void HomeModelBannerSuccess(HomeModelCallBack homeModelCallBack) {
+        RetrofitManager.getInstance().create(ApiServer.class)
+                .getBanner().compose(CommonSchedulers.io2main()).subscribe(new CommonObserver<BannerBean>() {
             @Override
             public void onNext(BannerBean bannerBean) {
-                homeModelBannerCallBack.HomeViewBannerSuccess(bannerBean);
+                homeModelCallBack.HomeViewSuccess(bannerBean);
             }
 
             @Override
             public void onError(Throwable e) {
-                homeModelBannerCallBack.HomeViewBannerError(e.getMessage());
+                homeModelCallBack.HomeViewError(e.getMessage());
             }
         });
     }
 
     //查询科室
     @Override
-    public void HomeModelChaXunKeshiSuccess(final HomeModelChaXunKeShiCallBack homeModelChaXunKeShiCallBack) {
-
-        ApiServer apiServer = RetrofitManager.getInstance().create(ApiServer.class);
-        apiServer.chaxunkeshi()
-                .compose(CommonSchedulers.<EnquirySectionBean>io2main())
+    public void HomeModelChaXunKeshiSuccess(HomeModelCallBack homeModelCallBack) {
+        RetrofitManager.getInstance().create(ApiServer.class)
+                .chaxunkeshi().compose(CommonSchedulers.io2main())
                 .subscribe(new CommonObserver<EnquirySectionBean>() {
                     @Override
                     public void onNext(EnquirySectionBean enquirySectionBean) {
-                        Log.d("aaaa", "onNext: " + enquirySectionBean.getMessage());
-                        homeModelChaXunKeShiCallBack.HomeViewChaXunKeShiSuccess(enquirySectionBean);
+                        homeModelCallBack.HomeViewSuccess(enquirySectionBean);
                     }
 
                     @Override
-                    public void onError(Throwable e) {
-                        homeModelChaXunKeShiCallBack.HomeViewChaXunKeShiError(e.getMessage());
+                    public void onError(Throwable throwable) {
+                        homeModelCallBack.HomeViewError(throwable.getMessage());
                     }
                 });
     }
 
     //健康咨询
     @Override
-    public void HomeModelJianKangZiXunData(HomeModelJianKangZiXunCallBack homeModelJianKangZiXunCallBack) {
+    public void HomeModelJianKangZiXunData(HomeModelCallBack homeModelCallBack) {
         RetrofitManager.getInstance().create(ApiServer.class)
                 .jiankangzixun()
                 .compose(CommonSchedulers.io2main())
                 .subscribe(new CommonObserver<HealthinformationBean>() {
                     @Override
                     public void onNext(HealthinformationBean healthinformationBean) {
-                        homeModelJianKangZiXunCallBack.HomeModelJianKangZiXunSuccess(healthinformationBean);
+                        homeModelCallBack.HomeViewSuccess(healthinformationBean);
                     }
 
                     @Override
                     public void onError(Throwable throwable) {
-                        homeModelJianKangZiXunCallBack.HomeModelJianKangZiXunError(throwable.getMessage());
+                homeModelCallBack.HomeViewError(throwable.getMessage());
                     }
                 });
     }
-
-
 }

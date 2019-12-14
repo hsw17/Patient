@@ -3,10 +3,11 @@ package com.wd.he_home.bean;
 import java.util.List;
 
 /**
- * author: [Liu He]
- * data: 2019/12/13.
- * function：
- */
+ *@describe(描述)：EnquirySectionBean  查询科室
+ *@data（日期）: 2019/12/14
+ *@time（时间）: 9:43
+ *@author（作者）: Liuhe
+ **/
 public class EnquirySectionBean {
 
     /**
