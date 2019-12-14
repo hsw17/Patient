@@ -41,4 +41,5 @@ dependencies {
     api rootProject.ext.dependencies["recyclerview-v7"]
     //implementation rootProject.ext.dependencies["XBanner"]
     api project(path: ':mvplibrary')
+
 }
