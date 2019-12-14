@@ -81,51 +81,14 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
         //查询科室
         presenter.HomePresenterChaXunKeShi();
         //设置滑动
-        strings = new ArrayList<>();
+   /*     strings = new ArrayList<>();
         strings.add("健康要闻");
         strings.add("医学动态");
         strings.add("医疗动态");
         strings.add("养生美容");
-        strings.add("健身减肥");
+        strings.add("健身减肥");*/
 
     }
-
-    //轮播图
-    @Override
-    public void HomeViewBannerSuccess(Object obj) {
-        BannerBean bannerBean = (BannerBean) obj;
-        List<BannerBean.ResultBean> result = bannerBean.getResult();
-        homeXbannerTop.setData(result,null);
-        homeXbannerTop.setmAdapter(new XBanner.XBannerAdapter() {
-            @Override
-            public void loadBanner(XBanner banner, Object model, View view, int position) {
-                Glide.with(context()).load(result.get(position).getImageUrl()).into((ImageView) view);
-            }
-        });
-        //健康咨询
-        HealthinformationBean healthinformationBean = (HealthinformationBean) obj;
-    }
-
-    @Override
-    public void HomeViewBannerError(String e) {
-
-    }
-
-    //查询科室
-    @Override
-    public void HomeViewChaXunKeShiSuccess(EnquirySectionBean enquirySectionBean) {
-        List<EnquirySectionBean.ResultBean> result = enquirySectionBean.getResult();
-        EnquirySectionAdapter enquirySectionAdapter = new EnquirySectionAdapter(MainActivity.this, result);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 4);
-        homeXRecyclerView.setLayoutManager(gridLayoutManager);
-        homeXRecyclerView.setAdapter(enquirySectionAdapter);
-
-    }
-
-    @Override
-    public void HomeViewChaXunKeShiError(String e) {
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -160,5 +123,34 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
             case R.id.home_vp:
                 break;
         }
+    }
+
+    @Override
+    public void HomeViewSuccess(Object obj) {
+        //轮播图
+        if (obj instanceof BannerBean) {
+            BannerBean bannerBean = (BannerBean) obj;
+            List<BannerBean.ResultBean> result = bannerBean.getResult();
+            homeXbannerTop.setData(result, null);
+            homeXbannerTop.setmAdapter(new XBanner.XBannerAdapter() {
+                @Override
+                public void loadBanner(XBanner banner, Object model, View view, int position) {
+                    Glide.with(context()).load(result.get(position).getImageUrl()).into((ImageView) view);
+                }
+            });
+        //查询科室
+        } else if (obj instanceof EnquirySectionBean) {
+            EnquirySectionBean enquirySectionBean = (EnquirySectionBean) obj;
+            List<EnquirySectionBean.ResultBean> result = enquirySectionBean.getResult();
+            EnquirySectionAdapter enquirySectionAdapter = new EnquirySectionAdapter(MainActivity.this, result);
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 4);
+            homeXRecyclerView.setLayoutManager(gridLayoutManager);
+            homeXRecyclerView.setAdapter(enquirySectionAdapter);
+        }
+    }
+
+    @Override
+    public void HomeViewError(String e) {
+
     }
 }

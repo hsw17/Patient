@@ -10,10 +10,10 @@ import com.wd.he_home.comtract.HomeContract;
 import com.wd.he_home.model.HomeModel;
 
 /**
- *@describe(描述)：HomePresenter  p层
- *@data（日期）: 2019/12/13
- *@time（时间）: 15:45
- *@author（作者）: Liuhe
+ * @describe(描述)：HomePresenter p层
+ * @data（日期）: 2019/12/13
+ * @time（时间）: 15:45
+ * @author（作者）: Liuhe
  **/
 public class HomePresenter extends BasePresenter<HomeContract.HomeView> implements HomeContract.HomePresenter {
 
@@ -23,20 +23,23 @@ public class HomePresenter extends BasePresenter<HomeContract.HomeView> implemen
     protected void initModel() {
         homeModel = new HomeModel();
     }
+
     //轮播图
     @Override
     public void HomePresenterBanner() {
-        homeModel.HomeModelBannerSuccess(new HomeContract.HomeModel.HomeModelBannerCallBack() {
+        homeModel.HomeModelBannerSuccess(new HomeContract.HomeModel.HomeModelCallBack() {
             @Override
-            public void HomeViewBannerSuccess(Object obj) {
+            public void HomeViewSuccess(Object obj) {
                 BannerBean bannerBean = (BannerBean) obj;
-                getView().HomeViewBannerSuccess(bannerBean);
+                getView().HomeViewSuccess(bannerBean);
             }
 
             @Override
-            public void HomeViewBannerError(String e) {
-            getView().HomeViewBannerError(e);
+            public void HomeViewError(String e) {
+                getView().HomeViewError(e);
             }
+
+
         });
     }
 
@@ -44,33 +47,38 @@ public class HomePresenter extends BasePresenter<HomeContract.HomeView> implemen
     //查询科室
     @Override
     public void HomePresenterChaXunKeShi() {
-        homeModel.HomeModelChaXunKeshiSuccess(new HomeContract.HomeModel.HomeModelChaXunKeShiCallBack() {
+        homeModel.HomeModelChaXunKeshiSuccess(new HomeContract.HomeModel.HomeModelCallBack() {
             @Override
-            public void HomeViewChaXunKeShiSuccess(EnquirySectionBean enquirySectionBean) {
-                Log.d("asd", "HomeViewChaXunKeShiSuccess: "+enquirySectionBean.getMessage());
-                getView().HomeViewChaXunKeShiSuccess(enquirySectionBean);
+            public void HomeViewSuccess(Object obj) {
+                EnquirySectionBean enquirySectionBean = (EnquirySectionBean) obj;
+                getView().HomeViewSuccess(enquirySectionBean);
             }
 
             @Override
-            public void HomeViewChaXunKeShiError(String e) {
-            getView().HomeViewChaXunKeShiError(e);
+            public void HomeViewError(String e) {
+                getView().HomeViewError(e);
             }
+
+
         });
 
     }
 
+    //健康咨询
     @Override
     public void HomePresenterJianKangZiXun() {
-        homeModel.HomeModelJianKangZiXunData(new HomeContract.HomeModel.HomeModelJianKangZiXunCallBack() {
+        homeModel.HomeModelJianKangZiXunData(new HomeContract.HomeModel.HomeModelCallBack() {
             @Override
-            public void HomeModelJianKangZiXunSuccess(Object obj) {
+            public void HomeViewSuccess(Object obj) {
                 HealthinformationBean healthinformationBean = (HealthinformationBean) obj;
+                getView().HomeViewSuccess(healthinformationBean);
             }
 
             @Override
-            public void HomeModelJianKangZiXunError(String e) {
-
+            public void HomeViewError(String e) {
+                getView().HomeViewError(e);
             }
+
         });
     }
 }
