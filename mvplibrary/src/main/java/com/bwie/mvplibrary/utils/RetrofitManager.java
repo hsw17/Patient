@@ -41,7 +41,8 @@ public class RetrofitManager {
     }
 
     private RetrofitManager(String url){
-        retrofit = new Retrofit.Builder ().baseUrl ( url )
+        retrofit = new Retrofit.Builder ()
+                .baseUrl ( url )
                 .addConverterFactory ( GsonConverterFactory.create () )
                 .addCallAdapterFactory ( RxJava2CallAdapterFactory.create () )
                 .client ( buildOkhttpClint () )
