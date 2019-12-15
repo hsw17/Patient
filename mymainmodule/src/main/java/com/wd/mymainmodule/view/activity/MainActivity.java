@@ -75,7 +75,6 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
 
         //        sp
         login = new SPUtils(this, "login");
-
         email = new SPUtils(this, "email");
         String email1 = (String) email.getSharedPreference("email", null);
         String pwd = (String) email.getSharedPreference("pwd", null);
@@ -146,6 +145,19 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
         });
 //        密码显示隐藏设置
         initPwd();
+//        忘记密码
+        loginButtonUpdateuserpwd.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.ResetUserPwdActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
     }
 
     private void initPwd() {

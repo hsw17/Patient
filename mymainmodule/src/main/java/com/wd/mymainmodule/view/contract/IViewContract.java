@@ -28,6 +28,8 @@ public interface IViewContract {
         void doEmailCode(String email);
         //注册
         void doRegister(Map<String,Object> map);
+        //重置用户密码（忘记密码用）
+        void doUserPwd(Map<String,Object> map);
     }
 
     //M层
@@ -38,6 +40,8 @@ public interface IViewContract {
         void doEmailCode(String email,IModelCallback iModelCallback);
 //        注册
         void doRegister(Map<String,Object> map, IModelCallback iModelCallback);
+//        重置用户密码（忘记密码用）
+        void doUserPwd(Map<String,Object> map, IModelCallback iModelCallback);
         interface IModelCallback{
             void onSuccess(Object obj);
             void onSuccessOne(Object one);
