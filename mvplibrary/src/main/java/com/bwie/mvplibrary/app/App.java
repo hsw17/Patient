@@ -3,6 +3,7 @@ package com.bwie.mvplibrary.app;
 import android.app.Application;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.facebook.drawee.backends.pipeline.Fresco;
 
 
 /*
@@ -20,6 +21,7 @@ public class App extends Application {
         ARouter.openDebug();
         ARouter.init(this);
         sContent = this;
+        Fresco.initialize(this);
     }
 
     public static App getsContent() {
