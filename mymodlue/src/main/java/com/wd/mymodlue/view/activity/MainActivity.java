@@ -1,6 +1,7 @@
 package com.wd.mymodlue.view.activity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -10,10 +11,17 @@ import android.widget.TextView;
 
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
+import com.bwie.mvplibrary.utils.SPUtils;
+import com.bwie.mvplibrary.utils.ToastUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.modle.bean.LoginBean;
+import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -59,6 +67,8 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
     LinearLayout linearMy;
     @BindView(R.id.my_text_title)
     TextView myTextTitle;
+    private LoginBean loginBean;
+    private Map<String, Object> map;
 
     @Override
     protected int bindLayout() {
@@ -75,6 +85,12 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
+        ToastUtils.init(this);
+        SPUtils login = new SPUtils(this, "login");
+        loginBean = (LoginBean) login.getSharedPreference("loginBean",null);
+        map = new HashMap<>();
+        map.put("userId",437);
+        map.put("sessionId","1576462315793437");
 //       底部文字
         myTextTitle.setText("@八维移动通讯学院毕业作品");
 //        返回
@@ -89,10 +105,79 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
 
             }
         });
+//        签到
+        myButtonSingIn.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                presenter.doAddSign(map);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//        我的档案
+        myButtonRecord.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.RecordActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//        我的关注
+        myButtonAttention.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.AttentionActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//        购买过的视频
+        myButtonVideo.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.VideoActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//   我的任务
+        myButtonTask.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.TaskActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
     }
     @Override
     public void onSuccess(Object obj) {
-
+        UserBean userBean= (UserBean) obj;
+        if ("0000".equals(userBean.status)) {
+            ToastUtils.show(userBean.message);
+        }else {
+            ToastUtils.show(userBean.message);
+        }
     }
 
     @Override

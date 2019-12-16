@@ -22,11 +22,14 @@ public interface IViewContract {
 
     //P层
     interface IPresenter {
-
+        //用户签到
+        void doAddSign(Map<String,Object> map);
     }
 
     //M层
     interface IModel{
+//        用户签到
+        void doAddSign(Map<String,Object> map, IModelCallback iModelCallback);
 
         interface IModelCallback{
             void onSuccess(Object obj);

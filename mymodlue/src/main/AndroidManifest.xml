@@ -3,12 +3,41 @@
     package="com.wd.mymodlue">
 
     <application
+        android:name="com.bwie.mvplibrary.app.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".view.activity.TaskActivity">
+            <intent-filter>
+                <action android:name="com.hl.TaskActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.VideoActivity">
+            <intent-filter>
+                <action android:name="com.hl.VideoActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.AttentionActivity">
+            <intent-filter>
+                <action android:name="com.hl.AttentionActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.RecordActivity">
+            <intent-filter>
+                <action android:name="com.hl.RecordActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
