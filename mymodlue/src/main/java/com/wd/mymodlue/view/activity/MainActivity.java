@@ -1,14 +1,64 @@
 package com.wd.mymodlue.view.activity;
 
 
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.bwie.mvplibrary.base.BaseActivity;
+import com.bwie.mvplibrary.utils.CustomClickListener;
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.wd.mymodlue.R;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
+
+    @BindView(R.id.head_details_back)
+    ImageView headDetailsBack;
+    @BindView(R.id.my_image_simple)
+    SimpleDraweeView myImageSimple;
+    @BindView(R.id.my_text_login)
+    TextView myTextLogin;
+    @BindView(R.id.my_button_sing_in)
+    Button myButtonSingIn;
+    @BindView(R.id.linear_lay)
+    LinearLayout linearLay;
+    @BindView(R.id.my_button_inquiry)
+    RelativeLayout myButtonInquiry;
+    @BindView(R.id.my_button_history)
+    RelativeLayout myButtonHistory;
+    @BindView(R.id.re_latiview)
+    RelativeLayout reLatiview;
+    @BindView(R.id.my_button_record)
+    LinearLayout myButtonRecord;
+    @BindView(R.id.my_button_wallet)
+    LinearLayout myButtonWallet;
+    @BindView(R.id.my_button_collect)
+    LinearLayout myButtonCollect;
+    @BindView(R.id.my_button_suggest)
+    LinearLayout myButtonSuggest;
+    @BindView(R.id.my_button_video)
+    LinearLayout myButtonVideo;
+    @BindView(R.id.my_button_patients_circle)
+    LinearLayout myButtonPatientsCircle;
+    @BindView(R.id.my_button_attention)
+    LinearLayout myButtonAttention;
+    @BindView(R.id.my_button_task)
+    LinearLayout myButtonTask;
+    @BindView(R.id.my_button_set)
+    LinearLayout myButtonSet;
+    @BindView(R.id.linear_my)
+    LinearLayout linearMy;
+    @BindView(R.id.my_text_title)
+    TextView myTextTitle;
 
     @Override
     protected int bindLayout() {
@@ -20,6 +70,26 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
         return new Persenter();
     }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+//       底部文字
+        myTextTitle.setText("@八维移动通讯学院毕业作品");
+//        返回
+        headDetailsBack.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                finish();
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+    }
     @Override
     public void onSuccess(Object obj) {
 
@@ -49,4 +119,5 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
     public void onFail(String str) {
 
     }
+
 }
