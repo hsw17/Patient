@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_32"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/drugclass_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:text="科室"
+        android:textColor="#000"
+        android:layout_marginLeft="@dimen/dp_25"
+        android:textSize="13sp" />
+</LinearLayout>

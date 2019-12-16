@@ -1,11 +1,17 @@
 package com.wd.he_home.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -16,10 +22,18 @@ import com.google.android.material.tabs.TabLayout;
 import com.stx.xhb.xbanner.XBanner;
 import com.wd.he_home.R;
 import com.wd.he_home.adapter.EnquirySectionAdapter;
+import com.wd.he_home.adapter.NewslistAdapter;
 import com.wd.he_home.bean.BannerBean;
 import com.wd.he_home.bean.EnquirySectionBean;
 import com.wd.he_home.bean.HealthinformationBean;
+import com.wd.he_home.bean.NewslistBean;
 import com.wd.he_home.comtract.HomeContract;
+import com.wd.he_home.fragment.HealthHighlightsFragment;
+import com.wd.he_home.fragment.changjian.CommonDrugsFragment;
+import com.wd.he_home.fragment.jiankangzixun.Fitnessweightloss_Fragment;
+import com.wd.he_home.fragment.jiankangzixun.Healthbeauty_Fragment;
+import com.wd.he_home.fragment.jiankangzixun.MedicalnewsFragment;
+import com.wd.he_home.fragment.jiankangzixun.Medicalnews_oneFragment;
 import com.wd.he_home.presenter.HomePresenter;
 
 import java.util.ArrayList;
@@ -56,11 +70,10 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
     RecyclerView homeXRecyclerView;
     @BindView(R.id.home_evaluation)
     ImageView homeEvaluation;
-    @BindView(R.id.home_tab)
     TabLayout homeTab;
-    @BindView(R.id.home_vp)
     ViewPager homeVp;
-    private ArrayList<String> strings;
+    private List<String> strings;
+    private List<Fragment> fragments;
 
     @Override
     protected int bindLayout() {
@@ -76,17 +89,50 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
     @Override
     protected void initData() {
         super.initData();
+        homeTab = findViewById(R.id.home_tab);
+        homeVp = findViewById(R.id.home_vp);
         //banner
         presenter.HomePresenterBanner();
         //查询科室
         presenter.HomePresenterChaXunKeShi();
+        //健康咨询
+        presenter.HomePresenterJianKangZiXun();
+        //添加页面
+        fragments = new ArrayList<>();
+        fragments.add(new HealthHighlightsFragment());
+        fragments.add(new MedicalnewsFragment());
+        fragments.add(new Medicalnews_oneFragment());
+        fragments.add(new Healthbeauty_Fragment());
+        fragments.add(new Fitnessweightloss_Fragment());
         //设置滑动
-   /*     strings = new ArrayList<>();
+        strings = new ArrayList<>();
         strings.add("健康要闻");
         strings.add("医学动态");
         strings.add("医疗动态");
         strings.add("养生美容");
-        strings.add("健身减肥");*/
+        strings.add("健身减肥");
+        //设置联动
+        homeVp.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+            @NonNull
+            @Override
+            public Fragment getItem(int i) {
+                return fragments.get(i);
+            }
+
+            @Override
+            public int getCount() {
+                return fragments.size();
+            }
+
+            @Nullable
+            @Override
+            public CharSequence getPageTitle(int position) {
+                return strings.get(position);
+            }
+        });
+        homeTab.setupWithViewPager(homeVp);
+        //默认选中
+        homeTab.getTabAt(0).select();
 
     }
 
@@ -109,8 +155,15 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
             case R.id.strut:
                 break;
             case R.id.disease_img:
+                //跳转到常见病症
+                startActivity(new Intent(MainActivity.this,CommonActivity.class));
+                /*Intent intent = new Intent(this,CommonActivity.class);
+                //intent.putExtra("",)
+                startActivity(intent);*/
                 break;
             case R.id.drugs_img:
+                startActivity(new Intent(MainActivity.this,CommonActivity.class));
+
                 break;
             case R.id.home_inquiry:
                 break;
@@ -138,15 +191,24 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
                     Glide.with(context()).load(result.get(position).getImageUrl()).into((ImageView) view);
                 }
             });
-        //查询科室
+
         } else if (obj instanceof EnquirySectionBean) {
+            //查询科室
+
             EnquirySectionBean enquirySectionBean = (EnquirySectionBean) obj;
             List<EnquirySectionBean.ResultBean> result = enquirySectionBean.getResult();
             EnquirySectionAdapter enquirySectionAdapter = new EnquirySectionAdapter(MainActivity.this, result);
             GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 4);
             homeXRecyclerView.setLayoutManager(gridLayoutManager);
             homeXRecyclerView.setAdapter(enquirySectionAdapter);
-        }
+        }/*else if (obj instanceof NewslistBean){
+            //查询咨询列表
+            NewslistBean newslistBean = (NewslistBean) obj;
+            List<NewslistBean.ResultBean> result = newslistBean.getResult();
+            //设置适配器
+            NewslistAdapter newslistAdapter = new NewslistAdapter(result, context());
+
+        }*/
     }
 
     @Override

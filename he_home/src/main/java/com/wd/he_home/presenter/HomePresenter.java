@@ -4,8 +4,11 @@ import android.util.Log;
 
 import com.bwie.mvplibrary.base.BasePresenter;
 import com.wd.he_home.bean.BannerBean;
+import com.wd.he_home.bean.CorrespondingsymptomsBean;
+import com.wd.he_home.bean.DrugClassificationBean;
 import com.wd.he_home.bean.EnquirySectionBean;
 import com.wd.he_home.bean.HealthinformationBean;
+import com.wd.he_home.bean.NewslistBean;
 import com.wd.he_home.comtract.HomeContract;
 import com.wd.he_home.model.HomeModel;
 
@@ -80,5 +83,56 @@ public class HomePresenter extends BasePresenter<HomeContract.HomeView> implemen
             }
 
         });
+    }
+
+    //查询咨询列表
+    @Override
+    public void HomePresenterZiXunLieBiao(String plateId, String page, String count) {
+        homeModel.HomeModelZiXunLieBiaoData(plateId, page, count, new HomeContract.HomeModel.HomeModelCallBack() {
+            @Override
+            public void HomeViewSuccess(Object obj) {
+                NewslistBean newslistBean = (NewslistBean) obj;
+                getView().HomeViewSuccess(newslistBean);
+            }
+
+            @Override
+            public void HomeViewError(String e) {
+                getView().HomeViewError(e);
+            }
+        });
+    }
+
+    //查询对应病症
+    @Override
+    public void HomePresenterDuiYingBingZheng(String departmentId) {
+            homeModel.HomeModelDuiYingBingZheng(departmentId, new HomeContract.HomeModel.HomeModelCallBack() {
+                @Override
+                public void HomeViewSuccess(Object obj) {
+                    CorrespondingsymptomsBean correspondingsymptomsBean = (CorrespondingsymptomsBean) obj;
+                    getView().HomeViewSuccess(correspondingsymptomsBean);
+                }
+
+                @Override
+                public void HomeViewError(String e) {
+                getView().HomeViewError(e);
+                }
+            });
+    }
+
+   // 药品分类
+    @Override
+    public void HomePresenterYaoPinFenLei() {
+     homeModel.HomeModelYaoPinFenLeiData(new HomeContract.HomeModel.HomeModelCallBack() {
+         @Override
+         public void HomeViewSuccess(Object obj) {
+             DrugClassificationBean drugClassificationBean = (DrugClassificationBean) obj;
+             getView().HomeViewSuccess(drugClassificationBean);
+         }
+
+         @Override
+         public void HomeViewError(String e) {
+            getView().HomeViewError(e);
+         }
+     });
     }
 }
