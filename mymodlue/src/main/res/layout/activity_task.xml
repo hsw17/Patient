@@ -71,10 +71,199 @@
         android:layout_marginTop="@dimen/dp_22"
         android:layout_marginLeft="@dimen/dp_20"
         android:layout_marginRight="@dimen/dp_20"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="+1"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:gravity="center"
+
+                android:layout_weight="1"
+
+                android:text="+2"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+
+                android:text="+3"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+
+                android:text="+4"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+
+                android:text="+5"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:gravity="center"
+
+                android:layout_weight="1"
+                android:text="+10"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:gravity="center"
+
+                android:layout_weight="1"
+                android:text="+10"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_16">
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1天"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:gravity="center"
+
+                android:layout_weight="1"
+
+                android:text="2天"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+
+                android:text="3天"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+
+                android:text="4天"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+
+                android:text="5天"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:gravity="center"
+
+                android:layout_weight="1"
+                android:text="6天"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:gravity="center"
+
+                android:layout_weight="1"
+                android:text="N天"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_36">
+        <ImageView
+            android:background="@mipmap/my_task_title"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_36"/>
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="每日任务"
+            android:textSize="@dimen/sp_14"
+            android:textColor="#fff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_36">
+        <ImageView
+            android:background="@mipmap/my_task_title"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_36"/>
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="一次性任务"
+            android:textSize="@dimen/sp_14"
+            android:textColor="#fff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
 </LinearLayout>
