@@ -12,7 +12,6 @@ import com.wd.he_home.bean.EnquirySectionBean;
 public interface HomeContract {
     //view
     interface HomeView extends IBaseView {
-        //轮播图
         void HomeViewSuccess(Object obj);
         void HomeViewError(String e);
     }
@@ -24,6 +23,12 @@ public interface HomeContract {
         void HomeModelChaXunKeshiSuccess(HomeModelCallBack homeModelCallBack);
         //健康咨询
         void HomeModelJianKangZiXunData(HomeModelCallBack homeModelCallBack);
+        //查询咨询列表
+        void HomeModelZiXunLieBiaoData(String plateId,String page,String count,HomeModelCallBack homeModelCallBack);
+        //根据科室查询对应病症
+        void HomeModelDuiYingBingZheng(String departmentId,HomeModelCallBack homeModelCallBack);
+        //药品分类
+        void HomeModelYaoPinFenLeiData(HomeModelCallBack homeModelCallBack);
         //接口回调
         interface HomeModelCallBack{
             void HomeViewSuccess(Object obj);
@@ -39,6 +44,12 @@ public interface HomeContract {
         void HomePresenterChaXunKeShi();
         //健康咨询
         void HomePresenterJianKangZiXun();
+        //查询咨询列表
+        void HomePresenterZiXunLieBiao(String plateId,String page,String count);
+        //查询对应病症
+        void HomePresenterDuiYingBingZheng(String departmentId);
+        //药品分类
+        void HomePresenterYaoPinFenLei();
 
     }
 }

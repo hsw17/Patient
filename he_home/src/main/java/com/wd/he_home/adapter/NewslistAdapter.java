@@ -1,0 +1,137 @@
+package com.wd.he_home.adapter;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.wd.he_home.R;
+import com.wd.he_home.bean.NewslistBean;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
+import retrofit2.http.Url;
+
+/**
+ * author: [Liu He]
+ * data: 2019/12/15.
+ * function：
+ */
+public class NewslistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    private List<NewslistBean.ResultBean>resultBeans;
+    private Context context;
+  private   SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
+
+    public NewslistAdapter(List<NewslistBean.ResultBean> resultBeans, Context context) {
+        this.resultBeans = resultBeans;
+        this.context = context;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        String[] split = resultBeans.get(position).getThumbnail().split(";");
+        if (split.length == 1) {
+            return 0;
+        } else if (split.length == 3) {
+            return 1;
+        }
+        return 2;
+    }
+    @NonNull
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        switch (viewType){
+            case 0:
+                View inflate = LayoutInflater.from(context).inflate(R.layout.newlist_one_layout, parent, false);
+                return new Newlist_one_Holder(inflate);
+            case 1:
+                View inflate1 = LayoutInflater.from(context).inflate(R.layout.newlist_two_layout, parent, false);
+                return new Newlist_two_Holder(inflate1);
+            case 2:
+                View inflate2 = LayoutInflater.from(context).inflate(R.layout.newlist_three_layout, parent, false);
+                return new Newlist_three_Holder(inflate2);
+        }
+        return  null;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        Date date = new Date(resultBeans.get(position).getReleaseTime());
+        int itemViewType = getItemViewType(position);
+        switch (itemViewType){
+            case 0:
+                ((Newlist_one_Holder) holder).text_name.setText(resultBeans.get(position).getSource());
+                ((Newlist_one_Holder) holder).text_title.setText(resultBeans.get(position).getTitle());
+                Glide.with(context).load(resultBeans.get(position).getThumbnail()).into(((Newlist_one_Holder) holder).simple);
+                simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
+                ((Newlist_one_Holder) holder).text_time.setText(simpleDateFormat.format(date));
+                break;
+            case 1:
+                ((Newlist_two_Holder) holder).text_title.setText(resultBeans.get(position).getTitle());
+                ((Newlist_two_Holder) holder).text_name.setText(resultBeans.get(position).getSource());
+
+                String[] split = resultBeans.get(position).getThumbnail().split(";");
+
+                Glide.with(context).load(split[0]).into(((Newlist_two_Holder) holder).simple1);
+                Glide.with(context).load(split[1]).into(((Newlist_two_Holder) holder).simple2);
+                Glide.with(context).load(split[2]).into(((Newlist_two_Holder) holder).simple3);
+                ((Newlist_two_Holder) holder).text_time.setText(simpleDateFormat.format(date));
+                break;
+            case 2:
+                ((Newlist_three_Holder) holder).text_name.setText(resultBeans.get(position).getSource());
+                ((Newlist_three_Holder) holder).text_title.setText(resultBeans.get(position).getTitle());
+                simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
+                ((Newlist_three_Holder) holder).text_time.setText(simpleDateFormat.format(date));
+                break;
+        }
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return 3;
+    }
+    public class Newlist_one_Holder extends RecyclerView.ViewHolder{
+        private ImageView simple;
+        private TextView text_title, text_name, text_time;
+        public Newlist_one_Holder(@NonNull View itemView) {
+            super(itemView);
+            simple = itemView.findViewById(R.id.simple);
+            text_title = itemView.findViewById(R.id.text_title);
+            text_name = itemView.findViewById(R.id.text_name);
+            text_time = itemView.findViewById(R.id.text_time);
+        }
+    }
+    public class Newlist_two_Holder extends RecyclerView.ViewHolder{
+        private ImageView simple1, simple2, simple3;
+        private TextView text_title, text_name, text_time;
+        public Newlist_two_Holder(@NonNull View itemView) {
+            super(itemView);
+            text_time = itemView.findViewById(R.id.text_time);
+            text_title = itemView.findViewById(R.id.text_title);
+            text_name = itemView.findViewById(R.id.text_name);
+            simple1 = itemView.findViewById(R.id.simple1);
+            simple2 = itemView.findViewById(R.id.simple2);
+            simple3 = itemView.findViewById(R.id.simple3);
+        }
+    }
+    public class Newlist_three_Holder extends RecyclerView.ViewHolder{
+        private TextView text_title, text_name, text_time;
+        public Newlist_three_Holder(@NonNull View itemView) {
+            super(itemView);
+            text_title = itemView.findViewById(R.id.text_title);
+            text_name = itemView.findViewById(R.id.text_name);
+            text_time = itemView.findViewById(R.id.text_time);
+        }
+    }
+}
