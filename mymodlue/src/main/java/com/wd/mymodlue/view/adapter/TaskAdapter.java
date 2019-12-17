@@ -61,6 +61,9 @@ public class TaskAdapter extends XRecyclerView.Adapter<TaskAdapter.MovieViewHold
             @Override
             protected void onSingleClick() {
                 areaView.onCurress(result.get(i).id);
+                movieViewHolder.firstButtonGoFinish.setVisibility(View.GONE);
+                movieViewHolder.firstButtonFinish.setVisibility(View.GONE);
+                movieViewHolder.collarButtonGoFinish.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -71,7 +74,10 @@ public class TaskAdapter extends XRecyclerView.Adapter<TaskAdapter.MovieViewHold
         movieViewHolder.collarButtonGoFinish.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
-
+                areaView.onCurre(result.get(i).id);
+                movieViewHolder.firstButtonGoFinish.setVisibility(View.GONE);
+                movieViewHolder.firstButtonFinish.setVisibility(View.VISIBLE);
+                movieViewHolder.collarButtonGoFinish.setVisibility(View.GONE);
             }
 
             @Override
@@ -79,17 +85,7 @@ public class TaskAdapter extends XRecyclerView.Adapter<TaskAdapter.MovieViewHold
 
             }
         });
-        movieViewHolder.firstButtonFinish.setOnClickListener(new CustomClickListener() {
-            @Override
-            protected void onSingleClick() {
 
-            }
-
-            @Override
-            protected void onFastClick() {
-
-            }
-        });
     }
 
     @Override

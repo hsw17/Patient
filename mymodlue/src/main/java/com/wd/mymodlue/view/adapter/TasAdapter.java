@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.wd.mymodlue.R;
 import com.wd.mymodlue.modle.bean.UserTaskListBean;
@@ -57,7 +58,34 @@ public class TasAdapter extends XRecyclerView.Adapter<TasAdapter.MovieViewHolder
                     movieViewHolder.firstButtonFinish.setVisibility(View.GONE);
                 }
 
+        movieViewHolder.firstButtonGoFinish.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                areaView.onCurress(result.get(i).id);
+                movieViewHolder.firstButtonGoFinish.setVisibility(View.GONE);
+                movieViewHolder.firstButtonFinish.setVisibility(View.GONE);
+                movieViewHolder.collarButtonGoFinish.setVisibility(View.VISIBLE);
+            }
 
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+        movieViewHolder.collarButtonGoFinish.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                areaView.onCurre(result.get(i).id);
+                movieViewHolder.firstButtonGoFinish.setVisibility(View.GONE);
+                movieViewHolder.firstButtonFinish.setVisibility(View.VISIBLE);
+                movieViewHolder.collarButtonGoFinish.setVisibility(View.GONE);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
     }
 
     @Override
@@ -93,5 +121,7 @@ public class TasAdapter extends XRecyclerView.Adapter<TasAdapter.MovieViewHolder
 
     public interface AreaView {
         void onCurress(int id);
+
+        void onCurre(int id);
     }
 }

@@ -177,6 +177,45 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
 
             }
         });
+//        我的钱包
+        myButtonWallet.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.WalletActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//   被采纳的建议
+        myButtonSuggest.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.SuggestActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//      设置
+        myButtonSet.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.SettingActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
     }
     @Override
     public void onSuccess(Object obj) {

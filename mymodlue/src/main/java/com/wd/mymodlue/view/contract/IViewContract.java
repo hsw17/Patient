@@ -30,6 +30,16 @@ public interface IViewContract {
         void doHetherSignToday(Map<String,Object> map);
         //查询用户任务列表
         void doFindUserTaskList(Map<String,Object> map);
+        //做任务
+        void doTask(Map<String,Object> map,int taskId);
+        //领取任务奖励
+        void doReceiveReward(Map<String,Object> map,int taskId);
+        //我的钱包
+        void doUserWallet(Map<String,Object> map);
+        //查询用户消费记录
+        void doRecordList(Map<String,Object> map,Map<String,Object> oap);
+        //查询我的被采纳的建议
+        void doCommentList(Map<String,Object> map,Map<String,Object> oap);
     }
 
     //M层
@@ -42,6 +52,16 @@ public interface IViewContract {
         void doHetherSignToday(Map<String,Object> map, IModelCallback iModelCallback);
 //        查询用户任务列表
         void doFindUserTaskList(Map<String,Object> map, IModelCallback iModelCallback);
+//        做任务
+        void doTask(Map<String,Object> map,int taskId, IModelCallback iModelCallback);
+//        领取任务奖励
+        void doReceiveReward(Map<String,Object> map,int taskId, IModelCallback iModelCallback);
+//        我的钱包
+        void doUserWallet(Map<String,Object> map, IModelCallback iModelCallback);
+//        查询用户消费记录
+        void doRecordList(Map<String,Object> map,Map<String,Object> oap, IModelCallback iModelCallback);
+//        查询我的被采纳的建议
+        void doCommentList(Map<String,Object> map,Map<String,Object> oap, IModelCallback iModelCallback);
 
         interface IModelCallback{
             void onSuccess(Object obj);
@@ -50,6 +70,7 @@ public interface IViewContract {
             void onSuccessThree(Object three);
             void onSuccessFour(Object four);
             void onFail(String str);
+
         }
     }
 }

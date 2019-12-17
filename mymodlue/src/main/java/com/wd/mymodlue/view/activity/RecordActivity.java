@@ -47,6 +47,8 @@ public class RecordActivity extends BaseActivity<Persenter> implements IViewCont
 
     }
 
+
+
     @Override
     public void onFail(String str) {
 

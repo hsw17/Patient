@@ -1,23 +1,25 @@
 package com.wd.mymodlue.view.activity;
 
+import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Bundle;
 
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.wd.mymodlue.R;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
 
-public class AttentionActivity extends BaseActivity<Persenter> implements IViewContract.IView {
+public class SettingActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
 
     @Override
     protected int bindLayout() {
-        return R.layout.activity_attention;
+        return R.layout.activity_setting;
     }
 
     @Override
     protected Persenter setPresenter() {
-        return new Persenter();
+        return null;
     }
 
     @Override

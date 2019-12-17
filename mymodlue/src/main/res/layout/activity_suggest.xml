@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.SuggestActivity">
+
+    <RelativeLayout
+        android:id="@+id/relay_layout"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_height="@dimen/dp_26">
+
+        <ImageView
+            android:id="@+id/head_details_back"
+            android:layout_width="@dimen/dp_16"
+            android:layout_height="@dimen/dp_16"
+            android:src="@mipmap/common_icon_back_black_n" />
+        <TextView
+            android:textStyle="bold"
+            android:text="被采纳建议"
+            android:id="@+id/head_text_name"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/sp_16"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_22" />
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_below="@id/relay_layout"
+        android:id="@+id/suggest_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/record_linear_layout"
+        android:layout_marginTop="@dimen/dp_150"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:background="@mipmap/no_message"
+            android:layout_width="@dimen/dp_126"
+            android:layout_height="@dimen/dp_135"/>
+        <TextView
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="您还暂时还没有建议被采纳！"
+            android:layout_marginTop="@dimen/dp_30"
+            android:textSize="@dimen/sp_14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</RelativeLayout>
