@@ -24,12 +24,24 @@ public interface IViewContract {
     interface IPresenter {
         //用户签到
         void doAddSign(Map<String,Object> map);
+        //查询用户连续签到天数
+        void doFindUserSign(Map<String,Object> map);
+        //查询用户当天是否签到
+        void doHetherSignToday(Map<String,Object> map);
+        //查询用户任务列表
+        void doFindUserTaskList(Map<String,Object> map);
     }
 
     //M层
     interface IModel{
 //        用户签到
         void doAddSign(Map<String,Object> map, IModelCallback iModelCallback);
+//        查询用户连续签到天数
+        void doFindUserSign(Map<String,Object> map, IModelCallback iModelCallback);
+//        查询用户当天是否签到
+        void doHetherSignToday(Map<String,Object> map, IModelCallback iModelCallback);
+//        查询用户任务列表
+        void doFindUserTaskList(Map<String,Object> map, IModelCallback iModelCallback);
 
         interface IModelCallback{
             void onSuccess(Object obj);

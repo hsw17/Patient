@@ -53,8 +53,116 @@ public class Persenter extends BasePresenter<IViewContract.IView> implements IVi
 
              @Override
              public void onFail(String str) {
+                 getView().onFail(str);
 
              }
          });
+    }
+
+    @Override
+    public void doFindUserSign(Map<String, Object> map) {
+        iModel.doFindUserSign(map, new IViewContract.IModel.IModelCallback() {
+            @Override
+            public void onSuccess(Object obj) {
+            }
+
+            @Override
+            public void onSuccessOne(Object one) {
+
+            }
+
+            @Override
+            public void onSuccessTwo(Object two) {
+                getView().onSuccessTwo(two);
+
+            }
+
+            @Override
+            public void onSuccessThree(Object three) {
+
+            }
+
+            @Override
+            public void onSuccessFour(Object four) {
+
+            }
+
+            @Override
+            public void onFail(String str) {
+            getView().onFail(str);
+            }
+        });
+    }
+
+    @Override
+    public void doHetherSignToday(Map<String, Object> map) {
+        iModel.doHetherSignToday(map, new IViewContract.IModel.IModelCallback() {
+            @Override
+            public void onSuccess(Object obj) {
+
+            }
+
+            @Override
+            public void onSuccessOne(Object one) {
+                getView().onSuccessOne(one);
+
+            }
+
+            @Override
+            public void onSuccessTwo(Object two) {
+
+            }
+
+            @Override
+            public void onSuccessThree(Object three) {
+
+            }
+
+            @Override
+            public void onSuccessFour(Object four) {
+
+            }
+
+            @Override
+            public void onFail(String str) {
+                getView().onFail(str);
+
+            }
+        });
+    }
+
+    @Override
+    public void doFindUserTaskList(Map<String, Object> map) {
+        iModel.doFindUserTaskList(map, new IViewContract.IModel.IModelCallback() {
+            @Override
+            public void onSuccess(Object obj) {
+
+            }
+
+            @Override
+            public void onSuccessOne(Object one) {
+
+            }
+
+            @Override
+            public void onSuccessTwo(Object two) {
+
+            }
+
+            @Override
+            public void onSuccessThree(Object three) {
+                getView().onSuccessThree(three);
+            }
+
+            @Override
+            public void onSuccessFour(Object four) {
+
+            }
+
+            @Override
+            public void onFail(String str) {
+                getView().onFail(str);
+            }
+        });
     }
 }

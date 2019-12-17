@@ -84,6 +84,7 @@ ext {
             "fresco-gif"              : 'com.facebook.fresco:animated-gif:0.14.1',
             "fresco-webpsupport"      : 'com.facebook.fresco:webpsupport:0.14.1',
             "fresco-webp"             : 'com.facebook.fresco:animated-webp:0.14.1',
+            "xrecyclerview"             : 'com.jcodecraeer:xrecyclerview:1.3.2',
 
     ]
 }

@@ -67,7 +67,7 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
     LinearLayout linearMy;
     @BindView(R.id.my_text_title)
     TextView myTextTitle;
-    private LoginBean loginBean;
+
     private Map<String, Object> map;
 
     @Override
@@ -86,11 +86,19 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
         ToastUtils.init(this);
+//        获取存储内容
         SPUtils login = new SPUtils(this, "login");
-        loginBean = (LoginBean) login.getSharedPreference("loginBean",null);
+        int id = (int) login.getSharedPreference("id", 0);
+        String sessionId = (String) login.getSharedPreference("sessionId", "");
+        String nickName = (String) login.getSharedPreference("nickName", "");
+        String headPic = (String) login.getSharedPreference("headPic", "");
+
+//        设置头像名字
+        myImageSimple.setImageURI(headPic);
+        myTextLogin.setText(nickName);
         map = new HashMap<>();
-        map.put("userId",437);
-        map.put("sessionId","1576462315793437");
+        map.put("userId",434);
+        map.put("sessionId","1576494766784434");
 //       底部文字
         myTextTitle.setText("@八维移动通讯学院毕业作品");
 //        返回

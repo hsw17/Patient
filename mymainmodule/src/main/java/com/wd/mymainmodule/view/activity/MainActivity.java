@@ -199,7 +199,18 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
         if ("0000".equals(loginBean.status)) {
             ToastUtils.show(loginBean.message);
 //            存储
-            login.SharedPreferenceput("loginBean", loginBean);
+            login.SharedPreferenceput("sessionId", loginBean.result.sessionId);
+            login.SharedPreferenceput("id", loginBean.result.id);
+            login.SharedPreferenceput("email", loginBean.result.email);
+            login.SharedPreferenceput("headPic", loginBean.result.headPic);
+            login.SharedPreferenceput("nickName", loginBean.result.nickName);
+            login.SharedPreferenceput("userName", loginBean.result.userName);
+            login.SharedPreferenceput("jiGuangPwd", loginBean.result.jiGuangPwd);
+            login.SharedPreferenceput("sex", loginBean.result.sex);
+            login.SharedPreferenceput("age", loginBean.result.age);
+            login.SharedPreferenceput("height", loginBean.result.height);
+            login.SharedPreferenceput("weight", loginBean.result.weight);
+            login.SharedPreferenceput("whetherBingWeChat", loginBean.result.whetherBingWeChat);
             String email = loginEditEmail.getText().toString();
             String pwd = loginEditPwd.getText().toString();
             this.email.SharedPreferenceput("email",email);
