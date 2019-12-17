@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.MainActivity">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablist"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40">
+
+    </com.google.android.material.tabs.TabLayout>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+         android:id="@+id/video"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_below="@id/tablist">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/pay"
+        android:src="@mipmap/common_icon_toll_n"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        app:fabCustomSize="@dimen/dp_30"
+        app:backgroundTint="#E6DCDC"
+        android:layout_gravity = "bottom|center"
+        android:layout_marginBottom="@dimen/dp_200"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_alignParentBottom="true"
+        android:scaleType="center">
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/shouchang"
+        android:src="@mipmap/common_button_collection_large_n"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        app:fabCustomSize="@dimen/dp_30"
+        app:backgroundTint="#E6DCDC"
+        android:layout_gravity = "bottom|center"
+        android:layout_marginBottom="@dimen/dp_160"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_alignParentBottom="true"
+        android:scaleType="center">
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/danmu"
+        android:src="@mipmap/common_icon_open_live_commenting_n"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        app:fabCustomSize="@dimen/dp_30"
+        app:backgroundTint="#F0E6E6"
+        android:layout_gravity = "bottom|center"
+        android:layout_marginBottom="@dimen/dp_120"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_alignParentBottom="true"
+        android:scaleType="center">
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
+
+</RelativeLayout>
