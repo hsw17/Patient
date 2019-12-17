@@ -52,8 +52,9 @@ import butterknife.OnClick;
 public class MainActivity extends BaseActivity<HomePresenter> implements HomeContract.HomeView {
 
 
-    @BindView(R.id.home_xbanner_top)
-    XBanner homeXbannerTop;
+    private String jumpUrl;
+    private Intent intent;
+
     @BindView(R.id.home_Title)
     TextView homeTitle;
     @BindView(R.id.home_lore)
@@ -74,6 +75,8 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
     ViewPager homeVp;
     private List<String> strings;
     private List<Fragment> fragments;
+    private BannerBean bannerBean;
+    private XBanner homeXbannerTop;
 
     @Override
     protected int bindLayout() {
@@ -91,6 +94,7 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
         super.initData();
         homeTab = findViewById(R.id.home_tab);
         homeVp = findViewById(R.id.home_vp);
+        homeXbannerTop = findViewById(R.id.home_xbanner_top);
         //banner
         presenter.HomePresenterBanner();
         //查询科室
@@ -134,6 +138,8 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
         //默认选中
         homeTab.getTabAt(0).select();
 
+
+
     }
 
     @Override
@@ -143,11 +149,10 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.home_xbanner_top, R.id.home_Title, R.id.home_lore, R.id.strut, R.id.disease_img, R.id.drugs_img, R.id.home_inquiry, R.id.home_XRecyclerView, R.id.home_evaluation, R.id.home_tab, R.id.home_vp})
+    @OnClick({  R.id.home_Title, R.id.home_lore, R.id.strut, R.id.disease_img, R.id.drugs_img, R.id.home_inquiry, R.id.home_XRecyclerView, R.id.home_evaluation, R.id.home_tab, R.id.home_vp})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.home_xbanner_top:
-                break;
+
             case R.id.home_Title:
                 break;
             case R.id.home_lore:
@@ -156,14 +161,13 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
                 break;
             case R.id.disease_img:
                 //跳转到常见病症
-                startActivity(new Intent(MainActivity.this,CommonActivity.class));
+                startActivity(new Intent(MainActivity.this, CommonActivity.class));
                 /*Intent intent = new Intent(this,CommonActivity.class);
                 //intent.putExtra("",)
                 startActivity(intent);*/
                 break;
             case R.id.drugs_img:
-                startActivity(new Intent(MainActivity.this,CommonActivity.class));
-
+                startActivity(new Intent(MainActivity.this, CommonActivity.class));
                 break;
             case R.id.home_inquiry:
                 break;
@@ -182,7 +186,7 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
     public void HomeViewSuccess(Object obj) {
         //轮播图
         if (obj instanceof BannerBean) {
-            BannerBean bannerBean = (BannerBean) obj;
+            bannerBean = (BannerBean) obj;
             List<BannerBean.ResultBean> result = bannerBean.getResult();
             homeXbannerTop.setData(result, null);
             homeXbannerTop.setmAdapter(new XBanner.XBannerAdapter() {
@@ -191,10 +195,18 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
                     Glide.with(context()).load(result.get(position).getImageUrl()).into((ImageView) view);
                 }
             });
-
+            //点击跳转新的页面
+            homeXbannerTop.setOnItemClickListener(new XBanner.OnItemClickListener() {
+                private Intent intent;
+                @Override
+                public void onItemClick(XBanner banner, int position) {
+                    intent = new Intent(context(), WebViewActivity.class);
+                    intent.putExtra("umpUrl", bannerBean.getResult().get(position).getJumpUrl());
+                    startActivity(intent);
+                }
+            });
         } else if (obj instanceof EnquirySectionBean) {
             //查询科室
-
             EnquirySectionBean enquirySectionBean = (EnquirySectionBean) obj;
             List<EnquirySectionBean.ResultBean> result = enquirySectionBean.getResult();
             EnquirySectionAdapter enquirySectionAdapter = new EnquirySectionAdapter(MainActivity.this, result);
@@ -207,7 +219,6 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
             List<NewslistBean.ResultBean> result = newslistBean.getResult();
             //设置适配器
             NewslistAdapter newslistAdapter = new NewslistAdapter(result, context());
-
         }*/
     }
 

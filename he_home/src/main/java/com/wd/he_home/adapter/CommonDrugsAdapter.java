@@ -14,6 +14,8 @@ import com.wd.he_home.bean.DrugClassificationBean;
 
 import java.util.List;
 
+import butterknife.OnClick;
+
 /**
  *@describe(描述)：CommonDrugsAdapter   药品分类
  *@data（日期）: 2019/12/16
@@ -39,8 +41,13 @@ public class CommonDrugsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof CommonDrugsHolder){
             ((CommonDrugsHolder) holder).drugclass_name.setText(list.get(position).getName());
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onClickItem.getOnClickItem(list.get(position).getId());
+                }
+            });
         }
-
     }
 
     @Override
@@ -55,5 +62,13 @@ public class CommonDrugsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             super(itemView);
             drugclass_name = itemView.findViewById(R.id.drugclass_name);
         }
+    }
+    //接口回调
+    public OnClickItem onClickItem;
+    public void setOnClick(OnClickItem onClickItem){
+        this.onClickItem =onClickItem;
+    }
+    public interface OnClickItem{
+        void getOnClickItem(String drugsCategoryId);
     }
 }

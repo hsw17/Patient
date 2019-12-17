@@ -44,6 +44,7 @@ public class CommonSymptomsAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                 public void onClick(View view) {
                     String id = resultBean.get(position).getId();
                     getClickItem.ClickItem(id);
+
                 }
             });
         }

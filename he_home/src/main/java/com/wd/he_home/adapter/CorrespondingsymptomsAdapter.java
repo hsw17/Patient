@@ -1,6 +1,7 @@
 package com.wd.he_home.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bwie.mvplibrary.app.Constant;
 import com.wd.he_home.R;
 import com.wd.he_home.bean.CorrespondingsymptomsBean;
+import com.wd.he_home.view.ConditionDetailsActivity;
 
 import java.util.List;
 
@@ -39,6 +42,15 @@ public class CorrespondingsymptomsAdapter extends RecyclerView.Adapter{
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof CorrespHolder) {
             ((CorrespHolder) holder).corresp_name.setText(resultBeans.get(position).getName());
+            ((CorrespHolder) holder).corresp_name.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, ConditionDetailsActivity.class);
+                    intent.putExtra("id_one", resultBeans.get(position).getId());
+                    intent.putExtra("name", resultBeans.get(position).getName());
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 
@@ -55,5 +67,12 @@ public class CorrespondingsymptomsAdapter extends RecyclerView.Adapter{
             super(itemView);
             corresp_name = itemView.findViewById(R.id.commons_name);
         }
+    }
+    public onCorresClickItem onCorresClickItem;
+    public void getOnClick(onCorresClickItem onCorresClickItem){
+        this.onCorresClickItem = onCorresClickItem;
+    }
+    public interface onCorresClickItem{
+        void getClickItem(String id);
     }
 }

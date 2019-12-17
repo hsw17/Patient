@@ -8,8 +8,12 @@ import com.bwie.mvplibrary.utils.CommonSchedulers;
 import com.bwie.mvplibrary.utils.RetrofitManager;
 import com.wd.he_home.app.ApiServer;
 import com.wd.he_home.bean.BannerBean;
+import com.wd.he_home.bean.ConditionDetailsBean;
+import com.wd.he_home.bean.ConsultationDetailsBean;
 import com.wd.he_home.bean.CorrespondingsymptomsBean;
 import com.wd.he_home.bean.DrugClassificationBean;
+import com.wd.he_home.bean.DrugDetailsBean;
+import com.wd.he_home.bean.DrugListBean;
 import com.wd.he_home.bean.EnquirySectionBean;
 import com.wd.he_home.bean.HealthinformationBean;
 import com.wd.he_home.bean.NewslistBean;
@@ -132,5 +136,81 @@ public class HomeModel implements HomeContract.HomeModel {
                     homeModelCallBack.HomeViewError(e.getMessage());
                     }
                 });
+    }
+
+    //药品列表
+    @Override
+    public void HomeModelYaoPinLieBiaoData(String drugsCategoryId, String page, String count, HomeModelCallBack homeModelCallBack) {
+        RetrofitManager.getInstance().create(ApiServer.class)
+                .yaopinliebiao(drugsCategoryId,page,count)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<DrugListBean>() {
+                    @Override
+                    public void onNext(DrugListBean drugListBean) {
+                        homeModelCallBack.HomeViewSuccess(drugListBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        homeModelCallBack.HomeViewError(e.getMessage());
+                    }
+                });
+    }
+
+    //查询病状详情
+    @Override
+    public void HomeModelBingZhuangXiangQingData(String id, HomeModelCallBack homeModelCallBack) {
+        RetrofitManager.getInstance().create(ApiServer.class)
+                .bingzhuangxiangqiang(id)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<ConditionDetailsBean>() {
+                    @Override
+                    public void onNext(ConditionDetailsBean conditionDetailsBean) {
+                        homeModelCallBack.HomeViewSuccess(conditionDetailsBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                    homeModelCallBack.HomeViewError(e.getMessage());
+                    }
+                });
+    }
+
+    //查询药品详情
+    @Override
+    public void HomeModelYaoPinXiangQingData(String id, HomeModelCallBack homeModelCallBack) {
+        RetrofitManager.getInstance().create(ApiServer.class)
+                .yaopinxiangqing(id)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<DrugDetailsBean>() {
+                    @Override
+                    public void onNext(DrugDetailsBean drugDetailsBean) {
+                        homeModelCallBack.HomeViewSuccess(drugDetailsBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        homeModelCallBack.HomeViewError(e.getMessage());
+                    }
+                });
+    }
+
+    //咨询详情
+    @Override
+    public void HomeModelZiXunXiangQingData(String userId, String sessionId, String infoId, HomeModelCallBack homeModelCallBack) {
+     RetrofitManager.getInstance().create(ApiServer.class)
+     .zixunxiangqing(userId,sessionId,infoId)
+     .compose(CommonSchedulers.io2main())
+     .subscribe(new CommonObserver<ConsultationDetailsBean>() {
+         @Override
+         public void onNext(ConsultationDetailsBean consultationDetailsBean) {
+             homeModelCallBack.HomeViewSuccess(consultationDetailsBean);
+         }
+
+         @Override
+         public void onError(Throwable e) {
+            homeModelCallBack.HomeViewError(e.getMessage());
+         }
+     });
     }
 }

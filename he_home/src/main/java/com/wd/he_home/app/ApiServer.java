@@ -2,8 +2,11 @@ package com.wd.he_home.app;
 
 
 import com.wd.he_home.bean.BannerBean;
+import com.wd.he_home.bean.ConditionDetailsBean;
+import com.wd.he_home.bean.ConsultationDetailsBean;
 import com.wd.he_home.bean.CorrespondingsymptomsBean;
 import com.wd.he_home.bean.DrugClassificationBean;
+import com.wd.he_home.bean.DrugDetailsBean;
 import com.wd.he_home.bean.DrugListBean;
 import com.wd.he_home.bean.EnquirySectionBean;
 import com.wd.he_home.bean.HealthinformationBean;
@@ -11,6 +14,7 @@ import com.wd.he_home.bean.NewslistBean;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.Query;
 
 
@@ -53,4 +57,17 @@ public interface ApiServer {
     //http://172.17.8.100/health/share/knowledgeBase/v1/findDrugsKnowledgeList
     @GET("health/share/knowledgeBase/v1/findDrugsKnowledgeList")
     Observable<DrugListBean> yaopinliebiao(@Query("drugsCategoryId")String drugsCategoryId,@Query("page")String page,@Query("count")String count);
+    //查询病状详情
+    //http://172.17.8.100/health/share/knowledgeBase/v1/findDiseaseKnowledge
+    @GET("health/share/knowledgeBase/v1/findDiseaseKnowledge")
+    Observable<ConditionDetailsBean> bingzhuangxiangqiang(@Query("id")String id);
+    //查询常见药品详情
+    //http://172.17.8.100/health/share/knowledgeBase/v1/findDrugsKnowledge
+    @GET("health/share/knowledgeBase/v1/findDrugsKnowledge")
+    Observable<DrugDetailsBean> yaopinxiangqing(@Query("id")String id);
+    //咨询详情
+    //http://172.17.8.100/health/share/information/v1/findInformation
+    @GET("health/share/information/v1/findInformation")
+    Observable<ConsultationDetailsBean> zixunxiangqing(@Header("userId")String userId,@Header("sessionId")String sessionId,@Query("infoId")String infoId);
+
 }
