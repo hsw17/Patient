@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.wd.mymodlue.R;
 import com.wd.mymodlue.modle.bean.UserTaskListBean;
@@ -56,6 +57,39 @@ public class TaskAdapter extends XRecyclerView.Adapter<TaskAdapter.MovieViewHold
                     movieViewHolder.collarButtonGoFinish.setVisibility(View.GONE);
                     movieViewHolder.firstButtonFinish.setVisibility(View.GONE);
                 }
+        movieViewHolder.firstButtonGoFinish.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                areaView.onCurress(result.get(i).id);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+        movieViewHolder.collarButtonGoFinish.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+        movieViewHolder.firstButtonFinish.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
     }
 
     @Override
@@ -91,5 +125,6 @@ public class TaskAdapter extends XRecyclerView.Adapter<TaskAdapter.MovieViewHold
 
     public interface AreaView {
         void onCurress(int id);
+        void onCurre(int id);
     }
 }
