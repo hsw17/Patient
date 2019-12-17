@@ -59,6 +59,7 @@ public class HealthHighlightsFragment extends BaseFragment<HomePresenter> implem
             NewslistAdapter newslistAdapter = new NewslistAdapter(result, context());
             zixunRecycler.setAdapter(newslistAdapter);
             zixunRecycler.addItemDecoration(new DividerItemDecoration(context(), DividerItemDecoration.VERTICAL));
+
         }
     }
 

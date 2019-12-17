@@ -1,6 +1,7 @@
 package com.wd.he_home.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.wd.he_home.R;
 import com.wd.he_home.bean.NewslistBean;
+import com.wd.he_home.view.FindInfoActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -75,6 +77,7 @@ public class NewslistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 Glide.with(context).load(resultBeans.get(position).getThumbnail()).into(((Newlist_one_Holder) holder).simple);
                 simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
                 ((Newlist_one_Holder) holder).text_time.setText(simpleDateFormat.format(date));
+
                 break;
             case 1:
                 ((Newlist_two_Holder) holder).text_title.setText(resultBeans.get(position).getTitle());
@@ -86,12 +89,14 @@ public class NewslistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 Glide.with(context).load(split[1]).into(((Newlist_two_Holder) holder).simple2);
                 Glide.with(context).load(split[2]).into(((Newlist_two_Holder) holder).simple3);
                 ((Newlist_two_Holder) holder).text_time.setText(simpleDateFormat.format(date));
+
                 break;
             case 2:
                 ((Newlist_three_Holder) holder).text_name.setText(resultBeans.get(position).getSource());
                 ((Newlist_three_Holder) holder).text_title.setText(resultBeans.get(position).getTitle());
                 simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
                 ((Newlist_three_Holder) holder).text_time.setText(simpleDateFormat.format(date));
+
                 break;
         }
 
@@ -133,5 +138,12 @@ public class NewslistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             text_name = itemView.findViewById(R.id.text_name);
             text_time = itemView.findViewById(R.id.text_time);
         }
+    }
+    public onClickNew onClickNew;
+    public void getOnClickNew(onClickNew onClickNew){
+        this.onClickNew =onClickNew;
+    }
+    public interface onClickNew{
+        void setOnClick(String inid);
     }
 }

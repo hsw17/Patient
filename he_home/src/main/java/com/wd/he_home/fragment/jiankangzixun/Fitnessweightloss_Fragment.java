@@ -1,5 +1,6 @@
 package com.wd.he_home.fragment.jiankangzixun;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -12,6 +13,7 @@ import com.wd.he_home.adapter.NewslistAdapter;
 import com.wd.he_home.bean.NewslistBean;
 import com.wd.he_home.comtract.HomeContract;
 import com.wd.he_home.presenter.HomePresenter;
+import com.wd.he_home.view.FindInfoActivity;
 
 import java.util.List;
 
@@ -63,18 +65,19 @@ public class Fitnessweightloss_Fragment extends BaseFragment<HomePresenter> impl
             NewslistAdapter newslistAdapter = new NewslistAdapter(result, context());
             zixunRecycler.setAdapter(newslistAdapter);
             zixunRecycler.addItemDecoration(new DividerItemDecoration(context(), DividerItemDecoration.VERTICAL));
+         /*   newslistAdapter.getOnClickNew(new NewslistAdapter.onClickNew() {
+                private Intent intent;
+                @Override
+                public void setOnClick(String inid) {
+                    intent = new Intent(context(), FindInfoActivity.class);
+                    intent.putExtra("in_id", inid);
+                    startActivity(intent);
+                }
+            });*/
         }
-
-    }
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(getActivity());
     }
     @Override
     public void HomeViewError(String e) {
-
     }
 
 }

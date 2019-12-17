@@ -4,8 +4,12 @@ import android.util.Log;
 
 import com.bwie.mvplibrary.base.BasePresenter;
 import com.wd.he_home.bean.BannerBean;
+import com.wd.he_home.bean.ConditionDetailsBean;
+import com.wd.he_home.bean.ConsultationDetailsBean;
 import com.wd.he_home.bean.CorrespondingsymptomsBean;
 import com.wd.he_home.bean.DrugClassificationBean;
+import com.wd.he_home.bean.DrugDetailsBean;
+import com.wd.he_home.bean.DrugListBean;
 import com.wd.he_home.bean.EnquirySectionBean;
 import com.wd.he_home.bean.HealthinformationBean;
 import com.wd.he_home.bean.NewslistBean;
@@ -134,5 +138,74 @@ public class HomePresenter extends BasePresenter<HomeContract.HomeView> implemen
             getView().HomeViewError(e);
          }
      });
+    }
+
+    //药品列表
+    @Override
+    public void HomePresenterYaoPinLieBiao(String drugsCategoryId, String page, String count) {
+            homeModel.HomeModelYaoPinLieBiaoData(drugsCategoryId, page, count, new HomeContract.HomeModel.HomeModelCallBack() {
+                @Override
+                public void HomeViewSuccess(Object obj) {
+                    DrugListBean drugListBean = (DrugListBean) obj;
+                    getView().HomeViewSuccess(drugListBean);
+                }
+
+                @Override
+                public void HomeViewError(String e) {
+                    getView().HomeViewError(e);
+                }
+            });
+    }
+
+    //查询病状详情
+    @Override
+    public void HomePresenterBingZhuangXiangQing(String id) {
+        homeModel.HomeModelBingZhuangXiangQingData(id, new HomeContract.HomeModel.HomeModelCallBack() {
+            @Override
+            public void HomeViewSuccess(Object obj) {
+                ConditionDetailsBean conditionDetailsBean = (ConditionDetailsBean) obj;
+                getView().HomeViewSuccess(conditionDetailsBean);
+            }
+
+            @Override
+            public void HomeViewError(String e) {
+                getView().HomeViewError(e);
+
+            }
+        });
+    }
+
+    //查询药品详情
+    @Override
+    public void HomePresenterYaoPinXiangQing(String id) {
+        homeModel.HomeModelYaoPinXiangQingData(id, new HomeContract.HomeModel.HomeModelCallBack() {
+            @Override
+            public void HomeViewSuccess(Object obj) {
+                DrugDetailsBean drugDetailsBean = (DrugDetailsBean) obj;
+                getView().HomeViewSuccess(drugDetailsBean);
+            }
+
+            @Override
+            public void HomeViewError(String e) {
+                getView().HomeViewError(e);
+            }
+        });
+    }
+
+    //查看咨询详情
+    @Override
+    public void HomePresenterZiXunXiangQing(String userId, String sessionId, String infoId) {
+        homeModel.HomeModelZiXunXiangQingData(userId, sessionId, infoId, new HomeContract.HomeModel.HomeModelCallBack() {
+            @Override
+            public void HomeViewSuccess(Object obj) {
+                ConsultationDetailsBean consultationDetailsBean = (ConsultationDetailsBean) obj;
+
+            getView().HomeViewSuccess(consultationDetailsBean); }
+
+            @Override
+            public void HomeViewError(String e) {
+                getView().HomeViewError(e);
+            }
+        });
     }
 }

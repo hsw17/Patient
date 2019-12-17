@@ -6,6 +6,7 @@ package com.wd.he_home.fragment.changjian;
  * function：
  */
 
+import android.content.Intent;
 import android.view.View;
 
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -21,6 +22,7 @@ import com.wd.he_home.bean.CorrespondingsymptomsBean;
 import com.wd.he_home.bean.EnquirySectionBean;
 import com.wd.he_home.comtract.HomeContract;
 import com.wd.he_home.presenter.HomePresenter;
+import com.wd.he_home.view.ConditionDetailsActivity;
 import com.wd.he_home.view.MainActivity;
 
 import java.util.List;
@@ -86,6 +88,16 @@ public class CommonSymptomsFragment extends BaseFragment<HomePresenter> implemen
             commonsTwoRecycler.setLayoutManager(gridLayoutManager);
             CorrespondingsymptomsAdapter correspondingsymptomsAdapter = new CorrespondingsymptomsAdapter(context(), result);
             commonsTwoRecycler.setAdapter(correspondingsymptomsAdapter);
+            //接口回调传值
+       /*     correspondingsymptomsAdapter.getOnClick(new CorrespondingsymptomsAdapter.onCorresClickItem() {
+                @Override
+                public void getClickItem(String id) {
+                    Intent intent = new Intent();
+                    intent.putExtra("id",id);
+                    intent.setClass(context(), ConditionDetailsActivity.class);
+                    startActivity(intent);
+                }
+            });*/
         }
     }
     @Override

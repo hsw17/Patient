@@ -54,13 +54,20 @@ public class NewslistBean {
          * thumbnail : https://jkcdn.pajk.com.cn/image/T1uRESB4dT1RCvBVdK
          * title : 灵芝、铁皮石斛有国际标准了！农残重金属等指标被明确规范
          */
-
+        private String content;
         private String id;
         private String plateId;
         private long releaseTime;
         private String source;
         private String thumbnail;
         private String title;
+        public String getContent() {
+            return content;
+        }
+
+        public void setContent(String content) {
+            this.content = content;
+        }
 
         public String getId() {
             return id;

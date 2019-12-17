@@ -29,6 +29,14 @@ public interface HomeContract {
         void HomeModelDuiYingBingZheng(String departmentId,HomeModelCallBack homeModelCallBack);
         //药品分类
         void HomeModelYaoPinFenLeiData(HomeModelCallBack homeModelCallBack);
+        //查询药品列表
+        void HomeModelYaoPinLieBiaoData(String drugsCategoryId,String page,String count,HomeModelCallBack homeModelCallBack);
+        //查询病状详情
+        void HomeModelBingZhuangXiangQingData(String id,HomeModelCallBack homeModelCallBack);
+        //查询药品详情
+        void HomeModelYaoPinXiangQingData(String id,HomeModelCallBack homeModelCallBack);
+        //咨询详情
+        void HomeModelZiXunXiangQingData(String userId,String sessionId,String infoId,HomeModelCallBack homeModelCallBack);
         //接口回调
         interface HomeModelCallBack{
             void HomeViewSuccess(Object obj);
@@ -50,6 +58,14 @@ public interface HomeContract {
         void HomePresenterDuiYingBingZheng(String departmentId);
         //药品分类
         void HomePresenterYaoPinFenLei();
+        //查询药品列表
+        void HomePresenterYaoPinLieBiao(String drugsCategoryId,String page,String count);
+        //查询病状详情
+        void HomePresenterBingZhuangXiangQing(String id);
+        //查询药品详情
+        void HomePresenterYaoPinXiangQing(String id);
+        //咨询详情
+        void HomePresenterZiXunXiangQing(String userId,String sessionId,String infoId);
 
     }
 }
