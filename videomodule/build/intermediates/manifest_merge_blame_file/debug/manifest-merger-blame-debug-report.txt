@@ -95,22 +95,23 @@
 41-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:9:9-54
 42        android:supportsRtl="true"
 42-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:10:9-35
-43        android:theme="@style/AppTheme" >
-43-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:11:9-40
-44        <activity android:name="com.bw.videomodule.view.activity.MainActivity" >
-44-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:12:9-18:20
-44-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:12:19-61
-45            <intent-filter>
-45-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:13:13-17:29
-46                <action android:name="android.intent.action.MAIN" />
-46-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:14:17-69
-46-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:14:25-66
-47
-48                <category android:name="android.intent.category.LAUNCHER" />
-48-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:16:17-77
-48-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:16:27-74
-49            </intent-filter>
-50        </activity>
-51    </application>
-52
-53</manifest>
+43        android:testOnly="true"
+44        android:theme="@style/AppTheme" >
+44-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:11:9-40
+45        <activity android:name="com.bw.videomodule.view.activity.MainActivity" >
+45-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:12:9-18:20
+45-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:12:19-61
+46            <intent-filter>
+46-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:13:13-17:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:14:17-69
+47-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:14:25-66
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:16:17-77
+49-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:16:27-74
+50            </intent-filter>
+51        </activity>
+52    </application>
+53
+54</manifest>
