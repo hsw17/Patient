@@ -112,6 +112,18 @@
 49-->H:\healthy\Patient\videomodule\src\main\AndroidManifest.xml:16:27-74
 50            </intent-filter>
 51        </activity>
-52    </application>
-53
-54</manifest>
+52        <activity
+52-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:12:9-17:63
+53            android:name="com.uuzuche.lib_zxing.activity.CaptureActivity"
+53-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:13:13-74
+54            android:configChanges="orientation|keyboardHidden"
+54-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:14:13-63
+55            android:screenOrientation="portrait"
+55-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:15:13-49
+56            android:theme="@style/Theme.AppCompat.NoActionBar"
+56-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:16:13-63
+57            android:windowSoftInputMode="stateAlwaysHidden" />
+57-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:17:13-60
+58    </application>
+59
+60</manifest>

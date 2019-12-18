@@ -10,6 +10,7 @@ MERGED from [:mvplibrary] H:\healthy\Patient\mvplibrary\build\intermediates\libr
 MERGED from [com.jakewharton:butterknife:10.0.0] C:\Users\義\.gradle\caches\transforms-2\files-2.1\4db959bb99a793b29fc9e6cd81c48f85\butterknife-10.0.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.dueeeke.dkplayer:dkplayer-java:2.5.5] C:\Users\義\.gradle\caches\transforms-2\files-2.1\19a769dd71ee3c59253aaec8cabbcb11\jetified-dkplayer-java-2.5.5\AndroidManifest.xml:2:1-18:12
 MERGED from [com.zhy:autolayout:1.4.5] C:\Users\義\.gradle\caches\transforms-2\files-2.1\37d56fa56c25b390d1e52a228a99bf48\jetified-autolayout-1.4.5\AndroidManifest.xml:2:1-12:12
+MERGED from [cn.yipianfengye.android:zxing-library:2.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:2:1-20:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\義\.gradle\caches\transforms-2\files-2.1\6119d746697059b7e1b74aab4d181f56\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\義\.gradle\caches\transforms-2\files-2.1\3ec6fa8458ddbe732478393a9f9e6c77\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.dueeeke.dkplayer:dkplayer-armv7a:2.5.5] C:\Users\義\.gradle\caches\transforms-2\files-2.1\805ab849dd184cc6f900e72577ff3032\dkplayer-armv7a-2.5.5\AndroidManifest.xml:2:1-9:12
@@ -61,6 +62,8 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\義\.gradle\ca
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\義\.gradle\caches\transforms-2\files-2.1\733fc1d306cee2c05d3e1fb0b7527020\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\義\.gradle\caches\transforms-2\files-2.1\fdd65d8b6066fd289a68b42931dc03a2\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\義\.gradle\caches\transforms-2\files-2.1\9dbc62e22c8dca6451c30f3018e7c3c6\rxandroid-2.1.1\AndroidManifest.xml:15:1-20:12
+MERGED from [com.hyman:flowlayout-lib:1.1.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\ecaa1903cc23f70ec23440b361e8f707\flowlayout-lib-1.1.2\AndroidManifest.xml:2:1-12:12
+MERGED from [com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30] C:\Users\義\.gradle\caches\transforms-2\files-2.1\bdb65b989174aff4e04864e70a2682d9\jetified-BaseRecyclerViewAdapterHelper-2.9.30\AndroidManifest.xml:2:1-11:12
 MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.8] C:\Users\義\.gradle\caches\transforms-2\files-2.1\aefa435079d3635d10f93acb84a51c01\ijkplayer-java-0.8.8\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:drawee:0.14.1] C:\Users\義\.gradle\caches\transforms-2\files-2.1\f6b464ac5349cb52872d40bc86032f67\jetified-drawee-0.14.1\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:fbcore:0.14.1] C:\Users\義\.gradle\caches\transforms-2\files-2.1\ca2a76fc7a9452e4070e71923f918c7b\fbcore-0.14.1\AndroidManifest.xml:2:1-9:12
@@ -87,6 +90,8 @@ MERGED from [com.google.android.material:material:1.0.0] C:\Users\義\.gradle\cac
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\義\.gradle\caches\transforms-2\files-2.1\c7eb9cd3508ac3959447c14fd76c9fb9\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.github.dueeeke.dkplayer:dkplayer-java:2.5.5] C:\Users\義\.gradle\caches\transforms-2\files-2.1\19a769dd71ee3c59253aaec8cabbcb11\jetified-dkplayer-java-2.5.5\AndroidManifest.xml:12:5-16:19
 MERGED from [com.github.dueeeke.dkplayer:dkplayer-java:2.5.5] C:\Users\義\.gradle\caches\transforms-2\files-2.1\19a769dd71ee3c59253aaec8cabbcb11\jetified-dkplayer-java-2.5.5\AndroidManifest.xml:12:5-16:19
+MERGED from [cn.yipianfengye.android:zxing-library:2.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:11:5-18:19
+MERGED from [cn.yipianfengye.android:zxing-library:2.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:11:5-18:19
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\義\.gradle\caches\transforms-2\files-2.1\3ec6fa8458ddbe732478393a9f9e6c77\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\義\.gradle\caches\transforms-2\files-2.1\3ec6fa8458ddbe732478393a9f9e6c77\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.core:core:1.1.0] C:\Users\義\.gradle\caches\transforms-2\files-2.1\e9dab9c67c1ee3668e0bbf86c6d8cbd8\core-1.1.0\AndroidManifest.xml:24:5-89
@@ -137,6 +142,8 @@ MERGED from [com.github.dueeeke.dkplayer:dkplayer-java:2.5.5] C:\Users\義\.gradl
 MERGED from [com.github.dueeeke.dkplayer:dkplayer-java:2.5.5] C:\Users\義\.gradle\caches\transforms-2\files-2.1\19a769dd71ee3c59253aaec8cabbcb11\jetified-dkplayer-java-2.5.5\AndroidManifest.xml:5:5-7:41
 MERGED from [com.zhy:autolayout:1.4.5] C:\Users\義\.gradle\caches\transforms-2\files-2.1\37d56fa56c25b390d1e52a228a99bf48\jetified-autolayout-1.4.5\AndroidManifest.xml:8:5-10:41
 MERGED from [com.zhy:autolayout:1.4.5] C:\Users\義\.gradle\caches\transforms-2\files-2.1\37d56fa56c25b390d1e52a228a99bf48\jetified-autolayout-1.4.5\AndroidManifest.xml:8:5-10:41
+MERGED from [cn.yipianfengye.android:zxing-library:2.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:7:5-9:41
+MERGED from [cn.yipianfengye.android:zxing-library:2.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\義\.gradle\caches\transforms-2\files-2.1\6119d746697059b7e1b74aab4d181f56\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\義\.gradle\caches\transforms-2\files-2.1\6119d746697059b7e1b74aab4d181f56\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\義\.gradle\caches\transforms-2\files-2.1\3ec6fa8458ddbe732478393a9f9e6c77\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
@@ -239,6 +246,10 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\義\.gradle\caches\t
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\義\.gradle\caches\transforms-2\files-2.1\fdd65d8b6066fd289a68b42931dc03a2\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\義\.gradle\caches\transforms-2\files-2.1\9dbc62e22c8dca6451c30f3018e7c3c6\rxandroid-2.1.1\AndroidManifest.xml:18:5-43
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\義\.gradle\caches\transforms-2\files-2.1\9dbc62e22c8dca6451c30f3018e7c3c6\rxandroid-2.1.1\AndroidManifest.xml:18:5-43
+MERGED from [com.hyman:flowlayout-lib:1.1.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\ecaa1903cc23f70ec23440b361e8f707\flowlayout-lib-1.1.2\AndroidManifest.xml:8:5-10:41
+MERGED from [com.hyman:flowlayout-lib:1.1.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\ecaa1903cc23f70ec23440b361e8f707\flowlayout-lib-1.1.2\AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30] C:\Users\義\.gradle\caches\transforms-2\files-2.1\bdb65b989174aff4e04864e70a2682d9\jetified-BaseRecyclerViewAdapterHelper-2.9.30\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30] C:\Users\義\.gradle\caches\transforms-2\files-2.1\bdb65b989174aff4e04864e70a2682d9\jetified-BaseRecyclerViewAdapterHelper-2.9.30\AndroidManifest.xml:7:5-9:41
 MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.8] C:\Users\義\.gradle\caches\transforms-2\files-2.1\aefa435079d3635d10f93acb84a51c01\ijkplayer-java-0.8.8\AndroidManifest.xml:5:5-7:41
 MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.8] C:\Users\義\.gradle\caches\transforms-2\files-2.1\aefa435079d3635d10f93acb84a51c01\ijkplayer-java-0.8.8\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:drawee:0.14.1] C:\Users\義\.gradle\caches\transforms-2\files-2.1\f6b464ac5349cb52872d40bc86032f67\jetified-drawee-0.14.1\AndroidManifest.xml:5:5-7:41
@@ -323,3 +334,15 @@ uses-permission#android.permission.PERMISSIONS_STORAGE
 ADDED from [:mvplibrary] H:\healthy\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:5-78
 	android:name
 		ADDED from [:mvplibrary] H:\healthy\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:22-75
+activity#com.uuzuche.lib_zxing.activity.CaptureActivity
+ADDED from [cn.yipianfengye.android:zxing-library:2.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:12:9-17:63
+	android:screenOrientation
+		ADDED from [cn.yipianfengye.android:zxing-library:2.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:15:13-49
+	android:windowSoftInputMode
+		ADDED from [cn.yipianfengye.android:zxing-library:2.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:17:13-60
+	android:configChanges
+		ADDED from [cn.yipianfengye.android:zxing-library:2.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:14:13-63
+	android:theme
+		ADDED from [cn.yipianfengye.android:zxing-library:2.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:16:13-63
+	android:name
+		ADDED from [cn.yipianfengye.android:zxing-library:2.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\22f665c715596ea510e374bdce3d49ca\jetified-zxing-library-2.2\AndroidManifest.xml:13:13-74

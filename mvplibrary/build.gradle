@@ -82,5 +82,17 @@ dependencies {
     api rootProject.ext.dependencies["fresco-webp"]
 
 
+    api rootProject.ext.dependencies["flowlayout-lib"]
+    api rootProject.ext.dependencies["ViewAdapterHelper"]
+    api rootProject.ext.dependencies["zxing-library"]
+    api rootProject.ext.dependencies["dkplayer-java"]
+    api rootProject.ext.dependencies["dkplayer-armv7a"]
+    api rootProject.ext.dependencies["dkplayer-armv5"]
+    api rootProject.ext.dependencies["dkplayer-arm64"]
+    api rootProject.ext.dependencies["dkplayer-x86"]
+    api rootProject.ext.dependencies["dkplayer-x86_64"]
+    api rootProject.ext.dependencies["dkplayer-ui"]
+
+
 
 }
