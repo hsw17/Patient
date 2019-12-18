@@ -37,6 +37,10 @@ public interface HomeContract {
         void HomeModelYaoPinXiangQingData(String id,HomeModelCallBack homeModelCallBack);
         //咨询详情
         void HomeModelZiXunXiangQingData(String userId,String sessionId,String infoId,HomeModelCallBack homeModelCallBack);
+        //首页搜索
+        void HomeModelShouYeSouSuoData(String keyWord,HomeModelCallBack homeModelCallBack);
+        //热门搜索
+        void HomeModelReMenSouSuoData(HomeModelCallBack homeModelCallBack);
         //接口回调
         interface HomeModelCallBack{
             void HomeViewSuccess(Object obj);
@@ -66,6 +70,10 @@ public interface HomeContract {
         void HomePresenterYaoPinXiangQing(String id);
         //咨询详情
         void HomePresenterZiXunXiangQing(String userId,String sessionId,String infoId);
+        //首页搜索
+        void HomePresenterShouYeSouSuo(String keyWord);
+        //热门搜索
+        void HomePresenterReMenSouSuo();
 
     }
 }

@@ -22,23 +22,24 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
 /**
- *@describe(描述)：CommonActivity  常见病症，常见药品  第一个
- *@data（日期）: 2019/12/16
- *@time（时间）: 9:06
- *@author（作者）: Liuhe
+ * @describe(描述)：CommonActivity 常见病症，常见药品  第一个
+ * @data（日期）: 2019/12/16
+ * @time（时间）: 9:06
+ * @author（作者）: Liuhe
  **/
 public class CommonActivity extends BaseActivity<HomePresenter> implements HomeContract.HomeView {
 
     private ArrayList<String> strings;
     private ArrayList<Fragment> fragments;
-        private ViewPager commonVp;
-        private TabLayout CommonTables;
+    private ViewPager commonVp;
+    private TabLayout CommonTables;
+
     @Override
     protected int bindLayout() {
         return R.layout.activity_common;
     }
-
     @Override
     protected HomePresenter setPresenter() {
         return new HomePresenter();
@@ -80,7 +81,6 @@ public class CommonActivity extends BaseActivity<HomePresenter> implements HomeC
 
     @Override
     public void HomeViewSuccess(Object obj) {
-
     }
 
     @Override

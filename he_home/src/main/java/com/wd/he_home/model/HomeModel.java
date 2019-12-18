@@ -16,7 +16,9 @@ import com.wd.he_home.bean.DrugDetailsBean;
 import com.wd.he_home.bean.DrugListBean;
 import com.wd.he_home.bean.EnquirySectionBean;
 import com.wd.he_home.bean.HealthinformationBean;
+import com.wd.he_home.bean.HomeSearchBean;
 import com.wd.he_home.bean.NewslistBean;
+import com.wd.he_home.bean.PopularSearchesBean;
 import com.wd.he_home.comtract.HomeContract;
 
 /**
@@ -212,5 +214,43 @@ public class HomeModel implements HomeContract.HomeModel {
             homeModelCallBack.HomeViewError(e.getMessage());
          }
      });
+    }
+
+    //首页搜索
+    @Override
+    public void HomeModelShouYeSouSuoData(String keyWord, HomeModelCallBack homeModelCallBack) {
+        RetrofitManager.getInstance().create(ApiServer.class)
+                .shouyesousuo(keyWord)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<HomeSearchBean>() {
+                    @Override
+                    public void onNext(HomeSearchBean homeSearchBean) {
+                        homeModelCallBack.HomeViewSuccess(homeSearchBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                    homeModelCallBack.HomeViewError(e.getMessage());
+                    }
+                });
+    }
+
+    //热门搜索
+    @Override
+    public void HomeModelReMenSouSuoData(HomeModelCallBack homeModelCallBack) {
+    RetrofitManager.getInstance().create(ApiServer.class)
+            .remensousuo()
+            .compose(CommonSchedulers.io2main())
+            .subscribe(new CommonObserver<PopularSearchesBean>() {
+                @Override
+                public void onNext(PopularSearchesBean popularSearchesBean) {
+                    homeModelCallBack.HomeViewSuccess(popularSearchesBean);
+                }
+
+                @Override
+                public void onError(Throwable e) {
+                homeModelCallBack.HomeViewError(e.getMessage());
+                }
+            });
     }
 }

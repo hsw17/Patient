@@ -10,7 +10,9 @@ import com.wd.he_home.bean.DrugDetailsBean;
 import com.wd.he_home.bean.DrugListBean;
 import com.wd.he_home.bean.EnquirySectionBean;
 import com.wd.he_home.bean.HealthinformationBean;
+import com.wd.he_home.bean.HomeSearchBean;
 import com.wd.he_home.bean.NewslistBean;
+import com.wd.he_home.bean.PopularSearchesBean;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -69,5 +71,12 @@ public interface ApiServer {
     //http://172.17.8.100/health/share/information/v1/findInformation
     @GET("health/share/information/v1/findInformation")
     Observable<ConsultationDetailsBean> zixunxiangqing(@Header("userId")String userId,@Header("sessionId")String sessionId,@Query("infoId")String infoId);
-
+    //首页搜索
+    //http://172.17.8.100/health/share/v1/homePageSearch
+    @GET("health/share/v1/homePageSearch")
+    Observable<HomeSearchBean> shouyesousuo(@Query("keyWord")String keyWord);
+    //热门搜索
+    //http://172.17.8.100/health/share/v1/popularSearch
+    @GET("health/share/v1/popularSearch")
+    Observable<PopularSearchesBean> remensousuo();
 }
