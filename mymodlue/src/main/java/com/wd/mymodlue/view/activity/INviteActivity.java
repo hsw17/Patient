@@ -1,17 +1,8 @@
 package com.wd.mymodlue.view.activity;
 
-
-import androidx.appcompat.app.AppCompatActivity;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 import android.os.Bundle;
-
-import com.bwie.mvplibrary.base.BaseActivity;
-
-
-import android.content.Intent;
-import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -19,17 +10,21 @@ import android.widget.TextView;
 
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
+import com.bwie.mvplibrary.utils.SPUtils;
+import com.bwie.mvplibrary.utils.ToastUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
-
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.modle.bean.HealthTestBean;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
 
+import java.util.HashMap;
+import java.util.Map;
 
-public class SettingActivity extends BaseActivity<Persenter> implements IViewContract.IView {
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-
-
+public class INviteActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
 
     @BindView(R.id.head_details_back)
@@ -38,54 +33,43 @@ public class SettingActivity extends BaseActivity<Persenter> implements IViewCon
     TextView headTextName;
     @BindView(R.id.relay_layout)
     RelativeLayout relayLayout;
-    @BindView(R.id.setting_image_view)
-    SimpleDraweeView settingImageView;
-    @BindView(R.id.setting_text_name)
-    TextView settingTextName;
-    @BindView(R.id.setting_image_name)
-    LinearLayout settingImageName;
-    @BindView(R.id.setting_image_pwd)
-    LinearLayout settingImagePwd;
-    @BindView(R.id.setting_text_clear)
-    TextView settingTextClear;
-    @BindView(R.id.setting_image_clear)
-    RelativeLayout settingImageClear;
-    @BindView(R.id.setting_image_ping_lian)
-    RelativeLayout settingImagePingLian;
-    @BindView(R.id.setting_image_new_app)
-    RelativeLayout settingImageNewApp;
-    @BindView(R.id.setting_image_ping_help)
-    RelativeLayout settingImagePingHelp;
-    @BindView(R.id.setting_image_my)
-    RelativeLayout settingImageMy;
-    @BindView(R.id.setting_image_new_invite)
-    RelativeLayout settingImageNewInvite;
-    @BindView(R.id.setting_image_login)
-    RelativeLayout settingImageLogin;
+    @BindView(R.id.invite_edit_code)
+    EditText inviteEditCode;
+    @BindView(R.id.invite_button_code)
+    LinearLayout inviteButtonCode;
+    @BindView(R.id.invite_simpl_view)
+    SimpleDraweeView inviteSimplView;
+    @BindView(R.id.invite_button_friend)
+    Button inviteButtonFriend;
+    private Map<String, Object> map;
 
     @Override
     protected int bindLayout() {
-        return R.layout.activity_setting;
-
+        return R.layout.activity_invite;
     }
 
     @Override
     protected Persenter setPresenter() {
-
         return new Persenter();
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
-//        邀请好友
-        settingImageNewInvite.setOnClickListener(new CustomClickListener() {
+        ToastUtils.init(this);
+//        获取存储内容
+        SPUtils login = new SPUtils(this, "login");
+        int id = (int) login.getSharedPreference("id", 0);
+        String sessionId = (String) login.getSharedPreference("sessionId", "");
+        map = new HashMap<>();
+        map.put("userId", 434);
+        map.put("sessionId", "1576494766784434");
+        presenter.doUserInvitation(map);
+        inviteButtonFriend.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
-                Intent intent=new Intent("com.hl.INviteActivity");
-                startActivity(intent);
+                
             }
 
             @Override
@@ -94,10 +78,15 @@ public class SettingActivity extends BaseActivity<Persenter> implements IViewCon
             }
         });
     }
-
     @Override
     public void onSuccess(Object obj) {
-
+        HealthTestBean healthTestBean= (HealthTestBean) obj;
+        if ("0000".equals(healthTestBean.result)) {
+            String status = healthTestBean.status;
+            inviteEditCode.setText(status);
+        }else{
+            inviteEditCode.setText("");
+        }
     }
 
     @Override
@@ -124,4 +113,6 @@ public class SettingActivity extends BaseActivity<Persenter> implements IViewCon
     public void onFail(String str) {
 
     }
+
+
 }

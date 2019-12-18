@@ -5,6 +5,7 @@ import com.bwie.mvplibrary.utils.CommonObserver;
 import com.bwie.mvplibrary.utils.CommonSchedulers;
 import com.bwie.mvplibrary.utils.RetrofitManager;
 import com.wd.mymodlue.modle.ap.Api;
+import com.wd.mymodlue.modle.bean.HealthTestBean;
 import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.modle.bean.UserCommentListBean;
 import com.wd.mymodlue.modle.bean.UserConsumptionRecordListBean;
@@ -180,6 +181,28 @@ public class IModel implements IViewContract.IModel {
                     public void onError(Throwable e) {
                         iModelCallback.onFail(e.toString());
 
+                    }
+                });
+    }
+
+    @Override
+    public void doInvitationCode(Map<String, Object> map, IModelCallback iModelCallback) {
+
+    }
+
+    @Override
+    public void doUserInvitation(Map<String, Object> map, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).doUserInvitation(map)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<HealthTestBean>() {
+                    @Override
+                    public void onNext(HealthTestBean healthTestBean) {
+                        iModelCallback.onSuccess(healthTestBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
                     }
                 });
     }

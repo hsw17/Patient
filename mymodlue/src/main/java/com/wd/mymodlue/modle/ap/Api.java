@@ -1,6 +1,7 @@
 package com.wd.mymodlue.modle.ap;
 
 
+import com.wd.mymodlue.modle.bean.HealthTestBean;
 import com.wd.mymodlue.modle.bean.LoginBean;
 import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.modle.bean.UserCommentListBean;
@@ -60,5 +61,13 @@ public interface Api {
     // 查询我的被采纳的建议
     @GET("health/user/verify/v1/findMyAdoptedCommentList")
     Observable<UserCommentListBean> doCommentList(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+    // 生成邀请码
+    @GET("health/user/verify/v1/makeInvitationCode")
+    Observable<UserBean> doInvitationCode(@HeaderMap Map<String,Object> map);
+
+    // 查询用户邀请码
+    @GET("health/user/verify/v1/findUserInvitationCode")
+    Observable<HealthTestBean> doUserInvitation(@HeaderMap Map<String,Object> map);
 
 }

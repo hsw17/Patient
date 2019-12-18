@@ -40,6 +40,10 @@ public interface IViewContract {
         void doRecordList(Map<String,Object> map,Map<String,Object> oap);
         //查询我的被采纳的建议
         void doCommentList(Map<String,Object> map,Map<String,Object> oap);
+        //生成邀请码
+        void doInvitationCode(Map<String,Object> map);
+        //查询用户邀请码
+        void doUserInvitation(Map<String,Object> map);
     }
 
     //M层
@@ -62,6 +66,10 @@ public interface IViewContract {
         void doRecordList(Map<String,Object> map,Map<String,Object> oap, IModelCallback iModelCallback);
 //        查询我的被采纳的建议
         void doCommentList(Map<String,Object> map,Map<String,Object> oap, IModelCallback iModelCallback);
+//        生成邀请码
+        void doInvitationCode(Map<String,Object> map, IModelCallback iModelCallback);
+//        查询用户邀请码
+        void doUserInvitation(Map<String,Object> map, IModelCallback iModelCallback);
 
         interface IModelCallback{
             void onSuccess(Object obj);
