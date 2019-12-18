@@ -123,8 +123,6 @@ public class ViewPagerLayoutManager extends LinearLayoutManager {
             if (mOnViewPagerListener != null && getChildCount() == 1) {
                 mOnViewPagerListener.onInitComplete();
             }
-
-
         }
 
         @Override

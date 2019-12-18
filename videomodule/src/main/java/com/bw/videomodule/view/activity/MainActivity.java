@@ -1,29 +1,48 @@
 package com.bw.videomodule.view.activity;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewParent;
 import android.view.WindowInsets;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.OrientationHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.Glide;
 import com.bw.videomodule.R;
 import com.bw.videomodule.api.Contract;
 import com.bw.videomodule.api.OnViewPagerListener;
+import com.bw.videomodule.bean.CollectionBean;
 import com.bw.videomodule.bean.VideoCategoryListBean;
 import com.bw.videomodule.bean.VideolistBean;
 import com.bw.videomodule.presenter.IPresenter;
 import com.bw.videomodule.utils.TikTokController;
 import com.bw.videomodule.utils.ViewPagerLayoutManager;
+import com.bw.videomodule.view.adapter.FragmentAdapter;
 import com.bw.videomodule.view.adapter.TikTokAdapter;
+import com.bw.videomodule.view.fragmnet.VideoFragment;
+import com.bw.videomodule.view.fragmnet.VideoFragmentFitness;
+import com.bw.videomodule.view.fragmnet.VideoFragmentHaird;
+import com.bw.videomodule.view.fragmnet.VideoFragmentHeart;
+import com.bw.videomodule.view.fragmnet.VideoFragmentRegimen;
+import com.bw.videomodule.view.fragmnet.VideoFragmentSense;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.Logger;
 import com.dueeeke.videoplayer.player.IjkVideoView;
@@ -31,26 +50,22 @@ import com.dueeeke.videoplayer.player.PlayerConfig;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends BaseActivity<IPresenter> implements Contract.IMainView {
 
-    private List<VideoCategoryListBean.ResultBean> videoCategoryListBeanResult;
-    private List<VideolistBean.ResultBean> videolistBeanResult;
     private TabLayout tablist;
-    private RecyclerView mPlayer;
     private String TAG = "MainActivity";
-    private IjkVideoView mIjkVideoView;
-    private TikTokController mTikTokController;
-    private int mCurrentPosition;
-    private String path = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576477228199&di=6f862283c719e0618c114253de6943c1&imgtype=0&src=http%3A%2F%2F1882.img.pp.sohu.com.cn%2Fimages%2Fblog%2F2011%2F6%2F6%2F21%2F13%2Fu228722099_1311fe6dc51g213.jpg";
-    private ViewPagerLayoutManager layoutManager;
-    private int mPosition = 0;
-    private FloatingActionButton pay;
-    private FloatingActionButton shouchang;
-    private FloatingActionButton danmu;
+    private boolean flag = true;
+
+    private ViewPager pager;
+    private ImageView imagela;
+    private List<VideoCategoryListBean.ResultBean> videoCategoryListBeanResult;
 
     @Override
     protected int bindLayout() {
@@ -66,30 +81,27 @@ public class MainActivity extends BaseActivity<IPresenter> implements Contract.I
     protected void initData() {
         super.initData ();
         tablist = findViewById ( R.id.tablist );
-        mPlayer = findViewById ( R.id.video );
-        pay = findViewById ( R.id.pay );
-        shouchang = findViewById ( R.id.shouchang );
-        danmu = findViewById ( R.id.danmu );
+        pager = findViewById ( R.id.pager );
+        imagela = findViewById ( R.id.imagela );
+
         presenter.videocategorylist ();
 
-//        setStatusBarTransparent();
-
-//        ActionBar actionBar = getSupportActionBar();
-//        if (actionBar != null) {
-//            actionBar.setTitle("抖音");
-//            actionBar.setDisplayHomeAsUpEnabled(true);
-//        }
-
-        mIjkVideoView = new IjkVideoView ( MainActivity.this );
-        PlayerConfig config = new PlayerConfig.Builder().setLooping().build();
-        mIjkVideoView.setPlayerConfig(config);
-        mTikTokController = new TikTokController (MainActivity.this);
-        mIjkVideoView.setVideoController( mTikTokController );
-
-        pay.setOnClickListener ( new View.OnClickListener () {
+        imagela.setOnClickListener ( new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Toast.makeText ( MainActivity.this, mPosition+"", Toast.LENGTH_SHORT ).show ();
+
+                ObjectAnimator translationX = new ObjectAnimator().ofFloat( imagela,"translationX",0,0);
+                ObjectAnimator translationY = new ObjectAnimator().ofFloat( imagela,"translationY",0,110f);
+
+                AnimatorSet animatorSet = new AnimatorSet();  //组合动画
+                animatorSet.playTogether(translationX,translationY); //设置动画
+                animatorSet.setDuration(90);  //设置动画时间
+                if (flag==true){
+                    animatorSet.start();
+                    flag = false;
+                }
+
+                tablist.setVisibility ( View.VISIBLE );
             }
         } );
 
@@ -98,25 +110,39 @@ public class MainActivity extends BaseActivity<IPresenter> implements Contract.I
     @Override
     public void success(VideoCategoryListBean videoCategoryListBean) {
         videoCategoryListBeanResult = videoCategoryListBean.getResult ();
+        Logger.d ( TAG,videoCategoryListBeanResult.size ()+"" );
 
-        int id = videoCategoryListBeanResult.get ( 0 ).getId ();
-        getMap ( id );
-
-        for (int i = 0; i < videoCategoryListBeanResult.size (); i++) {
-            tablist.addTab ( tablist.newTab () );
+        List<String> tablists = new ArrayList<> (  );
+        for (int i = 0; i <videoCategoryListBeanResult.size () ; i++) {
+            tablists.add ( videoCategoryListBeanResult.get ( i ).getName () );
         }
 
-        for (int i = 0; i < videoCategoryListBeanResult.size (); i++) {
-            tablist.getTabAt ( i ).setText ( videoCategoryListBean.getResult ().get ( i ).getName () );
-        }
+        List<Fragment> fragmentList = new ArrayList<> (  );
+        fragmentList.add ( new VideoFragment () );
+//        fragmentList.add ( new VideoFragmentSense () );
+//        fragmentList.add ( new VideoFragmentFitness () );
+//        fragmentList.add ( new VideoFragmentHaird () );
+//        fragmentList.add ( new VideoFragmentHeart ());
+//        fragmentList.add ( new VideoFragmentRegimen ());
+
+        FragmentAdapter fragmentAdapter = new FragmentAdapter ( getSupportFragmentManager (), fragmentList ,tablists);
+        pager.setAdapter ( fragmentAdapter );
+
+        tablist.setupWithViewPager ( pager );
 
         tablist.addOnTabSelectedListener ( new TabLayout.OnTabSelectedListener () {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                int position = tab.getPosition ();
-                layoutManager.removeAllViews ();
-                int id = videoCategoryListBeanResult.get ( position ).getId ();
-                getMap ( id );
+
+                ObjectAnimator translationX = new ObjectAnimator().ofFloat(imagela,"translationX",0,0);
+                ObjectAnimator translationY = new ObjectAnimator().ofFloat(imagela,"translationY",110f,0);
+
+                AnimatorSet animatorSet = new AnimatorSet();  //组合动画
+                animatorSet.playTogether(translationX,translationY); //设置动画
+                animatorSet.setDuration(90);  //设置动画时间
+                animatorSet.start();
+                flag = true;
+                tablist.setVisibility ( View.GONE );
             }
 
             @Override
@@ -126,46 +152,19 @@ public class MainActivity extends BaseActivity<IPresenter> implements Contract.I
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-//                int position = tab.getPosition ();
-//                Toast.makeText ( MainActivity.this, position+"", Toast.LENGTH_SHORT ).show ();
+
             }
         } );
     }
 
     @Override
     public void success(VideolistBean videolistBean) {
-        videolistBeanResult = videolistBean.getResult ();
+         videolistBean.getResult ();
+    }
 
-        if (layoutManager==null){
-            layoutManager = new ViewPagerLayoutManager(MainActivity.this, OrientationHelper.VERTICAL,false);
-        }
-
-        mPlayer.setLayoutManager( layoutManager );
-        TikTokAdapter tikTokAdapter = new TikTokAdapter( videolistBeanResult, MainActivity.this);
-        mPlayer.setAdapter( tikTokAdapter );
-
-        layoutManager.setOnViewPagerListener( new OnViewPagerListener () {
-            @Override
-            public void onInitComplete() {
-                //自动播放第一条
-                startPlay(0);
-            }
-
-            @Override
-            public void onPageRelease(boolean isNext, int position) {
-                if (mCurrentPosition == position) {
-                    mIjkVideoView.release();
-                }
-            }
-
-            @Override
-            public void onPageSelected(int position, boolean isBottom) {
-                if (mCurrentPosition == position) return;
-                mPosition = position;
-                startPlay(position);
-                mCurrentPosition = position;
-            }
-        });
+    @Override
+    public void success(CollectionBean collectionBean) {
+        Toast.makeText ( this, collectionBean.getMessage (), Toast.LENGTH_SHORT ).show ();
     }
 
     @Override
@@ -191,54 +190,4 @@ public class MainActivity extends BaseActivity<IPresenter> implements Contract.I
             getWindow().setStatusBarColor( ContextCompat.getColor(this, android.R.color.transparent));
         }
     }
-
-    private void startPlay(int position) {
-        View itemView = mPlayer.getChildAt(0);
-        FrameLayout frameLayout = itemView.findViewById(R.id.container);
-        Glide.with(this)
-                .load(path)
-                .placeholder(android.R.color.black)
-                .into(mTikTokController.getThumb());
-        ViewParent parent = mIjkVideoView.getParent();
-        if (parent instanceof FrameLayout) {
-            ((FrameLayout) parent).removeView(mIjkVideoView);
-        }
-        frameLayout.addView(mIjkVideoView);
-        mIjkVideoView.setUrl(videolistBeanResult.get ( position ).getOriginalUrl ());
-        mIjkVideoView.setScreenScale(IjkVideoView.SCREEN_SCALE_CENTER_CROP);
-        mIjkVideoView.start();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mIjkVideoView.pause();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mIjkVideoView.resume();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mIjkVideoView.release();
-    }
-
-
-    public void getMap(int categoryId){
-        Map<String, Object> headerMap = new HashMap<> ();
-        headerMap.put ( "userId", "441" );
-        headerMap.put ( "sessionId", "1576409538322441" );
-
-        Map<String, Object> queryMap = new HashMap<> ();
-        queryMap.put ( "categoryId", categoryId );
-        queryMap.put ( "page", 1 );
-        queryMap.put ( "count", 5 );
-
-        presenter.videoList ( headerMap,queryMap);
-    }
-
 }
