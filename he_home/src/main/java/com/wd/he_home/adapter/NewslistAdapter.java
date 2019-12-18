@@ -77,26 +77,55 @@ public class NewslistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 Glide.with(context).load(resultBeans.get(position).getThumbnail()).into(((Newlist_one_Holder) holder).simple);
                 simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
                 ((Newlist_one_Holder) holder).text_time.setText(simpleDateFormat.format(date));
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
 
+                    private Intent intent;
+
+                    @Override
+                    public void onClick(View view) {
+                        intent = new Intent(context, FindInfoActivity.class);
+                        intent.putExtra("in_id", resultBeans.get(position).getId());
+                        context.startActivity(intent);
+                    }
+                });
                 break;
             case 1:
                 ((Newlist_two_Holder) holder).text_title.setText(resultBeans.get(position).getTitle());
                 ((Newlist_two_Holder) holder).text_name.setText(resultBeans.get(position).getSource());
 
                 String[] split = resultBeans.get(position).getThumbnail().split(";");
-
                 Glide.with(context).load(split[0]).into(((Newlist_two_Holder) holder).simple1);
                 Glide.with(context).load(split[1]).into(((Newlist_two_Holder) holder).simple2);
                 Glide.with(context).load(split[2]).into(((Newlist_two_Holder) holder).simple3);
                 ((Newlist_two_Holder) holder).text_time.setText(simpleDateFormat.format(date));
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
 
+                    private Intent intent;
+
+                    @Override
+                    public void onClick(View view) {
+                        intent = new Intent(context, FindInfoActivity.class);
+                        intent.putExtra("in_id", resultBeans.get(position).getId());
+                        context.startActivity(intent);
+                    }
+                });
                 break;
             case 2:
                 ((Newlist_three_Holder) holder).text_name.setText(resultBeans.get(position).getSource());
                 ((Newlist_three_Holder) holder).text_title.setText(resultBeans.get(position).getTitle());
                 simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
                 ((Newlist_three_Holder) holder).text_time.setText(simpleDateFormat.format(date));
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
 
+                    private Intent intent;
+
+                    @Override
+                    public void onClick(View view) {
+                        intent = new Intent(context, FindInfoActivity.class);
+                        intent.putExtra("in_id", resultBeans.get(position).getId());
+                        context.startActivity(intent);
+                    }
+                });
                 break;
         }
 

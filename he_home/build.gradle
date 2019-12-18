@@ -36,12 +36,9 @@ android {
     allprojects {
 
         repositories {
-
             maven { url "https://jitpack.io" }
         }
     }
-
-
     configurations.all {
         resolutionStrategy.eachDependency { DependencyResolveDetails details ->
             def requested = details.requested
@@ -79,5 +76,10 @@ dependencies {
     api rootProject.ext.dependencies["tablelayout"]
     api rootProject.ext.dependencies["table"]
     api project(path: ':mvplibrary')
+    //流失布局
+    implementation 'com.hyman:flowlayout-lib:1.1.2'
+
+    //快速适配
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
 
 }

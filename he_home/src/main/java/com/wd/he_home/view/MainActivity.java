@@ -3,13 +3,14 @@ package com.wd.he_home.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -22,14 +23,10 @@ import com.google.android.material.tabs.TabLayout;
 import com.stx.xhb.xbanner.XBanner;
 import com.wd.he_home.R;
 import com.wd.he_home.adapter.EnquirySectionAdapter;
-import com.wd.he_home.adapter.NewslistAdapter;
 import com.wd.he_home.bean.BannerBean;
 import com.wd.he_home.bean.EnquirySectionBean;
-import com.wd.he_home.bean.HealthinformationBean;
-import com.wd.he_home.bean.NewslistBean;
 import com.wd.he_home.comtract.HomeContract;
 import com.wd.he_home.fragment.HealthHighlightsFragment;
-import com.wd.he_home.fragment.changjian.CommonDrugsFragment;
 import com.wd.he_home.fragment.jiankangzixun.Fitnessweightloss_Fragment;
 import com.wd.he_home.fragment.jiankangzixun.Healthbeauty_Fragment;
 import com.wd.he_home.fragment.jiankangzixun.MedicalnewsFragment;
@@ -52,9 +49,8 @@ import butterknife.OnClick;
 public class MainActivity extends BaseActivity<HomePresenter> implements HomeContract.HomeView {
 
 
-    private String jumpUrl;
-    private Intent intent;
-
+    private NestedScrollView nestedScrollView;
+    private EditText edit_shu;
     @BindView(R.id.home_Title)
     TextView homeTitle;
     @BindView(R.id.home_lore)
@@ -87,11 +83,19 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
     protected HomePresenter setPresenter() {
         return new HomePresenter();
     }
-
-
     @Override
     protected void initData() {
         super.initData();
+        nestedScrollView = findViewById(R.id.main_NestedScrollView);
+        nestedScrollView.setNestedScrollingEnabled(false);
+        edit_shu = findViewById(R.id.edit_shu);
+        edit_shu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //跳转到搜索页面
+                startActivity(new Intent(context(), SearchPageActivity.class));
+            }
+        });
         homeTab = findViewById(R.id.home_tab);
         homeVp = findViewById(R.id.home_vp);
         homeXbannerTop = findViewById(R.id.home_xbanner_top);
@@ -135,10 +139,6 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
             }
         });
         homeTab.setupWithViewPager(homeVp);
-        //默认选中
-        homeTab.getTabAt(0).select();
-
-
 
     }
 
@@ -149,10 +149,9 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
         ButterKnife.bind(this);
     }
 
-    @OnClick({  R.id.home_Title, R.id.home_lore, R.id.strut, R.id.disease_img, R.id.drugs_img, R.id.home_inquiry, R.id.home_XRecyclerView, R.id.home_evaluation, R.id.home_tab, R.id.home_vp})
+    @OnClick({R.id.home_Title, R.id.home_lore, R.id.strut, R.id.disease_img, R.id.drugs_img, R.id.home_inquiry, R.id.home_XRecyclerView, R.id.home_evaluation, R.id.home_tab, R.id.home_vp})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-
             case R.id.home_Title:
                 break;
             case R.id.home_lore:
@@ -162,9 +161,6 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
             case R.id.disease_img:
                 //跳转到常见病症
                 startActivity(new Intent(MainActivity.this, CommonActivity.class));
-                /*Intent intent = new Intent(this,CommonActivity.class);
-                //intent.putExtra("",)
-                startActivity(intent);*/
                 break;
             case R.id.drugs_img:
                 startActivity(new Intent(MainActivity.this, CommonActivity.class));
@@ -192,8 +188,12 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
             homeXbannerTop.setmAdapter(new XBanner.XBannerAdapter() {
                 @Override
                 public void loadBanner(XBanner banner, Object model, View view, int position) {
-                    Glide.with(context()).load(result.get(position).getImageUrl()).into((ImageView) view);
+                    Glide.with(context()).load(result.get(position).getImageUrl())
+                            .placeholder(R.mipmap.doctor)
+                            .error(R.mipmap.dermatology)
+                            .into((ImageView) view);
                 }
+
             });
             //点击跳转新的页面
             homeXbannerTop.setOnItemClickListener(new XBanner.OnItemClickListener() {
@@ -213,17 +213,17 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
             GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 4);
             homeXRecyclerView.setLayoutManager(gridLayoutManager);
             homeXRecyclerView.setAdapter(enquirySectionAdapter);
+
         }/*else if (obj instanceof NewslistBean){
-            //查询咨询列表
-            NewslistBean newslistBean = (NewslistBean) obj;
-            List<NewslistBean.ResultBean> result = newslistBean.getResult();
-            //设置适配器
-            NewslistAdapter newslistAdapter = new NewslistAdapter(result, context());
-        }*/
+                //查询咨询列表
+                NewslistBean newslistBean = (NewslistBean) obj;
+                List<NewslistBean.ResultBean> result = newslistBean.getResult();
+                //设置适配器
+                NewslistAdapter newslistAdapter = new NewslistAdapter(result, context());
+            }*/
     }
 
     @Override
     public void HomeViewError(String e) {
-
     }
 }

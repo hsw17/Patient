@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.SearchPageActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/white"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+        <ImageView
+            android:id="@+id/iv_home_search_back"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/common_icon_back_black_n" />
+
+                <EditText
+            android:id="@+id/et_home_search_title"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_gb"
+            android:hint="病症、药品名称、医生姓名"
+            android:paddingLeft="10dp"
+            android:textColor="@color/gray"
+            android:textSize="12sp" ></EditText>
+
+
+        <TextView
+            android:id="@+id/iv_home_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="14dp"
+            android:text="搜索"
+            android:textColor="@color/blue"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="visible"
+        android:id="@+id/ll_relevantSearchData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginTop="6dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:text="搜索历史"
+                android:textColor="@color/blue"
+                android:textSize="14sp" />
+            <com.wd.he_home.util.FlowView
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/fl_searchHistory"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:text="热门搜索"
+                android:textColor="@color/blue"
+                android:textSize="14sp" />
+
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/fl_topSearch"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="20dp"
+                app:max_select="-1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_home_noSearch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="6dp"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_noSearch_pic"
+            android:layout_width="129dp"
+            android:layout_height="129dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="132dp"
+            android:src="@mipmap/no_search_message" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_noSearch_pic"
+            android:layout_marginTop="40dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="抱歉!没有找到的相关信息"
+                android:textColor="#333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_noSearch_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text=" 头 "
+                android:textColor="#333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="的相关信息"
+                android:textColor="#333333"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/ll_searchData"
+        android:layout_marginTop="6dp"
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="医生"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/blue"
+            android:textSize="14sp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_doctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="药品"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/blue"
+            android:textSize="14sp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_drug"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="病症"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/blue"
+            android:textSize="14sp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_symptoms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

@@ -6,7 +6,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/commons_one_recycler"
-        android:layout_width="@dimen/dp_100"
+        android:layout_width="@dimen/dp_80"
         android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
 
     <androidx.recyclerview.widget.RecyclerView
