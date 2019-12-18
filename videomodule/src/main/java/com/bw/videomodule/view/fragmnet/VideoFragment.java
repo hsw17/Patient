@@ -2,13 +2,17 @@ package com.bw.videomodule.view.fragmnet;
 
 
 import android.media.Image;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.OrientationHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,16 +30,20 @@ import com.bw.videomodule.view.activity.MainActivity;
 import com.bw.videomodule.view.adapter.TikTokAdapter;
 import com.bwie.mvplibrary.base.BaseFragment;
 import com.bwie.mvplibrary.utils.Logger;
+import com.bwie.mvplibrary.utils.ToastUtils;
 import com.dueeeke.videoplayer.player.IjkVideoView;
 import com.dueeeke.videoplayer.player.PlayerConfig;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
+
+import org.w3c.dom.Text;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
+import retrofit2.http.GET;
 
 /*
  * @Auther:张贺祥(Lenovo)
@@ -61,14 +69,19 @@ public class VideoFragment extends BaseFragment<IPresenter> implements Contract.
     private TextView videotext;
     private ImageView starta;
     private ImageView pouse;
-    private TextView goumai;
+    private LinearLayout goumai;
     private TextView buynumber;
+    private FloatingActionButton shouchangs;
+    private FloatingActionButton pays;
+    private FloatingActionButton danmus;
+    private TextView times;
+    private int counts = 15;
 
     @Override
     public void success(VideoCategoryListBean videoCategoryListBean) {
         videoCategoryListBeanResult = videoCategoryListBean.getResult ();
 
-        int id = videoCategoryListBeanResult.get ( 0 ).getId ();
+        int id = videoCategoryListBeanResult.get ( 2 ).getId ();
         getMap ( id );
     }
 
@@ -85,6 +98,35 @@ public class VideoFragment extends BaseFragment<IPresenter> implements Contract.
         TikTokAdapter tikTokAdapter = new TikTokAdapter( videolistBeanResult, getActivity ());
         video.setAdapter( tikTokAdapter );
 
+
+        int whetherBuy = videolistBeanResult.get ( 0 ).getWhetherBuy ();
+        int whetherCollection = videolistBeanResult.get ( 0 ).getWhetherCollection ();
+        Toast.makeText ( getActivity (), whetherBuy+"----"+whetherCollection, Toast.LENGTH_SHORT ).show ();
+
+        if (whetherBuy == 1){
+            //已收藏
+            pay.hide ();
+            pays.show ();
+        }else if (whetherBuy==2){
+            //未收藏
+            pay.show ();
+            pays.hide ();
+        }
+
+        if (whetherCollection==1){
+            //已购买
+            shouchang.hide ();
+            shouchangs.show ();
+        }else if (whetherCollection==2){
+            //未购买
+            shouchang.show ();
+            shouchangs.hide ();
+        }
+
+        danmus.hide ();
+
+
+
         layoutManager.setOnViewPagerListener( new OnViewPagerListener () {
             @Override
             public void onInitComplete() {
@@ -96,6 +138,20 @@ public class VideoFragment extends BaseFragment<IPresenter> implements Contract.
                 buynumber.setText ( buyNum+"万人\n已购买" );
                 videoname.setText ( title );
                 videotext.setText ( abstracts );
+
+                int whetherBuy = videolistBeanResult.get ( 0 ).getWhetherBuy ();
+                if (whetherBuy == 1){
+                    pay.hide ();
+                    pays.show ();
+                }
+                int whetherCollection = videolistBeanResult.get ( 0 ).getWhetherCollection ();
+                if (whetherCollection==1){
+                    shouchang.hide ();
+                    shouchangs.show ();
+                }
+
+                handler.sendEmptyMessage ( 1 );
+                times.setText ( "15s" );
             }
 
             @Override
@@ -103,11 +159,14 @@ public class VideoFragment extends BaseFragment<IPresenter> implements Contract.
                 if (mCurrentPosition == position) {
                     mIjkVideoView.release();
                 }
+
+
             }
 
             @Override
             public void onPageSelected(int position, boolean isBottom) {
                 if (mCurrentPosition == position) return;
+
                 mPosition = position;
                 mCurrentPosition = position;
 
@@ -121,6 +180,22 @@ public class VideoFragment extends BaseFragment<IPresenter> implements Contract.
 
                 videoname.setText ( title );
                 videotext.setText ( abstracts );
+
+
+                int whetherBuy = videolistBeanResult.get ( position ).getWhetherBuy ();
+                if (whetherBuy == 1){
+                    pay.hide ();
+                    pays.show ();
+                }
+                int whetherCollection = videolistBeanResult.get ( position ).getWhetherCollection ();
+                if (whetherCollection==1){
+                    shouchang.hide ();
+                    shouchangs.show ();
+                }
+
+                handler.sendEmptyMessage ( 1 );
+                goumai.setVisibility ( View.VISIBLE );
+                times.setText ( "15s" );
             }
         });
 
@@ -150,9 +225,6 @@ public class VideoFragment extends BaseFragment<IPresenter> implements Contract.
     protected void initData() {
         super.initData ();
 
-
-
-
         starta.setOnClickListener ( new View.OnClickListener () {
             @Override
             public void onClick(View v) {
@@ -173,6 +245,43 @@ public class VideoFragment extends BaseFragment<IPresenter> implements Contract.
             @Override
             public void onClick(View v) {
                 getMapC ( mPosition );
+            }
+        } );
+
+        pay.setOnClickListener ( new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+
+            }
+        } );
+
+        pays.setOnClickListener ( new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+
+            }
+        } );
+
+        shouchangs.setOnClickListener ( new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                getMapC ( mPosition );
+            }
+        } );
+
+        danmu.setOnClickListener ( new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                danmus.show ();
+                danmu.hide ();
+            }
+        } );
+
+        danmus.setOnClickListener ( new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                danmu.show ();
+                danmus.hide ();
             }
         } );
 
@@ -209,6 +318,10 @@ public class VideoFragment extends BaseFragment<IPresenter> implements Contract.
         pouse = getActivity ().findViewById ( R.id.pouse );
         goumai = getActivity ().findViewById ( R.id.goumai );
         buynumber = getActivity ().findViewById ( R.id.buynumber );
+        shouchangs = getActivity ().findViewById ( R.id.shouchangs );
+        pays = getActivity ().findViewById ( R.id.pays );
+        danmus = getActivity ().findViewById ( R.id.danmus );
+        times = getActivity ().findViewById ( R.id.times );
     }
 
 
@@ -271,4 +384,22 @@ public class VideoFragment extends BaseFragment<IPresenter> implements Contract.
 
         fpresenter.collection ( headerMap,queryMap);
     }
+
+
+    Handler handler = new Handler (  ){
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage ( msg );
+            if (msg.what==1){
+                counts--;
+                 if (counts>0){
+                    times.setText ( counts+"s" );
+                    handler.sendEmptyMessageDelayed ( 1,1000 );
+                }else{
+                    counts = 15;
+                    goumai.setVisibility ( View.GONE );
+                }
+            }
+        }
+    };
 }

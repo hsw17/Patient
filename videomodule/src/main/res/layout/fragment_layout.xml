@@ -27,8 +27,38 @@
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/pays"
+        android:src="@mipmap/common_icon_comment_large_s"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        app:fabCustomSize="@dimen/dp_30"
+        app:backgroundTint="#E6DCDC"
+        android:layout_gravity = "bottom|center"
+        android:layout_marginBottom="@dimen/dp_220"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_alignParentBottom="true"
+        android:scaleType="center">
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/shouchang"
         android:src="@mipmap/common_button_collection_large_n"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        app:fabCustomSize="@dimen/dp_30"
+        app:backgroundTint="#E6DCDC"
+        android:layout_gravity = "bottom|center"
+        android:layout_marginBottom="@dimen/dp_180"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_alignParentBottom="true"
+        android:scaleType="center">
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/shouchangs"
+        android:src="@mipmap/common_button_collection_large_s"
         android:layout_width="@dimen/dp_30"
         android:layout_height="@dimen/dp_30"
         app:fabCustomSize="@dimen/dp_30"
@@ -56,6 +86,21 @@
         android:scaleType="center">
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/danmus"
+        android:src="@mipmap/common_icon_close_live_commenting_n"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        app:fabCustomSize="@dimen/dp_30"
+        app:backgroundTint="#F0E6E6"
+        android:layout_gravity = "bottom|center"
+        android:layout_marginBottom="@dimen/dp_140"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_alignParentBottom="true"
+        android:scaleType="center">
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
     <TextView
         android:id="@+id/buynumber"
         android:layout_width="wrap_content"
@@ -65,8 +110,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginRight="@dimen/dp_15"
         android:layout_marginBottom="@dimen/dp_80"
-        android:gravity="center">
-
+        android:gravity="center"
+        android:textColor="#B6B0B0">
     </TextView>
 
 
@@ -82,17 +127,44 @@
 
     </TextView>
 
-    <TextView
+    <LinearLayout
         android:id="@+id/goumai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/dp_50"
-        android:layout_marginRight="@dimen/dp_50"
-        android:text="试看15s,购买后观看完整视频 ">
+        android:layout_marginRight="@dimen/dp_30"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:orientation="horizontal">
 
-    </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="试看 "
+            android:textColor="#B6B0B0">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/times"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15s "
+            android:textColor="#F31212">
+
+        </TextView>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=",购买后观看完整视频 "
+            android:textColor="#B6B0B0">
+
+        </TextView>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/videotext"
