@@ -1,0 +1,60 @@
+{
+    "logs": [
+        {
+            "outputFile": "H:\\healthy\\Patient\\mymodlue\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\盗\\.gradle\\caches\\transforms-2\\files-2.1\\bdb65b989174aff4e04864e70a2682d9\\jetified-BaseRecyclerViewAdapterHelper-2.9.30\\res\\values-en\\values-en.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,105,162",
+                        "endColumns": "49,56,46",
+                        "endOffsets": "100,157,204"
+                    },
+                    "to": {
+                        "startLines": "10,11,12",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "641,691,748",
+                        "endColumns": "49,56,46",
+                        "endOffsets": "686,743,790"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\盗\\.gradle\\caches\\transforms-2\\files-2.1\\19a769dd71ee3c59253aaec8cabbcb11\\jetified-dkplayer-java-2.5.5\\res\\values-en\\values-en.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,123,219,272",
+                        "endColumns": "67,95,52,133",
+                        "endOffsets": "118,214,267,401"
+                    },
+                    "to": {
+                        "startLines": "2,3,7,9",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,123,399,507",
+                        "endColumns": "67,95,52,133",
+                        "endOffsets": "118,214,447,636"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\盗\\.gradle\\caches\\transforms-2\\files-2.1\\34584d18d051931a8028d512b63cf6cd\\jetified-dkplayer-ui-2.5.5\\res\\values-en\\values-en.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,133,184,235",
+                        "endColumns": "77,50,50,54",
+                        "endOffsets": "128,179,230,285"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,8",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "219,297,348,452",
+                        "endColumns": "77,50,50,54",
+                        "endOffsets": "292,343,394,502"
+                    }
+                }
+            ]
+        }
+    ]
+}
