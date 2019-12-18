@@ -74,31 +74,31 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int back = 0x7f080064;
-        public static final int bottom_container = 0x7f08007c;
-        public static final int bottom_progress = 0x7f08007d;
-        public static final int complete_container = 0x7f08008d;
-        public static final int curr_time = 0x7f080092;
-        public static final int fullscreen = 0x7f0800bb;
-        public static final int iv_battery = 0x7f0800d9;
-        public static final int iv_play = 0x7f0800db;
-        public static final int iv_refresh = 0x7f0800dc;
-        public static final int iv_replay = 0x7f0800dd;
-        public static final int loading = 0x7f0800f2;
-        public static final int lock = 0x7f0800f5;
-        public static final int seekBar = 0x7f080152;
-        public static final int start_play = 0x7f080173;
-        public static final int sys_time = 0x7f08017a;
-        public static final int thumb = 0x7f080192;
-        public static final int title = 0x7f080194;
-        public static final int top_container = 0x7f080199;
-        public static final int total_time = 0x7f08019a;
-        public static final int tv_multi_rate = 0x7f0801a1;
+        public static final int back = 0x7f080067;
+        public static final int bottom_container = 0x7f08007f;
+        public static final int bottom_progress = 0x7f080080;
+        public static final int complete_container = 0x7f080094;
+        public static final int curr_time = 0x7f080099;
+        public static final int fullscreen = 0x7f0800c5;
+        public static final int iv_battery = 0x7f0800e4;
+        public static final int iv_play = 0x7f0800e6;
+        public static final int iv_refresh = 0x7f0800e7;
+        public static final int iv_replay = 0x7f0800e8;
+        public static final int loading = 0x7f0800fe;
+        public static final int lock = 0x7f080101;
+        public static final int seekBar = 0x7f080171;
+        public static final int start_play = 0x7f080193;
+        public static final int sys_time = 0x7f08019a;
+        public static final int thumb = 0x7f0801b2;
+        public static final int title = 0x7f0801b4;
+        public static final int top_container = 0x7f0801b9;
+        public static final int total_time = 0x7f0801ba;
+        public static final int tv_multi_rate = 0x7f0801c1;
     }
     public static final class layout {
         private layout() {}
 
-        public static final int dkplayer_layout_standard_controller = 0x7f0b0036;
+        public static final int dkplayer_layout_standard_controller = 0x7f0b0038;
     }
     public static final class string {
         private string() {}

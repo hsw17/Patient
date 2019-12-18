@@ -42,6 +42,7 @@ public class SettingActivity_ViewBinding implements Unbinder {
     target.settingImageMy = Utils.findRequiredViewAsType(source, R.id.setting_image_my, "field 'settingImageMy'", RelativeLayout.class);
     target.settingImageNewInvite = Utils.findRequiredViewAsType(source, R.id.setting_image_new_invite, "field 'settingImageNewInvite'", RelativeLayout.class);
     target.settingImageLogin = Utils.findRequiredViewAsType(source, R.id.setting_image_login, "field 'settingImageLogin'", RelativeLayout.class);
+    target.settingImageLayout = Utils.findRequiredViewAsType(source, R.id.setting_image_layout, "field 'settingImageLayout'", RelativeLayout.class);
   }
 
   @Override
@@ -66,5 +67,6 @@ public class SettingActivity_ViewBinding implements Unbinder {
     target.settingImageMy = null;
     target.settingImageNewInvite = null;
     target.settingImageLogin = null;
+    target.settingImageLayout = null;
   }
 }

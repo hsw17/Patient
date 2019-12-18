@@ -1619,6 +1619,7 @@ drawable login_shape_d
 drawable login_shape_e
 drawable login_shape_f
 drawable login_shape_g
+drawable login_shape_j
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1679,6 +1680,7 @@ id SYM
 id SemiCircleSpin
 id SquareSpin
 id TriangleSkewSpin
+id a2
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -1741,6 +1743,8 @@ id always
 id async
 id auto
 id auto_focus
+id b1
+id b2
 id back
 id barrier
 id beginning
@@ -1767,7 +1771,11 @@ id bonus_sign_item_right6
 id bottom
 id bottom_container
 id bottom_progress
+id but_finish
+id but_photo
+id but_shoot
 id buttonPanel
+id c2
 id cancel_action
 id center
 id centerCrop
@@ -1790,6 +1798,8 @@ id coordinator
 id curr_time
 id custom
 id customPanel
+id d1
+id d2
 id decode
 id decode_failed
 id decode_succeeded
@@ -1814,6 +1824,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fanhui
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1856,6 +1867,7 @@ id invite_button_code
 id invite_button_friend
 id invite_edit_code
 id invite_simpl_view
+id invite_text_code
 id italic
 id item_touch_helper_previous_elevation
 id iv_battery
@@ -1870,6 +1882,7 @@ id launch_product_query
 id left
 id line1
 id line3
+id linear_gone
 id linear_lay
 id linear_my
 id listMode
@@ -1917,6 +1930,24 @@ id my_button_task
 id my_button_video
 id my_button_wallet
 id my_image_simple
+id my_information_Avatar
+id my_information_Avatar_a
+id my_information_Bankcard
+id my_information_Bankcard_a
+id my_information_Certification
+id my_information_Certification_a
+id my_information_Sign
+id my_information_age
+id my_information_bodyweight
+id my_information_gender
+id my_information_gender_a
+id my_information_height
+id my_information_mailbox
+id my_information_mailbox_a
+id my_information_name
+id my_information_name_a
+id my_information_weixin
+id my_information_weixin_a
 id my_text_login
 id my_text_title
 id navigation_header_container
@@ -1962,6 +1993,7 @@ id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
 id screen
+id screen_seekbar
 id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -1983,6 +2015,7 @@ id seekBar
 id select_dialog_listview
 id selected
 id setting_image_clear
+id setting_image_layout
 id setting_image_login
 id setting_image_my
 id setting_image_name
@@ -2141,8 +2174,10 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_attention
+layout activity_brightness
 layout activity_invite
 layout activity_main
+layout activity_message
 layout activity_record
 layout activity_setting
 layout activity_suggest
@@ -2350,6 +2385,7 @@ mipmap orthopedics
 mipmap otolaryngology
 mipmap pediatrics
 mipmap psychiatry
+mipmap qwe
 mipmap recorded_message
 mipmap register_icon_invitatiion_code_n
 mipmap register_icon_verification_code_n
