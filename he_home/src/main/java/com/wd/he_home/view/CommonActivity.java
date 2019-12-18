@@ -81,7 +81,6 @@ public class CommonActivity extends BaseActivity<HomePresenter> implements HomeC
 
     @Override
     public void HomeViewSuccess(Object obj) {
-
     }
 
     @Override

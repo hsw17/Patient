@@ -139,8 +139,6 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
             }
         });
         homeTab.setupWithViewPager(homeVp);
-        //默认选中
-        homeTab.getTabAt(0).select();
 
     }
 
@@ -195,6 +193,7 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
                             .error(R.mipmap.dermatology)
                             .into((ImageView) view);
                 }
+
             });
             //点击跳转新的页面
             homeXbannerTop.setOnItemClickListener(new XBanner.OnItemClickListener() {
