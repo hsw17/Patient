@@ -1,5 +1,6 @@
 package com.bw.videomodule.api;
 
+import com.bw.videomodule.bean.CollectionBean;
 import com.bw.videomodule.bean.VideoCategoryListBean;
 import com.bw.videomodule.bean.VideolistBean;
 
@@ -8,6 +9,7 @@ import java.util.Map;
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.HeaderMap;
+import retrofit2.http.POST;
 import retrofit2.http.QueryMap;
 
 /*
@@ -23,4 +25,7 @@ public interface IApiServcie {
 
     @GET("health/user/video/v1/findVideoVoList")
     Observable<VideolistBean> videoList(@HeaderMap Map<String, Object> headerMap, @QueryMap Map<String, Object> queryMap);
+
+    @POST("health/user/video/verify/v1/addUserVideoCollection")
+    Observable<CollectionBean> collection(@HeaderMap Map<String, Object> headerMap, @QueryMap Map<String, Object> queryMap);
 }

@@ -2,6 +2,7 @@ package com.bw.videomodule.model;
 
 import com.bw.videomodule.api.Contract;
 import com.bw.videomodule.api.IApiServcie;
+import com.bw.videomodule.bean.CollectionBean;
 import com.bw.videomodule.bean.VideoCategoryListBean;
 import com.bw.videomodule.bean.VideolistBean;
 import com.bw.videomodule.utils.RetrofitUtils;
@@ -53,5 +54,22 @@ public class IModel implements Contract.IModel {
                           callBack.fuilerror ( e.getMessage () );
                       }
                   } );
+    }
+
+    @Override
+    public void collection(Map<String, Object> headerMap, Map<String, Object> queryMap, CollectionCallBack callBack) {
+        iApiServcie.collection ( headerMap,queryMap )
+                .compose ( CommonSchedulers.io2main () )
+                .subscribe ( new CommonObserver<CollectionBean> () {
+                    @Override
+                    public void onNext(CollectionBean collectionBean) {
+                        callBack.backData ( collectionBean );
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        callBack.fuilerror ( e.getMessage () );
+                    }
+                } );
     }
 }
