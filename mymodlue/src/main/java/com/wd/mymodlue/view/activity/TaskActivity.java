@@ -348,11 +348,86 @@ public class TaskActivity extends BaseActivity<Persenter> implements IViewContra
         TaskAdapter taskAdapter=new TaskAdapter(resultBeans);
         accessibilityReListView.setLayoutManager(new LinearLayoutManager(this));
         accessibilityReListView.setAdapter(taskAdapter);
+        taskAdapter.setAreaView(new TaskAdapter.AreaView() {
+            @Override
+            public void onCurress(int id) {
+//                完成任务
+                presenter.doTask(map,id);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(100);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        accessibilityReListView.postInvalidate();
+
+                    }
+                }).start();
+            }
+
+            @Override
+            public void onCurre(int id) {
+//                  领取H币
+                presenter.doReceiveReward(map,id);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(100);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        accessibilityReListView.postInvalidate();
+
+                    }
+                }).start();
+
+            }
+        });
 
         TasAdapter tasAdapter=new TasAdapter(resultBean);
         accessibilityReList.setLayoutManager(new LinearLayoutManager(this));
         accessibilityReList.setAdapter(tasAdapter);
+        tasAdapter.setAreaView(new TasAdapter.AreaView() {
+            @Override
+            public void onCurress(int id) {
+//                完成任务
+                presenter.doTask(map,id);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(100);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        accessibilityReList.postInvalidate();
 
+                    }
+                }).start();
+            }
+
+            @Override
+            public void onCurre(int id) {
+//                  领取H币
+                presenter.doReceiveReward(map,id);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(100);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        accessibilityReList.postInvalidate();
+
+                    }
+                }).start();
+
+            }
+        });
 
 
 
@@ -360,8 +435,15 @@ public class TaskActivity extends BaseActivity<Persenter> implements IViewContra
 
     @Override
     public void onSuccessFour(Object four) {
-
+        UserBean userBean= (UserBean) four;
+        if ("0000".equals(userBean.status)) {
+            ToastUtils.show(userBean.message);
+        }else {
+            ToastUtils.show(userBean.message);
+        }
     }
+
+
 
     @Override
     public void onFail(String str) {

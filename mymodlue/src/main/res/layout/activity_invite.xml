@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.INviteActivity">
+    <RelativeLayout
+        android:id="@+id/relay_layout"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_height="@dimen/dp_26">
+
+        <ImageView
+            android:id="@+id/head_details_back"
+            android:layout_width="@dimen/dp_16"
+            android:layout_height="@dimen/dp_16"
+            android:src="@mipmap/common_icon_back_black_n" />
+        <TextView
+            android:textStyle="bold"
+            android:text="邀请好友"
+            android:id="@+id/head_text_name"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/sp_16"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_22" />
+    </RelativeLayout>
+    <LinearLayout
+        android:background="@mipmap/invitation_bg"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@mipmap/invitation_white_bg"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:textSize="@dimen/sp_16"
+                android:textColor="#333333"
+                android:text="您的邀请码"
+                android:layout_marginTop="@dimen/dp_40"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:gravity="center"
+                android:id="@+id/invite_edit_code"
+                android:textColor="#666666"
+                android:textSize="@dimen/sp_16"
+                android:background="#ededed"
+                android:layout_marginTop="@dimen/dp_18"
+                android:layout_gravity="center"
+                android:layout_width="@dimen/dp_140"
+                android:layout_height="@dimen/dp_36"/>
+
+            <LinearLayout
+                android:id="@+id/invite_button_code"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="#3087ea"
+                    android:textSize="@dimen/sp_14"
+                    android:text="复制邀请码"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:background="#3087ea"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="@dimen/dp_50"
+                android:background="#f2f2f2"
+                android:layout_gravity="center"
+                android:layout_width="@dimen/dp_230"
+                android:layout_height="@dimen/dp_1">
+
+            </LinearLayout>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/invite_simpl_view"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_40"
+                android:layout_width="@dimen/dp_120"
+                android:layout_height="@dimen/dp_120">
+
+            </com.facebook.drawee.view.SimpleDraweeView>
+            <TextView
+                android:layout_marginTop="@dimen/dp_20"
+                android:textColor="#666666"
+                android:textSize="@dimen/sp_12"
+                android:text="邀请好友下载App"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginTop="@dimen/dp_10"
+                android:textColor="#666666"
+                android:textSize="@dimen/sp_12"
+                android:text="注册填写上方邀请码 双方可分别获得300H币"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textColor="#ffffff"
+                android:textSize="@dimen/sp_14"
+                android:text="邀请好友"
+                android:id="@+id/invite_button_friend"
+                android:background="@drawable/login_shape_c"
+                android:layout_marginTop="@dimen/dp_46"
+                android:layout_gravity="center"
+                android:layout_width="@dimen/dp_230"
+                android:layout_height="@dimen/dp_36"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

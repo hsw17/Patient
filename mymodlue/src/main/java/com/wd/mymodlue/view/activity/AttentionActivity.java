@@ -1,8 +1,6 @@
 package com.wd.mymodlue.view.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
 
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.wd.mymodlue.R;
