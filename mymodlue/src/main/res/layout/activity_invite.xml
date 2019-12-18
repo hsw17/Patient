@@ -54,7 +54,7 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <EditText
+            <TextView
                 android:gravity="center"
                 android:id="@+id/invite_edit_code"
                 android:textColor="#666666"
@@ -63,7 +63,8 @@
                 android:layout_marginTop="@dimen/dp_18"
                 android:layout_gravity="center"
                 android:layout_width="@dimen/dp_140"
-                android:layout_height="@dimen/dp_36"/>
+                android:layout_height="@dimen/dp_36"
+                android:textIsSelectable="true"/>
 
             <LinearLayout
                 android:id="@+id/invite_button_code"
@@ -73,6 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:id="@+id/invite_text_code"
                     android:textColor="#3087ea"
                     android:textSize="@dimen/sp_14"
                     android:text="复制邀请码"
@@ -92,14 +94,15 @@
 
             </LinearLayout>
 
-            <com.facebook.drawee.view.SimpleDraweeView
+            <ImageView
                 android:id="@+id/invite_simpl_view"
                 android:layout_gravity="center"
+
                 android:layout_marginTop="@dimen/dp_40"
                 android:layout_width="@dimen/dp_120"
                 android:layout_height="@dimen/dp_120">
 
-            </com.facebook.drawee.view.SimpleDraweeView>
+            </ImageView>
             <TextView
                 android:layout_marginTop="@dimen/dp_20"
                 android:textColor="#666666"

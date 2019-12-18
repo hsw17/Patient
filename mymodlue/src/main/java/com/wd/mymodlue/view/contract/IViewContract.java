@@ -4,6 +4,8 @@ import com.bwie.mvplibrary.base.IBaseView;
 
 import java.util.Map;
 
+import okhttp3.MultipartBody;
+
 /**
  * date:2019/12/13
  * author:贺少伟(盗)
@@ -44,6 +46,8 @@ public interface IViewContract {
         void doInvitationCode(Map<String,Object> map);
         //查询用户邀请码
         void doUserInvitation(Map<String,Object> map);
+        //上传用户头像
+        void onloadHeadPic(Map<String,Object> map, MultipartBody.Part image);
     }
 
     //M层
@@ -70,6 +74,8 @@ public interface IViewContract {
         void doInvitationCode(Map<String,Object> map, IModelCallback iModelCallback);
 //        查询用户邀请码
         void doUserInvitation(Map<String,Object> map, IModelCallback iModelCallback);
+//        查询用户邀请码
+        void onloadHeadPic(Map<String,Object> map,MultipartBody.Part image, IModelCallback iModelCallback);
 
         interface IModelCallback{
             void onSuccess(Object obj);

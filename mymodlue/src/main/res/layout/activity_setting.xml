@@ -39,6 +39,7 @@
     </LinearLayout>
 
     <RelativeLayout
+        android:id="@+id/setting_image_layout"
         android:layout_marginRight="@dimen/dp_20"
         android:layout_marginLeft="@dimen/dp_20"
         android:layout_width="match_parent"
