@@ -5,6 +5,7 @@ import com.bwie.mvplibrary.utils.CommonObserver;
 import com.bwie.mvplibrary.utils.CommonSchedulers;
 import com.bwie.mvplibrary.utils.RetrofitManager;
 import com.wd.mymodlue.modle.ap.Api;
+import com.wd.mymodlue.modle.bean.HeadPicBean;
 import com.wd.mymodlue.modle.bean.HealthTestBean;
 import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.modle.bean.UserCommentListBean;
@@ -15,6 +16,8 @@ import com.wd.mymodlue.modle.bean.UserWalletBean;
 import com.wd.mymodlue.view.contract.IViewContract;
 
 import java.util.Map;
+
+import okhttp3.MultipartBody;
 
 /**
  * date:2019/12/13
@@ -203,6 +206,25 @@ public class IModel implements IViewContract.IModel {
                     @Override
                     public void onError(Throwable e) {
                         iModelCallback.onFail(e.toString());
+                    }
+                });
+    }
+
+    @Override
+    public void onloadHeadPic(Map<String, Object> map, MultipartBody.Part image, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onloadHeadPic(map,image)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<HeadPicBean>() {
+                    @Override
+                    public void onNext(HeadPicBean headPicBean) {
+                        iModelCallback.onSuccess(headPicBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                        iModelCallback.onFail(e.toString());
+
                     }
                 });
     }

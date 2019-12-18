@@ -1,6 +1,7 @@
 package com.wd.mymodlue.modle.ap;
 
 
+import com.wd.mymodlue.modle.bean.HeadPicBean;
 import com.wd.mymodlue.modle.bean.HealthTestBean;
 import com.wd.mymodlue.modle.bean.LoginBean;
 import com.wd.mymodlue.modle.bean.UserBean;
@@ -13,9 +14,12 @@ import com.wd.mymodlue.modle.bean.UserWalletBean;
 import java.util.Map;
 
 import io.reactivex.Observable;
+import okhttp3.MultipartBody;
 import retrofit2.http.GET;
 import retrofit2.http.HeaderMap;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 
@@ -69,5 +73,11 @@ public interface Api {
     // 查询用户邀请码
     @GET("health/user/verify/v1/findUserInvitationCode")
     Observable<HealthTestBean> doUserInvitation(@HeaderMap Map<String,Object> map);
+
+    //上传用户头像
+    @Multipart
+    @POST("health/user/verify/v1/modifyHeadPic")
+    Observable<HeadPicBean> onloadHeadPic(@HeaderMap Map<String,Object> map, @Part MultipartBody.Part image);
+
 
 }
