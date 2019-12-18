@@ -6,7 +6,6 @@ package com.wd.he_home.fragment.changjian;
  * function：
  */
 
-import android.content.Intent;
 import android.view.View;
 
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -17,17 +16,13 @@ import com.bwie.mvplibrary.base.BaseFragment;
 import com.wd.he_home.R;
 import com.wd.he_home.adapter.CommonSymptomsAdapter;
 import com.wd.he_home.adapter.CorrespondingsymptomsAdapter;
-import com.wd.he_home.adapter.EnquirySectionAdapter;
 import com.wd.he_home.bean.CorrespondingsymptomsBean;
 import com.wd.he_home.bean.EnquirySectionBean;
 import com.wd.he_home.comtract.HomeContract;
 import com.wd.he_home.presenter.HomePresenter;
-import com.wd.he_home.view.ConditionDetailsActivity;
-import com.wd.he_home.view.MainActivity;
 
 import java.util.List;
 
-import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -75,8 +70,8 @@ public class CommonSymptomsFragment extends BaseFragment<HomePresenter> implemen
             commonSymptomsAdapter.onGetClickItem(new CommonSymptomsAdapter.getClickItem() {
                 @Override
                 public void ClickItem(String departmentId) {
+                    //直接请求接口
                     fpresenter.HomePresenterDuiYingBingZheng(departmentId);
-                  /*  commonsTwoRecycler.setVisibility(View.VISIBLE);*/
                 }
             });
 
@@ -88,16 +83,6 @@ public class CommonSymptomsFragment extends BaseFragment<HomePresenter> implemen
             commonsTwoRecycler.setLayoutManager(gridLayoutManager);
             CorrespondingsymptomsAdapter correspondingsymptomsAdapter = new CorrespondingsymptomsAdapter(context(), result);
             commonsTwoRecycler.setAdapter(correspondingsymptomsAdapter);
-            //接口回调传值
-       /*     correspondingsymptomsAdapter.getOnClick(new CorrespondingsymptomsAdapter.onCorresClickItem() {
-                @Override
-                public void getClickItem(String id) {
-                    Intent intent = new Intent();
-                    intent.putExtra("id",id);
-                    intent.setClass(context(), ConditionDetailsActivity.class);
-                    startActivity(intent);
-                }
-            });*/
         }
     }
     @Override

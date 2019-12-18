@@ -12,7 +12,9 @@ import com.wd.he_home.bean.DrugDetailsBean;
 import com.wd.he_home.bean.DrugListBean;
 import com.wd.he_home.bean.EnquirySectionBean;
 import com.wd.he_home.bean.HealthinformationBean;
+import com.wd.he_home.bean.HomeSearchBean;
 import com.wd.he_home.bean.NewslistBean;
+import com.wd.he_home.bean.PopularSearchesBean;
 import com.wd.he_home.comtract.HomeContract;
 import com.wd.he_home.model.HomeModel;
 
@@ -109,52 +111,52 @@ public class HomePresenter extends BasePresenter<HomeContract.HomeView> implemen
     //查询对应病症
     @Override
     public void HomePresenterDuiYingBingZheng(String departmentId) {
-            homeModel.HomeModelDuiYingBingZheng(departmentId, new HomeContract.HomeModel.HomeModelCallBack() {
-                @Override
-                public void HomeViewSuccess(Object obj) {
-                    CorrespondingsymptomsBean correspondingsymptomsBean = (CorrespondingsymptomsBean) obj;
-                    getView().HomeViewSuccess(correspondingsymptomsBean);
-                }
+        homeModel.HomeModelDuiYingBingZheng(departmentId, new HomeContract.HomeModel.HomeModelCallBack() {
+            @Override
+            public void HomeViewSuccess(Object obj) {
+                CorrespondingsymptomsBean correspondingsymptomsBean = (CorrespondingsymptomsBean) obj;
+                getView().HomeViewSuccess(correspondingsymptomsBean);
+            }
 
-                @Override
-                public void HomeViewError(String e) {
+            @Override
+            public void HomeViewError(String e) {
                 getView().HomeViewError(e);
-                }
-            });
+            }
+        });
     }
 
-   // 药品分类
+    // 药品分类
     @Override
     public void HomePresenterYaoPinFenLei() {
-     homeModel.HomeModelYaoPinFenLeiData(new HomeContract.HomeModel.HomeModelCallBack() {
-         @Override
-         public void HomeViewSuccess(Object obj) {
-             DrugClassificationBean drugClassificationBean = (DrugClassificationBean) obj;
-             getView().HomeViewSuccess(drugClassificationBean);
-         }
+        homeModel.HomeModelYaoPinFenLeiData(new HomeContract.HomeModel.HomeModelCallBack() {
+            @Override
+            public void HomeViewSuccess(Object obj) {
+                DrugClassificationBean drugClassificationBean = (DrugClassificationBean) obj;
+                getView().HomeViewSuccess(drugClassificationBean);
+            }
 
-         @Override
-         public void HomeViewError(String e) {
-            getView().HomeViewError(e);
-         }
-     });
+            @Override
+            public void HomeViewError(String e) {
+                getView().HomeViewError(e);
+            }
+        });
     }
 
     //药品列表
     @Override
     public void HomePresenterYaoPinLieBiao(String drugsCategoryId, String page, String count) {
-            homeModel.HomeModelYaoPinLieBiaoData(drugsCategoryId, page, count, new HomeContract.HomeModel.HomeModelCallBack() {
-                @Override
-                public void HomeViewSuccess(Object obj) {
-                    DrugListBean drugListBean = (DrugListBean) obj;
-                    getView().HomeViewSuccess(drugListBean);
-                }
+        homeModel.HomeModelYaoPinLieBiaoData(drugsCategoryId, page, count, new HomeContract.HomeModel.HomeModelCallBack() {
+            @Override
+            public void HomeViewSuccess(Object obj) {
+                DrugListBean drugListBean = (DrugListBean) obj;
+                getView().HomeViewSuccess(drugListBean);
+            }
 
-                @Override
-                public void HomeViewError(String e) {
-                    getView().HomeViewError(e);
-                }
-            });
+            @Override
+            public void HomeViewError(String e) {
+                getView().HomeViewError(e);
+            }
+        });
     }
 
     //查询病状详情
@@ -200,11 +202,47 @@ public class HomePresenter extends BasePresenter<HomeContract.HomeView> implemen
             public void HomeViewSuccess(Object obj) {
                 ConsultationDetailsBean consultationDetailsBean = (ConsultationDetailsBean) obj;
 
-            getView().HomeViewSuccess(consultationDetailsBean); }
+                getView().HomeViewSuccess(consultationDetailsBean);
+            }
 
             @Override
             public void HomeViewError(String e) {
                 getView().HomeViewError(e);
+            }
+        });
+    }
+
+    //首页搜索
+    @Override
+    public void HomePresenterShouYeSouSuo(String keyWord) {
+        homeModel.HomeModelShouYeSouSuoData(keyWord, new HomeContract.HomeModel.HomeModelCallBack() {
+            @Override
+            public void HomeViewSuccess(Object obj) {
+                HomeSearchBean homeSearchBean = (HomeSearchBean) obj;
+                getView().HomeViewSuccess(homeSearchBean);
+            }
+
+            @Override
+            public void HomeViewError(String e) {
+                getView().HomeViewError(e);
+            }
+        });
+
+    }
+
+    //热门搜索
+    @Override
+    public void HomePresenterReMenSouSuo() {
+        homeModel.HomeModelReMenSouSuoData(new HomeContract.HomeModel.HomeModelCallBack() {
+            @Override
+            public void HomeViewSuccess(Object obj) {
+                PopularSearchesBean popularSearchesBean  = (PopularSearchesBean) obj;
+                getView().HomeViewSuccess(popularSearchesBean);
+            }
+
+            @Override
+            public void HomeViewError(String e) {
+            getView().HomeViewError(e);
             }
         });
     }

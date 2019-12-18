@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.ImageView;
 
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.wd.he_home.R;
@@ -19,6 +21,7 @@ import java.util.List;
 
 public class FindInfoActivity extends BaseActivity<HomePresenter> implements HomeContract.HomeView {
 
+    private ImageView image_fanhui;
     private WebView webView;
     private ConsultationDetailsBean.ResultBean  result;
     private Intent intent;
@@ -38,6 +41,7 @@ public class FindInfoActivity extends BaseActivity<HomePresenter> implements Hom
     @Override
     protected void initView() {
         super.initView();
+        image_fanhui = findViewById(R.id.image_fanhui);
         webView = findViewById(R.id.find_webview);
 
     }
@@ -48,11 +52,17 @@ public class FindInfoActivity extends BaseActivity<HomePresenter> implements Hom
         intent = getIntent();
         in_id = intent.getStringExtra("in_id");
         presenter.HomePresenterZiXunXiangQing("432","1576543952843432",in_id);
+        //点击销毁
+        image_fanhui.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
-
     @Override
     public void HomeViewSuccess(Object obj) {
-        if (obj instanceof NewslistBean){
+        if (obj instanceof ConsultationDetailsBean){
             ConsultationDetailsBean consultationDetailsBean = (ConsultationDetailsBean) obj;
             result = consultationDetailsBean.getResult();
             WebSettings settings = webView.getSettings();

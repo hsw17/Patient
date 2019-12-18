@@ -20,8 +20,6 @@ import butterknife.ButterKnife;
  * @author（作者）: Liuhe
  **/
 public class ConditionDetailsActivity extends BaseActivity<HomePresenter> implements HomeContract.HomeView {
-
-
     private Intent intent;
     private String id;
     private ConditionDetailsBean.ResultBean result;
@@ -57,8 +55,6 @@ public class ConditionDetailsActivity extends BaseActivity<HomePresenter> implem
         name = intent.getStringExtra("name");
         diseaseName.setText(name);
         presenter.HomePresenterBingZhuangXiangQing(id);
-
-
     }
 
     @Override
@@ -71,12 +67,9 @@ public class ConditionDetailsActivity extends BaseActivity<HomePresenter> implem
             diseaseBenefitTaboo.setText(result.getBenefitTaboo());
             diseaseChineseMedicineTreatment.setText(result.getChineseMedicineTreatment());
         }
-
     }
-
     @Override
     public void HomeViewError(String e) {
-
     }
 
     @Override
