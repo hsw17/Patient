@@ -27,6 +27,9 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+anim dkplayer_anim_alpha_in
+anim dkplayer_anim_alpha_out
+anim dkplayer_anim_center_view
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -309,6 +312,15 @@ attr indeterminateProgressStyle
 attr indicator
 attr indicator_color
 attr initialActivityCount
+attr inner_corner_color
+attr inner_corner_length
+attr inner_corner_width
+attr inner_height
+attr inner_margintop
+attr inner_scan_bitmap
+attr inner_scan_iscircle
+attr inner_scan_speed
+attr inner_width
 attr insetForeground
 attr isLightTheme
 attr itemBackground
@@ -415,6 +427,7 @@ attr materialCardViewStyle
 attr maxActionInlineWidth
 attr maxButtonHeight
 attr maxImageSize
+attr max_select
 attr measureWithLargestChild
 attr menu
 attr metro_divider
@@ -543,6 +556,7 @@ attr tabStyle
 attr tabTextAppearance
 attr tabTextColor
 attr tabUnboundedRipple
+attr tag_gravity
 attr textAllCaps
 attr textAppearanceBody1
 attr textAppearanceBody2
@@ -650,6 +664,7 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color bg_color
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -662,12 +677,14 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
+color cc
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
 color color_blue
 color color_gray
 color color_red
+color contents_text
 color design_bottom_navigation_shadow_color
 color design_default_color_primary
 color design_default_color_primary_dark
@@ -685,10 +702,18 @@ color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
+color dkplayer_background_color
+color dkplayer_theme_color
+color dkplayer_theme_color_translucent
+color encode_view
 color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color grgray
+color header
+color help_button_view
+color help_view
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color material_blue_grey_800
@@ -732,6 +757,7 @@ color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
+color possible_result_points
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -740,12 +766,27 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color result_image_border
+color result_minor_text
+color result_points
+color result_text
+color result_view
 color ripple_material_dark
 color ripple_material_light
+color sbc_header_text
+color sbc_header_view
+color sbc_layout_view
+color sbc_list_item
+color sbc_page_number_text
+color sbc_snippet_text
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color share_text
+color share_view
+color status_text
+color status_view
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -754,6 +795,10 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color transparent
+color viewfinder_frame
+color viewfinder_laser
+color viewfinder_mask
 dimen _sp_50
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -845,6 +890,7 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
+dimen def_height
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
 dimen design_bottom_navigation_active_item_min_width
@@ -891,6 +937,15 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen dkplayer_controller_height
+dimen dkplayer_controller_icon_padding
+dimen dkplayer_controller_seekbar_max_size
+dimen dkplayer_controller_seekbar_size_n
+dimen dkplayer_controller_seekbar_size_s
+dimen dkplayer_controller_text_size
+dimen dkplayer_controller_time_text_size
+dimen dkplayer_default_spacing
+dimen dkplayer_play_btn_size
 dimen dp_0
 dimen dp_0_1
 dimen dp_0_5
@@ -1499,6 +1554,45 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable dkplayer_battery_level
+drawable dkplayer_ic_action_arrow_back
+drawable dkplayer_ic_action_autorenew
+drawable dkplayer_ic_action_battery
+drawable dkplayer_ic_action_battery_10
+drawable dkplayer_ic_action_battery_20
+drawable dkplayer_ic_action_battery_30
+drawable dkplayer_ic_action_battery_40
+drawable dkplayer_ic_action_battery_50
+drawable dkplayer_ic_action_battery_60
+drawable dkplayer_ic_action_battery_70
+drawable dkplayer_ic_action_battery_80
+drawable dkplayer_ic_action_battery_90
+drawable dkplayer_ic_action_brightness
+drawable dkplayer_ic_action_close
+drawable dkplayer_ic_action_fast_forward
+drawable dkplayer_ic_action_fast_rewind
+drawable dkplayer_ic_action_fullscreen
+drawable dkplayer_ic_action_fullscreen_exit
+drawable dkplayer_ic_action_lock_open
+drawable dkplayer_ic_action_lock_outline
+drawable dkplayer_ic_action_pause
+drawable dkplayer_ic_action_play_arrow
+drawable dkplayer_ic_action_replay
+drawable dkplayer_ic_action_volume_off
+drawable dkplayer_ic_action_volume_up
+drawable dkplayer_layer_progress_bar
+drawable dkplayer_progress_loading
+drawable dkplayer_seekbar_thumb
+drawable dkplayer_seekbar_thumb_normal
+drawable dkplayer_seekbar_thumb_pressed
+drawable dkplayer_selector_full_screen_button
+drawable dkplayer_selector_lock_button
+drawable dkplayer_selector_play_button
+drawable dkplayer_shape_back_bg
+drawable dkplayer_shape_play_bg
+drawable dkplayer_shape_standard_controller_top_bg
+drawable dkplayer_shape_stardard_controller_bottom_bg
+drawable dkplayer_shape_status_view_btn
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_loading_rotate
@@ -1542,6 +1636,9 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable progressbar
 drawable progressloading
+drawable sample_footer_loading
+drawable sample_footer_loading_progress
+drawable scan_light
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -1563,6 +1660,10 @@ id BallSpinFadeLoader
 id BallTrianglePath
 id BallZigZag
 id BallZigZagDeflect
+id BaseQuickAdapter_databinding_support
+id BaseQuickAdapter_dragging_support
+id BaseQuickAdapter_swiping_support
+id BaseQuickAdapter_viewholder_support
 id CTRL
 id CubeTransition
 id FUNCTION
@@ -1639,6 +1740,8 @@ id all
 id always
 id async
 id auto
+id auto_focus
+id back
 id barrier
 id beginning
 id blocking
@@ -1662,6 +1765,8 @@ id bonus_sign_item_right4
 id bonus_sign_item_right5
 id bonus_sign_item_right6
 id bottom
+id bottom_container
+id bottom_progress
 id buttonPanel
 id cancel_action
 id center
@@ -1677,12 +1782,17 @@ id clip_horizontal
 id clip_vertical
 id collapseActionView
 id collar_button_go_finish
+id complete_container
 id container
 id content
 id contentPanel
 id coordinator
+id curr_time
 id custom
 id customPanel
+id decode
+id decode_failed
+id decode_succeeded
 id decor_content_parent
 id default_activity_button
 id design_bottom_sheet
@@ -1695,6 +1805,8 @@ id dimensions
 id direct
 id disableHome
 id edit_query
+id encode_failed
+id encode_succeeded
 id end
 id end_padder
 id enterAlways
@@ -1713,8 +1825,10 @@ id fitEnd
 id fitStart
 id fitXY
 id fixed
+id fl_zxing_container
 id focusCrop
 id forever
+id fullscreen
 id ghost_view
 id gone
 id group_divider
@@ -1744,9 +1858,15 @@ id invite_edit_code
 id invite_simpl_view
 id italic
 id item_touch_helper_previous_elevation
+id iv_battery
+id iv_icon
+id iv_play
+id iv_refresh
+id iv_replay
 id labeled
 id largeLabel
 id last_refresh_time
+id launch_product_query
 id left
 id line1
 id line3
@@ -1760,6 +1880,13 @@ id listview_header_arrow
 id listview_header_content
 id listview_header_progressbar
 id listview_header_text
+id load_more_load_end_view
+id load_more_load_fail_view
+id load_more_loading_view
+id loading
+id loading_progress
+id loading_text
+id lock
 id margin
 id marginBottom
 id marginLeft
@@ -1814,8 +1941,11 @@ id parentPanel
 id parent_matrix
 id percent
 id pin
+id preview_view
+id pro_percent
 id progress_circular
 id progress_horizontal
+id quit
 id radio
 id re_latiview
 id record_button_add
@@ -1823,6 +1953,8 @@ id record_linear_layout
 id refresh_status_textview
 id rela_view
 id relay_layout
+id restart_preview
+id return_scan_result
 id right
 id right_icon
 id right_side
@@ -1837,6 +1969,8 @@ id scrollView
 id scrollable
 id search_badge
 id search_bar
+id search_book_contents_failed
+id search_book_contents_succeeded
 id search_button
 id search_close_btn
 id search_edit_frame
@@ -1845,6 +1979,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id seekBar
 id select_dialog_listview
 id selected
 id setting_image_clear
@@ -1877,11 +2012,14 @@ id src_in
 id src_over
 id standard
 id start
+id start_play
 id status_bar_latest_event_content
+id status_btn
 id stretch
 id submenuarrow
 id submit_area
 id suggest_list_view
+id sys_time
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -1905,24 +2043,31 @@ id text_view
 id textinput_counter
 id textinput_error
 id textinput_helper_text
+id thumb
 id time
 id title
 id titleDividerNoCustom
 id title_template
 id top
 id topPanel
+id top_container
+id total_time
 id touch_outside
 id transition_current_scene
 id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tv_multi_rate
+id tv_percent
+id tv_prompt
 id unchecked
 id uniform
 id unlabeled
 id up
 id useLogo
 id view_offset_helper
+id viewfinder_view
 id visible
 id wall_button_left
 id wall_button_right
@@ -2004,6 +2149,7 @@ layout activity_suggest
 layout activity_task
 layout activity_video
 layout activity_wallet
+layout camera
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2019,6 +2165,10 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout dkplayer_layout_center_window
+layout dkplayer_layout_standard_controller
+layout dkplayer_layout_status_view
+layout fragment_capture
 layout item_area
 layout item_sugint
 layout item_wallot
@@ -2042,6 +2192,7 @@ layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout pull_to_refresh_head
+layout quick_view_load_more
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -2216,6 +2367,7 @@ mipmap the_slide_gesture
 mipmap user_bg
 mipmap wallet_icon
 mipmap wallet_icon_clock_n
+raw beep
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -2250,15 +2402,31 @@ string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string character_counter_content_description
 string character_counter_pattern
+string dkplayer_continue_play
+string dkplayer_error_message
+string dkplayer_lock_tip
+string dkplayer_locked
+string dkplayer_replay
+string dkplayer_retry
+string dkplayer_unlocked
+string dkplayer_wifi_tip
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string gravity_center
+string gravity_left
+string gravity_right
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
+string ijkplayer_dummy
 string invalid_password
 string invalid_username
 string listview_header_hint_normal
 string listview_header_hint_release
 string listview_header_last_time
 string listview_loading
+string load_end
+string load_failed
+string loading
 string login_failed
 string mtrl_chip_close_icon_content_description
 string nomore_loading
@@ -2281,6 +2449,7 @@ style Animation_AppCompat_Dialog
 style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
+style AppBaseTheme
 style AppTheme
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
@@ -2780,6 +2949,7 @@ style Widget_MaterialComponents_TextInputLayout_OutlinedBox
 style Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense
 style Widget_MaterialComponents_Toolbar
 style Widget_Support_CoordinatorLayout
+style my_actionbar_style
 styleable AVLoadingIndicatorView indicator indicator_color
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
@@ -2855,6 +3025,7 @@ styleable StateListDrawableItem android_drawable
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
 styleable TabItem android_icon android_layout android_text
 styleable TabLayout tabBackground tabContentStart tabGravity tabIconTint tabIconTintMode tabIndicator tabIndicatorAnimationDuration tabIndicatorColor tabIndicatorFullWidth tabIndicatorGravity tabIndicatorHeight tabInlineLabel tabMaxWidth tabMinWidth tabMode tabPadding tabPaddingBottom tabPaddingEnd tabPaddingStart tabPaddingTop tabRippleColor tabSelectedTextColor tabTextAppearance tabTextColor tabUnboundedRipple
+styleable TagFlowLayout max_select tag_gravity
 styleable TextAppearance android_textSize android_typeface android_textStyle android_textColor android_textColorHint android_textColorLink android_shadowColor android_shadowDx android_shadowDy android_shadowRadius android_fontFamily android_textFontWeight fontFamily fontVariationSettings textAllCaps textLocale
 styleable TextInputLayout android_textColorHint android_hint boxBackgroundColor boxBackgroundMode boxCollapsedPaddingTop boxCornerRadiusBottomEnd boxCornerRadiusBottomStart boxCornerRadiusTopEnd boxCornerRadiusTopStart boxStrokeColor boxStrokeWidth counterEnabled counterMaxLength counterOverflowTextAppearance counterTextAppearance errorEnabled errorTextAppearance helperText helperTextEnabled helperTextTextAppearance hintAnimationEnabled hintEnabled hintTextAppearance passwordToggleContentDescription passwordToggleDrawable passwordToggleEnabled passwordToggleTint passwordToggleTintMode
 styleable ThemeEnforcement android_textAppearance enforceMaterialTheme enforceTextAppearance
@@ -2862,3 +3033,4 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+styleable ViewfinderView inner_corner_color inner_corner_length inner_corner_width inner_height inner_margintop inner_scan_bitmap inner_scan_iscircle inner_scan_speed inner_width

@@ -38,11 +38,7 @@ import com.bw.videomodule.utils.ViewPagerLayoutManager;
 import com.bw.videomodule.view.adapter.FragmentAdapter;
 import com.bw.videomodule.view.adapter.TikTokAdapter;
 import com.bw.videomodule.view.fragmnet.VideoFragment;
-import com.bw.videomodule.view.fragmnet.VideoFragmentFitness;
-import com.bw.videomodule.view.fragmnet.VideoFragmentHaird;
-import com.bw.videomodule.view.fragmnet.VideoFragmentHeart;
-import com.bw.videomodule.view.fragmnet.VideoFragmentRegimen;
-import com.bw.videomodule.view.fragmnet.VideoFragmentSense;
+
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.Logger;
 import com.dueeeke.videoplayer.player.IjkVideoView;
