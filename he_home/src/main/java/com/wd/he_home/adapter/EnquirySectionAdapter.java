@@ -15,11 +15,12 @@ import com.wd.he_home.R;
 import com.wd.he_home.bean.EnquirySectionBean;
 
 import java.util.List;
+
 /**
- *@describe(描述)：EnquirySectionAdapter
- *@data（日期）: 2019/12/14
- *@time（时间）: 8:15
- *@author（作者）: Liuhe
+ * @describe(描述)：EnquirySectionAdapter
+ * @data（日期）: 2019/12/14
+ * @time（时间）: 8:15
+ * @author（作者）: Liuhe
  **/
 public class EnquirySectionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
@@ -43,6 +44,13 @@ public class EnquirySectionAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         if (holder instanceof EnquirySectionHolder) {
             ((EnquirySectionHolder) holder).item_dep_name.setText(resultBean.get(position).getDepartmentName());
             Glide.with(context).load(resultBean.get(position).getPic()).into(((EnquirySectionHolder) holder).item_dep_img);
+            //传值跳转进行选择科室
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    setEnqiryClick.setOnClick(resultBean.get(position).getId());
+                }
+            });
         }
     }
 
@@ -61,5 +69,17 @@ public class EnquirySectionAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             item_dep_img = itemView.findViewById(R.id.item_dep_img);
             item_dep_name = itemView.findViewById(R.id.item_dep_name);
         }
+    }
+
+    public setEnqiryClick setEnqiryClick;
+
+    public void getEnqiryClick(setEnqiryClick setEnqiryClick) {
+        this.setEnqiryClick = setEnqiryClick;
+
+    }
+
+    //接口回调跳转
+    public interface setEnqiryClick {
+        void setOnClick(String position);
     }
 }
