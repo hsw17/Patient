@@ -429,4 +429,39 @@ public class Persenter extends BasePresenter<IViewContract.IView> implements IVi
             }
         });
     }
+
+    @Override
+    public void onUpdateUserPwd(Map<String, Object> map, Map<String, Object> oap) {
+        iModel.onUpdateUserPwd(map, oap, new IViewContract.IModel.IModelCallback() {
+            @Override
+            public void onSuccess(Object obj) {
+                getView().onSuccess(obj);
+            }
+
+            @Override
+            public void onSuccessOne(Object one) {
+
+            }
+
+            @Override
+            public void onSuccessTwo(Object two) {
+
+            }
+
+            @Override
+            public void onSuccessThree(Object three) {
+
+            }
+
+            @Override
+            public void onSuccessFour(Object four) {
+
+            }
+
+            @Override
+            public void onFail(String str) {
+                getView().onFail(str);
+            }
+        });
+    }
 }

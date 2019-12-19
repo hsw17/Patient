@@ -19,6 +19,7 @@ import retrofit2.http.GET;
 import retrofit2.http.HeaderMap;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
@@ -78,6 +79,10 @@ public interface Api {
     @Multipart
     @POST("health/user/verify/v1/modifyHeadPic")
     Observable<HeadPicBean> onloadHeadPic(@HeaderMap Map<String,Object> map, @Part MultipartBody.Part image);
+
+    //修改密码
+    @PUT("health/user/verify/v1/updateUserPwd")
+    Observable<UserBean> onUpdateUserPwd(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
 
 
 }

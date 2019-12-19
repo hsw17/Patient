@@ -84,6 +84,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_4"/>
     <RelativeLayout
+        android:id="@+id/setting_image_pwd"
         android:layout_marginRight="@dimen/dp_20"
         android:layout_marginLeft="@dimen/dp_20"
         android:layout_width="match_parent"
@@ -97,7 +98,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <LinearLayout
-            android:id="@+id/setting_image_pwd"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:gravity="center"
