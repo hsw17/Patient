@@ -1,6 +1,7 @@
 package com.wd.he_home.view;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 
@@ -60,12 +61,7 @@ public class CommonActivity extends BaseActivity<HomePresenter> implements HomeC
         fragments = new ArrayList<>();
         fragments.add(new CommonSymptomsFragment());
         fragments.add(new CommonDrugsFragment());
-        editText.setFocusable(true);
-        editText.setFocusableInTouchMode(true);
-        editText.requestFocus();
 
-        editText.clearFocus();//失去焦点
-        editText.requestFocus();//获取焦点
         //设置适配器
         commonVp.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @NonNull
@@ -87,8 +83,8 @@ public class CommonActivity extends BaseActivity<HomePresenter> implements HomeC
         });
         //设置联动
         CommonTables.setupWithViewPager(commonVp);
-    }
 
+    }
     @Override
     public void HomeViewSuccess(Object obj) {
     }

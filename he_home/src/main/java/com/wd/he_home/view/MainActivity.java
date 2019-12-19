@@ -2,6 +2,7 @@ package com.wd.he_home.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -33,6 +34,7 @@ import com.wd.he_home.fragment.jiankangzixun.Healthbeauty_Fragment;
 import com.wd.he_home.fragment.jiankangzixun.MedicalnewsFragment;
 import com.wd.he_home.fragment.jiankangzixun.Medicalnews_oneFragment;
 import com.wd.he_home.presenter.HomePresenter;
+import com.wd.he_home.util.vp.CustomScrollViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,6 +74,7 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
     private List<Fragment> fragments;
     private BannerBean bannerBean;
     private XBanner homeXbannerTop;
+    private CustomScrollViewPager customScrollViewPager;
 
     @Override
     protected int bindLayout() {
@@ -141,6 +144,8 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
         homeTab.setupWithViewPager(homeVp);
 
     }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

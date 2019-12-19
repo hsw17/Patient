@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".view.CommonActivity">
@@ -21,6 +23,8 @@
             android:src="@mipmap/boy"></ImageView>
 
         <EditText
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:id="@+id/comm_edit_shu"
             android:layout_width="@dimen/dp_260"
             android:layout_height="@dimen/dp_32"
