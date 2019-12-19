@@ -75,11 +75,13 @@ dependencies {
     api rootProject.ext.dependencies["XBanner"]
     api rootProject.ext.dependencies["tablelayout"]
     api rootProject.ext.dependencies["table"]
+    api rootProject.ext.dependencies["flowlayout-lib"]
+    api rootProject.ext.dependencies["ViewAdapterHelper"]
     api project(path: ':mvplibrary')
-    //流失布局
+/*    //流失布局
     implementation 'com.hyman:flowlayout-lib:1.1.2'
 
     //快速适配
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'*/
 
 }

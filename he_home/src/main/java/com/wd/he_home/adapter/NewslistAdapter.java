@@ -118,7 +118,6 @@ public class NewslistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
 
                     private Intent intent;
-
                     @Override
                     public void onClick(View view) {
                         intent = new Intent(context, FindInfoActivity.class);

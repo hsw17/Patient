@@ -27,8 +27,6 @@ public class HealthHighlightsFragment extends BaseFragment<HomePresenter> implem
         return R.layout.healthhighlights_layout;
     }
 
-
-
     @Override
     protected HomePresenter setPresenter() {
         return new HomePresenter();
@@ -37,7 +35,7 @@ public class HealthHighlightsFragment extends BaseFragment<HomePresenter> implem
     @Override
     protected void initData() {
         super.initData();
-        fpresenter.HomePresenterZiXunLieBiao("1", "2", "5");
+        fpresenter.HomePresenterZiXunLieBiao("1", "2", "10");
     }
     @Override
     protected void initView() {
