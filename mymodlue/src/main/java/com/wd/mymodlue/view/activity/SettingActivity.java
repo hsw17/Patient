@@ -35,7 +35,7 @@ public class SettingActivity extends BaseActivity<Persenter> implements IViewCon
     @BindView(R.id.setting_image_name)
     LinearLayout settingImageName;
     @BindView(R.id.setting_image_pwd)
-    LinearLayout settingImagePwd;
+    RelativeLayout settingImagePwd;
     @BindView(R.id.setting_text_clear)
     TextView settingTextClear;
     @BindView(R.id.setting_image_clear)
@@ -136,6 +136,19 @@ public class SettingActivity extends BaseActivity<Persenter> implements IViewCon
             @Override
             protected void onSingleClick() {
                 Intent intent = new Intent("com.hl.BrightnessActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//        修改密码
+        settingImagePwd.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.PwdActivity");
                 startActivity(intent);
             }
 
