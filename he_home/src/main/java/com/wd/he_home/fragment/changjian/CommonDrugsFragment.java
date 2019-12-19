@@ -57,7 +57,7 @@ public class CommonDrugsFragment extends BaseFragment<HomePresenter> implements 
             commonDrugsAdapter.setOnClick(new CommonDrugsAdapter.OnClickItem() {
                 @Override
                 public void getOnClickItem(String drugsCategoryId) {
-                    fpresenter.HomePresenterYaoPinLieBiao(drugsCategoryId, "2", "5");
+                    fpresenter.HomePresenterYaoPinLieBiao(drugsCategoryId, "1", "100");
                 }
             });
         } else if (obj instanceof DrugListBean) {

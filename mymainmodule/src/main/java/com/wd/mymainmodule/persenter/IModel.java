@@ -80,4 +80,23 @@ public class IModel implements IViewContract.IModel {
                     }
                 });
     }
+
+    @Override
+    public void doUserPwd(Map<String, Object> map, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).doUserPwd(map)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UserBean>() {
+                    @Override
+                    public void onNext(UserBean userBean) {
+                        if (iModelCallback!=null) {
+                            iModelCallback.onSuccess(userBean);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+                });
+    }
 }

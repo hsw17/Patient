@@ -41,6 +41,12 @@ ext {
             "rxpermissions"          : "com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar",
             //图片处理框架
             "glide"                  : "com.github.bumptech.glide:glide:3.7.0",
+//            流式布局
+            "flowlayout-lib"         : "com.hyman:flowlayout-lib:1.1.2",
+//            快速适配
+            "ViewAdapterHelper"      : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30",
+            //添加zxing二维码依赖
+            "zxing-library"                  : "cn.yipianfengye.android:zxing-library:2.2",
 
             //test
             "junit"                  : "junit:junit:4.12",
@@ -77,5 +83,24 @@ ext {
             "constraint-layout"      : 'com.android.support.constraint:constraint-layout:1.1.0',//约束性布局
             "test:runner"            : 'com.android.support.test:runner:1.0.2',//测试依赖，新建项目时会默认添加，一般不建议添加
             "espresso-core"          : 'com.android.support.test.espresso:espresso-core:3.0.2',//测试依赖，新建项目时会默认添加，一般不建议添加
+
+//            frace
+            "fresco"                  : 'com.facebook.fresco:fresco:0.14.1',
+            "fresco-base"             : 'com.facebook.fresco:animated-base-support:0.14.1',
+            "fresco-gif"              : 'com.facebook.fresco:animated-gif:0.14.1',
+            "fresco-webpsupport"      : 'com.facebook.fresco:webpsupport:0.14.1',
+            "fresco-webp"             : 'com.facebook.fresco:animated-webp:0.14.1',
+            "xrecyclerview"             : 'com.jcodecraeer:xrecyclerview:1.3.2',
+            //    # 必选，可兼容市面上绝大部分设备
+            "dkplayer-java"             : 'com.github.dueeeke.dkplayer:dkplayer-java:2.5.5',
+            "dkplayer-armv7a"             : 'com.github.dueeeke.dkplayer:dkplayer-armv7a:2.5.5',
+            //    # 可选，用于兼容一些其他的CPU架构
+            "dkplayer-armv5"             : 'com.github.dueeeke.dkplayer:dkplayer-armv5:2.5.5',
+            "dkplayer-arm64"             : 'com.github.dueeeke.dkplayer:dkplayer-arm64:2.5.5',
+            "dkplayer-x86"                  : 'com.github.dueeeke.dkplayer:dkplayer-x86:2.5.5',
+            "dkplayer-x86_64"             : 'com.github.dueeeke.dkplayer:dkplayer-x86_64:2.5.5',
+            //    # 可选，里面包含StandardVideoController的实现
+            "dkplayer-ui"             : 'com.github.dueeeke.dkplayer:dkplayer-ui:2.5.5',
+
     ]
 }

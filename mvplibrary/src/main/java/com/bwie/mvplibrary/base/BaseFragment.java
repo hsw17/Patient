@@ -21,7 +21,8 @@ import androidx.fragment.app.Fragment;
 public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements IBaseView {
 
     protected P fpresenter;
-
+    private boolean isPrePared;
+    private boolean isLazyLoaded;
 
 
     @Override
@@ -39,8 +40,22 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
         if (fpresenter!=null){
             fpresenter.attachView ( this );
         }
+        isPrePared = true;
         initView ();
-        initData ();
+        lazyLoaded();
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+       lazyLoaded();
+    }
+
+    private void lazyLoaded(){
+        if(getUserVisibleHint() && isPrePared && !isLazyLoaded){
+            initData();
+            isLazyLoaded = true;
+        }
     }
 
     protected abstract int bindLayout();

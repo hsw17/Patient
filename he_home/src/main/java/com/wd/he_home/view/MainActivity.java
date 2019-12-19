@@ -21,6 +21,7 @@ import com.bumptech.glide.Glide;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.google.android.material.tabs.TabLayout;
 import com.stx.xhb.xbanner.XBanner;
+import com.stx.xhb.xbanner.transformers.Transformer;
 import com.wd.he_home.R;
 import com.wd.he_home.adapter.EnquirySectionAdapter;
 import com.wd.he_home.bean.BannerBean;
@@ -47,8 +48,6 @@ import butterknife.OnClick;
  * @author（作者）: Liuhe
  **/
 public class MainActivity extends BaseActivity<HomePresenter> implements HomeContract.HomeView {
-
-
     private NestedScrollView nestedScrollView;
     private EditText edit_shu;
     @BindView(R.id.home_Title)
@@ -86,6 +85,7 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
     @Override
     protected void initData() {
         super.initData();
+        //防止事件冲突
         nestedScrollView = findViewById(R.id.main_NestedScrollView);
         nestedScrollView.setNestedScrollingEnabled(false);
         edit_shu = findViewById(R.id.edit_shu);
@@ -195,6 +195,7 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
                 }
 
             });
+            homeXbannerTop.setPageTransformer(Transformer.Alpha); //渐变，效果不明显
             //点击跳转新的页面
             homeXbannerTop.setOnItemClickListener(new XBanner.OnItemClickListener() {
                 private Intent intent;
@@ -213,6 +214,16 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
             GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 4);
             homeXRecyclerView.setLayoutManager(gridLayoutManager);
             homeXRecyclerView.setAdapter(enquirySectionAdapter);
+            //接口回调传值
+            enquirySectionAdapter.getEnqiryClick(new EnquirySectionAdapter.setEnqiryClick() {
+                @Override
+                public void setOnClick(String position) {
+                    //挑战到问诊咨询
+                    Intent intent = new Intent(MainActivity.this,ConsultationActivity.class);
+                    intent.putExtra("position",position);
+                    startActivity(intent);
+                }
+            });
 
         }/*else if (obj instanceof NewslistBean){
                 //查询咨询列表

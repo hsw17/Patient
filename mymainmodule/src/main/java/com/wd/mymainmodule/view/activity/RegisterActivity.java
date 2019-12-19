@@ -170,6 +170,17 @@ public class RegisterActivity extends BaseActivity<Persenter> implements IViewCo
 
             }
         });
+        registerEditXuan.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
         initRegula();
     }
 

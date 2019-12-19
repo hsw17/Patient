@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center_horizontal"
+    android:background="@mipmap/login_bg"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.ResetPwdActivity">
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_height="@dimen/dp_26">
+
+        <ImageView
+            android:id="@+id/head_details_back"
+            android:layout_width="@dimen/dp_16"
+            android:layout_height="@dimen/dp_16"
+            android:src="@mipmap/common_icon_back_white_n" />
+        <TextView
+            android:id="@+id/head_text_name"
+            android:layout_centerHorizontal="true"
+            android:textColor="#fff"
+            android:textSize="@dimen/sp_16"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_22" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relate_view"
+        android:layout_width="@dimen/dp_280"
+        android:layout_height="@dimen/dp_144"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_170"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="@dimen/dp_240"
+            android:layout_height="@dimen/dp_144"
+            android:layout_centerHorizontal="true"
+            android:alpha="0.3"
+            android:background="@drawable/login_shape_a">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/dp_260"
+            android:layout_height="@dimen/dp_139"
+            android:layout_centerHorizontal="true"
+            android:alpha="0.6"
+            android:background="@drawable/login_shape_a">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/dp_280"
+            android:layout_height="@dimen/dp_134"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/login_shape_a">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginRight="@dimen/dp_30"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+                        <EditText
+                            android:id="@+id/login_edit_pwd"
+                            android:maxLength="16"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="请输入密码"
+                            android:password="true"
+                            android:singleLine="true"
+                            android:textColorHint="#999999"
+                            android:textSize="@dimen/sp_14">
+
+                        </EditText>
+                        <ToggleButton
+                            android:layout_centerVertical="true"
+                            android:id="@+id/login_image_hine"
+                            android:background="@mipmap/login_icon_hide_password_n"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/dp_5"
+                            android:layout_width="@dimen/dp_16"
+                            android:layout_height="@dimen/dp_13"
+                            android:disabledAlpha="@android:integer/config_longAnimTime"
+                            android:minWidth="@null"
+                            android:minHeight="@null"
+                            android:text="@null"
+                            android:textOff="@null"
+                            android:textOn="@null"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+                        <EditText
+                            android:id="@+id/login_edit_pwdl"
+                            android:maxLength="16"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="请输入密码"
+                            android:password="true"
+                            android:singleLine="true"
+                            android:textColorHint="#999999"
+                            android:textSize="@dimen/sp_14">
+
+                        </EditText>
+                        <ToggleButton
+                            android:layout_centerVertical="true"
+                            android:id="@+id/login_image_hinel"
+                            android:background="@mipmap/login_icon_hide_password_n"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/dp_5"
+                            android:layout_width="@dimen/dp_16"
+                            android:layout_height="@dimen/dp_13"
+                            android:disabledAlpha="@android:integer/config_longAnimTime"
+                            android:minWidth="@null"
+                            android:minHeight="@null"
+                            android:text="@null"
+                            android:textOff="@null"
+                            android:textOn="@null"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:textColor="#3087EA"
+        android:id="@+id/reset_edit_next"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginBottom="88dp"
+        android:background="@drawable/login_shape_a"
+        android:text="完成"
+        android:textSize="@dimen/sp_16" />
+</RelativeLayout>

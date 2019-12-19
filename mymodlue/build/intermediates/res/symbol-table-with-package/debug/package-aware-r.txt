@@ -1743,8 +1743,11 @@ id always
 id async
 id auto
 id auto_focus
+<<<<<<< HEAD
 id b1
 id b2
+=======
+>>>>>>> 70d7d5da70a94d2c1dc23814115c0cc4fd3c8abe
 id back
 id barrier
 id beginning
@@ -1771,12 +1774,16 @@ id bonus_sign_item_right6
 id bottom
 id bottom_container
 id bottom_progress
+<<<<<<< HEAD
 id but_affirm
 id but_finish
 id but_photo
 id but_shoot
 id buttonPanel
 id c2
+=======
+id buttonPanel
+>>>>>>> 70d7d5da70a94d2c1dc23814115c0cc4fd3c8abe
 id cancel_action
 id center
 id centerCrop
@@ -1799,8 +1806,11 @@ id coordinator
 id curr_time
 id custom
 id customPanel
+<<<<<<< HEAD
 id d1
 id d2
+=======
+>>>>>>> 70d7d5da70a94d2c1dc23814115c0cc4fd3c8abe
 id decode
 id decode_failed
 id decode_succeeded
@@ -1815,9 +1825,12 @@ id dialog_button
 id dimensions
 id direct
 id disableHome
+<<<<<<< HEAD
 id edit_again_new_password
 id edit_new_password
 id edit_old_password
+=======
+>>>>>>> 70d7d5da70a94d2c1dc23814115c0cc4fd3c8abe
 id edit_query
 id encode_failed
 id encode_succeeded
@@ -1828,7 +1841,10 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+<<<<<<< HEAD
 id fanhui
+=======
+>>>>>>> 70d7d5da70a94d2c1dc23814115c0cc4fd3c8abe
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1871,7 +1887,10 @@ id invite_button_code
 id invite_button_friend
 id invite_edit_code
 id invite_simpl_view
+<<<<<<< HEAD
 id invite_text_code
+=======
+>>>>>>> 70d7d5da70a94d2c1dc23814115c0cc4fd3c8abe
 id italic
 id item_touch_helper_previous_elevation
 id iv_battery
@@ -1886,7 +1905,10 @@ id launch_product_query
 id left
 id line1
 id line3
+<<<<<<< HEAD
 id linear_gone
+=======
+>>>>>>> 70d7d5da70a94d2c1dc23814115c0cc4fd3c8abe
 id linear_lay
 id linear_my
 id listMode
@@ -1934,6 +1956,7 @@ id my_button_task
 id my_button_video
 id my_button_wallet
 id my_image_simple
+<<<<<<< HEAD
 id my_information_Avatar
 id my_information_Avatar_a
 id my_information_Bankcard
@@ -1952,6 +1975,8 @@ id my_information_name
 id my_information_name_a
 id my_information_weixin
 id my_information_weixin_a
+=======
+>>>>>>> 70d7d5da70a94d2c1dc23814115c0cc4fd3c8abe
 id my_text_login
 id my_text_title
 id navigation_header_container
@@ -1997,7 +2022,10 @@ id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
 id screen
+<<<<<<< HEAD
 id screen_seekbar
+=======
+>>>>>>> 70d7d5da70a94d2c1dc23814115c0cc4fd3c8abe
 id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -2019,7 +2047,10 @@ id seekBar
 id select_dialog_listview
 id selected
 id setting_image_clear
+<<<<<<< HEAD
 id setting_image_layout
+=======
+>>>>>>> 70d7d5da70a94d2c1dc23814115c0cc4fd3c8abe
 id setting_image_login
 id setting_image_my
 id setting_image_name
@@ -2178,11 +2209,16 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_attention
+<<<<<<< HEAD
 layout activity_brightness
 layout activity_invite
 layout activity_main
 layout activity_message
 layout activity_pwd
+=======
+layout activity_invite
+layout activity_main
+>>>>>>> 70d7d5da70a94d2c1dc23814115c0cc4fd3c8abe
 layout activity_record
 layout activity_setting
 layout activity_suggest
@@ -2390,7 +2426,10 @@ mipmap orthopedics
 mipmap otolaryngology
 mipmap pediatrics
 mipmap psychiatry
+<<<<<<< HEAD
 mipmap qwe
+=======
+>>>>>>> 70d7d5da70a94d2c1dc23814115c0cc4fd3c8abe
 mipmap recorded_message
 mipmap register_icon_invitatiion_code_n
 mipmap register_icon_verification_code_n

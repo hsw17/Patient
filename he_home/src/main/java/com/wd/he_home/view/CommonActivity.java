@@ -2,6 +2,7 @@ package com.wd.he_home.view;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,6 +37,8 @@ public class CommonActivity extends BaseActivity<HomePresenter> implements HomeC
     private ViewPager commonVp;
     private TabLayout CommonTables;
 
+    private EditText editText;
+
     @Override
     protected int bindLayout() {
         return R.layout.activity_common;
@@ -48,6 +51,7 @@ public class CommonActivity extends BaseActivity<HomePresenter> implements HomeC
     @Override
     protected void initData() {
         super.initData();
+        editText = findViewById(R.id.comm_edit_shu);
         commonVp = findViewById(R.id.common_vp);
         CommonTables = findViewById(R.id.common_tables);
         strings = new ArrayList<>();
@@ -56,6 +60,12 @@ public class CommonActivity extends BaseActivity<HomePresenter> implements HomeC
         fragments = new ArrayList<>();
         fragments.add(new CommonSymptomsFragment());
         fragments.add(new CommonDrugsFragment());
+        editText.setFocusable(true);
+        editText.setFocusableInTouchMode(true);
+        editText.requestFocus();
+
+        editText.clearFocus();//失去焦点
+        editText.requestFocus();//获取焦点
         //设置适配器
         commonVp.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @NonNull

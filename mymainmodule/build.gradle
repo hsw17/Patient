@@ -11,6 +11,7 @@ android {
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
+
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [moduleName: project.getName()]
@@ -42,7 +43,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation project(path: ':mvplibrary')
-
     api rootProject.ext.dependencies["arouter-api"]
 
 }
