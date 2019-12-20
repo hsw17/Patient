@@ -101,6 +101,19 @@
         android:scaleType="center">
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
+
+    <TextView
+        android:id="@+id/tv_device_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_200"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:textColor="#666666"
+        android:textSize="30sp"
+        android:text="3万人\n已购买3万人\n已购买3万人\n已购买3万人\n已购买3万人\n已购买3万人\n已购买3万人\n已购买"
+        android:visibility="gone"/>
+
     <TextView
         android:id="@+id/buynumber"
         android:layout_width="wrap_content"
