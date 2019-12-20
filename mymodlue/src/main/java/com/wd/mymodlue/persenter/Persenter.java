@@ -431,7 +431,7 @@ public class Persenter extends BasePresenter<IViewContract.IView> implements IVi
     }
 
     @Override
-    public void onUpdateUserPwd(Map<String, Object> map, Map<String, Object> oap) {
+    public void onUpdateUserPwd(Map<String, Object> map, Map<String, String> oap) {
         iModel.onUpdateUserPwd(map, oap, new IViewContract.IModel.IModelCallback() {
             @Override
             public void onSuccess(Object obj) {
@@ -461,6 +461,155 @@ public class Persenter extends BasePresenter<IViewContract.IView> implements IVi
             @Override
             public void onFail(String str) {
                 getView().onFail(str);
+            }
+        });
+    }
+
+    @Override
+    public void onModifyNickName(Map<String, Object> map, String nickName) {
+        iModel.onModifyNickName(map, nickName, new IViewContract.IModel.IModelCallback() {
+            @Override
+            public void onSuccess(Object obj) {
+                getView().onSuccess(obj);
+
+            }
+
+            @Override
+            public void onSuccessOne(Object one) {
+
+            }
+
+            @Override
+            public void onSuccessTwo(Object two) {
+
+            }
+
+            @Override
+            public void onSuccessThree(Object three) {
+
+            }
+
+            @Override
+            public void onSuccessFour(Object four) {
+
+            }
+
+            @Override
+            public void onFail(String str) {
+                getView().onFail(str);
+
+            }
+        });
+    }
+
+    @Override
+    public void onUpdateUserSex(Map<String, Object> map, int sex) {
+        iModel.onUpdateUserSex(map, sex, new IViewContract.IModel.IModelCallback() {
+            @Override
+            public void onSuccess(Object obj) {
+                getView().onSuccess(obj);
+
+            }
+
+            @Override
+            public void onSuccessOne(Object one) {
+
+            }
+
+            @Override
+            public void onSuccessTwo(Object two) {
+
+            }
+
+            @Override
+            public void onSuccessThree(Object three) {
+
+            }
+
+            @Override
+            public void onSuccessFour(Object four) {
+
+            }
+
+            @Override
+            public void onFail(String str) {
+                getView().onFail(str);
+
+            }
+        });
+
+    }
+
+    @Override
+    public void onUserDoctorFollowList(Map<String, Object> map, Map<String, Object> oap) {
+        iModel.onUserDoctorFollowList(map, oap, new IViewContract.IModel.IModelCallback() {
+            @Override
+            public void onSuccess(Object obj) {
+                getView().onSuccess(obj);
+
+            }
+
+            @Override
+            public void onSuccessOne(Object one) {
+
+            }
+
+            @Override
+            public void onSuccessTwo(Object two) {
+
+            }
+
+            @Override
+            public void onSuccessThree(Object three) {
+
+            }
+
+            @Override
+            public void onSuccessFour(Object four) {
+
+            }
+
+            @Override
+            public void onFail(String str) {
+                getView().onFail(str);
+
+            }
+        });
+    }
+
+    @Override
+    public void onCancelFollow(Map<String, Object> map, int doctorId) {
+        iModel.onCancelFollow(map, doctorId, new IViewContract.IModel.IModelCallback() {
+            @Override
+            public void onSuccess(Object obj) {
+
+            }
+
+            @Override
+            public void onSuccessOne(Object one) {
+                getView().onSuccessOne(one);
+
+            }
+
+            @Override
+            public void onSuccessTwo(Object two) {
+
+            }
+
+            @Override
+            public void onSuccessThree(Object three) {
+
+            }
+
+            @Override
+            public void onSuccessFour(Object four) {
+
+            }
+
+            @Override
+            public void onFail(String str) {
+                getView().onFail(str);
+
             }
         });
     }

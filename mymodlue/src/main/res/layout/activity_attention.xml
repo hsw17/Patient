@@ -37,7 +37,14 @@
 
     </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/record_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/record_linear_layout"
         android:layout_marginTop="@dimen/dp_150"
         android:layout_gravity="center"

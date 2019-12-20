@@ -10,6 +10,7 @@ import com.wd.mymodlue.modle.bean.HealthTestBean;
 import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.modle.bean.UserCommentListBean;
 import com.wd.mymodlue.modle.bean.UserConsumptionRecordListBean;
+import com.wd.mymodlue.modle.bean.UserDoctorFollowBean;
 import com.wd.mymodlue.modle.bean.UserSignBean;
 import com.wd.mymodlue.modle.bean.UserTaskListBean;
 import com.wd.mymodlue.modle.bean.UserWalletBean;
@@ -230,13 +231,85 @@ public class IModel implements IViewContract.IModel {
     }
 
     @Override
-    public void onUpdateUserPwd(Map<String, Object> map, Map<String, Object> oap, IModelCallback iModelCallback) {
+    public void onUpdateUserPwd(Map<String, Object> map, Map<String, String> oap, IModelCallback iModelCallback) {
         RetrofitManager.getInstance().create(Api.class).onUpdateUserPwd(map,oap)
                 .compose(CommonSchedulers.io2main())
                 .subscribe(new CommonObserver<UserBean>() {
                     @Override
                     public void onNext(UserBean userBean) {
                         iModelCallback.onSuccess(userBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onModifyNickName(Map<String, Object> map, String nickName, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onModifyNickName(map,nickName)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UserBean>() {
+                    @Override
+                    public void onNext(UserBean userBean) {
+                        iModelCallback.onSuccess(userBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+                    }
+                });
+    }
+
+    @Override
+    public void onUpdateUserSex(Map<String, Object> map, int sex, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onUpdateUserSex(map,sex)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UserBean>() {
+                    @Override
+                    public void onNext(UserBean userBean) {
+                        iModelCallback.onSuccess(userBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+                    }
+                });
+    }
+
+    @Override
+    public void onUserDoctorFollowList(Map<String, Object> map, Map<String, Object> oap, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onUserDoctorFollowList(map,oap)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UserDoctorFollowBean>() {
+                    @Override
+                    public void onNext(UserDoctorFollowBean userDoctorFollowBean) {
+                        iModelCallback.onSuccess(userDoctorFollowBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onCancelFollow(Map<String, Object> map, int doctorId, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onCancelFollow(map,doctorId)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UserBean>() {
+                    @Override
+                    public void onNext(UserBean userBean) {
+                        iModelCallback.onSuccessOne(userBean);
 
                     }
 

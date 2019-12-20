@@ -35,7 +35,6 @@ public class PwdActivity extends BaseActivity<Persenter> implements IViewContrac
     EditText editAgainNewPassword;
     @BindView(R.id.but_affirm)
     Button butAffirm;
-    private Map<String, Object> oap;
     private Map<String, Object> map;
 
     @Override
@@ -61,7 +60,6 @@ public class PwdActivity extends BaseActivity<Persenter> implements IViewContrac
         map = new HashMap<>();
         map.put("userId", 434);
         map.put("sessionId", "1576494766784434");
-        oap = new HashMap<>();
 
         butAffirm.setOnClickListener(new CustomClickListener() {
             @Override
@@ -74,7 +72,7 @@ public class PwdActivity extends BaseActivity<Persenter> implements IViewContrac
 //                新密码
                 String newpwd = editNewPassword.getText().toString();
                 String Againpwd = editAgainNewPassword.getText().toString();
-                if (newpwd.equals("")&&Againpwd.equals("")) {
+                if (newpwd.equals("")&&Againpwd.equals("")&&oldpwd.equals("")) {
                     ToastUtils.show("密码不能为空");
                     return;
                 }
@@ -85,7 +83,7 @@ public class PwdActivity extends BaseActivity<Persenter> implements IViewContrac
                 try {
                     String s = RsaCoder.encryptByPublicKey(Againpwd);
                     String s1 = RsaCoder.encryptByPublicKey(oldpwd);
-                    Map<String,Object> map=new HashMap<>();
+                    Map<String,String> oap=new HashMap<>();
 
                     oap.put("oldPwd",s1);
                     oap.put("newPwd",s);

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-99:12
-INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-99:12
-INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-99:12
-INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-99:12
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-113:12
 MERGED from [:mvplibrary] H:\healthy\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-39:12
 MERGED from [com.alibaba:arouter-api:1.3.1] C:\Users\義\.gradle\caches\transforms-2\files-2.1\3d78d0454869b7a270dcd18998589d15\jetified-arouter-api-1.3.1\AndroidManifest.xml:2:1-10:12
 MERGED from [com.jcodecraeer:xrecyclerview:1.3.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\e99c17591f8901073b555cbd579009f5\jetified-xrecyclerview-1.3.2\AndroidManifest.xml:2:1-13:12
@@ -71,25 +71,25 @@ MERGED from [com.github.dueeeke.dkplayer:dkplayer-ui:2.5.5] C:\Users\義\.gradle\
 MERGED from [com.facebook.fresco:drawee:0.14.1] C:\Users\義\.gradle\caches\transforms-2\files-2.1\f6b464ac5349cb52872d40bc86032f67\jetified-drawee-0.14.1\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:fbcore:0.14.1] C:\Users\義\.gradle\caches\transforms-2\files-2.1\ca2a76fc7a9452e4070e71923f918c7b\fbcore-0.14.1\AndroidManifest.xml:2:1-9:12
 MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.8] C:\Users\義\.gradle\caches\transforms-2\files-2.1\aefa435079d3635d10f93acb84a51c01\ijkplayer-java-0.8.8\AndroidManifest.xml:2:1-9:12
-INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-99:12
-INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-99:12
-INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-99:12
+INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-113:12
 	package
 		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:3:5-30
 		INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml
 		INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-99:12
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-113:12
 		INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-99:12
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:1-113:12
 		INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:5:5-97:19
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:5:5-111:19
 MERGED from [com.jcodecraeer:xrecyclerview:1.3.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\e99c17591f8901073b555cbd579009f5\jetified-xrecyclerview-1.3.2\AndroidManifest.xml:11:5-20
 MERGED from [com.jcodecraeer:xrecyclerview:1.3.2] C:\Users\義\.gradle\caches\transforms-2\files-2.1\e99c17591f8901073b555cbd579009f5\jetified-xrecyclerview-1.3.2\AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\義\.gradle\caches\transforms-2\files-2.1\c7eb9cd3508ac3959447c14fd76c9fb9\material-1.0.0\AndroidManifest.xml:22:5-20
@@ -124,134 +124,154 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\義\.gradle\cac
 		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:12:9-40
 	android:name
 		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:6:9-51
-activity#com.wd.mymodlue.view.activity.PwdActivity
+activity#com.wd.mymodlue.view.activity.GenderActivity
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:13:9-19:20
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:13:19-60
-intent-filter#action:name:com.hl.PwdActivity+category:name:android.intent.category.DEFAULT
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:13:19-63
+intent-filter#action:name:com.hl.GenderActivity+category:name:android.intent.category.DEFAULT
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:14:13-18:29
-action#com.hl.PwdActivity
-ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:15:17-61
+action#com.hl.GenderActivity
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:15:17-64
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:15:25-58
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:15:25-61
 category#android.intent.category.DEFAULT
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:17:17-76
 	android:name
 		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:17:27-73
-activity#com.wd.mymodlue.view.activity.MessageActivity
+activity#com.wd.mymodlue.view.activity.NicknameActivity
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:20:9-26:20
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:20:19-64
-intent-filter#action:name:com.hl.MessageActivity+category:name:android.intent.category.DEFAULT
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:20:19-65
+intent-filter#action:name:com.hl.NicknameActivity+category:name:android.intent.category.DEFAULT
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:21:13-25:29
-action#com.hl.MessageActivity
-ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:22:17-65
+action#com.hl.NicknameActivity
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:22:17-66
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:22:25-62
-activity#com.wd.mymodlue.view.activity.BrightnessActivity
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:22:25-63
+activity#com.wd.mymodlue.view.activity.PwdActivity
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:27:9-33:20
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:27:19-67
-intent-filter#action:name:com.hl.BrightnessActivity+category:name:android.intent.category.DEFAULT
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:27:19-60
+intent-filter#action:name:com.hl.PwdActivity+category:name:android.intent.category.DEFAULT
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:28:13-32:29
-action#com.hl.BrightnessActivity
-ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:29:17-68
+action#com.hl.PwdActivity
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:29:17-61
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:29:25-65
-activity#com.wd.mymodlue.view.activity.INviteActivity
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:29:25-58
+activity#com.wd.mymodlue.view.activity.MessageActivity
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:34:9-40:20
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:34:19-63
-intent-filter#action:name:com.hl.INviteActivity+category:name:android.intent.category.DEFAULT
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:34:19-64
+intent-filter#action:name:com.hl.MessageActivity+category:name:android.intent.category.DEFAULT
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:35:13-39:29
-action#com.hl.INviteActivity
-ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:36:17-64
+action#com.hl.MessageActivity
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:36:17-65
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:36:25-61
-activity#com.wd.mymodlue.view.activity.SettingActivity
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:36:25-62
+activity#com.wd.mymodlue.view.activity.BrightnessActivity
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:41:9-47:20
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:41:19-64
-intent-filter#action:name:com.hl.SettingActivity+category:name:android.intent.category.DEFAULT
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:41:19-67
+intent-filter#action:name:com.hl.BrightnessActivity+category:name:android.intent.category.DEFAULT
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:42:13-46:29
-action#com.hl.SettingActivity
-ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:43:17-65
+action#com.hl.BrightnessActivity
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:43:17-68
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:43:25-62
-activity#com.wd.mymodlue.view.activity.SuggestActivity
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:43:25-65
+activity#com.wd.mymodlue.view.activity.INviteActivity
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:48:9-54:20
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:48:19-64
-intent-filter#action:name:com.hl.SuggestActivity+category:name:android.intent.category.DEFAULT
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:48:19-63
+intent-filter#action:name:com.hl.INviteActivity+category:name:android.intent.category.DEFAULT
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:49:13-53:29
-action#com.hl.SuggestActivity
-ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:50:17-65
+action#com.hl.INviteActivity
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:50:17-64
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:50:25-62
-activity#com.wd.mymodlue.view.activity.WalletActivity
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:50:25-61
+activity#com.wd.mymodlue.view.activity.SettingActivity
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:55:9-61:20
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:55:19-63
-intent-filter#action:name:com.hl.WalletActivity+category:name:android.intent.category.DEFAULT
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:55:19-64
+intent-filter#action:name:com.hl.SettingActivity+category:name:android.intent.category.DEFAULT
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:56:13-60:29
-action#com.hl.WalletActivity
-ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:57:17-64
+action#com.hl.SettingActivity
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:57:17-65
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:57:25-61
-activity#com.wd.mymodlue.view.activity.TaskActivity
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:57:25-62
+activity#com.wd.mymodlue.view.activity.SuggestActivity
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:62:9-68:20
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:62:19-61
-intent-filter#action:name:com.hl.TaskActivity+category:name:android.intent.category.DEFAULT
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:62:19-64
+intent-filter#action:name:com.hl.SuggestActivity+category:name:android.intent.category.DEFAULT
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:63:13-67:29
-action#com.hl.TaskActivity
-ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:64:17-62
+action#com.hl.SuggestActivity
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:64:17-65
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:64:25-59
-activity#com.wd.mymodlue.view.activity.VideoActivity
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:64:25-62
+activity#com.wd.mymodlue.view.activity.WalletActivity
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:69:9-75:20
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:69:19-62
-intent-filter#action:name:com.hl.VideoActivity+category:name:android.intent.category.DEFAULT
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:69:19-63
+intent-filter#action:name:com.hl.WalletActivity+category:name:android.intent.category.DEFAULT
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:70:13-74:29
-action#com.hl.VideoActivity
-ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:71:17-63
+action#com.hl.WalletActivity
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:71:17-64
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:71:25-60
-activity#com.wd.mymodlue.view.activity.AttentionActivity
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:71:25-61
+activity#com.wd.mymodlue.view.activity.TaskActivity
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:76:9-82:20
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:76:19-66
-intent-filter#action:name:com.hl.AttentionActivity+category:name:android.intent.category.DEFAULT
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:76:19-61
+intent-filter#action:name:com.hl.TaskActivity+category:name:android.intent.category.DEFAULT
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:77:13-81:29
-action#com.hl.AttentionActivity
-ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:78:17-67
+action#com.hl.TaskActivity
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:78:17-62
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:78:25-64
-activity#com.wd.mymodlue.view.activity.RecordActivity
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:78:25-59
+activity#com.wd.mymodlue.view.activity.VideoActivity
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:83:9-89:20
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:83:19-63
-intent-filter#action:name:com.hl.RecordActivity+category:name:android.intent.category.DEFAULT
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:83:19-62
+intent-filter#action:name:com.hl.VideoActivity+category:name:android.intent.category.DEFAULT
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:84:13-88:29
-action#com.hl.RecordActivity
-ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:85:17-64
+action#com.hl.VideoActivity
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:85:17-63
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:85:25-61
-activity#com.wd.mymodlue.view.activity.MainActivity
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:85:25-60
+activity#com.wd.mymodlue.view.activity.AttentionActivity
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:90:9-96:20
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:90:19-61
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:90:19-66
+intent-filter#action:name:com.hl.AttentionActivity+category:name:android.intent.category.DEFAULT
 ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:91:13-95:29
+action#com.hl.AttentionActivity
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:92:17-67
+	android:name
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:92:25-64
+activity#com.wd.mymodlue.view.activity.RecordActivity
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:97:9-103:20
+	android:name
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:97:19-63
+intent-filter#action:name:com.hl.RecordActivity+category:name:android.intent.category.DEFAULT
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:98:13-102:29
+action#com.hl.RecordActivity
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:99:17-64
+	android:name
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:99:25-61
+activity#com.wd.mymodlue.view.activity.MainActivity
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:104:9-110:20
+	android:name
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:104:19-61
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:105:13-109:29
 action#android.intent.action.MAIN
-ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:92:17-69
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:106:17-69
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:92:25-66
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:106:25-66
 category#android.intent.category.LAUNCHER
-ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:94:17-77
+ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:108:17-77
 	android:name
-		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:94:27-74
+		ADDED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml:108:27-74
 uses-sdk
 INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from H:\healthy\Patient\mymodlue\src\main\AndroidManifest.xml

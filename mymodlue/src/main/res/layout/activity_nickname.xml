@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.NicknameActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="60dp">
+        <ImageView
+            android:id="@+id/fanhui"
+            android:src="@mipmap/common_icon_back_black_n"
+            android:layout_marginLeft="30dp"
+            android:layout_width="20dp"
+            android:layout_centerVertical="true"
+            android:layout_height="20dp"/>
+        <TextView
+            android:text="设置昵称"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:background="@drawable/login_shape_h"
+            android:id="@+id/name_button_finish"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/sp_12"
+            android:text="完成"
+            android:layout_width="@dimen/dp_52"
+            android:layout_height="@dimen/dp_24"/>
+    </RelativeLayout>
+    <TextView
+        android:background="#D4D1D1"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        />
+    <RelativeLayout
+        android:id="@+id/my_information_Avatar_a"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <EditText
+            android:id="@+id/name_edit_text"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:hint="欧若拉"
+            android:textColorHint="#999999"
+            android:textColor="#333333"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/name_imag_delete"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/common_icon_close_n"
+            android:layout_alignParentRight="true"
+            android:layout_width="@dimen/dp_16"
+            android:layout_height="@dimen/dp_16"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="#D4D1D1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/name_visit_gone"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="@dimen/dp_134">
+
+            <TextView
+                android:background="@drawable/login_shape_a"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_12"
+                android:text="您的消息将会被跟改！"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_94"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40">
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/name_button_call_of"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="#ffffff"
+                    android:text="取消"
+                    android:background="@drawable/login_shape_j"
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="@dimen/dp_40"/>
+                <TextView
+                    android:gravity="center"
+
+                    android:id="@+id/name_button_affrim"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="#ffffff"
+                    android:background="@drawable/login_shape_d"
+                    android:text="确认"
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="@dimen/dp_40"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

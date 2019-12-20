@@ -1619,6 +1619,7 @@ drawable login_shape_d
 drawable login_shape_e
 drawable login_shape_f
 drawable login_shape_g
+drawable login_shape_h
 drawable login_shape_j
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
@@ -1771,6 +1772,9 @@ id bonus_sign_item_right6
 id bottom
 id bottom_container
 id bottom_progress
+id boy01
+id boy_check01
+id boy_check02
 id but_affirm
 id but_finish
 id but_photo
@@ -1799,7 +1803,6 @@ id coordinator
 id curr_time
 id custom
 id customPanel
-<<<<<<< HEAD
 id d1
 id d2
 id decode
@@ -1846,6 +1849,7 @@ id focusCrop
 id forever
 id fullscreen
 id ghost_view
+id gilr01
 id gone
 id group_divider
 id groups
@@ -1955,6 +1959,12 @@ id my_information_weixin
 id my_information_weixin_a
 id my_text_login
 id my_text_title
+id name_button_affrim
+id name_button_call_of
+id name_button_finish
+id name_edit_text
+id name_imag_delete
+id name_visit_gone
 id navigation_header_container
 id never
 id none
@@ -1986,6 +1996,7 @@ id radio
 id re_latiview
 id record_button_add
 id record_linear_layout
+id record_list_view
 id refresh_status_textview
 id rela_view
 id relay_layout
@@ -2180,9 +2191,11 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_attention
 layout activity_brightness
+layout activity_gender
 layout activity_invite
 layout activity_main
 layout activity_message
+layout activity_nickname
 layout activity_pwd
 layout activity_record
 layout activity_setting
@@ -2211,6 +2224,7 @@ layout dkplayer_layout_standard_controller
 layout dkplayer_layout_status_view
 layout fragment_capture
 layout item_area
+layout item_attention
 layout item_sugint
 layout item_wallot
 layout listview_footer

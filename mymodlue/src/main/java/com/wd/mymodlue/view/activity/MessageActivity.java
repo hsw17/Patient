@@ -191,6 +191,33 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
 
             }
         });
+//        修改昵称
+        myInformationNameA.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.NicknameActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//        修改性别
+        myInformationGenderA.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.GenderActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode,Intent data) {
@@ -236,6 +263,7 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
                 case 101:  //相机返回的数据（相机的返回码）
                     if (data!=null) {
                         try {
+
                             Bitmap bitmap = data.getParcelableExtra("data");
                             if (bitmap != null) {
                                 File file1 = saveBitmapFile(bitmap);

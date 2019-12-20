@@ -49,7 +49,16 @@ public interface IViewContract {
         //上传用户头像
         void onloadHeadPic(Map<String,Object> map, MultipartBody.Part image);
         //修改密码
-        void onUpdateUserPwd(Map<String,Object> map,Map<String,Object> oap);
+        void onUpdateUserPwd(Map<String,Object> map,Map<String,String> oap);
+        //修改用户昵称
+        void onModifyNickName(Map<String,Object> map,String nickName);
+        //修改用户性别
+        void onUpdateUserSex(Map<String,Object> map,int sex);
+        //查询用户关注医生列表
+        void onUserDoctorFollowList(Map<String,Object> map,Map<String,Object> oap);
+          //取消关注医生
+        void onCancelFollow(Map<String,Object> map,int doctorId);
+
     }
 
     //M层
@@ -79,7 +88,15 @@ public interface IViewContract {
 //        上传用户头像
         void onloadHeadPic(Map<String,Object> map,MultipartBody.Part image, IModelCallback iModelCallback);
 //       修改密码
-        void onUpdateUserPwd(Map<String,Object> map,Map<String,Object> oap, IModelCallback iModelCallback);
+        void onUpdateUserPwd(Map<String,Object> map,Map<String,String> oap, IModelCallback iModelCallback);
+//       修改用户昵称
+        void onModifyNickName(Map<String,Object> map,String nickName, IModelCallback iModelCallback);
+//       修改用户性别
+        void onUpdateUserSex(Map<String,Object> map,int sex, IModelCallback iModelCallback);
+//       查询用户关注医生列表
+        void onUserDoctorFollowList(Map<String,Object> map,Map<String,Object> oap, IModelCallback iModelCallback);
+//       取消关注医生
+        void onCancelFollow(Map<String,Object> map,int doctorId, IModelCallback iModelCallback);
 
         interface IModelCallback{
             void onSuccess(Object obj);

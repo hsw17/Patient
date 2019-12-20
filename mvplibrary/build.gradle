@@ -1,6 +1,20 @@
 apply plugin: 'com.android.library'
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('H:\\healthy\\Patient\\mvplibrary\\health.keystore')
+            keyAlias = 'health'
+            storePassword '123456'
+            keyPassword '123456'
+        }
+        release {
+            storeFile file('H:\\healthy\\Patient\\mvplibrary\\health.keystore')
+            storePassword '123456'
+            keyAlias = 'health'
+            keyPassword '123456'
+        }
+    }
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
 
@@ -62,6 +76,7 @@ dependencies {
     api rootProject.ext.dependencies["converter-scalars"]
     api rootProject.ext.dependencies["okhttp3"]
     api rootProject.ext.dependencies["gson"]
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 
     api rootProject.ext.dependencies["dagger2"]
     api rootProject.ext.dependencies["rxjava2"]

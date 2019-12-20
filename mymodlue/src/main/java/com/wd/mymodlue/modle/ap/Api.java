@@ -7,6 +7,7 @@ import com.wd.mymodlue.modle.bean.LoginBean;
 import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.modle.bean.UserCommentListBean;
 import com.wd.mymodlue.modle.bean.UserConsumptionRecordListBean;
+import com.wd.mymodlue.modle.bean.UserDoctorFollowBean;
 import com.wd.mymodlue.modle.bean.UserSignBean;
 import com.wd.mymodlue.modle.bean.UserTaskListBean;
 import com.wd.mymodlue.modle.bean.UserWalletBean;
@@ -15,7 +16,9 @@ import java.util.Map;
 
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
+import retrofit2.http.FieldMap;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.HeaderMap;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -82,7 +85,22 @@ public interface Api {
 
     //修改密码
     @PUT("health/user/verify/v1/updateUserPwd")
-    Observable<UserBean> onUpdateUserPwd(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+    Observable<UserBean> onUpdateUserPwd(@HeaderMap Map<String,Object> map, @QueryMap Map<String,String> oap);
 
+    //修改用户昵称
+    @PUT("health/user/verify/v1/modifyNickName")
+    Observable<UserBean> onModifyNickName(@HeaderMap Map<String,Object> map, @Query("nickName") String nickName);
+
+    //修改用户性别
+    @PUT("health/user/verify/v1/updateUserSex")
+    Observable<UserBean> onUpdateUserSex(@HeaderMap Map<String,Object> map, @Query("sex") int sex);
+
+    //查询用户关注医生列表
+    @GET("health/user/verify/v1/findUserDoctorFollowList")
+    Observable<UserDoctorFollowBean> onUserDoctorFollowList(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+    //取消关注医生
+    @GET("health/user/inquiry/verify/v1/cancelFollow")
+    Observable<UserBean> onCancelFollow(@HeaderMap Map<String,Object> map, @Query("doctorId") int doctorId);
 
 }

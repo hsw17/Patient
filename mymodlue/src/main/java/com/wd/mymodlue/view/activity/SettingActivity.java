@@ -104,17 +104,15 @@ public class SettingActivity extends BaseActivity<Persenter> implements IViewCon
             protected void onSingleClick() {
                 //                清除缓存
                 DataCleanManager.clearAllCache(SettingActivity.this);
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            Thread.sleep(100);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        settingTextClear.postInvalidate();
-                    }
-                }).start();
+                //        获取缓冲数量
+                try {
+//            获取文件大小
+                    String totalCacheSize = DataCleanManager.getTotalCacheSize(SettingActivity.this);
+                    settingTextClear.setText(totalCacheSize);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
             @Override
