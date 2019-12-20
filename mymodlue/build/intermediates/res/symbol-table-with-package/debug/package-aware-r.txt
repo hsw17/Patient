@@ -1738,6 +1738,8 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id age_seekbar
+id age_weight
 id alertTitle
 id all
 id always
@@ -1775,6 +1777,7 @@ id bottom_progress
 id boy01
 id boy_check01
 id boy_check02
+id btn_finish_sign
 id but_affirm
 id but_finish
 id but_photo
@@ -1870,6 +1873,8 @@ id id_tag_autolayout_padding
 id id_tag_autolayout_size
 id ifRoom
 id image
+id image_height
+id image_weight
 id info
 id invisible
 id invite_button_code
@@ -1889,11 +1894,15 @@ id largeLabel
 id last_refresh_time
 id launch_product_query
 id left
+id lin_list_tm
 id line1
 id line3
 id linear_gone
 id linear_lay
 id linear_my
+id linear_out
+id linear_tre
+id linear_two
 id listMode
 id list_item
 id listview_foot_more
@@ -2047,6 +2056,14 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id sign_seekbar
+id simpl_image_view
+id simpl_text_hpl
+id simpl_text_hzl
+id simpl_text_name
+id simpl_text_quxiao
+id simpl_text_yiyuang
+id simpl_text_zhiwei
 id smallLabel
 id snackbar_action
 id snackbar_text
@@ -2081,6 +2098,8 @@ id tag_unhandled_key_listeners
 id task_linear_run
 id text
 id text2
+id text2_progress
+id text3_progress
 id textSize
 id textSpacerNoButtons
 id textSpacerNoTitle
@@ -2088,6 +2107,7 @@ id textStart
 id text_hb
 id text_input_password_toggle
 id text_name
+id text_progress
 id text_view
 id textinput_counter
 id textinput_error
@@ -2131,6 +2151,7 @@ id wallet_text_jian
 id wallet_text_name
 id wallet_text_time
 id wallet_text_title
+id we_seekbar
 id width
 id withText
 id wrap
@@ -2191,7 +2212,9 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_attention
 layout activity_brightness
+layout activity_feature
 layout activity_gender
+layout activity_inquiry
 layout activity_invite
 layout activity_main
 layout activity_message

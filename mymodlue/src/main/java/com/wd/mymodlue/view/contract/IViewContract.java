@@ -56,8 +56,17 @@ public interface IViewContract {
         void onUpdateUserSex(Map<String,Object> map,int sex);
         //查询用户关注医生列表
         void onUserDoctorFollowList(Map<String,Object> map,Map<String,Object> oap);
-          //取消关注医生
+        //取消关注医生
         void onCancelFollow(Map<String,Object> map,int doctorId);
+        //完善用户信息
+        void onPerfectUserInfo(Map<String,Object> map,Map<String,Object> oap);
+
+        //用户查看当前问诊
+        void onInquiryRecord(Map<String,Object> map);
+
+        //结束问诊
+        void onEndInquiry(Map<String,Object> map,int recordId);
+
 
     }
 
@@ -97,6 +106,15 @@ public interface IViewContract {
         void onUserDoctorFollowList(Map<String,Object> map,Map<String,Object> oap, IModelCallback iModelCallback);
 //       取消关注医生
         void onCancelFollow(Map<String,Object> map,int doctorId, IModelCallback iModelCallback);
+
+//       完善用户信息
+        void onPerfectUserInfo(Map<String,Object> map,Map<String,Object> oap, IModelCallback iModelCallback);
+
+//       用户查看当前问诊
+        void onInquiryRecord(Map<String,Object> map, IModelCallback iModelCallback);
+
+//       结束问诊
+        void onEndInquiry(Map<String,Object> map,int recordId, IModelCallback iModelCallback);
 
         interface IModelCallback{
             void onSuccess(Object obj);

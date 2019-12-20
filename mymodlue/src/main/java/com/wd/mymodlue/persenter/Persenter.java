@@ -613,4 +613,115 @@ public class Persenter extends BasePresenter<IViewContract.IView> implements IVi
             }
         });
     }
+
+    @Override
+    public void onPerfectUserInfo(Map<String, Object> map, Map<String, Object> oap) {
+        iModel.onPerfectUserInfo(map, oap, new IViewContract.IModel.IModelCallback() {
+            @Override
+            public void onSuccess(Object obj) {
+                getView().onSuccess(obj);
+
+            }
+
+            @Override
+            public void onSuccessOne(Object one) {
+
+            }
+
+            @Override
+            public void onSuccessTwo(Object two) {
+
+            }
+
+            @Override
+            public void onSuccessThree(Object three) {
+
+            }
+
+            @Override
+            public void onSuccessFour(Object four) {
+
+            }
+
+            @Override
+            public void onFail(String str) {
+                getView().onFail(str);
+
+            }
+        });
+    }
+
+    @Override
+    public void onInquiryRecord(Map<String, Object> map) {
+        iModel.onInquiryRecord(map, new IViewContract.IModel.IModelCallback() {
+            @Override
+            public void onSuccess(Object obj) {
+                getView().onSuccess(obj);
+
+            }
+
+            @Override
+            public void onSuccessOne(Object one) {
+
+            }
+
+            @Override
+            public void onSuccessTwo(Object two) {
+
+            }
+
+            @Override
+            public void onSuccessThree(Object three) {
+
+            }
+
+            @Override
+            public void onSuccessFour(Object four) {
+
+            }
+
+            @Override
+            public void onFail(String str) {
+                getView().onFail(str);
+
+            }
+        });
+    }
+
+    @Override
+    public void onEndInquiry(Map<String, Object> map, int recordId) {
+        iModel.onEndInquiry(map, recordId, new IViewContract.IModel.IModelCallback() {
+            @Override
+            public void onSuccess(Object obj) {
+
+            }
+
+            @Override
+            public void onSuccessOne(Object one) {
+                getView().onSuccessOne(one);
+
+            }
+
+            @Override
+            public void onSuccessTwo(Object two) {
+
+            }
+
+            @Override
+            public void onSuccessThree(Object three) {
+
+            }
+
+            @Override
+            public void onSuccessFour(Object four) {
+
+            }
+
+            @Override
+            public void onFail(String str) {
+                getView().onFail(str);
+
+            }
+        });
+    }
 }

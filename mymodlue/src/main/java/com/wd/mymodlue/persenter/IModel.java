@@ -5,6 +5,8 @@ import com.bwie.mvplibrary.utils.CommonObserver;
 import com.bwie.mvplibrary.utils.CommonSchedulers;
 import com.bwie.mvplibrary.utils.RetrofitManager;
 import com.wd.mymodlue.modle.ap.Api;
+import com.wd.mymodlue.modle.bean.CurrencyNoticeListBean;
+import com.wd.mymodlue.modle.bean.CurrentInquiryRecordBean;
 import com.wd.mymodlue.modle.bean.HeadPicBean;
 import com.wd.mymodlue.modle.bean.HealthTestBean;
 import com.wd.mymodlue.modle.bean.UserBean;
@@ -305,6 +307,62 @@ public class IModel implements IViewContract.IModel {
     @Override
     public void onCancelFollow(Map<String, Object> map, int doctorId, IModelCallback iModelCallback) {
         RetrofitManager.getInstance().create(Api.class).onCancelFollow(map,doctorId)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UserBean>() {
+                    @Override
+                    public void onNext(UserBean userBean) {
+                        iModelCallback.onSuccessOne(userBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onPerfectUserInfo(Map<String, Object> map, Map<String, Object> oap, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onPerfectUserInfo(map,oap)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UserBean>() {
+                    @Override
+                    public void onNext(UserBean userBean) {
+                        iModelCallback.onSuccess(userBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onInquiryRecord(Map<String, Object> map, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onInquiryRecord(map)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<CurrentInquiryRecordBean>() {
+                    @Override
+                    public void onNext(CurrentInquiryRecordBean currentInquiryRecordBean) {
+                        iModelCallback.onSuccess(currentInquiryRecordBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+                });
+    }
+
+    @Override
+    public void onEndInquiry(Map<String, Object> map, int recordId, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onEndInquiry(map,recordId)
                 .compose(CommonSchedulers.io2main())
                 .subscribe(new CommonObserver<UserBean>() {
                     @Override

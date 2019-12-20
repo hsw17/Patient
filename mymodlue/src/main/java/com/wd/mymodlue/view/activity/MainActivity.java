@@ -94,8 +94,11 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
         String headPic = (String) login.getSharedPreference("headPic", "");
 
 //        设置头像名字
-        myImageSimple.setImageURI(headPic);
-        myTextLogin.setText(nickName);
+        if (id!=0){
+            myImageSimple.setImageURI(headPic);
+            myTextLogin.setText(nickName);
+        }
+
         map = new HashMap<>();
         map.put("userId",434);
         map.put("sessionId","1576494766784434");
@@ -208,6 +211,19 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
             @Override
             protected void onSingleClick() {
                 Intent intent=new Intent("com.hl.SettingActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//        当前问诊
+        myButtonInquiry.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.InquiryActivity");
                 startActivity(intent);
             }
 

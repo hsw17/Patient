@@ -37,25 +37,34 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/record_linear_layout"
-        android:layout_marginTop="@dimen/dp_150"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
 
-        <ImageView
-            android:background="@mipmap/no_message"
-            android:layout_width="@dimen/dp_126"
-            android:layout_height="@dimen/dp_135"/>
-        <TextView
-            android:textStyle="bold"
-            android:gravity="center"
-            android:text="您还没有购买过视频!"
-            android:layout_marginTop="@dimen/dp_30"
-            android:textSize="@dimen/sp_14"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/record_linear_layout"
+            android:layout_marginTop="@dimen/dp_150"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:background="@mipmap/no_message"
+                android:layout_width="@dimen/dp_126"
+                android:layout_height="@dimen/dp_135"/>
+            <TextView
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="您还没有购买过视频!"
+                android:layout_marginTop="@dimen/dp_30"
+                android:textSize="@dimen/sp_14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>

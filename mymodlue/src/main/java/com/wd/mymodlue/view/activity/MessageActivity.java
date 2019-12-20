@@ -217,7 +217,19 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
 
             }
         });
+//      体征
+        myInformationSign.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.FeatureActivity");
+                startActivity(intent);
+            }
 
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode,Intent data) {

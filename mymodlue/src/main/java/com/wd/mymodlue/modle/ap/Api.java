@@ -1,6 +1,8 @@
 package com.wd.mymodlue.modle.ap;
 
 
+import com.wd.mymodlue.modle.bean.CurrencyNoticeListBean;
+import com.wd.mymodlue.modle.bean.CurrentInquiryRecordBean;
 import com.wd.mymodlue.modle.bean.HeadPicBean;
 import com.wd.mymodlue.modle.bean.HealthTestBean;
 import com.wd.mymodlue.modle.bean.LoginBean;
@@ -102,5 +104,17 @@ public interface Api {
     //取消关注医生
     @GET("health/user/inquiry/verify/v1/cancelFollow")
     Observable<UserBean> onCancelFollow(@HeaderMap Map<String,Object> map, @Query("doctorId") int doctorId);
+
+    //完善用户信息
+    @PUT("health/user/verify/v1/perfectUserInfo")
+    Observable<UserBean> onPerfectUserInfo(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+    //用户查看当前问诊
+    @GET("health/user/inquiry/verify/v1/findCurrentInquiryRecord")
+    Observable<CurrentInquiryRecordBean> onInquiryRecord(@HeaderMap Map<String,Object> map);
+
+    //结束问诊
+    @PUT("health/user/inquiry/verify/v1/endInquiry")
+    Observable<UserBean> onEndInquiry(@HeaderMap Map<String,Object> map,@Query("recordId") int recordId);
 
 }

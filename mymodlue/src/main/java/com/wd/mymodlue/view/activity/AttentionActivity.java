@@ -61,7 +61,10 @@ public class AttentionActivity extends BaseActivity<Persenter> implements IViewC
         map = new HashMap<>();
         map.put("userId", 434);
         map.put("sessionId", "1576494766784434");
-
+        Map<String,Object> oap = new HashMap<>();
+        oap.put("page", 1);
+        oap.put("count", 10);
+        presenter.onUserDoctorFollowList(map,oap);
 
 //        返回
         headDetailsBack.setOnClickListener(new CustomClickListener() {
@@ -79,26 +82,33 @@ public class AttentionActivity extends BaseActivity<Persenter> implements IViewC
     @Override
     public void onSuccess(Object obj) {
         UserDoctorFollowBean userDoctorFollowBean= (UserDoctorFollowBean) obj;
-        List<UserDoctorFollowBean.ResultBean> result = userDoctorFollowBean.result;
-        if (result.size()==0){
-            recordLinearLayout.setVisibility(View.VISIBLE);
-        }else{
-            recordLinearLayout.setVisibility(View.GONE);
-            AttenttionAdapter attenttionAdapter=new AttenttionAdapter(result);
-            recordListView.setLayoutManager(new LinearLayoutManager(this));
-            recordListView.setAdapter(attenttionAdapter);
-            attenttionAdapter.setAreaView(new AttenttionAdapter.AreaView() {
-                @Override
-                public void onCurress(int id) {
-                    presenter.onCancelFollow(map,id);
-                }
+        if ("0000".equals(userDoctorFollowBean.status)) {
 
-                @Override
-                public void onCurre(int id) {
+            List<UserDoctorFollowBean.ResultBean> result = userDoctorFollowBean.result;
+            if (result.size()==0){
+                recordLinearLayout.setVisibility(View.VISIBLE);
+                return;
+            }else{
+                recordLinearLayout.setVisibility(View.GONE);
+                AttenttionAdapter attenttionAdapter=new AttenttionAdapter(result);
+                recordListView.setLayoutManager(new LinearLayoutManager(this));
+                recordListView.setAdapter(attenttionAdapter);
+                attenttionAdapter.setAreaView(new AttenttionAdapter.AreaView() {
+                    @Override
+                    public void onCurress(int id) {
+                        presenter.onCancelFollow(map,id);
+                    }
 
-                }
-            });
+                    @Override
+                    public void onCurre(int id) {
+
+                    }
+                });
+            }
+        }else {
+            ToastUtils.show(userDoctorFollowBean.message);
         }
+
     }
 
     @Override
