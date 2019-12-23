@@ -1,6 +1,7 @@
 package com.wd.mymodlue.view.activity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,6 +42,7 @@ public class GenderActivity extends BaseActivity<Persenter> implements IViewCont
     CheckBox gilr01;
     @BindView(R2.id.boy_check02)
     ImageView boyCheck02;
+    private SPUtils login;
 
 
     @Override
@@ -60,7 +62,7 @@ public class GenderActivity extends BaseActivity<Persenter> implements IViewCont
         ButterKnife.bind(this);
         ToastUtils.init(this);
 //        获取存储内容
-        SPUtils login = new SPUtils(this, "login");
+        login = new SPUtils(this, "login");
         int id = (int) login.getSharedPreference("id", 0);
         String sessionId = (String) login.getSharedPreference("sessionId", "");
         Map<String, Object> map = new HashMap<>();
@@ -71,7 +73,6 @@ public class GenderActivity extends BaseActivity<Persenter> implements IViewCont
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked==true){
                     sex=1;
-
                     boyCheck01.setVisibility(View.VISIBLE);
                     boyCheck02.setVisibility(View.GONE);
                 }else {
@@ -84,7 +85,6 @@ public class GenderActivity extends BaseActivity<Persenter> implements IViewCont
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked==true){
                     sex=2;
-
                     boyCheck02.setVisibility(View.VISIBLE);
                     boyCheck01.setVisibility(View.GONE);
                 }else {
@@ -97,6 +97,8 @@ public class GenderActivity extends BaseActivity<Persenter> implements IViewCont
         fanhui.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.MessageActivity");
+                startActivity(intent);
                 finish();
 
             }
@@ -129,6 +131,9 @@ public class GenderActivity extends BaseActivity<Persenter> implements IViewCont
         UserBean userBean = (UserBean) obj;
         if ("0000".equals(userBean.status)) {
             ToastUtils.show(userBean.message);
+            login.SharedPreferenceput("sex", sex);
+            Intent intent=new Intent("com.hl.MessageActivity");
+            startActivity(intent);
             finish();
         } else {
             ToastUtils.show(userBean.message);

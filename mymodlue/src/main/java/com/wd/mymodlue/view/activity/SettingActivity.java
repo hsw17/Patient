@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.DataCleanManager;
+import com.bwie.mvplibrary.utils.SPUtils;
+import com.bwie.mvplibrary.utils.ToastUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wd.mymodlue.R;
 import com.wd.mymodlue.R2;
@@ -55,7 +57,11 @@ public class SettingActivity extends BaseActivity<Persenter> implements IViewCon
     RelativeLayout settingImageLogin;
     @BindView(R2.id.setting_image_layout)
     RelativeLayout settingImageLayout;
-
+    private int id;
+    private String sessionId;
+    private SPUtils login;
+    private String nickName;
+    private String headPic;
     @Override
     protected int bindLayout() {
         return R.layout.activity_setting;
@@ -73,7 +79,31 @@ public class SettingActivity extends BaseActivity<Persenter> implements IViewCon
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
-//        个人信息
+        ToastUtils.init(this);
+        login = new SPUtils(this, "login");
+        id = (int) login.getSharedPreference("id", 0);
+        sessionId = (String) login.getSharedPreference("sessionId", "");
+        nickName = (String) login.getSharedPreference("nickName", "");
+        headPic = (String) login.getSharedPreference("headPic", "");
+          if (id!=0){
+            settingImageView.setImageURI(headPic);
+            settingTextName.setText(nickName);
+         }
+//          返回
+        headDetailsBack.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent(SettingActivity.this,My_ModuleMainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+        //        个人信息
         settingImageLayout.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {

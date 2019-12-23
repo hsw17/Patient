@@ -6,6 +6,13 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".view.activity.TaskActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_marginTop="@dimen/dp_20"
@@ -777,4 +784,7 @@
         android:layout_height="wrap_content">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

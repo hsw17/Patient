@@ -1,6 +1,7 @@
 package com.wd.mymodlue.view.activity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -71,6 +72,8 @@ public class AttentionActivity extends BaseActivity<Persenter> implements IViewC
         headDetailsBack.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
+                Intent intent=new Intent(AttentionActivity.this,My_ModuleMainActivity.class);
+                startActivity(intent);
                 finish();
             }
 

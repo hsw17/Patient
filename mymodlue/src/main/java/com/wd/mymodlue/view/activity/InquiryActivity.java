@@ -99,7 +99,7 @@ public class InquiryActivity extends BaseActivity<Persenter> implements IViewCon
         CurrentInquiryRecordBean currentInquiryRecordBean= (CurrentInquiryRecordBean) obj;
         if ("0000".equals(currentInquiryRecordBean.status)) {
             CurrentInquiryRecordBean.ResultBean result = currentInquiryRecordBean.result;
-            if (result.equals(null)){
+            if (result==null){
                 relaView.setVisibility(View.GONE);
                 recordLinearLayout.setVisibility(View.VISIBLE);
                 return;

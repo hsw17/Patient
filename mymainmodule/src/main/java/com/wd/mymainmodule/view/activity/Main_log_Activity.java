@@ -84,6 +84,7 @@ public class Main_log_Activity extends BaseActivity<Persenter> implements IViewC
         email = new SPUtils(this, "email");
         String email1 = (String) email.getSharedPreference("email", null);
         String pwd = (String) email.getSharedPreference("pwd", null);
+
         if (email1!=null){
             //        设置默认
             loginEditEmail.setText(email1);

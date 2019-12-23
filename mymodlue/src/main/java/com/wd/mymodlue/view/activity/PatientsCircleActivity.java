@@ -3,46 +3,44 @@ package com.wd.mymodlue.view.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
-import com.wd.mymainmodule.R2;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class VideoActivity extends BaseActivity<Persenter> implements IViewContract.IView {
+public class PatientsCircleActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
 
-    @BindView(R2.id.head_details_back)
-    ImageView headDetailsBack;
-    @BindView(com.wd.mymodlue.R2.id.record_linear_layout)
-    LinearLayout recordLinearLayout;
+    @BindView(R2.id.fanhui)
+    ImageView fanhui;
 
     @Override
     protected int bindLayout() {
-        return R.layout.activity_video;
+        return R.layout.activity_patients_circle;
     }
 
     @Override
     protected Persenter setPresenter() {
         return new Persenter();
     }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
-        headDetailsBack.setOnClickListener(new CustomClickListener() {
+
+
+//        返回
+        fanhui.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
-                Intent intent=new Intent(VideoActivity.this,My_ModuleMainActivity.class);
+                Intent intent = new Intent(PatientsCircleActivity.this,My_ModuleMainActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -53,7 +51,6 @@ public class VideoActivity extends BaseActivity<Persenter> implements IViewContr
             }
         });
     }
-
     @Override
     public void onSuccess(Object obj) {
 
@@ -83,5 +80,6 @@ public class VideoActivity extends BaseActivity<Persenter> implements IViewContr
     public void onFail(String str) {
 
     }
+
 
 }

@@ -1,5 +1,6 @@
 package com.wd.mymodlue.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -72,6 +73,8 @@ public class SuggestActivity extends BaseActivity<Persenter> implements IViewCon
         headDetailsBack.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
+                Intent intent=new Intent(SuggestActivity.this,My_ModuleMainActivity.class);
+                startActivity(intent);
                 finish();
             }
 

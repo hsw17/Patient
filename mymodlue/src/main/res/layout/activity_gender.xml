@@ -51,41 +51,41 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_120"
         >
         <CheckBox
             android:button="@null"
             android:id="@+id/boy01"
             android:background="@mipmap/boy"
-            android:layout_width="120dp"
-            android:layout_height="120dp"/>
-        <ImageView
-            android:id="@+id/boy_check01"
-            android:layout_width="91dp"
-            android:layout_height="21dp"
-            android:visibility="gone"
-            android:src="@mipmap/selected"
-            android:layout_below="@id/boy01"
-            android:layout_marginTop="-20dp"
-            android:layout_marginLeft="15dp"
-            />
-        <CheckBox
-            android:id="@+id/gilr01"
-            android:button="@null"
-            android:layout_toRightOf="@id/boy01"
-            android:layout_marginLeft="@dimen/dp_80"
-            android:background="@mipmap/girl"
             android:layout_width="@dimen/dp_120"
             android:layout_height="@dimen/dp_120"/>
+
+        <ImageView
+            android:id="@+id/boy_check01"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="21dp"
+            android:visibility="gone"
+            android:layout_below="@id/boy01"
+            android:layout_marginTop="-24dp"
+            android:src="@mipmap/selected" />
+
+        <CheckBox
+            android:id="@+id/gilr01"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_120"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/girl"
+            android:button="@null" />
+
         <ImageView
             android:id="@+id/boy_check02"
-            android:layout_width="@dimen/dp_91"
-            android:layout_height="@dimen/dp_21"
             android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_21"
             android:src="@mipmap/selected"
             android:layout_below="@id/gilr01"
             android:layout_marginTop="-20dp"
-            android:layout_marginLeft="@dimen/dp_215"
             />
     </RelativeLayout>
     <LinearLayout

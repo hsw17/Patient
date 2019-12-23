@@ -1,5 +1,6 @@
 package com.wd.mymodlue.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -104,6 +105,19 @@ public class TaskActivity extends BaseActivity<Persenter> implements IViewContra
         presenter.doFindUserSign(map);
         presenter.doHetherSignToday(map);
         presenter.doFindUserTaskList(map);
+        headDetailsBack.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent(TaskActivity.this,My_ModuleMainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
     }
 
     @Override
@@ -308,6 +322,26 @@ public class TaskActivity extends BaseActivity<Persenter> implements IViewContra
                 bonusSignItemLeft6.setBackgroundResource(R.color.color_blue);
                 bonusSignItemLeft7.setBackgroundResource(R.color.color_gray);
             } else if (userSignBean.result == 7) {
+                bonusSignItemDay.setBackgroundResource(R.drawable.border_sign_day_checkin);
+                bonusSignItemDay2.setBackgroundResource(R.drawable.border_sign_day_checkin);
+                bonusSignItemDay3.setBackgroundResource(R.drawable.border_sign_day_checkin);
+                bonusSignItemDay4.setBackgroundResource(R.drawable.border_sign_day_checkin);
+                bonusSignItemDay5.setBackgroundResource(R.drawable.border_sign_day_checkin);
+                bonusSignItemDay6.setBackgroundResource(R.drawable.border_sign_day_checkin);
+                bonusSignItemDay7.setBackgroundResource(R.mipmap.my_task_select);
+                bonusSignItemRight.setBackgroundResource(R.color.color_blue);
+                bonusSignItemRight2.setBackgroundResource(R.color.color_blue);
+                bonusSignItemRight3.setBackgroundResource(R.color.color_blue);
+                bonusSignItemRight4.setBackgroundResource(R.color.color_blue);
+                bonusSignItemRight5.setBackgroundResource(R.color.color_blue);
+                bonusSignItemRight6.setBackgroundResource(R.color.color_blue);
+                bonusSignItemLeft2.setBackgroundResource(R.color.color_blue);
+                bonusSignItemLeft3.setBackgroundResource(R.color.color_blue);
+                bonusSignItemLeft4.setBackgroundResource(R.color.color_blue);
+                bonusSignItemLeft5.setBackgroundResource(R.color.color_blue);
+                bonusSignItemLeft6.setBackgroundResource(R.color.color_blue);
+                bonusSignItemLeft7.setBackgroundResource(R.color.color_blue);
+            }else {
                 bonusSignItemDay.setBackgroundResource(R.drawable.border_sign_day_checkin);
                 bonusSignItemDay2.setBackgroundResource(R.drawable.border_sign_day_checkin);
                 bonusSignItemDay3.setBackgroundResource(R.drawable.border_sign_day_checkin);

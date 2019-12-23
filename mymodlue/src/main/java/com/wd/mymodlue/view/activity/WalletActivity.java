@@ -1,5 +1,6 @@
 package com.wd.mymodlue.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -78,6 +79,9 @@ public class WalletActivity extends BaseActivity<Persenter> implements IViewCont
         headDetailsBack.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
+                Intent intent=new Intent(WalletActivity.this,My_ModuleMainActivity.class);
+                startActivity(intent);
+                finish();
                 finish();
             }
 

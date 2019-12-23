@@ -2,6 +2,7 @@ package com.wd.mymodlue.view.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -46,6 +47,8 @@ public class NicknameActivity extends BaseActivity<Persenter> implements IViewCo
     TextView nameButtonAffrim;
     @BindView(R2.id.name_visit_gone)
     LinearLayout nameVisitGone;
+    private SPUtils login;
+    private String s;
 
     @Override
     protected int bindLayout() {
@@ -64,7 +67,7 @@ public class NicknameActivity extends BaseActivity<Persenter> implements IViewCo
         ButterKnife.bind(this);
         ToastUtils.init(this);
 //        获取存储内容
-        SPUtils login = new SPUtils(this, "login");
+        login = new SPUtils(this, "login");
         int id = (int) login.getSharedPreference("id", 0);
         String sessionId = (String) login.getSharedPreference("sessionId", "");
         Map<String, Object> map = new HashMap<>();
@@ -99,7 +102,7 @@ public class NicknameActivity extends BaseActivity<Persenter> implements IViewCo
         nameButtonAffrim.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
-                String s = nameEditText.getText().toString();
+                s = nameEditText.getText().toString();
                 if (s.equals(null)) {
                     ToastUtils.show("不能为空");
                     return;
@@ -129,6 +132,8 @@ public class NicknameActivity extends BaseActivity<Persenter> implements IViewCo
         fanhui.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.MessageActivity");
+                startActivity(intent);
                 finish();
             }
 
@@ -144,6 +149,9 @@ public class NicknameActivity extends BaseActivity<Persenter> implements IViewCo
         UserBean userBean = (UserBean) obj;
         if ("0000".equals(userBean.status)) {
             ToastUtils.show(userBean.message);
+            login.SharedPreferenceput("nickName",s);
+            Intent intent=new Intent("com.hl.MessageActivity");
+            startActivity(intent);
             finish();
         } else {
             ToastUtils.show(userBean.message);

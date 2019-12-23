@@ -1,6 +1,7 @@
 package com.wd.mymodlue.view.activity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -53,6 +54,7 @@ public class FeatureActivity extends BaseActivity<Persenter> implements IViewCon
     private int height;
     private int weight;
     private int age;
+    private SPUtils login;
 
     @Override
     protected int bindLayout() {
@@ -71,7 +73,7 @@ public class FeatureActivity extends BaseActivity<Persenter> implements IViewCon
         ButterKnife.bind(this);
         ToastUtils.init(this);
 //        获取存储内容
-        SPUtils login = new SPUtils(this, "login");
+        login = new SPUtils(this, "login");
         int id = (int) login.getSharedPreference("id", 0);
         String sessionId = (String) login.getSharedPreference("sessionId", "");
         Map<String, Object> map = new HashMap<>();
@@ -81,13 +83,25 @@ public class FeatureActivity extends BaseActivity<Persenter> implements IViewCon
         oap.put("age", age);
         oap.put("height", height);
         oap.put("weight", weight);
+
+        fanhui.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.MessageActivity");
+                startActivity(intent);
+                finish();
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
         btnFinishSign.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
 
                 presenter.onPerfectUserInfo(map,oap);
-
-                finish();
             }
 
             @Override
@@ -173,6 +187,11 @@ public class FeatureActivity extends BaseActivity<Persenter> implements IViewCon
         UserBean userBean = (UserBean) obj;
         if ("0000".equals(userBean.status)) {
             ToastUtils.show(userBean.message);
+            login.SharedPreferenceput("age", age);
+            login.SharedPreferenceput("height", height);
+            login.SharedPreferenceput("weight", weight);
+            Intent intent=new Intent("com.hl.MessageActivity");
+            startActivity(intent);
             finish();
         } else {
             ToastUtils.show(userBean.message);

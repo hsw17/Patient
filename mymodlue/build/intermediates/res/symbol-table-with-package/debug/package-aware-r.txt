@@ -1993,6 +1993,7 @@ id my_information_age
 id my_information_bodyweight
 id my_information_gender
 id my_information_gender_a
+id my_information_genderl
 id my_information_height
 id my_information_mailbox
 id my_information_mailbox_a
@@ -2281,6 +2282,7 @@ layout activity_main_main
 layout activity_message
 layout activity_mymodlue_main
 layout activity_nickname
+layout activity_patients_circle
 layout activity_pwd
 layout activity_record
 layout activity_register_module

@@ -137,14 +137,24 @@
                 android:text="性别"
                 android:textColor="#333333"
                 android:textSize="14sp" />
-
-            <ImageView
-                android:id="@+id/my_information_gender"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+            <RelativeLayout
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@id/b1"
-                android:src="@mipmap/common_icon_girl_n" />
+                android:layout_width="24dp"
+                android:layout_height="24dp">
+                <ImageView
+                    android:id="@+id/my_information_gender"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@mipmap/common_icon_girl_n" />
+                <ImageView
+                    android:id="@+id/my_information_genderl"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:visibility="gone"
+                    android:src="@mipmap/common_icon_boy_n" />
+            </RelativeLayout>
+
 
             <ImageView
                 android:id="@+id/b1"
