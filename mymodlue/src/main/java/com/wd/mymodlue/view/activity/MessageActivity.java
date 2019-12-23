@@ -19,9 +19,11 @@ import android.widget.TextView;
 import com.bwie.mvplibrary.app.App;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
+import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.HeadPicBean;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
@@ -45,64 +47,66 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
 
     //需要的权限数组 读/写/相机
     private static String[] PERMISSIONS_STORAGE = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
-    @BindView(R.id.fanhui)
+    @BindView(R2.id.fanhui)
     ImageView fanhui;
-    @BindView(R.id.my_information_Avatar)
+    @BindView(R2.id.my_information_Avatar)
     SimpleDraweeView myInformationAvatar;
-    @BindView(R.id.my_information_Avatar_a)
+    @BindView(R2.id.my_information_Avatar_a)
     RelativeLayout myInformationAvatarA;
-    @BindView(R.id.my_information_name)
+    @BindView(R2.id.my_information_name)
     TextView myInformationName;
-    @BindView(R.id.a2)
+    @BindView(R2.id.a2)
     ImageView a2;
-    @BindView(R.id.my_information_name_a)
+    @BindView(R2.id.my_information_name_a)
     RelativeLayout myInformationNameA;
-    @BindView(R.id.my_information_gender)
+    @BindView(R2.id.my_information_gender)
     ImageView myInformationGender;
-    @BindView(R.id.b1)
+    @BindView(R2.id.b1)
     ImageView b1;
-    @BindView(R.id.my_information_gender_a)
+    @BindView(R2.id.my_information_gender_a)
     RelativeLayout myInformationGenderA;
-    @BindView(R.id.my_information_height)
+    @BindView(R2.id.my_information_height)
     TextView myInformationHeight;
-    @BindView(R.id.my_information_bodyweight)
+    @BindView(R2.id.my_information_bodyweight)
     TextView myInformationBodyweight;
-    @BindView(R.id.my_information_age)
+    @BindView(R2.id.my_information_age)
     TextView myInformationAge;
-    @BindView(R.id.b2)
+    @BindView(R2.id.b2)
     ImageView b2;
-    @BindView(R.id.my_information_Sign)
+    @BindView(R2.id.my_information_Sign)
     RelativeLayout myInformationSign;
-    @BindView(R.id.my_information_mailbox)
+    @BindView(R2.id.my_information_mailbox)
     TextView myInformationMailbox;
-    @BindView(R.id.my_information_mailbox_a)
+    @BindView(R2.id.my_information_mailbox_a)
     RelativeLayout myInformationMailboxA;
-    @BindView(R.id.my_information_weixin)
+    @BindView(R2.id.my_information_weixin)
     TextView myInformationWeixin;
-    @BindView(R.id.c2)
+    @BindView(R2.id.c2)
     ImageView c2;
-    @BindView(R.id.my_information_weixin_a)
+    @BindView(R2.id.my_information_weixin_a)
     RelativeLayout myInformationWeixinA;
-    @BindView(R.id.my_information_Certification)
+    @BindView(R2.id.my_information_Certification)
     TextView myInformationCertification;
-    @BindView(R.id.d1)
+    @BindView(R2.id.d1)
     ImageView d1;
-    @BindView(R.id.my_information_Certification_a)
+    @BindView(R2.id.my_information_Certification_a)
     RelativeLayout myInformationCertificationA;
-    @BindView(R.id.my_information_Bankcard)
+    @BindView(R2.id.my_information_Bankcard)
     TextView myInformationBankcard;
-    @BindView(R.id.d2)
+    @BindView(R2.id.d2)
     ImageView d2;
-    @BindView(R.id.my_information_Bankcard_a)
+    @BindView(R2.id.my_information_Bankcard_a)
     RelativeLayout myInformationBankcardA;
-    @BindView(R.id.but_shoot)
+    @BindView(R2.id.but_shoot)
     Button butShoot;
-    @BindView(R.id.but_photo)
+    @BindView(R2.id.but_photo)
     Button butPhoto;
-    @BindView(R.id.but_finish)
+    @BindView(R2.id.but_finish)
     Button butFinish;
-    @BindView(R.id.linear_gone)
+    @BindView(R2.id.linear_gone)
     LinearLayout linearGone;
+    private int id;
+    private String sessionId;
 
     @Override
     protected int bindLayout() {
@@ -120,6 +124,11 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
         ToastUtils.init(this);
+        //        获取存储内容
+        SPUtils login = new SPUtils(this, "login");
+        id = (int) login.getSharedPreference("id", 0);
+        sessionId = (String) login.getSharedPreference("sessionId", "");
+
 //          返回
         fanhui.setOnClickListener(new CustomClickListener() {
             @Override
@@ -235,8 +244,8 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
     protected void onActivityResult(int requestCode, int resultCode,Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Map<String,Object> map = new HashMap<>();
-        map.put("userId",434);
-        map.put("sessionId","1576494766784434");
+        map.put("userId",id);
+        map.put("sessionId",sessionId);
         //判断返回码不等于0
         if (requestCode != RESULT_CANCELED) {
             //读取返回码

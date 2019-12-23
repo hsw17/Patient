@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.CollectActivity">
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_30"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_height="@dimen/dp_24">
+
+        <ImageView
+            android:id="@+id/head_details_back"
+            android:layout_width="@dimen/dp_16"
+            android:layout_centerVertical="true"
+            android:layout_height="@dimen/dp_16"
+            android:src="@mipmap/common_icon_back_black_n" />
+        <TextView
+            android:textStyle="bold"
+            android:text="我的收藏"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/sp_16"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_22" />
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        app:tabTextColor="#999999"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_36">
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

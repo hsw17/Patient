@@ -16,6 +16,7 @@ import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
@@ -29,21 +30,21 @@ import butterknife.ButterKnife;
 public class NicknameActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
 
-    @BindView(R.id.fanhui)
+    @BindView(R2.id.fanhui)
     ImageView fanhui;
-    @BindView(R.id.name_button_finish)
+    @BindView(R2.id.name_button_finish)
     Button nameButtonFinish;
-    @BindView(R.id.name_edit_text)
+    @BindView(R2.id.name_edit_text)
     EditText nameEditText;
-    @BindView(R.id.name_imag_delete)
+    @BindView(R2.id.name_imag_delete)
     ImageView nameImagDelete;
-    @BindView(R.id.my_information_Avatar_a)
+    @BindView(R2.id.my_information_Avatar_a)
     RelativeLayout myInformationAvatarA;
-    @BindView(R.id.name_button_call_of)
+    @BindView(R2.id.name_button_call_of)
     TextView nameButtonCallOf;
-    @BindView(R.id.name_button_affrim)
+    @BindView(R2.id.name_button_affrim)
     TextView nameButtonAffrim;
-    @BindView(R.id.name_visit_gone)
+    @BindView(R2.id.name_visit_gone)
     LinearLayout nameVisitGone;
 
     @Override
@@ -67,8 +68,8 @@ public class NicknameActivity extends BaseActivity<Persenter> implements IViewCo
         int id = (int) login.getSharedPreference("id", 0);
         String sessionId = (String) login.getSharedPreference("sessionId", "");
         Map<String, Object> map = new HashMap<>();
-        map.put("userId", 434);
-        map.put("sessionId", "1576494766784434");
+        map.put("userId", id);
+        map.put("sessionId", sessionId);
 //        修改昵称
         nameButtonFinish.setOnClickListener(new CustomClickListener() {
             @Override

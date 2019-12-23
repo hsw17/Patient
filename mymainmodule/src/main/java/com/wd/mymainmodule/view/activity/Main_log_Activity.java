@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.bwie.mvplibrary.app.App;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.Logger;
@@ -21,7 +23,11 @@ import com.bwie.mvplibrary.utils.NetUtil;
 import com.bwie.mvplibrary.utils.PwdAndEmail;
 import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
+
+
+import com.tencent.mm.opensdk.modelmsg.SendAuth;
 import com.wd.mymainmodule.R;
+import com.wd.mymainmodule.R2;
 import com.wd.mymainmodule.modle.bean.LoginBean;
 import com.wd.mymainmodule.persenter.Persenter;
 import com.wd.mymainmodule.rsacoder.RsaCoder;
@@ -29,36 +35,36 @@ import com.wd.mymainmodule.view.contract.IViewContract;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+@Route(path = "/mymainmodule/activity")
+public class Main_log_Activity extends BaseActivity<Persenter> implements IViewContract.IView {
 
-public class MainActivity extends BaseActivity<Persenter> implements IViewContract.IView {
-
-    @BindView(R.id.login_edit_email)
+    @BindView(R2.id.login_edit_email)
     EditText loginEditEmail;
-    @BindView(R.id.login_image_false)
+    @BindView(R2.id.login_image_false)
     ImageView loginImageFalse;
-    @BindView(R.id.login_image_true)
+    @BindView(R2.id.login_image_true)
     ImageView loginImageTrue;
-    @BindView(R.id.login_edit_pwd)
+    @BindView(R2.id.login_edit_pwd)
     EditText loginEditPwd;
 
-    @BindView(R.id.login_button_login)
+    @BindView(R2.id.login_button_login)
     TextView loginButtonLogin;
-    @BindView(R.id.relate_view)
+    @BindView(R2.id.relate_view)
     RelativeLayout relateView;
-    @BindView(R.id.login_button_updateuserpwd)
+    @BindView(R2.id.login_button_updateuserpwd)
     TextView loginButtonUpdateuserpwd;
-    @BindView(R.id.login_button_register)
+    @BindView(R2.id.login_button_register)
     LinearLayout loginButtonRegister;
-    @BindView(R.id.login_button_wx)
+    @BindView(R2.id.login_button_wx)
     ImageView loginButtonWx;
-    @BindView(R.id.login_image_hine)
+    @BindView(R2.id.login_image_hine)
     ToggleButton loginImageHine;
     private SPUtils login;
     private SPUtils email;
 
     @Override
     protected int bindLayout() {
-        return R.layout.activity_main;
+        return R.layout.activity_main_main;
     }
 
     @Override
@@ -73,7 +79,7 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
         ButterKnife.bind(this);
         ToastUtils.init(this);
 
-        //        sp
+//            sp
         login = new SPUtils(this, "login");
         email = new SPUtils(this, "email");
         String email1 = (String) email.getSharedPreference("email", null);
@@ -108,7 +114,7 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
                 String email = loginEditEmail.getText().toString().trim();
                 String pwd = loginEditPwd.getText().toString().trim();
                 if (email.equals("")) {
-                    Toast.makeText(MainActivity.this, "邮箱不能为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Main_log_Activity.this, "邮箱不能为空", Toast.LENGTH_SHORT).show();
                     return;
                 }
 //                进行正则判断
@@ -117,11 +123,11 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
                 boolean email1 = pwdAndEmail.isEmail(email);
 
                 if (pwd.equals("")) {
-                    Toast.makeText(MainActivity.this, "密码不能为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Main_log_Activity.this, "密码不能为空", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (email1 == false) {
-                    Toast.makeText(MainActivity.this, "邮箱格式不正确", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Main_log_Activity.this, "邮箱格式不正确", Toast.LENGTH_SHORT).show();
                     return;
                 }
 //                判断网络
@@ -151,6 +157,22 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
             protected void onSingleClick() {
                 Intent intent=new Intent("com.hl.ResetUserPwdActivity");
                 startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//        微信登录
+        loginButtonWx.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                SendAuth.Req req = new SendAuth.Req();
+                req.scope = "snsapi_userinfo";
+                req.state = "wechat_sdk_demo_test";
+                App.api.sendReq(req);
+                finish();
             }
 
             @Override

@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".view.activity.CollectActivity"></activity>
         <activity android:name=".view.activity.InquiryActivity">
             <intent-filter>
                 <action android:name="com.hl.InquiryActivity" />
@@ -17,7 +18,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.FeatureActivity" >
+        <activity android:name=".view.activity.FeatureActivity">
             <intent-filter>
                 <action android:name="com.hl.FeatureActivity" />
 
@@ -115,7 +116,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.MainActivity">
+        <activity android:name=".view.activity.My_ModuleMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

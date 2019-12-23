@@ -11,6 +11,7 @@ import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.LoginBean;
 import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.modle.bean.UserSignBean;
@@ -33,51 +34,51 @@ import butterknife.ButterKnife;
 public class TaskActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
 
-    @BindView(R.id.head_details_back)
+    @BindView(R2.id.head_details_back)
     ImageView headDetailsBack;
-    @BindView(R.id.bonus_sign_item_day)
+    @BindView(R2.id.bonus_sign_item_day)
     TextView bonusSignItemDay;
-    @BindView(R.id.bonus_sign_item_right)
+    @BindView(R2.id.bonus_sign_item_right)
     View bonusSignItemRight;
-    @BindView(R.id.bonus_sign_item_left2)
+    @BindView(R2.id.bonus_sign_item_left2)
     View bonusSignItemLeft2;
-    @BindView(R.id.bonus_sign_item_day2)
+    @BindView(R2.id.bonus_sign_item_day2)
     TextView bonusSignItemDay2;
-    @BindView(R.id.bonus_sign_item_right2)
+    @BindView(R2.id.bonus_sign_item_right2)
     View bonusSignItemRight2;
-    @BindView(R.id.bonus_sign_item_left3)
+    @BindView(R2.id.bonus_sign_item_left3)
     View bonusSignItemLeft3;
-    @BindView(R.id.bonus_sign_item_day3)
+    @BindView(R2.id.bonus_sign_item_day3)
     TextView bonusSignItemDay3;
-    @BindView(R.id.bonus_sign_item_right3)
+    @BindView(R2.id.bonus_sign_item_right3)
     View bonusSignItemRight3;
-    @BindView(R.id.bonus_sign_item_left4)
+    @BindView(R2.id.bonus_sign_item_left4)
     View bonusSignItemLeft4;
-    @BindView(R.id.bonus_sign_item_day4)
+    @BindView(R2.id.bonus_sign_item_day4)
     TextView bonusSignItemDay4;
-    @BindView(R.id.bonus_sign_item_right4)
+    @BindView(R2.id.bonus_sign_item_right4)
     View bonusSignItemRight4;
-    @BindView(R.id.bonus_sign_item_left5)
+    @BindView(R2.id.bonus_sign_item_left5)
     View bonusSignItemLeft5;
-    @BindView(R.id.bonus_sign_item_day5)
+    @BindView(R2.id.bonus_sign_item_day5)
     TextView bonusSignItemDay5;
-    @BindView(R.id.bonus_sign_item_right5)
+    @BindView(R2.id.bonus_sign_item_right5)
     View bonusSignItemRight5;
-    @BindView(R.id.bonus_sign_item_left6)
+    @BindView(R2.id.bonus_sign_item_left6)
     View bonusSignItemLeft6;
-    @BindView(R.id.bonus_sign_item_day6)
+    @BindView(R2.id.bonus_sign_item_day6)
     TextView bonusSignItemDay6;
-    @BindView(R.id.bonus_sign_item_right6)
+    @BindView(R2.id.bonus_sign_item_right6)
     View bonusSignItemRight6;
-    @BindView(R.id.bonus_sign_item_left7)
+    @BindView(R2.id.bonus_sign_item_left7)
     View bonusSignItemLeft7;
-    @BindView(R.id.bonus_sign_item_day7)
+    @BindView(R2.id.bonus_sign_item_day7)
     TextView bonusSignItemDay7;
-    @BindView(R.id.task_linear_run)
+    @BindView(R2.id.task_linear_run)
     LinearLayout taskLinearRun;
-    @BindView(R.id.accessibility_re_list_view)
+    @BindView(R2.id.accessibility_re_list_view)
     RecyclerView accessibilityReListView;
-    @BindView(R.id.accessibility_re_list)
+    @BindView(R2.id.accessibility_re_list)
     RecyclerView accessibilityReList;
     private LoginBean loginBean;
     private Map<String, Object> map;
@@ -98,8 +99,8 @@ public class TaskActivity extends BaseActivity<Persenter> implements IViewContra
         int id = (int) login.getSharedPreference("id", 0);
         String sessionId = (String) login.getSharedPreference("sessionId", "");
         map = new HashMap<>();
-        map.put("userId", 434);
-        map.put("sessionId", "1576494766784434");
+        map.put("userId", id);
+        map.put("sessionId", sessionId);
         presenter.doFindUserSign(map);
         presenter.doHetherSignToday(map);
         presenter.doFindUserTaskList(map);

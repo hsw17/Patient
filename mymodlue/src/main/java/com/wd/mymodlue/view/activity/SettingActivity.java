@@ -13,6 +13,7 @@ import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.DataCleanManager;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
 
@@ -22,37 +23,37 @@ import butterknife.ButterKnife;
 
 public class SettingActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
-    @BindView(R.id.head_details_back)
+    @BindView(R2.id.head_details_back)
     ImageView headDetailsBack;
-    @BindView(R.id.head_text_name)
+    @BindView(R2.id.head_text_name)
     TextView headTextName;
-    @BindView(R.id.relay_layout)
+    @BindView(R2.id.relay_layout)
     RelativeLayout relayLayout;
-    @BindView(R.id.setting_image_view)
+    @BindView(R2.id.setting_image_view)
     SimpleDraweeView settingImageView;
-    @BindView(R.id.setting_text_name)
+    @BindView(R2.id.setting_text_name)
     TextView settingTextName;
-    @BindView(R.id.setting_image_name)
+    @BindView(R2.id.setting_image_name)
     LinearLayout settingImageName;
-    @BindView(R.id.setting_image_pwd)
+    @BindView(R2.id.setting_image_pwd)
     RelativeLayout settingImagePwd;
-    @BindView(R.id.setting_text_clear)
+    @BindView(R2.id.setting_text_clear)
     TextView settingTextClear;
-    @BindView(R.id.setting_image_clear)
+    @BindView(R2.id.setting_image_clear)
     RelativeLayout settingImageClear;
-    @BindView(R.id.setting_image_ping_lian)
+    @BindView(R2.id.setting_image_ping_lian)
     RelativeLayout settingImagePingLian;
-    @BindView(R.id.setting_image_new_app)
+    @BindView(R2.id.setting_image_new_app)
     RelativeLayout settingImageNewApp;
-    @BindView(R.id.setting_image_ping_help)
+    @BindView(R2.id.setting_image_ping_help)
     RelativeLayout settingImagePingHelp;
-    @BindView(R.id.setting_image_my)
+    @BindView(R2.id.setting_image_my)
     RelativeLayout settingImageMy;
-    @BindView(R.id.setting_image_new_invite)
+    @BindView(R2.id.setting_image_new_invite)
     RelativeLayout settingImageNewInvite;
-    @BindView(R.id.setting_image_login)
+    @BindView(R2.id.setting_image_login)
     RelativeLayout settingImageLogin;
-    @BindView(R.id.setting_image_layout)
+    @BindView(R2.id.setting_image_layout)
     RelativeLayout settingImageLayout;
 
     @Override

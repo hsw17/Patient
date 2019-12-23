@@ -12,8 +12,9 @@ import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
-import com.google.common.eventbus.EventBus;
+
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
@@ -28,17 +29,17 @@ public class GenderActivity extends BaseActivity<Persenter> implements IViewCont
 
 
     int sex;
-    @BindView(R.id.fanhui)
+    @BindView(R2.id.fanhui)
     ImageView fanhui;
-    @BindView(R.id.name_button_finish)
+    @BindView(R2.id.name_button_finish)
     Button nameButtonFinish;
-    @BindView(R.id.boy01)
+    @BindView(R2.id.boy01)
     CheckBox boy01;
-    @BindView(R.id.boy_check01)
+    @BindView(R2.id.boy_check01)
     ImageView boyCheck01;
-    @BindView(R.id.gilr01)
+    @BindView(R2.id.gilr01)
     CheckBox gilr01;
-    @BindView(R.id.boy_check02)
+    @BindView(R2.id.boy_check02)
     ImageView boyCheck02;
 
 
@@ -63,8 +64,8 @@ public class GenderActivity extends BaseActivity<Persenter> implements IViewCont
         int id = (int) login.getSharedPreference("id", 0);
         String sessionId = (String) login.getSharedPreference("sessionId", "");
         Map<String, Object> map = new HashMap<>();
-        map.put("userId", 434);
-        map.put("sessionId", "1576494766784434");
+        map.put("userId", id);
+        map.put("sessionId", sessionId);
         boy01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

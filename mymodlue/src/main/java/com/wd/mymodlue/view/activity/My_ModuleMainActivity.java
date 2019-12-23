@@ -9,13 +9,15 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wd.mymodlue.R;
-import com.wd.mymodlue.modle.bean.LoginBean;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
@@ -25,54 +27,54 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+@Route(path = "/mymodlue/activity")
+public class My_ModuleMainActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
-public class MainActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
-
-    @BindView(R.id.head_details_back)
+    @BindView(R2.id.head_details_back)
     ImageView headDetailsBack;
-    @BindView(R.id.my_image_simple)
+    @BindView(R2.id.my_image_simple)
     SimpleDraweeView myImageSimple;
-    @BindView(R.id.my_text_login)
+    @BindView(R2.id.my_text_login)
     TextView myTextLogin;
-    @BindView(R.id.my_button_sing_in)
+    @BindView(R2.id.my_button_sing_in)
     Button myButtonSingIn;
-    @BindView(R.id.linear_lay)
+    @BindView(R2.id.linear_lay)
     LinearLayout linearLay;
-    @BindView(R.id.my_button_inquiry)
+    @BindView(R2.id.my_button_inquiry)
     RelativeLayout myButtonInquiry;
-    @BindView(R.id.my_button_history)
+    @BindView(R2.id.my_button_history)
     RelativeLayout myButtonHistory;
-    @BindView(R.id.re_latiview)
+    @BindView(R2.id.re_latiview)
     RelativeLayout reLatiview;
-    @BindView(R.id.my_button_record)
+    @BindView(R2.id.my_button_record)
     LinearLayout myButtonRecord;
-    @BindView(R.id.my_button_wallet)
+    @BindView(R2.id.my_button_wallet)
     LinearLayout myButtonWallet;
-    @BindView(R.id.my_button_collect)
+    @BindView(R2.id.my_button_collect)
     LinearLayout myButtonCollect;
-    @BindView(R.id.my_button_suggest)
+    @BindView(R2.id.my_button_suggest)
     LinearLayout myButtonSuggest;
-    @BindView(R.id.my_button_video)
+    @BindView(R2.id.my_button_video)
     LinearLayout myButtonVideo;
-    @BindView(R.id.my_button_patients_circle)
+    @BindView(R2.id.my_button_patients_circle)
     LinearLayout myButtonPatientsCircle;
-    @BindView(R.id.my_button_attention)
+    @BindView(R2.id.my_button_attention)
     LinearLayout myButtonAttention;
-    @BindView(R.id.my_button_task)
+    @BindView(R2.id.my_button_task)
     LinearLayout myButtonTask;
-    @BindView(R.id.my_button_set)
+    @BindView(R2.id.my_button_set)
     LinearLayout myButtonSet;
-    @BindView(R.id.linear_my)
+    @BindView(R2.id.linear_my)
     LinearLayout linearMy;
-    @BindView(R.id.my_text_title)
+    @BindView(R2.id.my_text_title)
     TextView myTextTitle;
 
     private Map<String, Object> map;
 
     @Override
     protected int bindLayout() {
-        return R.layout.activity_main;
+        return R.layout.activity_mymodlue_main;
     }
 
     @Override
@@ -98,10 +100,20 @@ public class MainActivity extends BaseActivity<Persenter> implements IViewContra
             myImageSimple.setImageURI(headPic);
             myTextLogin.setText(nickName);
         }
+        myTextLogin.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                ARouter.getInstance().build("/mymainmodule/activity").navigation();
+            }
 
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
         map = new HashMap<>();
-        map.put("userId",434);
-        map.put("sessionId","1576494766784434");
+        map.put("userId",id);
+        map.put("sessionId",sessionId);
 //       底部文字
         myTextTitle.setText("@八维移动通讯学院毕业作品");
 //        返回

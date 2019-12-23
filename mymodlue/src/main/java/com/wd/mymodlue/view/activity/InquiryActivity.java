@@ -13,6 +13,7 @@ import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.CurrencyNoticeListBean;
 import com.wd.mymodlue.modle.bean.CurrentInquiryRecordBean;
 import com.wd.mymodlue.modle.bean.UserBean;
@@ -30,27 +31,27 @@ import butterknife.ButterKnife;
 public class InquiryActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
 
-    @BindView(R.id.head_details_back)
+    @BindView(R2.id.head_details_back)
     ImageView headDetailsBack;
-    @BindView(R.id.record_imag_view)
+    @BindView(R2.id.record_imag_view)
     SimpleDraweeView recordImagView;
-    @BindView(R.id.text_name)
+    @BindView(R2.id.text_name)
     TextView textName;
-    @BindView(R.id.text_jobTitle)
+    @BindView(R2.id.text_jobTitle)
     TextView textJobTitle;
-    @BindView(R.id.text_department)
+    @BindView(R2.id.text_department)
     TextView textDepartment;
-    @BindView(R.id.text_long)
+    @BindView(R2.id.text_long)
     TextView textLong;
-    @BindView(R.id.liner_message)
+    @BindView(R2.id.liner_message)
     LinearLayout linerMessage;
-    @BindView(R.id.text_view_jeixu)
+    @BindView(R2.id.text_view_jeixu)
     TextView textViewJeixu;
-    @BindView(R.id.text_view_finish)
+    @BindView(R2.id.text_view_finish)
     TextView textViewFinish;
-    @BindView(R.id.rela_view)
+    @BindView(R2.id.rela_view)
     RelativeLayout relaView;
-    @BindView(R.id.record_linear_layout)
+    @BindView(R2.id.record_linear_layout)
     RelativeLayout recordLinearLayout;
     private Map<String, Object> map;
 
@@ -76,8 +77,8 @@ public class InquiryActivity extends BaseActivity<Persenter> implements IViewCon
         int id = (int) login.getSharedPreference("id", 0);
         String sessionId = (String) login.getSharedPreference("sessionId", "");
         map = new HashMap<>();
-        map.put("userId", 434);
-        map.put("sessionId", "1576494766784434");
+        map.put("userId", id);
+        map.put("sessionId", sessionId);
         presenter.onInquiryRecord(map);
 //      返回
         headDetailsBack.setOnClickListener(new CustomClickListener() {

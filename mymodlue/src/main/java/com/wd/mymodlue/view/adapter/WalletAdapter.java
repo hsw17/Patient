@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.UserConsumptionRecordListBean;
 
 import java.text.SimpleDateFormat;
@@ -27,11 +28,11 @@ import butterknife.ButterKnife;
  */
 public class WalletAdapter extends XRecyclerView.Adapter<WalletAdapter.MovieViewHolder> {
     List<UserConsumptionRecordListBean.ResultBean> result;
-    @BindView(R.id.walle_text_name)
+    @BindView(R2.id.walle_text_name)
     TextView walleTextName;
-    @BindView(R.id.walle_text_time)
+    @BindView(R2.id.walle_text_time)
     TextView walleTextTime;
-    @BindView(R.id.walle_text_manay)
+    @BindView(R2.id.walle_text_manay)
     TextView walleTextManay;
 
 
@@ -71,11 +72,11 @@ public class WalletAdapter extends XRecyclerView.Adapter<WalletAdapter.MovieView
 
 
     public class MovieViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.walle_text_name)
+        @BindView(R2.id.walle_text_name)
         TextView walleTextName;
-        @BindView(R.id.walle_text_time)
+        @BindView(R2.id.walle_text_time)
         TextView walleTextTime;
-        @BindView(R.id.walle_text_manay)
+        @BindView(R2.id.walle_text_manay)
         TextView walleTextManay;
 
         public MovieViewHolder(@NonNull View itemView) {

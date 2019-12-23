@@ -11,6 +11,7 @@ import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.rsacoder.RsaCoder;
@@ -25,15 +26,15 @@ import butterknife.ButterKnife;
 public class PwdActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
 
-    @BindView(R.id.head_details_back)
+    @BindView(R2.id.head_details_back)
     ImageView headDetailsBack;
-    @BindView(R.id.edit_old_password)
+    @BindView(R2.id.edit_old_password)
     EditText editOldPassword;
-    @BindView(R.id.edit_new_password)
+    @BindView(R2.id.edit_new_password)
     EditText editNewPassword;
-    @BindView(R.id.edit_again_new_password)
+    @BindView(R2.id.edit_again_new_password)
     EditText editAgainNewPassword;
-    @BindView(R.id.but_affirm)
+    @BindView(R2.id.but_affirm)
     Button butAffirm;
     private Map<String, Object> map;
 
@@ -58,8 +59,8 @@ public class PwdActivity extends BaseActivity<Persenter> implements IViewContrac
         int id = (int) login.getSharedPreference("id", 0);
         String sessionId = (String) login.getSharedPreference("sessionId", "");
         map = new HashMap<>();
-        map.put("userId", 434);
-        map.put("sessionId", "1576494766784434");
+        map.put("userId", id);
+        map.put("sessionId", sessionId);
 
         butAffirm.setOnClickListener(new CustomClickListener() {
             @Override

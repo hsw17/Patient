@@ -19,6 +19,7 @@ import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.wd.mymainmodule.R;
+import com.wd.mymainmodule.R2;
 import com.wd.mymainmodule.modle.bean.UserBean;
 import com.wd.mymainmodule.persenter.Persenter;
 import com.wd.mymainmodule.rsacoder.RsaCoder;
@@ -33,21 +34,21 @@ import butterknife.ButterKnife;
 public class ResetPwdActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
 
-    @BindView(R.id.head_details_back)
+    @BindView(R2.id.head_details_back)
     ImageView headDetailsBack;
-    @BindView(R.id.head_text_name)
+    @BindView(R2.id.head_text_name)
     TextView headTextName;
-    @BindView(R.id.login_edit_pwd)
+    @BindView(R2.id.login_edit_pwd)
     EditText loginEditPwd;
-    @BindView(R.id.login_image_hine)
+    @BindView(R2.id.login_image_hine)
     ToggleButton loginImageHine;
-    @BindView(R.id.login_edit_pwdl)
+    @BindView(R2.id.login_edit_pwdl)
     EditText loginEditPwdl;
-    @BindView(R.id.login_image_hinel)
+    @BindView(R2.id.login_image_hinel)
     ToggleButton loginImageHinel;
-    @BindView(R.id.relate_view)
+    @BindView(R2.id.relate_view)
     RelativeLayout relateView;
-    @BindView(R.id.reset_edit_next)
+    @BindView(R2.id.reset_edit_next)
     Button resetEditNext;
     private SPUtils email;
     private String email1;
@@ -164,7 +165,7 @@ public class ResetPwdActivity extends BaseActivity<Persenter> implements IViewCo
             ToastUtils.show(userBean.message);
             String pwdl = loginEditPwdl.getText().toString();
             email.SharedPreferenceput("pwd",pwdl);
-            Intent intent=new Intent(this,MainActivity.class);
+            Intent intent=new Intent(this,Main_log_Activity.class);
             sendBroadcast(intent);
 //            finish();
         }else{

@@ -12,8 +12,9 @@ import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
-import com.google.common.eventbus.EventBus;
+
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
@@ -27,27 +28,27 @@ import butterknife.ButterKnife;
 public class FeatureActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
 
-    @BindView(R.id.fanhui)
+    @BindView(R2.id.fanhui)
     ImageView fanhui;
-    @BindView(R.id.btn_finish_sign)
+    @BindView(R2.id.btn_finish_sign)
     Button btnFinishSign;
-    @BindView(R.id.image_height)
+    @BindView(R2.id.image_height)
     ImageView imageHeight;
-    @BindView(R.id.text_progress)
+    @BindView(R2.id.text_progress)
     TextView textProgress;
-    @BindView(R.id.sign_seekbar)
+    @BindView(R2.id.sign_seekbar)
     SeekBar signSeekbar;
-    @BindView(R.id.image_weight)
+    @BindView(R2.id.image_weight)
     ImageView imageWeight;
-    @BindView(R.id.text2_progress)
+    @BindView(R2.id.text2_progress)
     TextView text2Progress;
-    @BindView(R.id.we_seekbar)
+    @BindView(R2.id.we_seekbar)
     SeekBar weSeekbar;
-    @BindView(R.id.age_weight)
+    @BindView(R2.id.age_weight)
     ImageView ageWeight;
-    @BindView(R.id.text3_progress)
+    @BindView(R2.id.text3_progress)
     TextView text3Progress;
-    @BindView(R.id.age_seekbar)
+    @BindView(R2.id.age_seekbar)
     SeekBar ageSeekbar;
     private int height;
     private int weight;
@@ -74,8 +75,8 @@ public class FeatureActivity extends BaseActivity<Persenter> implements IViewCon
         int id = (int) login.getSharedPreference("id", 0);
         String sessionId = (String) login.getSharedPreference("sessionId", "");
         Map<String, Object> map = new HashMap<>();
-        map.put("userId", 434);
-        map.put("sessionId", "1576494766784434");
+        map.put("userId", id);
+        map.put("sessionId", sessionId);
         Map<String, Object> oap = new HashMap<>();
         oap.put("age", age);
         oap.put("height", height);

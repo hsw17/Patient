@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
 
@@ -19,13 +20,13 @@ import butterknife.ButterKnife;
 
 public class BrightnessActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
-    @BindView(R.id.head_details_back)
+    @BindView(R2.id.head_details_back)
     ImageView headDetailsBack;
-    @BindView(R.id.head_text_name)
+    @BindView(R2.id.head_text_name)
     TextView headTextName;
-    @BindView(R.id.relay_layout)
+    @BindView(R2.id.relay_layout)
     RelativeLayout relayLayout;
-    @BindView(R.id.screen_seekbar)
+    @BindView(R2.id.screen_seekbar)
     SeekBar screenSeekbar;
 
     @Override

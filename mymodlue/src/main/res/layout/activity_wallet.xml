@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"/>
         </RelativeLayout>
         <TextView
-            android:id="@+id/text_view"
+            android:id="@+id/text_viewl"
             android:text="满200H币可提现"
             android:textColor="#ffffff"
             android:textSize="@dimen/sp_10"
@@ -73,7 +73,7 @@
                 android:layout_marginLeft="@dimen/dp_70"
                 android:layout_marginRight="@dimen/dp_70"
                 android:layout_marginTop="@dimen/dp_24"
-                android:layout_below="@id/text_view"
+                android:layout_below="@id/text_viewl"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_30">
                 <Button

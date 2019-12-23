@@ -12,6 +12,7 @@ import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.UserDoctorFollowBean;
 
 import java.util.List;
@@ -78,27 +79,27 @@ public class AttenttionAdapter extends XRecyclerView.Adapter<AttenttionAdapter.M
 
 
     public class MovieViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.simpl_image_view)
+        @BindView(R2.id.simpl_image_view)
         SimpleDraweeView simplImageView;
-        @BindView(R.id.simpl_text_name)
+        @BindView(R2.id.simpl_text_name)
         TextView simplTextName;
-        @BindView(R.id.simpl_text_zhiwei)
+        @BindView(R2.id.simpl_text_zhiwei)
         TextView simplTextZhiwei;
-        @BindView(R.id.linear_out)
+        @BindView(R2.id.linear_out)
         LinearLayout linearOut;
-        @BindView(R.id.simpl_text_yiyuang)
+        @BindView(R2.id.simpl_text_yiyuang)
         TextView simplTextYiyuang;
-        @BindView(R.id.linear_two)
+        @BindView(R2.id.linear_two)
         LinearLayout linearTwo;
-        @BindView(R.id.simpl_text_hpl)
+        @BindView(R2.id.simpl_text_hpl)
         TextView simplTextHpl;
-        @BindView(R.id.simpl_text_hzl)
+        @BindView(R2.id.simpl_text_hzl)
         TextView simplTextHzl;
-        @BindView(R.id.linear_tre)
+        @BindView(R2.id.linear_tre)
         LinearLayout linearTre;
-        @BindView(R.id.simpl_text_quxiao)
+        @BindView(R2.id.simpl_text_quxiao)
         TextView simplTextQuxiao;
-        @BindView(R.id.lin_list_tm)
+        @BindView(R2.id.lin_list_tm)
         LinearLayout linListTm;
 
         public MovieViewHolder(@NonNull View itemView) {

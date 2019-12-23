@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.UserTaskListBean;
 
 import java.util.List;
@@ -96,15 +97,15 @@ public class TasAdapter extends XRecyclerView.Adapter<TasAdapter.MovieViewHolder
 
     public class MovieViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.text_name)
+        @BindView(R2.id.text_name)
         TextView textName;
-        @BindView(R.id.text_hb)
+        @BindView(R2.id.text_hb)
         TextView textHb;
-        @BindView(R.id.first_button_finish)
+        @BindView(R2.id.first_button_finish)
         Button firstButtonFinish;
-        @BindView(R.id.first_button_go_finish)
+        @BindView(R2.id.first_button_go_finish)
         Button firstButtonGoFinish;
-        @BindView(R.id.collar_button_go_finish)
+        @BindView(R2.id.collar_button_go_finish)
         Button collarButtonGoFinish;
         public MovieViewHolder(@NonNull View itemView) {
             super(itemView);

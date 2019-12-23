@@ -11,6 +11,7 @@ import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.modle.bean.UserDoctorFollowBean;
 import com.wd.mymodlue.persenter.Persenter;
@@ -29,11 +30,11 @@ import butterknife.ButterKnife;
 public class AttentionActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
 
-    @BindView(R.id.head_details_back)
+    @BindView(R2.id.head_details_back)
     ImageView headDetailsBack;
-    @BindView(R.id.record_list_view)
+    @BindView(R2.id.record_list_view)
     RecyclerView recordListView;
-    @BindView(R.id.record_linear_layout)
+    @BindView(R2.id.record_linear_layout)
     LinearLayout recordLinearLayout;
     private Map<String, Object> map;
 
@@ -59,8 +60,8 @@ public class AttentionActivity extends BaseActivity<Persenter> implements IViewC
         int id = (int) login.getSharedPreference("id", 0);
         String sessionId = (String) login.getSharedPreference("sessionId", "");
         map = new HashMap<>();
-        map.put("userId", 434);
-        map.put("sessionId", "1576494766784434");
+        map.put("userId", id);
+        map.put("sessionId", sessionId);
         Map<String,Object> oap = new HashMap<>();
         oap.put("page", 1);
         oap.put("count", 10);

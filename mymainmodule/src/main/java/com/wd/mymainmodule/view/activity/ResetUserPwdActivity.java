@@ -14,10 +14,10 @@ import com.bwie.mvplibrary.utils.PwdAndEmail;
 import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.wd.mymainmodule.R;
+import com.wd.mymainmodule.R2;
 import com.wd.mymainmodule.modle.bean.UserBean;
 import com.wd.mymainmodule.persenter.Persenter;
 import com.wd.mymainmodule.view.contract.IViewContract;
-import com.wd.mymainmodule.view.zview.HeadBackView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,19 +25,19 @@ import butterknife.ButterKnife;
 public class ResetUserPwdActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
 
-    @BindView(R.id.reset_edit_email)
+    @BindView(R2.id.reset_edit_email)
     EditText resetEditEmail;
-    @BindView(R.id.reset_text_code)
+    @BindView(R2.id.reset_text_code)
     TextView resetTextCode;
-    @BindView(R.id.reset_edit_code)
+    @BindView(R2.id.reset_edit_code)
     EditText resetEditCode;
-    @BindView(R.id.relate_view)
+    @BindView(R2.id.relate_view)
     RelativeLayout relateView;
-    @BindView(R.id.reset_edit_next)
+    @BindView(R2.id.reset_edit_next)
     Button resetEditNext;
-    @BindView(R.id.head_details_back)
+    @BindView(R2.id.head_details_back)
     ImageView headDetailsBack;
-    @BindView(R.id.head_text_name)
+    @BindView(R2.id.head_text_name)
     TextView headTextName;
     private SPUtils email;
 
