@@ -22,6 +22,8 @@ public class App extends Application {
         ARouter.init(this);
         sContent = this;
         Fresco.initialize(this);
+
+
     }
 
     public static App getsContent() {

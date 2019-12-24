@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/releatshape">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_150"
+        android:textSize="@dimen/sp_14"
+        android:text="您尚有咨询在进行中\n请先关闭再开始新的咨询"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/quxiao"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/dp_40"
+            android:text="取消"
+            android:gravity="center"
+            android:textSize="@dimen/sp_18"
+            android:background="#999999"
+            android:textColor="#fff"/>
+
+        <TextView
+            android:id="@+id/tojies"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/dp_40"
+            android:text="去结束"
+            android:gravity="center"
+            android:textSize="@dimen/sp_18"
+            android:background="#5A6DD6"
+            android:textColor="#fff"/>
+    </LinearLayout>
+
+
+</LinearLayout>
