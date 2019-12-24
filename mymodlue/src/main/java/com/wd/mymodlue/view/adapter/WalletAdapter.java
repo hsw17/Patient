@@ -60,7 +60,7 @@ public class WalletAdapter extends XRecyclerView.Adapter<WalletAdapter.MovieView
             movieViewHolder.walleTextManay.setText("+"+result.get(i).changeNum+"H币");
         }else if (result.get(i).direction==2){
             movieViewHolder.walleTextManay.setTextColor(Color.BLUE);
-            movieViewHolder.walleTextManay.setText("+"+result.get(i).changeNum+"H币");
+            movieViewHolder.walleTextManay.setText("-"+result.get(i).changeNum+"H币");
         }
 
     }

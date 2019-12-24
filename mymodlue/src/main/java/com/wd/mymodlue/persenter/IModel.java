@@ -5,10 +5,20 @@ import com.bwie.mvplibrary.utils.CommonObserver;
 import com.bwie.mvplibrary.utils.CommonSchedulers;
 import com.bwie.mvplibrary.utils.RetrofitManager;
 import com.wd.mymodlue.modle.ap.Api;
+import com.wd.mymodlue.modle.bean.AddArchivesBean;
+import com.wd.mymodlue.modle.bean.CollectionListBean;
 import com.wd.mymodlue.modle.bean.CurrencyNoticeListBean;
 import com.wd.mymodlue.modle.bean.CurrentInquiryRecordBean;
+import com.wd.mymodlue.modle.bean.DeleteArchivesBean;
+import com.wd.mymodlue.modle.bean.DoctorEvaluateBean;
 import com.wd.mymodlue.modle.bean.HeadPicBean;
 import com.wd.mymodlue.modle.bean.HealthTestBean;
+import com.wd.mymodlue.modle.bean.HealthinformationBean;
+import com.wd.mymodlue.modle.bean.HistoryBean;
+import com.wd.mymodlue.modle.bean.NewslistBean;
+import com.wd.mymodlue.modle.bean.UpdateArchivesBean;
+import com.wd.mymodlue.modle.bean.UserArchivesBean;
+import com.wd.mymodlue.modle.bean.UserArchivesPictureBean;
 import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.modle.bean.UserCommentListBean;
 import com.wd.mymodlue.modle.bean.UserConsumptionRecordListBean;
@@ -18,6 +28,7 @@ import com.wd.mymodlue.modle.bean.UserTaskListBean;
 import com.wd.mymodlue.modle.bean.UserWalletBean;
 import com.wd.mymodlue.view.contract.IViewContract;
 
+import java.util.List;
 import java.util.Map;
 
 import okhttp3.MultipartBody;
@@ -368,6 +379,195 @@ public class IModel implements IViewContract.IModel {
                     @Override
                     public void onNext(UserBean userBean) {
                         iModelCallback.onSuccessOne(userBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onjiankangzixun(Map<String,Object> map,IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onjiankangzixun(map)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<NewslistBean>() {
+                    @Override
+                    public void onNext(NewslistBean newslistBean) {
+                        if (iModelCallback!=null) {
+                            iModelCallback.onSuccess(newslistBean);
+                        }
+
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onHistoryInquiryRecord(Map<String, Object> map, Map<String, Object> oap, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onHistoryInquiryRecord(map,oap)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<HistoryBean>() {
+                    @Override
+                    public void onNext(HistoryBean historyBean) {
+                        iModelCallback.onSuccess(historyBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onDoctorEvaluate(Map<String, Object> map, int recordId, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onDoctorEvaluate(map,recordId)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<DoctorEvaluateBean>() {
+                    @Override
+                    public void onNext(DoctorEvaluateBean doctorEvaluateBean) {
+                        iModelCallback.onSuccess(doctorEvaluateBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+                    }
+                });
+    }
+
+    @Override
+    public void onCollectionList(Map<String, Object> map, Map<String, Object> oap, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onCollectionList(map,oap)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<CollectionListBean>() {
+                    @Override
+                    public void onNext(CollectionListBean collectionListBean) {
+                        iModelCallback.onSuccess(collectionListBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onSickCollection(Map<String, Object> map, int sickCircleId, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onSickCollection(map,sickCircleId)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UserBean>() {
+                    @Override
+                    public void onNext(UserBean userBean) {
+                        iModelCallback.onSuccessOne(userBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onGetarchives(Map<String, Object> map, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onGetarchives(map)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UserArchivesBean>() {
+                    @Override
+                    public void onNext(UserArchivesBean userArchivesBean) {
+                        iModelCallback.onSuccess(userArchivesBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onGetdeleteUserArchives(Map<String, Object> map, int archivesId, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onGetdeleteUserArchives(map,archivesId)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<DeleteArchivesBean>() {
+                    @Override
+                    public void onNext(DeleteArchivesBean deleteArchivesBean) {
+                        iModelCallback.onSuccessOne(deleteArchivesBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onGetupdateUserArchives(Map<String, Object> map, Map<String, Object> oap, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onGetupdateUserArchives(map,oap)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UpdateArchivesBean>() {
+                    @Override
+                    public void onNext(UpdateArchivesBean updateArchivesBean) {
+                        iModelCallback.onSuccess(updateArchivesBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onGetaddUserArchives(Map<String, Object> map, Map<String, Object> oap, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onGetaddUserArchives(map,oap)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<AddArchivesBean>() {
+                    @Override
+                    public void onNext(AddArchivesBean addArchivesBean) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onGetpicture(Map<String, Object> map, List<MultipartBody.Part> picture, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onGetpicture(map,picture)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UserArchivesPictureBean>() {
+                    @Override
+                    public void onNext(UserArchivesPictureBean userArchivesPictureBean) {
 
                     }
 

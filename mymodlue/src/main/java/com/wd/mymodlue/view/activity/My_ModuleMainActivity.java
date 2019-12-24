@@ -283,6 +283,19 @@ public class My_ModuleMainActivity extends BaseActivity<Persenter> implements IV
 
             }
         });
+        //        历史问诊
+        myButtonHistory.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.HistoryActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
     }
     @Override
     public void onSuccess(Object obj) {

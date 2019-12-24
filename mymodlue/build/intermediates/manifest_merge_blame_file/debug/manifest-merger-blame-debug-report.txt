@@ -11,7 +11,7 @@
 9-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml
 10
 11    <application
-11-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:5:5-126:19
+11-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:5:5-155:19
 12        android:name="com.bwie.mvplibrary.app.App"
 12-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:6:9-51
 13        android:allowBackup="true"
@@ -26,230 +26,283 @@
 17-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:11:9-35
 18        android:theme="@style/AppTheme" >
 18-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:12:9-40
-19        <activity android:name="com.wd.mymodlue.view.activity.CollectActivity" />
-19-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:13:9-76
+19        <activity android:name="com.wd.mymodlue.view.activity.CompileActivity" >
+19-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:13:9-19:20
 19-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:13:19-64
-20        <activity android:name="com.wd.mymodlue.view.activity.InquiryActivity" >
-20-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:14:9-20:20
-20-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:14:19-64
-21            <intent-filter>
-21-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:15:13-19:29
-22                <action android:name="com.hl.InquiryActivity" />
-22-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:16:17-65
-22-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:16:25-62
-23
-24                <category android:name="android.intent.category.DEFAULT" />
-24-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:17-76
-24-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:27-73
-25            </intent-filter>
-26        </activity>
-27        <activity android:name="com.wd.mymodlue.view.activity.FeatureActivity" >
-27-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:21:9-27:20
-27-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:21:19-64
-28            <intent-filter>
-28-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:22:13-26:29
-29                <action android:name="com.hl.FeatureActivity" />
-29-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:23:17-65
-29-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:23:25-62
-30
-31                <category android:name="android.intent.category.DEFAULT" />
-31-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:17-76
-31-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:27-73
-32            </intent-filter>
-33        </activity>
-34        <activity android:name="com.wd.mymodlue.view.activity.GenderActivity" >
-34-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:28:9-34:20
-34-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:28:19-63
-35            <intent-filter>
-35-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:29:13-33:29
-36                <action android:name="com.hl.GenderActivity" />
-36-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:30:17-64
-36-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:30:25-61
-37
-38                <category android:name="android.intent.category.DEFAULT" />
-38-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:17-76
-38-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:27-73
-39            </intent-filter>
-40        </activity>
-41        <activity android:name="com.wd.mymodlue.view.activity.NicknameActivity" >
-41-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:35:9-41:20
-41-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:35:19-65
-42            <intent-filter>
-42-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:36:13-40:29
-43                <action android:name="com.hl.NicknameActivity" />
-43-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:37:17-66
-43-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:37:25-63
-44
-45                <category android:name="android.intent.category.DEFAULT" />
-45-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:17-76
-45-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:27-73
-46            </intent-filter>
-47        </activity>
-48        <activity android:name="com.wd.mymodlue.view.activity.PwdActivity" >
-48-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:42:9-48:20
-48-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:42:19-60
-49            <intent-filter>
-49-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:43:13-47:29
-50                <action android:name="com.hl.PwdActivity" />
-50-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:44:17-61
-50-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:44:25-58
-51
-52                <category android:name="android.intent.category.DEFAULT" />
-52-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:17-76
-52-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:27-73
-53            </intent-filter>
-54        </activity>
-55        <activity android:name="com.wd.mymodlue.view.activity.MessageActivity" >
-55-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:49:9-55:20
-55-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:49:19-64
-56            <intent-filter>
-56-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:50:13-54:29
-57                <action android:name="com.hl.MessageActivity" />
-57-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:51:17-65
-57-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:51:25-62
-58
-59                <category android:name="android.intent.category.DEFAULT" />
-59-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:17-76
-59-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:27-73
-60            </intent-filter>
-61        </activity>
-62        <activity android:name="com.wd.mymodlue.view.activity.BrightnessActivity" >
-62-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:56:9-62:20
-62-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:56:19-67
-63            <intent-filter>
-63-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:57:13-61:29
-64                <action android:name="com.hl.BrightnessActivity" />
-64-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:58:17-68
-64-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:58:25-65
-65
-66                <category android:name="android.intent.category.DEFAULT" />
-66-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:17-76
-66-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:27-73
-67            </intent-filter>
-68        </activity>
-69        <activity android:name="com.wd.mymodlue.view.activity.INviteActivity" >
-69-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:63:9-69:20
-69-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:63:19-63
-70            <intent-filter>
-70-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:64:13-68:29
-71                <action android:name="com.hl.INviteActivity" />
-71-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:65:17-64
-71-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:65:25-61
-72
-73                <category android:name="android.intent.category.DEFAULT" />
-73-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:17-76
-73-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:27-73
-74            </intent-filter>
-75        </activity>
-76        <activity android:name="com.wd.mymodlue.view.activity.SettingActivity" >
-76-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:70:9-76:20
-76-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:70:19-64
-77            <intent-filter>
-77-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:71:13-75:29
-78                <action android:name="com.hl.SettingActivity" />
-78-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:72:17-65
-78-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:72:25-62
-79
-80                <category android:name="android.intent.category.DEFAULT" />
-80-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:17-76
-80-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:27-73
-81            </intent-filter>
-82        </activity>
-83        <activity android:name="com.wd.mymodlue.view.activity.SuggestActivity" >
-83-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:77:9-83:20
-83-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:77:19-64
-84            <intent-filter>
-84-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:78:13-82:29
-85                <action android:name="com.hl.SuggestActivity" />
-85-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:79:17-65
-85-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:79:25-62
-86
-87                <category android:name="android.intent.category.DEFAULT" />
-87-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:17-76
-87-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:27-73
-88            </intent-filter>
-89        </activity>
-90        <activity android:name="com.wd.mymodlue.view.activity.WalletActivity" >
-90-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:84:9-90:20
-90-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:84:19-63
-91            <intent-filter>
-91-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:85:13-89:29
-92                <action android:name="com.hl.WalletActivity" />
-92-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:86:17-64
-92-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:86:25-61
-93
-94                <category android:name="android.intent.category.DEFAULT" />
-94-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:17-76
-94-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:27-73
-95            </intent-filter>
-96        </activity>
-97        <activity android:name="com.wd.mymodlue.view.activity.TaskActivity" >
-97-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:91:9-97:20
-97-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:91:19-61
-98            <intent-filter>
-98-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:92:13-96:29
-99                <action android:name="com.hl.TaskActivity" />
-99-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:93:17-62
-99-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:93:25-59
-100
-101                <category android:name="android.intent.category.DEFAULT" />
-101-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:17-76
-101-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:27-73
-102            </intent-filter>
-103        </activity>
-104        <activity android:name="com.wd.mymodlue.view.activity.VideoActivity" >
-104-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:98:9-104:20
-104-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:98:19-62
-105            <intent-filter>
-105-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:99:13-103:29
-106                <action android:name="com.hl.VideoActivity" />
-106-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:100:17-63
-106-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:100:25-60
-107
-108                <category android:name="android.intent.category.DEFAULT" />
-108-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:17-76
-108-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:27-73
-109            </intent-filter>
-110        </activity>
-111        <activity android:name="com.wd.mymodlue.view.activity.AttentionActivity" >
-111-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:105:9-111:20
-111-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:105:19-66
-112            <intent-filter>
-112-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:106:13-110:29
-113                <action android:name="com.hl.AttentionActivity" />
-113-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:107:17-67
-113-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:107:25-64
-114
-115                <category android:name="android.intent.category.DEFAULT" />
-115-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:17-76
-115-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:27-73
-116            </intent-filter>
-117        </activity>
-118        <activity android:name="com.wd.mymodlue.view.activity.RecordActivity" >
-118-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:112:9-118:20
-118-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:112:19-63
-119            <intent-filter>
-119-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:113:13-117:29
-120                <action android:name="com.hl.RecordActivity" />
-120-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:114:17-64
-120-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:114:25-61
-121
-122                <category android:name="android.intent.category.DEFAULT" />
-122-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:17-76
-122-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:18:27-73
-123            </intent-filter>
-124        </activity>
-125        <activity android:name="com.wd.mymodlue.view.activity.My_ModuleMainActivity" >
-125-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:119:9-125:20
-125-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:119:19-70
-126
-127            <!-- <intent-filter> -->
-128            <!-- <action android:name="android.intent.action.MAIN" /> -->
-129
-130
-131            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-132            <!-- </intent-filter> -->
-133        </activity>
-134    </application>
-135
-136</manifest>
+20            <intent-filter>
+20-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:14:13-18:29
+21                <action android:name="com.hl.CompileActivity" />
+21-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:15:17-65
+21-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:15:25-62
+22
+23                <category android:name="android.intent.category.DEFAULT" />
+23-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+23-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+24            </intent-filter>
+25        </activity>
+26        <activity android:name="com.wd.mymodlue.view.activity.HistoryActivity" >
+26-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:20:9-26:20
+26-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:20:19-64
+27            <intent-filter>
+27-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:21:13-25:29
+28                <action android:name="com.hl.HistoryActivity" />
+28-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:22:17-65
+28-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:22:25-62
+29
+30                <category android:name="android.intent.category.DEFAULT" />
+30-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+30-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+31            </intent-filter>
+32        </activity>
+33        <activity android:name="com.wd.mymodlue.view.activity.PatientsCircleActivity" >
+33-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:27:9-33:20
+33-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:27:19-71
+34            <intent-filter>
+34-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:28:13-32:29
+35                <action android:name="com.hl.PatientsCircleActivity" />
+35-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:29:17-72
+35-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:29:25-69
+36
+37                <category android:name="android.intent.category.DEFAULT" />
+37-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+37-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+38            </intent-filter>
+39        </activity>
+40        <activity android:name="com.wd.mymodlue.view.activity.CollectActivity" >
+40-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:34:9-40:20
+40-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:34:19-64
+41            <intent-filter>
+41-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:35:13-39:29
+42                <action android:name="com.hl.CollectActivity" />
+42-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:36:17-65
+42-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:36:25-62
+43
+44                <category android:name="android.intent.category.DEFAULT" />
+44-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+44-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+45            </intent-filter>
+46        </activity>
+47        <activity android:name="com.wd.mymodlue.view.activity.InquiryActivity" >
+47-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:41:9-47:20
+47-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:41:19-64
+48            <intent-filter>
+48-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:42:13-46:29
+49                <action android:name="com.hl.InquiryActivity" />
+49-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:43:17-65
+49-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:43:25-62
+50
+51                <category android:name="android.intent.category.DEFAULT" />
+51-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+51-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+52            </intent-filter>
+53        </activity>
+54        <activity android:name="com.wd.mymodlue.view.activity.FeatureActivity" >
+54-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:48:9-54:20
+54-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:48:19-64
+55            <intent-filter>
+55-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:49:13-53:29
+56                <action android:name="com.hl.FeatureActivity" />
+56-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:50:17-65
+56-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:50:25-62
+57
+58                <category android:name="android.intent.category.DEFAULT" />
+58-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+58-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+59            </intent-filter>
+60        </activity>
+61        <activity android:name="com.wd.mymodlue.view.activity.GenderActivity" >
+61-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:55:9-61:20
+61-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:55:19-63
+62            <intent-filter>
+62-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:56:13-60:29
+63                <action android:name="com.hl.GenderActivity" />
+63-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:57:17-64
+63-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:57:25-61
+64
+65                <category android:name="android.intent.category.DEFAULT" />
+65-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+65-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+66            </intent-filter>
+67        </activity>
+68        <activity android:name="com.wd.mymodlue.view.activity.NicknameActivity" >
+68-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:62:9-68:20
+68-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:62:19-65
+69            <intent-filter>
+69-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:63:13-67:29
+70                <action android:name="com.hl.NicknameActivity" />
+70-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:64:17-66
+70-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:64:25-63
+71
+72                <category android:name="android.intent.category.DEFAULT" />
+72-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+72-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+73            </intent-filter>
+74        </activity>
+75        <activity android:name="com.wd.mymodlue.view.activity.PwdActivity" >
+75-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:69:9-75:20
+75-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:69:19-60
+76            <intent-filter>
+76-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:70:13-74:29
+77                <action android:name="com.hl.PwdActivity" />
+77-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:71:17-61
+77-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:71:25-58
+78
+79                <category android:name="android.intent.category.DEFAULT" />
+79-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+79-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+80            </intent-filter>
+81        </activity>
+82        <activity android:name="com.wd.mymodlue.view.activity.MessageActivity" >
+82-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:76:9-82:20
+82-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:76:19-64
+83            <intent-filter>
+83-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:77:13-81:29
+84                <action android:name="com.hl.MessageActivity" />
+84-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:78:17-65
+84-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:78:25-62
+85
+86                <category android:name="android.intent.category.DEFAULT" />
+86-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+86-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+87            </intent-filter>
+88        </activity>
+89        <activity android:name="com.wd.mymodlue.view.activity.BrightnessActivity" >
+89-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:83:9-89:20
+89-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:83:19-67
+90            <intent-filter>
+90-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:84:13-88:29
+91                <action android:name="com.hl.BrightnessActivity" />
+91-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:85:17-68
+91-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:85:25-65
+92
+93                <category android:name="android.intent.category.DEFAULT" />
+93-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+93-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+94            </intent-filter>
+95        </activity>
+96        <activity android:name="com.wd.mymodlue.view.activity.INviteActivity" >
+96-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:90:9-96:20
+96-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:90:19-63
+97            <intent-filter>
+97-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:91:13-95:29
+98                <action android:name="com.hl.INviteActivity" />
+98-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:92:17-64
+98-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:92:25-61
+99
+100                <category android:name="android.intent.category.DEFAULT" />
+100-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+100-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+101            </intent-filter>
+102        </activity>
+103        <activity android:name="com.wd.mymodlue.view.activity.SettingActivity" >
+103-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:97:9-103:20
+103-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:97:19-64
+104            <intent-filter>
+104-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:98:13-102:29
+105                <action android:name="com.hl.SettingActivity" />
+105-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:99:17-65
+105-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:99:25-62
+106
+107                <category android:name="android.intent.category.DEFAULT" />
+107-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+107-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+108            </intent-filter>
+109        </activity>
+110        <activity android:name="com.wd.mymodlue.view.activity.SuggestActivity" >
+110-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:104:9-110:20
+110-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:104:19-64
+111            <intent-filter>
+111-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:105:13-109:29
+112                <action android:name="com.hl.SuggestActivity" />
+112-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:106:17-65
+112-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:106:25-62
+113
+114                <category android:name="android.intent.category.DEFAULT" />
+114-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+114-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+115            </intent-filter>
+116        </activity>
+117        <activity android:name="com.wd.mymodlue.view.activity.WalletActivity" >
+117-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:111:9-117:20
+117-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:111:19-63
+118            <intent-filter>
+118-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:112:13-116:29
+119                <action android:name="com.hl.WalletActivity" />
+119-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:113:17-64
+119-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:113:25-61
+120
+121                <category android:name="android.intent.category.DEFAULT" />
+121-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+121-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+122            </intent-filter>
+123        </activity>
+124        <activity android:name="com.wd.mymodlue.view.activity.TaskActivity" >
+124-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:118:9-124:20
+124-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:118:19-61
+125            <intent-filter>
+125-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:119:13-123:29
+126                <action android:name="com.hl.TaskActivity" />
+126-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:120:17-62
+126-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:120:25-59
+127
+128                <category android:name="android.intent.category.DEFAULT" />
+128-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+128-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+129            </intent-filter>
+130        </activity>
+131        <activity android:name="com.wd.mymodlue.view.activity.VideoActivity" >
+131-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:125:9-131:20
+131-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:125:19-62
+132            <intent-filter>
+132-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:126:13-130:29
+133                <action android:name="com.hl.VideoActivity" />
+133-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:127:17-63
+133-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:127:25-60
+134
+135                <category android:name="android.intent.category.DEFAULT" />
+135-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+135-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+136            </intent-filter>
+137        </activity>
+138        <activity android:name="com.wd.mymodlue.view.activity.AttentionActivity" >
+138-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:132:9-138:20
+138-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:132:19-66
+139            <intent-filter>
+139-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:133:13-137:29
+140                <action android:name="com.hl.AttentionActivity" />
+140-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:134:17-67
+140-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:134:25-64
+141
+142                <category android:name="android.intent.category.DEFAULT" />
+142-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+142-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+143            </intent-filter>
+144        </activity>
+145        <activity android:name="com.wd.mymodlue.view.activity.RecordActivity" >
+145-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:139:9-145:20
+145-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:139:19-63
+146            <intent-filter>
+146-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:140:13-144:29
+147                <action android:name="com.hl.RecordActivity" />
+147-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:141:17-64
+147-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:141:25-61
+148
+149                <category android:name="android.intent.category.DEFAULT" />
+149-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:17-76
+149-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:17:27-73
+150            </intent-filter>
+151        </activity>
+152        <activity android:name="com.wd.mymodlue.view.activity.My_ModuleMainActivity" >
+152-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:146:9-154:20
+152-->H:\healthy\Patient\mymodlue\src\main\library\AndroidManifest.xml:146:19-70
+153
+154            <!-- <intent-filter> -->
+155            <!-- <action android:name="android.intent.action.MAIN" /> -->
+156
+157
+158            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+159            <!-- </intent-filter> -->
+160        </activity>
+161    </application>
+162
+163</manifest>

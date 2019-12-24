@@ -2,6 +2,7 @@ package com.wd.mymodlue.view.contract;
 
 import com.bwie.mvplibrary.base.IBaseView;
 
+import java.util.List;
 import java.util.Map;
 
 import okhttp3.MultipartBody;
@@ -67,6 +68,36 @@ public interface IViewContract {
         //结束问诊
         void onEndInquiry(Map<String,Object> map,int recordId);
 
+        //查询健康资讯板块
+        void onjiankangzixun(Map<String,Object> map);
+
+        //查看历史问诊
+        void onHistoryInquiryRecord(Map<String,Object> map,Map<String,Object> oap);
+
+        //查询问诊评价详情
+        void onDoctorEvaluate(Map<String,Object> map,int recordId);
+
+        //查询用户收藏病友圈列表
+        void onCollectionList(Map<String,Object> map,Map<String,Object> oap);
+
+        //取消病友圈收藏
+        void onSickCollection(Map<String,Object> map,int sickCircleId);
+
+        //查看自己的档案
+        void onGetarchives(Map<String,Object> map);
+
+        //删除档案
+        void onGetdeleteUserArchives(Map<String,Object> map,int archivesId);
+
+        //用户修改档案
+        void onGetupdateUserArchives(Map<String,Object> map,Map<String,Object> oap);
+
+        //用户添加档案
+        void onGetaddUserArchives(Map<String,Object> map,Map<String,Object> oap);
+
+        //用户档案上传图片
+        void onGetpicture(Map<String,Object> map,List<MultipartBody.Part> picture);
+
 
     }
 
@@ -115,6 +146,36 @@ public interface IViewContract {
 
 //       结束问诊
         void onEndInquiry(Map<String,Object> map,int recordId, IModelCallback iModelCallback);
+
+//       查询健康资讯板块
+        void onjiankangzixun(Map<String,Object> map,IModelCallback iModelCallback);
+
+//       查看历史问诊
+        void onHistoryInquiryRecord(Map<String,Object> map,Map<String,Object> oap,IModelCallback iModelCallback);
+
+//       查询问诊评价详情
+        void onDoctorEvaluate(Map<String,Object> map,int recordId,IModelCallback iModelCallback);
+
+//       查询用户收藏病友圈列表
+        void onCollectionList(Map<String,Object> map,Map<String,Object> oap,IModelCallback iModelCallback);
+
+//       取消病友圈收藏
+        void onSickCollection(Map<String,Object> map,int sickCircleId,IModelCallback iModelCallback);
+
+//       查看自己的档案
+        void onGetarchives(Map<String,Object> map,IModelCallback iModelCallback);
+
+//      删除档案
+        void onGetdeleteUserArchives(Map<String,Object> map,int archivesId,IModelCallback iModelCallback);
+
+//     用户修改档案
+        void onGetupdateUserArchives(Map<String,Object> map,Map<String,Object> oap,IModelCallback iModelCallback);
+
+//     用户添加档案
+        void onGetaddUserArchives(Map<String,Object> map,Map<String,Object> oap,IModelCallback iModelCallback);
+
+//     用户档案上传图片
+        void onGetpicture(Map<String,Object> map, List<MultipartBody.Part> picture, IModelCallback iModelCallback);
 
         interface IModelCallback{
             void onSuccess(Object obj);

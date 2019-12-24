@@ -15,6 +15,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bwie.mvplibrary.app.App;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
@@ -239,6 +240,7 @@ public class Main_log_Activity extends BaseActivity<Persenter> implements IViewC
             this.email.SharedPreferenceput("email",email);
             this.email.SharedPreferenceput("pwd",pwd);
 //             跳转路径
+            ARouter.getInstance().build("/mymodlue/activity").navigation();
             finish();
         } else {
             ToastUtils.show(loginBean.message);

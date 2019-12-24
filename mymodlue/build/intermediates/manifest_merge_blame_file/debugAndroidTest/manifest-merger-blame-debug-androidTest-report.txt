@@ -3,24 +3,24 @@
 3    package="com.wd.mymodlue.test" >
 4
 5    <uses-sdk
-5-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3655978093443443675.xml:5:5-74
+5-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4398698409211647797.xml:5:5-74
 6        android:minSdkVersion="26"
-6-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3655978093443443675.xml:5:15-41
+6-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4398698409211647797.xml:5:15-41
 7        android:targetSdkVersion="27" />
-7-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3655978093443443675.xml:5:42-71
+7-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4398698409211647797.xml:5:42-71
 8
 9    <instrumentation
-9-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3655978093443443675.xml:11:5-15:70
+9-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4398698409211647797.xml:11:5-15:70
 10        android:name="androidx.test.runner.AndroidJUnitRunner"
-10-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3655978093443443675.xml:11:22-76
+10-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4398698409211647797.xml:11:22-76
 11        android:functionalTest="false"
-11-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3655978093443443675.xml:14:22-52
+11-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4398698409211647797.xml:14:22-52
 12        android:handleProfiling="false"
-12-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3655978093443443675.xml:13:22-53
+12-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4398698409211647797.xml:13:22-53
 13        android:label="Tests for com.wd.mymodlue.test"
-13-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3655978093443443675.xml:15:22-68
+13-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4398698409211647797.xml:15:22-68
 14        android:targetPackage="com.wd.mymodlue.test" />
-14-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3655978093443443675.xml:12:22-66
+14-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4398698409211647797.xml:12:22-66
 15
 16    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 16-->[:mvplibrary] H:\healthy\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-14:47
@@ -99,7 +99,7 @@
 40-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:24:22-69
 41
 42    <application
-42-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3655978093443443675.xml:7:5-9:19
+42-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4398698409211647797.xml:7:5-9:19
 43        android:name="com.bwie.mvplibrary.app.App"
 43-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-51
 44        android:allowBackup="true"
@@ -107,7 +107,7 @@
 45        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 45-->[androidx.core:core:1.1.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\78f41c6946dea7ca97f5ff6ef8b6a433\core-1.1.0\AndroidManifest.xml:24:18-86
 46        android:debuggable="true"
-46-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3655978093443443675.xml:7:18-43
+46-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4398698409211647797.xml:7:18-43
 47        android:icon="@mipmap/ic_launcher"
 47-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:9-43
 48        android:label="@string/app_name"
@@ -119,18 +119,18 @@
 51        android:theme="@style/AppTheme" >
 51-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:9-40
 52        <uses-library android:name="android.test.runner" />
-52-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3655978093443443675.xml:8:9-60
-52-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3655978093443443675.xml:8:23-57
+52-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4398698409211647797.xml:8:9-60
+52-->H:\healthy\Patient\mymodlue\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4398698409211647797.xml:8:23-57
 53
-54        <activity android:name="com.wd.mymodlue.view.activity.PatientsCircleActivity" />
-54-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:9-89
-54-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:19-86
-55        <activity android:name="com.wd.mymodlue.view.activity.CollectActivity" >
+54        <activity android:name="com.wd.mymodlue.view.activity.CompileActivity" />
+54-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:9-82
+54-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:19-79
+55        <activity android:name="com.wd.mymodlue.view.activity.HistoryActivity" >
 55-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:9-26:20
 55-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:19-79
 56            <intent-filter>
 56-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:13-25:29
-57                <action android:name="com.hl.CollectActivity" />
+57                <action android:name="com.hl.HistoryActivity" />
 57-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:17-65
 57-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:25-62
 58
@@ -139,26 +139,26 @@
 59-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 60            </intent-filter>
 61        </activity>
-62        <activity android:name="com.wd.mymodlue.view.activity.InquiryActivity" >
+62        <activity android:name="com.wd.mymodlue.view.activity.PatientsCircleActivity" >
 62-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:9-33:20
-62-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:19-79
+62-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:19-86
 63            <intent-filter>
 63-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:13-32:29
-64                <action android:name="com.hl.InquiryActivity" />
-64-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:17-65
-64-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:25-62
+64                <action android:name="com.hl.PatientsCircleActivity" />
+64-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:17-72
+64-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:25-69
 65
 66                <category android:name="android.intent.category.DEFAULT" />
 66-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
 66-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 67            </intent-filter>
 68        </activity>
-69        <activity android:name="com.wd.mymodlue.view.activity.FeatureActivity" >
+69        <activity android:name="com.wd.mymodlue.view.activity.CollectActivity" >
 69-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:34:9-40:20
 69-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:34:19-79
 70            <intent-filter>
 70-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:35:13-39:29
-71                <action android:name="com.hl.FeatureActivity" />
+71                <action android:name="com.hl.CollectActivity" />
 71-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:36:17-65
 71-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:36:25-62
 72
@@ -167,299 +167,301 @@
 73-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 74            </intent-filter>
 75        </activity>
-76        <activity android:name="com.wd.mymodlue.view.activity.GenderActivity" >
+76        <activity android:name="com.wd.mymodlue.view.activity.InquiryActivity" >
 76-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:9-47:20
-76-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:19-78
+76-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:19-79
 77            <intent-filter>
 77-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:42:13-46:29
-78                <action android:name="com.hl.GenderActivity" />
-78-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:17-64
-78-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:25-61
+78                <action android:name="com.hl.InquiryActivity" />
+78-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:17-65
+78-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:25-62
 79
 80                <category android:name="android.intent.category.DEFAULT" />
 80-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
 80-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 81            </intent-filter>
 82        </activity>
-83        <activity android:name="com.wd.mymodlue.view.activity.NicknameActivity" >
+83        <activity android:name="com.wd.mymodlue.view.activity.FeatureActivity" >
 83-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:48:9-54:20
-83-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:48:19-80
+83-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:48:19-79
 84            <intent-filter>
 84-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:49:13-53:29
-85                <action android:name="com.hl.NicknameActivity" />
-85-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:50:17-66
-85-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:50:25-63
+85                <action android:name="com.hl.FeatureActivity" />
+85-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:50:17-65
+85-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:50:25-62
 86
 87                <category android:name="android.intent.category.DEFAULT" />
 87-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
 87-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 88            </intent-filter>
 89        </activity>
-90        <activity android:name="com.wd.mymodlue.view.activity.PwdActivity" >
+90        <activity android:name="com.wd.mymodlue.view.activity.GenderActivity" >
 90-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:55:9-61:20
-90-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:55:19-75
+90-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:55:19-78
 91            <intent-filter>
 91-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:56:13-60:29
-92                <action android:name="com.hl.PwdActivity" />
-92-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:57:17-61
-92-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:57:25-58
+92                <action android:name="com.hl.GenderActivity" />
+92-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:57:17-64
+92-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:57:25-61
 93
 94                <category android:name="android.intent.category.DEFAULT" />
 94-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
 94-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 95            </intent-filter>
 96        </activity>
-97        <activity android:name="com.wd.mymodlue.view.activity.MessageActivity" >
+97        <activity android:name="com.wd.mymodlue.view.activity.NicknameActivity" >
 97-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:62:9-68:20
-97-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:62:19-79
+97-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:62:19-80
 98            <intent-filter>
 98-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:63:13-67:29
-99                <action android:name="com.hl.MessageActivity" />
-99-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:64:17-65
-99-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:64:25-62
+99                <action android:name="com.hl.NicknameActivity" />
+99-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:64:17-66
+99-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:64:25-63
 100
 101                <category android:name="android.intent.category.DEFAULT" />
 101-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
 101-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 102            </intent-filter>
 103        </activity>
-104        <activity android:name="com.wd.mymodlue.view.activity.BrightnessActivity" >
+104        <activity android:name="com.wd.mymodlue.view.activity.PwdActivity" >
 104-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:69:9-75:20
-104-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:69:19-82
+104-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:69:19-75
 105            <intent-filter>
 105-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:70:13-74:29
-106                <action android:name="com.hl.BrightnessActivity" />
-106-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:71:17-68
-106-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:71:25-65
+106                <action android:name="com.hl.PwdActivity" />
+106-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:71:17-61
+106-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:71:25-58
 107
 108                <category android:name="android.intent.category.DEFAULT" />
 108-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
 108-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 109            </intent-filter>
 110        </activity>
-111        <activity android:name="com.wd.mymodlue.view.activity.INviteActivity" >
+111        <activity android:name="com.wd.mymodlue.view.activity.MessageActivity" >
 111-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:76:9-82:20
-111-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:76:19-78
+111-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:76:19-79
 112            <intent-filter>
 112-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:77:13-81:29
-113                <action android:name="com.hl.INviteActivity" />
-113-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:78:17-64
-113-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:78:25-61
+113                <action android:name="com.hl.MessageActivity" />
+113-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:78:17-65
+113-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:78:25-62
 114
 115                <category android:name="android.intent.category.DEFAULT" />
 115-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
 115-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 116            </intent-filter>
 117        </activity>
-118        <activity android:name="com.wd.mymodlue.view.activity.SettingActivity" >
+118        <activity android:name="com.wd.mymodlue.view.activity.BrightnessActivity" >
 118-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:83:9-89:20
-118-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:83:19-79
+118-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:83:19-82
 119            <intent-filter>
 119-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:84:13-88:29
-120                <action android:name="com.hl.SettingActivity" />
-120-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:85:17-65
-120-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:85:25-62
+120                <action android:name="com.hl.BrightnessActivity" />
+120-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:85:17-68
+120-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:85:25-65
 121
 122                <category android:name="android.intent.category.DEFAULT" />
 122-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
 122-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 123            </intent-filter>
 124        </activity>
-125        <activity android:name="com.wd.mymodlue.view.activity.SuggestActivity" >
+125        <activity android:name="com.wd.mymodlue.view.activity.INviteActivity" >
 125-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:90:9-96:20
-125-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:90:19-79
+125-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:90:19-78
 126            <intent-filter>
 126-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:91:13-95:29
-127                <action android:name="com.hl.SuggestActivity" />
-127-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:92:17-65
-127-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:92:25-62
+127                <action android:name="com.hl.INviteActivity" />
+127-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:92:17-64
+127-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:92:25-61
 128
 129                <category android:name="android.intent.category.DEFAULT" />
 129-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
 129-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 130            </intent-filter>
 131        </activity>
-132        <activity android:name="com.wd.mymodlue.view.activity.WalletActivity" >
+132        <activity android:name="com.wd.mymodlue.view.activity.SettingActivity" >
 132-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:97:9-103:20
-132-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:97:19-78
+132-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:97:19-79
 133            <intent-filter>
 133-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:98:13-102:29
-134                <action android:name="com.hl.WalletActivity" />
-134-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:99:17-64
-134-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:99:25-61
+134                <action android:name="com.hl.SettingActivity" />
+134-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:99:17-65
+134-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:99:25-62
 135
 136                <category android:name="android.intent.category.DEFAULT" />
 136-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
 136-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 137            </intent-filter>
 138        </activity>
-139        <activity android:name="com.wd.mymodlue.view.activity.TaskActivity" >
+139        <activity android:name="com.wd.mymodlue.view.activity.SuggestActivity" >
 139-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:104:9-110:20
-139-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:104:19-76
+139-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:104:19-79
 140            <intent-filter>
 140-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:105:13-109:29
-141                <action android:name="com.hl.TaskActivity" />
-141-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:106:17-62
-141-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:106:25-59
+141                <action android:name="com.hl.SuggestActivity" />
+141-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:106:17-65
+141-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:106:25-62
 142
 143                <category android:name="android.intent.category.DEFAULT" />
 143-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
 143-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 144            </intent-filter>
 145        </activity>
-146        <activity android:name="com.wd.mymodlue.view.activity.VideoActivity" >
+146        <activity android:name="com.wd.mymodlue.view.activity.WalletActivity" >
 146-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:111:9-117:20
-146-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:111:19-77
+146-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:111:19-78
 147            <intent-filter>
 147-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:112:13-116:29
-148                <action android:name="com.hl.VideoActivity" />
-148-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:113:17-63
-148-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:113:25-60
+148                <action android:name="com.hl.WalletActivity" />
+148-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:113:17-64
+148-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:113:25-61
 149
 150                <category android:name="android.intent.category.DEFAULT" />
 150-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
 150-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 151            </intent-filter>
 152        </activity>
-153        <activity android:name="com.wd.mymodlue.view.activity.AttentionActivity" >
+153        <activity android:name="com.wd.mymodlue.view.activity.TaskActivity" >
 153-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:118:9-124:20
-153-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:118:19-81
+153-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:118:19-76
 154            <intent-filter>
 154-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:119:13-123:29
-155                <action android:name="com.hl.AttentionActivity" />
-155-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:120:17-67
-155-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:120:25-64
+155                <action android:name="com.hl.TaskActivity" />
+155-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:120:17-62
+155-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:120:25-59
 156
 157                <category android:name="android.intent.category.DEFAULT" />
 157-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
 157-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 158            </intent-filter>
 159        </activity>
-160        <activity android:name="com.wd.mymodlue.view.activity.RecordActivity" >
+160        <activity android:name="com.wd.mymodlue.view.activity.VideoActivity" >
 160-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:125:9-131:20
-160-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:125:19-78
+160-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:125:19-77
 161            <intent-filter>
 161-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:126:13-130:29
-162                <action android:name="com.hl.RecordActivity" />
-162-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:127:17-64
-162-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:127:25-61
+162                <action android:name="com.hl.VideoActivity" />
+162-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:127:17-63
+162-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:127:25-60
 163
 164                <category android:name="android.intent.category.DEFAULT" />
 164-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
 164-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 165            </intent-filter>
 166        </activity>
-167        <activity android:name="com.wd.mymodlue.view.activity.My_ModuleMainActivity" >
-167-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:132:9-140:20
-167-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:132:19-85
-168
-169            <!-- <intent-filter> -->
-170            <!-- <action android:name="android.intent.action.MAIN" /> -->
-171
-172
-173            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-174            <!-- </intent-filter> -->
-175        </activity>
-176        <activity android:name="com.wd.mymainmodule.view.activity.ResetPwdActivity" >
-176-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:9-24:20
-176-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:19-84
-177            <intent-filter>
-177-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:13-23:29
-178                <action android:name="com.hl.ResetPwdActivity" />
-178-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:17-66
-178-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:25-63
-179
-180                <category android:name="android.intent.category.DEFAULT" />
-180-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
-180-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
-181            </intent-filter>
-182        </activity>
-183        <activity android:name="com.wd.mymainmodule.view.activity.ResetUserPwdActivity" >
-183-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:9-31:20
-183-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:19-88
-184            <intent-filter>
-184-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:13-30:29
-185                <action android:name="com.hl.ResetUserPwdActivity" />
-185-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:17-70
-185-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:25-67
+167        <activity android:name="com.wd.mymodlue.view.activity.AttentionActivity" >
+167-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:132:9-138:20
+167-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:132:19-81
+168            <intent-filter>
+168-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:133:13-137:29
+169                <action android:name="com.hl.AttentionActivity" />
+169-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:134:17-67
+169-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:134:25-64
+170
+171                <category android:name="android.intent.category.DEFAULT" />
+171-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
+171-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
+172            </intent-filter>
+173        </activity>
+174        <activity android:name="com.wd.mymodlue.view.activity.RecordActivity" >
+174-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:139:9-145:20
+174-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:139:19-78
+175            <intent-filter>
+175-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:140:13-144:29
+176                <action android:name="com.hl.RecordActivity" />
+176-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:141:17-64
+176-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:141:25-61
+177
+178                <category android:name="android.intent.category.DEFAULT" />
+178-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
+178-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
+179            </intent-filter>
+180        </activity>
+181        <activity android:name="com.wd.mymodlue.view.activity.My_ModuleMainActivity" >
+181-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:146:9-154:20
+181-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:146:19-85
+182
+183            <!-- <intent-filter> -->
+184            <!-- <action android:name="android.intent.action.MAIN" /> -->
+185
 186
-187                <category android:name="android.intent.category.DEFAULT" />
-187-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
-187-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
-188            </intent-filter>
+187            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+188            <!-- </intent-filter> -->
 189        </activity>
-190        <activity android:name="com.wd.mymainmodule.view.activity.RegisterActivity" >
-190-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:9-38:20
-190-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:19-84
+190        <activity android:name="com.wd.mymainmodule.view.activity.ResetPwdActivity" >
+190-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:9-24:20
+190-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:19-84
 191            <intent-filter>
-191-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:33:13-37:29
-192                <action android:name="com.hl.RegisterActivity" />
-192-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:34:17-66
-192-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:34:25-63
+191-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:13-23:29
+192                <action android:name="com.hl.ResetPwdActivity" />
+192-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:17-66
+192-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:25-63
 193
 194                <category android:name="android.intent.category.DEFAULT" />
 194-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
 194-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 195            </intent-filter>
 196        </activity>
-197        <activity android:name="com.wd.mymainmodule.view.activity.Main_log_Activity" >
-197-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:9-45:20
-197-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:19-85
+197        <activity android:name="com.wd.mymainmodule.view.activity.ResetUserPwdActivity" >
+197-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:9-31:20
+197-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:19-88
 198            <intent-filter>
-198-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:13-44:29
-199                <action android:name="android.intent.action.MAIN" />
-199-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:17-69
-199-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:25-66
+198-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:13-30:29
+199                <action android:name="com.hl.ResetUserPwdActivity" />
+199-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:17-70
+199-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:25-67
 200
-201                <category android:name="android.intent.category.LAUNCHER" />
-201-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:17-77
-201-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:27-74
+201                <category android:name="android.intent.category.DEFAULT" />
+201-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
+201-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
 202            </intent-filter>
 203        </activity>
-204        <activity
-204-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:12:9-17:63
-205            android:name="com.uuzuche.lib_zxing.activity.CaptureActivity"
-205-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:13:13-74
-206            android:configChanges="orientation|keyboardHidden"
-206-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:14:13-63
-207            android:screenOrientation="portrait"
-207-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:15:13-49
-208            android:theme="@style/Theme.AppCompat.NoActionBar"
-208-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:16:13-63
-209            android:windowSoftInputMode="stateAlwaysHidden" />
-209-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:17:13-60
-210        <activity
-210-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:27:9-33:20
-211            android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
-211-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:28:13-99
-212            android:theme="@android:style/Theme" >
-212-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:29:13-49
-213            <intent-filter>
-213-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:30:13-32:29
-214                <action android:name="android.intent.action.MAIN" />
-214-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:17-69
-214-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:25-66
-215            </intent-filter>
-216        </activity>
-217        <activity
-217-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:34:9-40:20
-218            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity"
-218-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:35:13-95
-219            android:theme="@android:style/Theme" >
-219-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:36:13-49
-220            <intent-filter>
-220-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:30:13-32:29
-221                <action android:name="android.intent.action.MAIN" />
-221-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:17-69
-221-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:25-66
-222            </intent-filter>
-223        </activity>
+204        <activity android:name="com.wd.mymainmodule.view.activity.RegisterActivity" >
+204-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:9-38:20
+204-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:19-84
+205            <intent-filter>
+205-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:33:13-37:29
+206                <action android:name="com.hl.RegisterActivity" />
+206-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:34:17-66
+206-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:34:25-63
+207
+208                <category android:name="android.intent.category.DEFAULT" />
+208-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:17-76
+208-->[__tested_artifact__::mymodlue] H:\healthy\Patient\mymodlue\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:27-73
+209            </intent-filter>
+210        </activity>
+211        <activity android:name="com.wd.mymainmodule.view.activity.Main_log_Activity" >
+211-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:9-45:20
+211-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:19-85
+212            <intent-filter>
+212-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:13-44:29
+213                <action android:name="android.intent.action.MAIN" />
+213-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:17-69
+213-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:25-66
+214
+215                <category android:name="android.intent.category.LAUNCHER" />
+215-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:17-77
+215-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:27-74
+216            </intent-filter>
+217        </activity>
+218        <activity
+218-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:12:9-17:63
+219            android:name="com.uuzuche.lib_zxing.activity.CaptureActivity"
+219-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:13:13-74
+220            android:configChanges="orientation|keyboardHidden"
+220-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:14:13-63
+221            android:screenOrientation="portrait"
+221-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:15:13-49
+222            android:theme="@style/Theme.AppCompat.NoActionBar"
+222-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:16:13-63
+223            android:windowSoftInputMode="stateAlwaysHidden" />
+223-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:17:13-60
 224        <activity
-224-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:41:9-47:20
-225            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
-225-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:42:13-103
-226            android:theme="@android:style/Theme.Dialog" >
-226-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:43:13-56
+224-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:27:9-33:20
+225            android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
+225-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:28:13-99
+226            android:theme="@android:style/Theme" >
+226-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:29:13-49
 227            <intent-filter>
 227-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:30:13-32:29
 228                <action android:name="android.intent.action.MAIN" />
@@ -467,17 +469,43 @@
 228-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:25-66
 229            </intent-filter>
 230        </activity>
-231
-232        <provider
-232-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\d036f66a148620f08b99516087fd373d\lifecycle-process-2.0.0\AndroidManifest.xml:23:9-27:43
-233            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-233-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\d036f66a148620f08b99516087fd373d\lifecycle-process-2.0.0\AndroidManifest.xml:24:13-79
-234            android:authorities="com.wd.mymodlue.test.lifecycle-process"
-234-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\d036f66a148620f08b99516087fd373d\lifecycle-process-2.0.0\AndroidManifest.xml:25:13-69
-235            android:exported="false"
-235-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\d036f66a148620f08b99516087fd373d\lifecycle-process-2.0.0\AndroidManifest.xml:26:13-37
-236            android:multiprocess="true" />
-236-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\d036f66a148620f08b99516087fd373d\lifecycle-process-2.0.0\AndroidManifest.xml:27:13-40
-237    </application>
-238
-239</manifest>
+231        <activity
+231-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:34:9-40:20
+232            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity"
+232-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:35:13-95
+233            android:theme="@android:style/Theme" >
+233-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:36:13-49
+234            <intent-filter>
+234-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:30:13-32:29
+235                <action android:name="android.intent.action.MAIN" />
+235-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:17-69
+235-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:25-66
+236            </intent-filter>
+237        </activity>
+238        <activity
+238-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:41:9-47:20
+239            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
+239-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:42:13-103
+240            android:theme="@android:style/Theme.Dialog" >
+240-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:43:13-56
+241            <intent-filter>
+241-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:30:13-32:29
+242                <action android:name="android.intent.action.MAIN" />
+242-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:17-69
+242-->[:mymainmodule] H:\healthy\Patient\mymainmodule\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:25-66
+243            </intent-filter>
+244        </activity>
+245
+246        <provider
+246-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\d036f66a148620f08b99516087fd373d\lifecycle-process-2.0.0\AndroidManifest.xml:23:9-27:43
+247            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+247-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\d036f66a148620f08b99516087fd373d\lifecycle-process-2.0.0\AndroidManifest.xml:24:13-79
+248            android:authorities="com.wd.mymodlue.test.lifecycle-process"
+248-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\d036f66a148620f08b99516087fd373d\lifecycle-process-2.0.0\AndroidManifest.xml:25:13-69
+249            android:exported="false"
+249-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\d036f66a148620f08b99516087fd373d\lifecycle-process-2.0.0\AndroidManifest.xml:26:13-37
+250            android:multiprocess="true" />
+250-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\d036f66a148620f08b99516087fd373d\lifecycle-process-2.0.0\AndroidManifest.xml:27:13-40
+251    </application>
+252
+253</manifest>
