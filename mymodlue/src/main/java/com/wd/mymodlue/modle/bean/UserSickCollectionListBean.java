@@ -31,6 +31,8 @@ public class UserSickCollectionListBean {
         public int collectionNum;
         public int commentNum;
         public long createTime;
+        public String title;
+        public String disease;
         public int id;
         public int sickCircleId;
     }

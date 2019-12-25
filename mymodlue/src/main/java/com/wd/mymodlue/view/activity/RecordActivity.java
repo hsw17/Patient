@@ -109,7 +109,8 @@ public class RecordActivity extends BaseActivity<Persenter> implements IViewCont
         recordButtonAdd.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
-
+                Intent intent=new Intent("com.hl.CompileActivity");
+                startActivity(intent);
             }
 
             @Override

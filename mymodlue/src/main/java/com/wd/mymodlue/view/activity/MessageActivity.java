@@ -16,6 +16,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.SPUtils;
@@ -41,7 +43,7 @@ import butterknife.ButterKnife;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-
+@Route(path = "/mymodlue/emactivity")
 public class MessageActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
     //需要的权限数组 读/写/相机
@@ -272,6 +274,18 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
             protected void onSingleClick() {
                 Intent intent = new Intent("com.hl.FeatureActivity");
                 startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//        邮箱
+        myInformationMailbox.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                ARouter.getInstance().build("/mymainmodule/emailctivity").navigation();
             }
 
             @Override

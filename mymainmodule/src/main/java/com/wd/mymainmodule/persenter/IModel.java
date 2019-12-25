@@ -99,4 +99,22 @@ public class IModel implements IViewContract.IModel {
                     }
                 });
     }
+
+    @Override
+    public void doEmail(Map<String, Object> oap, String email, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).doEmail(oap,email)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UserBean>() {
+                    @Override
+                    public void onNext(UserBean userBean) {
+                        iModelCallback.onSuccess(userBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+                    }
+                });
+    }
 }

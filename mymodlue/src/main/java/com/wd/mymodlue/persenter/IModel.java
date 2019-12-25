@@ -11,6 +11,7 @@ import com.wd.mymodlue.modle.bean.CurrencyNoticeListBean;
 import com.wd.mymodlue.modle.bean.CurrentInquiryRecordBean;
 import com.wd.mymodlue.modle.bean.DeleteArchivesBean;
 import com.wd.mymodlue.modle.bean.DoctorEvaluateBean;
+import com.wd.mymodlue.modle.bean.GIfListBean;
 import com.wd.mymodlue.modle.bean.HeadPicBean;
 import com.wd.mymodlue.modle.bean.HealthTestBean;
 import com.wd.mymodlue.modle.bean.HealthinformationBean;
@@ -23,9 +24,11 @@ import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.modle.bean.UserCommentListBean;
 import com.wd.mymodlue.modle.bean.UserConsumptionRecordListBean;
 import com.wd.mymodlue.modle.bean.UserDoctorFollowBean;
+import com.wd.mymodlue.modle.bean.UserSickCollectionListBean;
 import com.wd.mymodlue.modle.bean.UserSignBean;
 import com.wd.mymodlue.modle.bean.UserTaskListBean;
 import com.wd.mymodlue.modle.bean.UserWalletBean;
+import com.wd.mymodlue.modle.bean.VideoCollectBean;
 import com.wd.mymodlue.view.contract.IViewContract;
 
 import java.util.List;
@@ -568,6 +571,81 @@ public class IModel implements IViewContract.IModel {
                 .subscribe(new CommonObserver<UserArchivesPictureBean>() {
                     @Override
                     public void onNext(UserArchivesPictureBean userArchivesPictureBean) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onVideoCollectionList(Map<String, Object> map, Map<String, Object> oap, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onVideoCollectionList(map,oap)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<VideoCollectBean>() {
+                    @Override
+                    public void onNext(VideoCollectBean videoCollectBean) {
+                        iModelCallback.onSuccess(videoCollectBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onGiftList(IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onGiftList()
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<GIfListBean>() {
+                    @Override
+                    public void onNext(GIfListBean gIfListBean) {
+                        iModelCallback.onSuccess(gIfListBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onSickCollectionList(Map<String, Object> map, Map<String, Object> oap, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onSickCollectionList(map,oap)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UserSickCollectionListBean>() {
+                    @Override
+                    public void onNext(UserSickCollectionListBean userSickCollectionListBean) {
+                        iModelCallback.onSuccess(userSickCollectionListBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onHandselGift(Map<String, Object> map, Map<String, Object> oap, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onHandselGift(map,oap)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UserBean>() {
+                    @Override
+                    public void onNext(UserBean userBean) {
+                        iModelCallback.onSuccessOne(userBean);
 
                     }
 

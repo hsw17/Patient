@@ -70,6 +70,7 @@ public class CompileActivity extends BaseActivity<Persenter> implements IViewCon
     private SPUtils login;
     private Map<String, Object> map;
     Calendar calendar = Calendar.getInstance(Locale.CHINA);
+    private int id1;
 
     @Override
     protected int bindLayout() {
@@ -119,6 +120,8 @@ public class CompileActivity extends BaseActivity<Persenter> implements IViewCon
         map = new HashMap<>();
         map.put("userId", id);
         map.put("sessionId", sessionId);
+        Intent intent = getIntent();
+        id1 = intent.getIntExtra("id", 0);
 //      返回
         head_details_back.setOnClickListener(new CustomClickListener() {
             @Override
@@ -132,6 +135,7 @@ public class CompileActivity extends BaseActivity<Persenter> implements IViewCon
             }
         });
         //点击保存
+
         addFiles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -246,7 +250,9 @@ public class CompileActivity extends BaseActivity<Persenter> implements IViewCon
         UpdateArchivesBean updateArchivesBean= (UpdateArchivesBean) obj;
         if ("0000".equals(updateArchivesBean.getStatus())) {
             ToastUtils.show(updateArchivesBean.getMessage());
-
+            Intent intent=new Intent("com.hl.SuccessActivity");
+            intent.putExtra("idl",id1);
+            sendBroadcast(intent);
         }else {
             ToastUtils.show(updateArchivesBean.getMessage());
         }

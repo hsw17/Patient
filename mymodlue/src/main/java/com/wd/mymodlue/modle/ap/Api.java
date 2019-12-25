@@ -7,6 +7,7 @@ import com.wd.mymodlue.modle.bean.CurrencyNoticeListBean;
 import com.wd.mymodlue.modle.bean.CurrentInquiryRecordBean;
 import com.wd.mymodlue.modle.bean.DeleteArchivesBean;
 import com.wd.mymodlue.modle.bean.DoctorEvaluateBean;
+import com.wd.mymodlue.modle.bean.GIfListBean;
 import com.wd.mymodlue.modle.bean.HeadPicBean;
 import com.wd.mymodlue.modle.bean.HealthTestBean;
 import com.wd.mymodlue.modle.bean.HealthinformationBean;
@@ -20,9 +21,11 @@ import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.modle.bean.UserCommentListBean;
 import com.wd.mymodlue.modle.bean.UserConsumptionRecordListBean;
 import com.wd.mymodlue.modle.bean.UserDoctorFollowBean;
+import com.wd.mymodlue.modle.bean.UserSickCollectionListBean;
 import com.wd.mymodlue.modle.bean.UserSignBean;
 import com.wd.mymodlue.modle.bean.UserTaskListBean;
 import com.wd.mymodlue.modle.bean.UserWalletBean;
+import com.wd.mymodlue.modle.bean.VideoCollectBean;
 
 import java.util.List;
 import java.util.Map;
@@ -166,5 +169,21 @@ public interface Api {
     @Multipart
     @POST("health/user/verify/v1/uploadArchivesPicture")
     Observable<UserArchivesPictureBean> onGetpicture(@HeaderMap Map<String,Object> map, @Part List<MultipartBody.Part> picture);
+
+    //用户收藏健康课堂视频列表
+    @GET("health/user/verify/v1/findVideoCollectionList")
+    Observable<VideoCollectBean> onVideoCollectionList(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+    //查询用户收藏病友圈列表
+    @GET("health/user/verify/v1/findUserSickCollectionList")
+    Observable<UserSickCollectionListBean> onSickCollectionList(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+    //查询礼物列表
+    @GET("health/user/inquiry/v1/findGiftList")
+    Observable<GIfListBean> onGiftList();
+
+    //查询礼物列表
+    @GET("health/user/inquiry/verify/v1/handselGift")
+    Observable<UserBean> onHandselGift(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
 
 }
