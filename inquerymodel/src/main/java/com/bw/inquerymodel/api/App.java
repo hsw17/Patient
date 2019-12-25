@@ -3,6 +3,8 @@ package com.bw.inquerymodel.api;
 import android.app.Application;
 import android.content.Context;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+
 import cn.jpush.im.android.api.JMessageClient;
 import cn.jpush.im.api.BasicCallback;
 
@@ -18,5 +20,6 @@ public class App extends Application {
         super.onCreate ();
         context = this;
         JMessageClient.init(context);
+        Fresco.initialize ( context );
     }
 }

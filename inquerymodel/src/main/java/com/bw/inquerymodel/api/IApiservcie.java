@@ -5,13 +5,17 @@ import com.bw.inquerymodel.bean.DepartmentBean;
 import com.bw.inquerymodel.bean.DoctorListBean;
 import com.bw.inquerymodel.bean.DoctroinfoBean;
 import com.bw.inquerymodel.bean.EndInquiryBean;
+import com.bw.inquerymodel.bean.RecordListBean;
 import com.bw.inquerymodel.bean.ResultBean;
 
 import java.util.Map;
 
 import io.reactivex.Observable;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.HeaderMap;
+import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
@@ -40,4 +44,11 @@ public interface IApiservcie {
     //结束当前问诊
     @PUT("health/user/inquiry/verify/v1/endInquiry")
     Observable<EndInquiryBean> endinquiry(@HeaderMap Map<String,Object> headerMap,@Query ( "recordId" ) int recordId);
+    //发送信息
+    @FormUrlEncoded
+    @POST("health/user/inquiry/verify/v1/pushMessage")
+    Observable<EndInquiryBean> sendmessage(@HeaderMap Map<String,Object> headerMap,@FieldMap Map<String,Object> queryMap);
+    //查询历史问诊记录
+    @GET("health/user/inquiry/verify/v1/findInquiryRecordList")
+    Observable<RecordListBean> recordlist(@HeaderMap Map<String,Object> headerMap, @FieldMap Map<String,Object> queryMap);
 }

@@ -53,6 +53,8 @@ public class InqueryActivity extends BaseActivity<DoctroInfoPresenter> implement
     private int doctorIds;
     private RecyclerView pinglun;
     private String doctorName;
+    private String doctorId;
+    private String doctorUserName;
 
     @Override
     protected int bindLayout() {
@@ -69,7 +71,8 @@ public class InqueryActivity extends BaseActivity<DoctroInfoPresenter> implement
         super.initData ();
 
         Intent intent = getIntent ();
-        String doctorId = intent.getStringExtra ( "doctorId" );
+        doctorId = intent.getStringExtra ( "doctorId" );
+        doctorUserName = intent.getStringExtra ( "doctorUserName" );
         presenter.doctorinfo ( Integer.parseInt ( doctorId ) );
     }
 
@@ -108,6 +111,7 @@ public class InqueryActivity extends BaseActivity<DoctroInfoPresenter> implement
             public void onClick(View v) {
                 Intent intent = new Intent ( InqueryActivity.this, LiaoTActivity.class );
                 intent.putExtra ( "userName", doctorName);
+                intent.putExtra ( "doctorId",doctorId );
                 startActivity ( intent );
 
             }

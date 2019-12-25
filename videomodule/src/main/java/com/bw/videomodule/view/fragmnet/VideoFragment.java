@@ -379,8 +379,8 @@ public class VideoFragment extends BaseFragment<IPresenter> implements Contract.
 
     public void getMap(int categoryId){
         Map<String, Object> headerMap = new HashMap<> ();
-        headerMap.put ( "userId", "441" );
-        headerMap.put ( "sessionId", "1576409538322441" );
+        headerMap.put ( "userId", "434" );
+        headerMap.put ( "sessionId", "1577169030922434" );
 
         Map<String, Object> queryMap = new HashMap<> ();
         queryMap.put ( "categoryId", categoryId );
@@ -392,8 +392,8 @@ public class VideoFragment extends BaseFragment<IPresenter> implements Contract.
 
     public void getMapC(int categoryId){
         Map<String, Object> headerMap = new HashMap<> ();
-        headerMap.put ( "userId", "441" );
-        headerMap.put ( "sessionId", "1576582364721441" );
+        headerMap.put ( "userId", "434" );
+        headerMap.put ( "sessionId", "1577169030922434" );
 
         Map<String, Object> queryMap = new HashMap<> ();
         queryMap.put ( "videoId", categoryId );

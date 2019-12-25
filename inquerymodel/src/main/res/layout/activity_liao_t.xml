@@ -61,20 +61,6 @@
             android:visibility="gone"
             android:layout_height="wrap_content">
 
-            <com.wd.health.view.AudioRecorderButton
-                android:id="@+id/btn_recorder"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/shape_btn_recorder_normal"
-                android:gravity="center"
-                android:minHeight="0dp"
-                android:padding="3dp"
-                android:text="@string/str_recorder_normal" />
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -85,21 +71,8 @@
             android:id="@+id/edit_sendmessage_zyj"
             android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20px"
-            android:layout_marginTop="20px"
             android:layout_weight="1"
-
-            android:gravity="center_vertical"
-            android:hint="请输入咨询的问题"
-            android:imeOptions="actionSend"
-            android:paddingLeft="20px"
-            android:paddingRight="20px"
-            android:paddingTop="10px"
-            android:paddingBottom="10px"
-            android:singleLine="true"
-
-            android:textCursorDrawable="@null"
-            android:textSize="14sp" />
+            android:hint="请输入..."/>
         <ImageView
             android:id="@+id/bq_details_img"
             android:layout_width="80px"

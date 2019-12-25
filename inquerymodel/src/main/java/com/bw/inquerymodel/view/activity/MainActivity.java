@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -23,6 +24,7 @@ import com.bw.inquerymodel.contract.DocTorContract;
 import com.bw.inquerymodel.presenter.IPresenter;
 import com.bw.inquerymodel.view.adapter.DocTorRecycleAdapter;
 import com.bwie.mvplibrary.base.BaseActivity;
+import com.bwie.mvplibrary.utils.Logger;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.tabs.TabLayout;
 
@@ -32,6 +34,7 @@ import java.util.Map;
 
 public class MainActivity extends BaseActivity<IPresenter> implements DocTorContract.IMainView {
 
+    private String TAG = "MainActivity";
     private TabLayout dtablayout;
     private TabLayout tablouy;
     private int doctorId;
@@ -242,12 +245,14 @@ public class MainActivity extends BaseActivity<IPresenter> implements DocTorCont
                     getMapD ();
                 }
             } );
-        }else {
+        }else if (message.equals ( "查询成功" )){
             AlertDialog.Builder builder = new AlertDialog.Builder ( this );
             View view = LinearLayout.inflate ( this, R.layout.alter_layout, null );
             TextView quxiao = view.findViewById ( R.id.quxiao );
             TextView tojies = view.findViewById ( R.id.tojies );
             builder.setView ( view );
+
+            int recordId = currentBean.getResult ().getRecordId ();
 
             AlertDialog alertDialog = builder.create ();
             alertDialog.show ();
@@ -262,7 +267,6 @@ public class MainActivity extends BaseActivity<IPresenter> implements DocTorCont
                 @Override
                 public void onClick(View v) {
                     alertDialog.dismiss ();
-                    int recordId = currentBean.getResult ().getRecordId ();
                     getMapE ( recordId );
 
                 }
@@ -316,6 +320,7 @@ public class MainActivity extends BaseActivity<IPresenter> implements DocTorCont
             String doctorUserName = resultBean.getDoctorUserName ();
             Intent intent = new Intent ( MainActivity.this, LiaoTActivity.class );
             intent.putExtra ( "doctorUserName",doctorUserName );
+            intent.putExtra ( "doctorId",String.valueOf ( doctorId ) );
             startActivity ( intent );
         }
     }
@@ -327,7 +332,7 @@ public class MainActivity extends BaseActivity<IPresenter> implements DocTorCont
 
     @Override
     public void fuilerror(String e) {
-
+        Logger.d ( TAG,e );
     }
 
 
@@ -355,13 +360,13 @@ public class MainActivity extends BaseActivity<IPresenter> implements DocTorCont
     public void getMapC( ){
         headerMap = new HashMap<> (  );
         headerMap.put ( "userId","434" );
-        headerMap.put ( "sessionId","1577082173935434" );
+        headerMap.put ( "sessionId","1577169030922434" );
         presenter.current ( headerMap );
     }
     public void getMapD(){
         headerMap = new HashMap<> (  );
         headerMap.put ( "userId","434" );
-        headerMap.put ( "sessionId","1577082173935434" );
+        headerMap.put ( "sessionId","1577169030922434" );
 
         presenter.result ( headerMap,doctorId);
     }
@@ -369,7 +374,7 @@ public class MainActivity extends BaseActivity<IPresenter> implements DocTorCont
     public void getMapE(int recordId){
         headerMap = new HashMap<> (  );
         headerMap.put ( "userId","434" );
-        headerMap.put ( "sessionId","1577082173935434" );
+        headerMap.put ( "sessionId","1577169030922434" );
 
         presenter.endinquiry ( headerMap,recordId);
     }
