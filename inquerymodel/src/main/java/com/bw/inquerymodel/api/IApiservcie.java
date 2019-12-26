@@ -50,5 +50,5 @@ public interface IApiservcie {
     Observable<EndInquiryBean> sendmessage(@HeaderMap Map<String,Object> headerMap,@FieldMap Map<String,Object> queryMap);
     //查询历史问诊记录
     @GET("health/user/inquiry/verify/v1/findInquiryRecordList")
-    Observable<RecordListBean> recordlist(@HeaderMap Map<String,Object> headerMap, @FieldMap Map<String,Object> queryMap);
+    Observable<RecordListBean> recordlist(@HeaderMap Map<String,Object> headerMap, @QueryMap Map<String,Object> queryMap);
 }

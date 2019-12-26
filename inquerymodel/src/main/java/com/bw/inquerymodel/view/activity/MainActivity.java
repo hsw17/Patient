@@ -90,6 +90,7 @@ public class MainActivity extends BaseActivity<IPresenter> implements DocTorCont
             @Override
             public void onClick(View v) {
                  getMapC (  );
+                Toast.makeText ( MainActivity.this, "1", Toast.LENGTH_SHORT ).show ();
             }
         } );
 
@@ -360,13 +361,13 @@ public class MainActivity extends BaseActivity<IPresenter> implements DocTorCont
     public void getMapC( ){
         headerMap = new HashMap<> (  );
         headerMap.put ( "userId","434" );
-        headerMap.put ( "sessionId","1577169030922434" );
+        headerMap.put ( "sessionId","1577327626255434" );
         presenter.current ( headerMap );
     }
     public void getMapD(){
         headerMap = new HashMap<> (  );
         headerMap.put ( "userId","434" );
-        headerMap.put ( "sessionId","1577169030922434" );
+        headerMap.put ( "sessionId","1577327626255434" );
 
         presenter.result ( headerMap,doctorId);
     }
@@ -374,7 +375,7 @@ public class MainActivity extends BaseActivity<IPresenter> implements DocTorCont
     public void getMapE(int recordId){
         headerMap = new HashMap<> (  );
         headerMap.put ( "userId","434" );
-        headerMap.put ( "sessionId","1577169030922434" );
+        headerMap.put ( "sessionId","1577327626255434" );
 
         presenter.endinquiry ( headerMap,recordId);
     }

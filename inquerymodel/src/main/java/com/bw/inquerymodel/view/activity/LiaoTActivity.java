@@ -1,6 +1,7 @@
 package com.bw.inquerymodel.view.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.media.Image;
@@ -18,9 +19,12 @@ import com.bw.inquerymodel.bean.RecordListBean;
 import com.bw.inquerymodel.contract.InqueryContract;
 import com.bw.inquerymodel.presenter.InqueryPresenter;
 import com.bw.inquerymodel.utils.RsaCoder;
+import com.bw.inquerymodel.view.adapter.RecirdListRecycleAdapter;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.base.BasePresenter;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -48,6 +52,8 @@ public class LiaoTActivity extends BaseActivity<InqueryPresenter> implements Inq
     private int recordId;
     private String doctorUserName;
     private String username;
+    private Map<String, Object> queryMap;
+    private XRecyclerView recycle;
 
     @Override
     protected int bindLayout() {
@@ -106,7 +112,9 @@ public class LiaoTActivity extends BaseActivity<InqueryPresenter> implements Inq
                                 public void gotResult(int i, String s) {
                                     if (i==0){
                                         Toast.makeText ( LiaoTActivity.this, "发送成功", Toast.LENGTH_SHORT ).show ();
-
+                                        getMapC ();
+                                        getMapD ();
+                                        presenter.recordlist ( headerMap,queryMap );
                                         edit.setText ( "" );
                                     }else {
                                         Toast.makeText ( LiaoTActivity.this, "发送失败", Toast.LENGTH_SHORT ).show ();
@@ -134,6 +142,9 @@ public class LiaoTActivity extends BaseActivity<InqueryPresenter> implements Inq
         TextContent textContent = (TextContent) newMessage.getContent ();
         String text = textContent.getText ();
 
+        getMapC ();
+        getMapD ();
+        presenter.recordlist ( headerMap,queryMap );
     }
 
 
@@ -142,6 +153,7 @@ public class LiaoTActivity extends BaseActivity<InqueryPresenter> implements Inq
         super.initView ();
         edit = findViewById ( R.id.edit_sendmessage_zyj );
         but_send = findViewById ( R.id. but_send);
+        recycle = findViewById ( R.id.lv_chat_dialog );
     }
 
     @Override
@@ -157,7 +169,18 @@ public class LiaoTActivity extends BaseActivity<InqueryPresenter> implements Inq
 
     @Override
     public void success(RecordListBean recordListBean) {
+        Toast.makeText ( this,recordListBean.getMessage (), Toast.LENGTH_SHORT ).show ();
+        List<RecordListBean.ResultBean> result = recordListBean.getResult ();
+        List<RecordListBean.ResultBean> reverserResult = new ArrayList<> ();
+        // 反转集合 使最新消息在最下面
+        for (int i = result.size() - 1; i >= 0; i--) {
+            reverserResult.add(result.get(i));
+        }
 
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager ( this, LinearLayoutManager.VERTICAL, false );
+        recycle.setLayoutManager ( linearLayoutManager );
+        RecirdListRecycleAdapter recirdListRecycleAdapter = new RecirdListRecycleAdapter ( reverserResult, this );
+        recycle.setAdapter ( recirdListRecycleAdapter );
     }
 
     @Override
@@ -168,7 +191,13 @@ public class LiaoTActivity extends BaseActivity<InqueryPresenter> implements Inq
     public void getMapC( ){
         headerMap = new HashMap<> (  );
         headerMap.put ( "userId","434" );
-        headerMap.put ( "sessionId","1577169030922434" );
-        presenter.current ( headerMap );
+        headerMap.put ( "sessionId","1577327626255434" );
+    }
+
+    public void getMapD( ){
+        queryMap = new HashMap<> (  );
+        queryMap.put ( "inquiryId",recordId );
+        queryMap.put ( "page","1" );
+        queryMap.put ( "count","10" );
     }
 }
