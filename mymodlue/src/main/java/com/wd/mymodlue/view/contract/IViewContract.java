@@ -93,6 +93,13 @@ public interface IViewContract {
         void onGiftList();
         //送礼物
         void onHandselGift(Map<String,Object> map,Map<String,Object> oap);
+        //用户取消视频收藏
+        void onVideoCollection(Map<String,Object> map,int videoId );
+        //查询用户购买视频列表
+        void onVideoBuyList(Map<String,Object> map,Map<String,Object> oap);
+
+        //删除购买健康课堂视频
+        void ondeleteVideoBuy(Map<String,Object> map,int videoId);
 
 
     }
@@ -168,6 +175,12 @@ public interface IViewContract {
         void onSickCollectionList(Map<String, Object> map, Map<String, Object> oap, IModelCallback iModelCallback);
 //      送礼物
         void onHandselGift(Map<String, Object> map, Map<String, Object> oap, IModelCallback iModelCallback);
+//    用户取消视频收藏
+        void onVideoCollection(Map<String, Object> map,int videoId, IModelCallback iModelCallback);
+//    查询用户购买视频列表
+        void onVideoBuyList(Map<String, Object> map,Map<String, Object> oap, IModelCallback iModelCallback);
+//    删除购买健康课堂视频
+        void ondeleteVideoBuy(Map<String, Object> map,int videoId, IModelCallback iModelCallback);
 
         interface IModelCallback{
             void onSuccess(Object obj);

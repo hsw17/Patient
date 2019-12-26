@@ -10,16 +10,22 @@ import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
+import com.dueeeke.videoplayer.player.IjkVideoView;
 import com.wd.mymainmodule.R2;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.modle.bean.UserBean;
+import com.wd.mymodlue.modle.bean.VideoBuyBean;
 import com.wd.mymodlue.modle.bean.VideoCollectBean;
 import com.wd.mymodlue.persenter.Persenter;
+import com.wd.mymodlue.view.adapter.VideoAdapter;
+import com.wd.mymodlue.view.adapter.VideoBuyAdapter;
 import com.wd.mymodlue.view.contract.IViewContract;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,7 +38,13 @@ public class VideoActivity extends BaseActivity<Persenter> implements IViewContr
     @BindView(com.wd.mymodlue.R2.id.record_linear_layout)
     LinearLayout recordLinearLayout;
     RecyclerView recordLinearView;
+
     private SPUtils login;
+    private IjkVideoView ijkView;
+    private VideoAdapter videoAdapter;
+    private Map<String, Object> map;
+    private Map<String, Object> oap;
+    private VideoBuyAdapter videoAdapter1;
 
     @Override
     protected int bindLayout() {
@@ -56,13 +68,13 @@ public class VideoActivity extends BaseActivity<Persenter> implements IViewContr
         login = new SPUtils(this, "login");
         int id = (int) login.getSharedPreference("id", 0);
         String sessionId = (String) login.getSharedPreference("sessionId", "");
-        Map<String, Object> map = new HashMap<>();
+        map = new HashMap<>();
         map.put("userId", id);
         map.put("sessionId", sessionId);
-        Map<String, Object> oap = new HashMap<>();
+        oap = new HashMap<>();
         oap.put("page", 1);
         oap.put("count", 10);
-        presenter.onVideoCollectionList(map,oap);
+        presenter.onVideoBuyList(map, oap);
         headDetailsBack.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
@@ -80,24 +92,47 @@ public class VideoActivity extends BaseActivity<Persenter> implements IViewContr
 
     @Override
     public void onSuccess(Object obj) {
-        VideoCollectBean videoCollectBean= (VideoCollectBean) obj;
-        if ("0000".equals(videoCollectBean.status)) {
-            List<VideoCollectBean.ResultBean> result = videoCollectBean.result;
+        VideoBuyBean videoBuyBean= (VideoBuyBean) obj;
+        if ("0000".equals(videoBuyBean.status)) {
+            List<VideoBuyBean.ResultBean> result = videoBuyBean.result;
             if (result.size()==0) {
                 recordLinearLayout.setVisibility(View.VISIBLE);
+                recordLinearView.setVisibility(View.GONE);
                 return;
             }else{
+                videoAdapter1 = new VideoBuyAdapter(result);
+                recordLinearView.setLayoutManager(new LinearLayoutManager(this));
+                recordLinearView.setAdapter(videoAdapter1);
+                videoAdapter1.setAreaView(new VideoBuyAdapter.AreaView() {
+                    @Override
+                    public void onCurress(int id) {
+                        presenter.ondeleteVideoBuy(map,id);
+
+                    }
+
+                    @Override
+                    public void onCurre(IjkVideoView IjkView) {
+
+                    }
+                });
 
             }
 
         }else{
-            ToastUtils.show(videoCollectBean.message);
+            ToastUtils.show(videoBuyBean.message);
         }
     }
 
     @Override
     public void onSuccessOne(Object one) {
-
+        UserBean userBean= (UserBean) one;
+        if ("0000".equals(userBean.status)) {
+            ToastUtils.show(userBean.message);
+            presenter.onVideoBuyList(map, oap);
+            videoAdapter1.notifyDataSetChanged();
+        }else{
+            ToastUtils.show(userBean.message);
+        }
     }
 
     @Override

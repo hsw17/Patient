@@ -25,6 +25,7 @@ import com.wd.mymodlue.modle.bean.UserSickCollectionListBean;
 import com.wd.mymodlue.modle.bean.UserSignBean;
 import com.wd.mymodlue.modle.bean.UserTaskListBean;
 import com.wd.mymodlue.modle.bean.UserWalletBean;
+import com.wd.mymodlue.modle.bean.VideoBuyBean;
 import com.wd.mymodlue.modle.bean.VideoCollectBean;
 
 import java.util.List;
@@ -185,5 +186,17 @@ public interface Api {
     //查询礼物列表
     @GET("health/user/inquiry/verify/v1/handselGift")
     Observable<UserBean> onHandselGift(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+    //用户取消视频收藏
+    @DELETE("health/user/verify/v1/cancelVideoCollection")
+    Observable<UserBean> onVideoCollection(@HeaderMap Map<String,Object> map, @Query("videoId") int videoId);
+
+    //查询用户购买视频列表
+    @GET("health/user/verify/v1/findUserVideoBuyList")
+    Observable<VideoBuyBean> onVideoBuyList(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+    //删除购买健康课堂视频
+    @DELETE("health/user/verify/v1/deleteVideoBuy")
+    Observable<UserBean> ondeleteVideoBuy(@HeaderMap Map<String,Object> map, @Query("videoId") int videoId);
 
 }

@@ -28,6 +28,7 @@ import com.wd.mymodlue.modle.bean.UserSickCollectionListBean;
 import com.wd.mymodlue.modle.bean.UserSignBean;
 import com.wd.mymodlue.modle.bean.UserTaskListBean;
 import com.wd.mymodlue.modle.bean.UserWalletBean;
+import com.wd.mymodlue.modle.bean.VideoBuyBean;
 import com.wd.mymodlue.modle.bean.VideoCollectBean;
 import com.wd.mymodlue.view.contract.IViewContract;
 
@@ -641,6 +642,63 @@ public class IModel implements IViewContract.IModel {
     @Override
     public void onHandselGift(Map<String, Object> map, Map<String, Object> oap, IModelCallback iModelCallback) {
         RetrofitManager.getInstance().create(Api.class).onHandselGift(map,oap)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UserBean>() {
+                    @Override
+                    public void onNext(UserBean userBean) {
+                        iModelCallback.onSuccessOne(userBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onVideoCollection(Map<String, Object> map, int videoId, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onVideoCollection(map,videoId)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UserBean>() {
+                    @Override
+                    public void onNext(UserBean userBean) {
+                        iModelCallback.onSuccessOne(userBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void onVideoBuyList(Map<String, Object> map, Map<String, Object> oap, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).onVideoBuyList(map,oap)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<VideoBuyBean>() {
+                    @Override
+                    public void onNext(VideoBuyBean videoBuyBean) {
+                        iModelCallback.onSuccess(videoBuyBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
+
+    @Override
+    public void ondeleteVideoBuy(Map<String, Object> map, int videoId, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).ondeleteVideoBuy(map,videoId)
                 .compose(CommonSchedulers.io2main())
                 .subscribe(new CommonObserver<UserBean>() {
                     @Override
