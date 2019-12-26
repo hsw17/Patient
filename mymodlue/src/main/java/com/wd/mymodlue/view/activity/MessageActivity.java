@@ -293,6 +293,19 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
 
             }
         });
+//        my_information_Certification_a
+        myInformationCertificationA.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent = new Intent("com.hl.CertificActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
     }
 
     @Override

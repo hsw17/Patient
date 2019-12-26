@@ -1836,7 +1836,9 @@ id bottom_progress
 id boy01
 id boy_check01
 id boy_check02
+id btn_finish_id_card
 id btn_finish_sign
+id btn_next_id_card
 id but_affirm
 id but_finish
 id but_photo
@@ -1953,7 +1955,13 @@ id image
 id image_height
 id image_start
 id image_weight
+id img_camera_id_card_back
+id img_camera_id_card_front
+id img_cuowu_back
+id img_cuowu_front
 id img_endTime
+id img_id_card_back
+id img_id_card_front
 id img_startTime
 id info
 id info_img
@@ -1987,6 +1995,8 @@ id lin_list_tm
 id line1
 id line3
 id linear_gone
+id linear_id_card_back
+id linear_id_card_front
 id linear_lay
 id linear_my
 id linear_out
@@ -2384,6 +2394,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_attention
 layout activity_brightness
+layout activity_certific
 layout activity_collect
 layout activity_compile
 layout activity_email

@@ -10,6 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".view.activity.CertificActivity">
+            <intent-filter>
+                <action android:name="com.hl.CertificActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".view.activity.SuccessActivity">
             <intent-filter>
                 <action android:name="com.hl.SuccessActivity" />

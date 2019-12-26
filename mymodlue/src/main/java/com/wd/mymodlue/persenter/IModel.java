@@ -751,4 +751,23 @@ public class IModel implements IViewContract.IModel {
                     }
                 });
     }
+
+    @Override
+    public void doUserIdCard(Map<String, Object> map, Map<String, Object> BodyMap, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).doUserIdCard(map,BodyMap)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<UserBean>() {
+                    @Override
+                    public void onNext(UserBean userBean) {
+                        iModelCallback.onSuccess(userBean);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+
+                    }
+                });
+    }
 }

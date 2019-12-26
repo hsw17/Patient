@@ -108,6 +108,9 @@ public interface IViewContract {
         //查询我的病友圈帖子的评论列表
         void getMySickCircleCommentList(Map<String,Object> map,Map<String,Object> oap);
 
+        //绑定身份证
+        void doUserIdCard(Map<String,Object> map,Map<String,Object> BodyMap);
+
 
     }
 
@@ -192,6 +195,8 @@ public interface IViewContract {
         void getMySickCircleList(Map<String, Object> map,Map<String, Object> oap, IModelCallback iModelCallback);
 //    查询我的病友圈帖子的评论列表
         void getMySickCircleCommentList(Map<String, Object> map,Map<String, Object> oap, IModelCallback iModelCallback);
+//    绑定身份证
+        void doUserIdCard(Map<String, Object> map, Map<String,Object> BodyMap, IModelCallback iModelCallback);
 
         interface IModelCallback{
             void onSuccess(Object obj);

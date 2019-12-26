@@ -41,6 +41,7 @@ import retrofit2.http.FieldMap;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.HeaderMap;
+import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -207,5 +208,8 @@ public interface Api {
 //  查询我的病友圈帖子的评论列表
     @GET("health/user/sickCircle/verify/v1/findMySickCircleCommentList")
     Observable<MySickCircleCommentListBean> getMySickCircleCommentList(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
-
+//绑定身份证
+@Headers({"Content-Type: application/json","Accept: application/json"})
+@POST("health/user/verify/v1/bindUserIdCard")
+Observable<UserBean> doUserIdCard(@HeaderMap Map<String,Object> map, @Body Map<String,Object> BodyMap);
 }
