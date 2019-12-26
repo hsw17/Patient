@@ -11,6 +11,7 @@ import com.bw.inquerymodel.bean.ResultBean;
 import java.util.Map;
 
 import io.reactivex.Observable;
+import retrofit2.http.DELETE;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -34,7 +35,7 @@ public interface IApiservcie {
     Observable<DoctorListBean> doctrolist(@QueryMap Map<String,Object> queryMap);
     //查询医生详情
     @GET("health/user/inquiry/v1/findDoctorInfo")
-    Observable<DoctroinfoBean> doctroinfo(@Query ( "doctorId" ) int doctorId);
+    Observable<DoctroinfoBean> doctroinfo(@HeaderMap Map<String,Object> headerMap, @Query ( "doctorId" ) int doctorId);
     //查询当前问诊
     @GET("health/user/inquiry/verify/v1/findCurrentInquiryRecord")
     Observable<CurrentBean> current(@HeaderMap Map<String,Object> headerMap);
@@ -51,4 +52,10 @@ public interface IApiservcie {
     //查询历史问诊记录
     @GET("health/user/inquiry/verify/v1/findInquiryRecordList")
     Observable<RecordListBean> recordlist(@HeaderMap Map<String,Object> headerMap, @QueryMap Map<String,Object> queryMap);
+    //关注医生
+    @POST("health/user/inquiry/verify/v1/followDoctor")
+    Observable<EndInquiryBean> followdoctor(@HeaderMap Map<String,String> headerMap,@Query ( "doctorId" ) int doctorId);
+    //取消关注医生
+    @DELETE("health/user/inquiry/verify/v1/cancelFollow")
+    Observable<EndInquiryBean> canceldoctor(@HeaderMap Map<String,String> headerMap,@Query ( "doctorId" ) int doctorId);
 }

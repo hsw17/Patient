@@ -169,7 +169,6 @@ public class LiaoTActivity extends BaseActivity<InqueryPresenter> implements Inq
 
     @Override
     public void success(RecordListBean recordListBean) {
-        Toast.makeText ( this,recordListBean.getMessage (), Toast.LENGTH_SHORT ).show ();
         List<RecordListBean.ResultBean> result = recordListBean.getResult ();
         List<RecordListBean.ResultBean> reverserResult = new ArrayList<> ();
         // 反转集合 使最新消息在最下面

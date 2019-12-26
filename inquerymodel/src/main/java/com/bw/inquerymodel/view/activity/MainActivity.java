@@ -2,6 +2,7 @@ package com.bw.inquerymodel.view.activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -54,6 +55,7 @@ public class MainActivity extends BaseActivity<IPresenter> implements DocTorCont
     private RecyclerView doctor_recycle;
     private TextView servciePrcie;
     private Map<String, Object> headerMap;
+    private int doctorIds;
 
     @Override
     protected int bindLayout() {
@@ -108,8 +110,8 @@ public class MainActivity extends BaseActivity<IPresenter> implements DocTorCont
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition ();
-                doctorId = result.get ( position ).getId ();
-                getMapA ( doctorId,condition );
+                doctorIds = result.get ( position ).getId ();
+                getMapB ( doctorIds,1,1 );
             }
 
             @Override
@@ -119,7 +121,9 @@ public class MainActivity extends BaseActivity<IPresenter> implements DocTorCont
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-
+                int position = tab.getPosition ();
+                doctorIds = result.get ( position ).getId ();
+                getMapB ( doctorIds,1,1 );
             }
         } );
 
@@ -127,12 +131,12 @@ public class MainActivity extends BaseActivity<IPresenter> implements DocTorCont
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition ();
-                if (position < 3 && flag == false){
-                    getMapA ( doctorId,position+1 );
+                if (position < 3){
+                    getMapB ( doctorIds,position+1,1 );
                     flag = true;
                 }else if (position == 3 && flag == true){
                     sortBy = 1;
-                    getMapB ( doctorId,position+1,sortBy );
+                    getMapB ( doctorIds,position+1,sortBy );
                     flag = false;
                 }
             }
@@ -144,7 +148,15 @@ public class MainActivity extends BaseActivity<IPresenter> implements DocTorCont
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-
+                int position = tab.getPosition ();
+                if (position < 3 && flag == false){
+                    getMapB ( doctorIds,position+1,1 );
+                    flag = true;
+                }else if (position == 3 && flag == true){
+                    sortBy = 1;
+                    getMapB ( doctorIds,position+1,sortBy );
+                    flag = false;
+                }
             }
         } );
 
@@ -166,49 +178,58 @@ public class MainActivity extends BaseActivity<IPresenter> implements DocTorCont
     @Override
     public void success(DoctorListBean doctorList) {
         doctorListresult = doctorList.getResult ();
-        doctorId = doctorListresult.get ( 0 ).getDoctorId ();
-        String imagePic = doctorListresult.get ( 0 ).getImagePic ();
-        String doctorName = doctorListresult.get ( 0 ).getDoctorName ();
-        String jobTitle = doctorListresult.get ( 0 ).getJobTitle ();
-        String inauguralHospital = doctorListresult.get ( 0 ).getInauguralHospital ();
-        String praise = doctorListresult.get ( 0 ).getPraise ();
-        int serverNum = doctorListresult.get ( 0 ).getServerNum ();
-        int servicePrices = doctorListresult.get ( 0 ).getServicePrice ();
-        servciePrcie.setText ( servicePrices+"H币/1次" );
+        if (doctorListresult.size ()>0){
+            doctorId = doctorListresult.get ( 0 ).getDoctorId ();
+            String imagePic = doctorListresult.get ( 0 ).getImagePic ();
+            String doctorName = doctorListresult.get ( 0 ).getDoctorName ();
+            String jobTitle = doctorListresult.get ( 0 ).getJobTitle ();
+            String inauguralHospital = doctorListresult.get ( 0 ).getInauguralHospital ();
+            String praise = doctorListresult.get ( 0 ).getPraise ();
+            int serverNum = doctorListresult.get ( 0 ).getServerNum ();
+            int servicePrices = doctorListresult.get ( 0 ).getServicePrice ();
+            servciePrcie.setText ( servicePrices+"H币/1次" );
 
-        doctor_simple.setImageURI ( imagePic );
-        docname.setText ( doctorName );
-        zhiwei.setText ( jobTitle );
-        address.setText ( inauguralHospital );
-        haoping.setText ("好评率 "+ praise );
-        huanmber.setText ( "服务人数 "+ serverNum );
+            doctor_simple.setImageURI ( imagePic );
+            docname.setText ( doctorName );
+            zhiwei.setText ( jobTitle );
+            address.setText ( inauguralHospital );
+            haoping.setText ("好评率 "+ praise );
+            huanmber.setText ( "服务人数 "+ serverNum );
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager ( this, LinearLayoutManager.HORIZONTAL, false );
-        doctor_recycle.setLayoutManager ( linearLayoutManager );
-        DocTorRecycleAdapter docTorRecycleAdapter = new DocTorRecycleAdapter ( this, doctorListresult );
-        doctor_recycle.setAdapter ( docTorRecycleAdapter );
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager ( this, LinearLayoutManager.HORIZONTAL, false );
+            doctor_recycle.setLayoutManager ( linearLayoutManager );
+            DocTorRecycleAdapter docTorRecycleAdapter = new DocTorRecycleAdapter ( this, doctorListresult );
+            doctor_recycle.setAdapter ( docTorRecycleAdapter );
 
-        docTorRecycleAdapter.setDoctorSimple ( new DocTorRecycleAdapter.DoctorSimple () {
-            @Override
-            public void setsimple(String simple, String doctorName, String jobTitle, String inauguralHospital, String praise, String serverNum,int dictroIds,int servicePrice) {
-                doctor_simple.setImageURI ( simple );
-                docname.setText ( doctorName );
-                zhiwei.setText ( jobTitle );
-                address.setText ( inauguralHospital );
-                haoping.setText ("好评率 "+ praise );
-                huanmber.setText ( "服务人数 "+ serverNum );
-                servciePrcie.setText ( servicePrice+"H币/1次" );
-                doctorId = dictroIds;
-            }
-        } );
+            docTorRecycleAdapter.setDoctorSimple ( new DocTorRecycleAdapter.DoctorSimple () {
+                @Override
+                public void setsimple(String simple, String doctorName, String jobTitle, String inauguralHospital, String praise, String serverNum,int dictroIds,int servicePrice) {
+                    doctor_simple.setImageURI ( simple );
+                    docname.setText ( doctorName );
+                    zhiwei.setText ( jobTitle );
+                    address.setText ( inauguralHospital );
+                    haoping.setText ("好评率 "+ praise );
+                    huanmber.setText ( "服务人数 "+ serverNum );
+                    servciePrcie.setText ( servicePrice+"H币/1次" );
+                    doctorId = dictroIds;
+                }
+            } );
+        }else {
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager ( this, LinearLayoutManager.HORIZONTAL, false );
+            doctor_recycle.setLayoutManager ( linearLayoutManager );
+            DocTorRecycleAdapter docTorRecycleAdapter = new DocTorRecycleAdapter ( this, doctorListresult );
+            doctor_recycle.setAdapter ( docTorRecycleAdapter );
+            Toast.makeText ( this, "暂无数据", Toast.LENGTH_SHORT ).show ();
+        }
+
     }
 
     //科室列表
     @Override
     public void success(DepartmentBean departmentBean) {
         result = departmentBean.getResult ();
-        doctorId = result.get ( 0 ).getId ();
-        getMapA ( doctorId,condition );
+        doctorIds = result.get ( 0 ).getId ();
+        getMapB ( doctorIds,condition,1 );
 
         for (int i = 0; i < result.size (); i++) {
             dtablayout.addTab ( dtablayout.newTab () );
@@ -334,17 +355,6 @@ public class MainActivity extends BaseActivity<IPresenter> implements DocTorCont
     @Override
     public void fuilerror(String e) {
         Logger.d ( TAG,e );
-    }
-
-
-    public void getMapA(int deptId,int condition ){
-        queryMap = new HashMap<> (  );
-        queryMap.put ( "deptId",deptId );
-        queryMap.put ( "condition",condition );
-        queryMap.put ( "page",1 );
-        queryMap.put ( "count",6 );
-
-        presenter.doctorList ( queryMap );
     }
 
     public void getMapB(int deptId,int condition,int sortBy ){

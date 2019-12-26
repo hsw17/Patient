@@ -9,19 +9,23 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bw.inquerymodel.R;
 import com.bw.inquerymodel.bean.DoctroinfoBean;
+import com.bw.inquerymodel.bean.EndInquiryBean;
 import com.bw.inquerymodel.contract.DoctroInfoContract;
 import com.bw.inquerymodel.presenter.DoctroInfoPresenter;
 import com.bw.inquerymodel.view.adapter.DoctroEvalutaeAdapter;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import cn.jpush.im.android.api.JMessageClient;
 
@@ -55,6 +59,8 @@ public class InqueryActivity extends BaseActivity<DoctroInfoPresenter> implement
     private String doctorName;
     private String doctorId;
     private String doctorUserName;
+    private int followFlag;
+    private int doctorId1;
 
     @Override
     protected int bindLayout() {
@@ -73,7 +79,10 @@ public class InqueryActivity extends BaseActivity<DoctroInfoPresenter> implement
         Intent intent = getIntent ();
         doctorId = intent.getStringExtra ( "doctorId" );
         doctorUserName = intent.getStringExtra ( "doctorUserName" );
-        presenter.doctorinfo ( Integer.parseInt ( doctorId ) );
+        Map<String,Object> headerMap = new HashMap<> (  );
+        headerMap.put ( "userId","434" );
+        headerMap.put ( "sessionId","1577327626255434" );
+        presenter.doctorinfo (headerMap, Integer.parseInt ( doctorId ) );
     }
 
     @Override
@@ -113,14 +122,34 @@ public class InqueryActivity extends BaseActivity<DoctroInfoPresenter> implement
                 intent.putExtra ( "userName", doctorName);
                 intent.putExtra ( "doctorId",doctorId );
                 startActivity ( intent );
-
             }
         } );
+
+        guanzhu.setOnClickListener ( new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText ( InqueryActivity.this, "1", Toast.LENGTH_SHORT ).show ();
+                if(followFlag==2){
+                    Map<String,String> headerMap = new HashMap<> (  );
+                    headerMap.put ( "userId","434" );
+                    headerMap.put ( "sessionId","1577327626255434" );
+                    presenter.followdoctor ( headerMap,doctorId1 );
+                }else if (followFlag==1){
+                    Map<String,String> headerMap = new HashMap<> (  );
+                    headerMap.put ( "userId","434" );
+                    headerMap.put ( "sessinoId","1577327626255434" );
+                    presenter.canceldoctor ( headerMap,doctorId1);
+                }
+            }
+        } );
+
+
     }
 
     @Override
     public void success(DoctroinfoBean doctroinfoBean) {
         doctroinfoBeanResult = doctroinfoBean.getResult ();
+        doctorId1 = doctroinfoBeanResult.getDoctorId ();
         String imagePic = doctroinfoBeanResult.getImagePic ();
         doctorName = doctroinfoBeanResult.getDoctorName ();
         doctorIds = doctroinfoBeanResult.getDoctorId ();
@@ -129,9 +158,15 @@ public class InqueryActivity extends BaseActivity<DoctroInfoPresenter> implement
         String praise = doctroinfoBeanResult.getPraise ();
         int serverNum = doctroinfoBeanResult.getServerNum ();
         int servicePrice = doctroinfoBeanResult.getServicePrice ();
-        int followFlag = doctroinfoBeanResult.getFollowFlag ();
+        followFlag = doctroinfoBeanResult.getFollowFlag ();
         String personalProfile = doctroinfoBeanResult.getPersonalProfile ();
         String goodField = doctroinfoBeanResult.getGoodField ();
+
+        if (followFlag == 1){
+            guanzhu.setImageResource ( R.mipmap.common_icon_attention_large_s );
+        }else {
+            guanzhu.setImageResource ( R.mipmap.common_icon_attention_large_n );
+        }
 
         doctro_image.setImageURI ( imagePic );
         docnames.setText ( doctorName );
@@ -179,6 +214,16 @@ public class InqueryActivity extends BaseActivity<DoctroInfoPresenter> implement
         }
 
 
+    }
+
+    @Override
+    public void success(EndInquiryBean endInquiryBean) {
+        String message = endInquiryBean.getMessage ();
+        Toast.makeText ( this, message, Toast.LENGTH_SHORT ).show ();
+//        Map<String,Object> headerMap = new HashMap<> (  );
+//        headerMap.put ( "userId","434" );
+//        headerMap.put ( "sessionId","1577327626255434" );
+//        presenter.doctorinfo (headerMap, Integer.parseInt ( doctorId ) );
     }
 
     @Override

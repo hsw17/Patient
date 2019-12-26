@@ -52,6 +52,7 @@
         app:tabMaxWidth="@dimen/dp_200"
         app:tabMinWidth="@dimen/dp_20"
         app:tabTextColor="#999999"
+        app:tabSelectedTextColor="@color/blicke"
         style="@style/TabLayoutTextSizeA">
     </com.google.android.material.tabs.TabLayout>
 
