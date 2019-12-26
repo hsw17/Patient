@@ -16,6 +16,8 @@ import com.wd.mymodlue.modle.bean.HeadPicBean;
 import com.wd.mymodlue.modle.bean.HealthTestBean;
 import com.wd.mymodlue.modle.bean.HealthinformationBean;
 import com.wd.mymodlue.modle.bean.HistoryBean;
+import com.wd.mymodlue.modle.bean.MySickCircleCommentListBean;
+import com.wd.mymodlue.modle.bean.MySickCircleListBean;
 import com.wd.mymodlue.modle.bean.NewslistBean;
 import com.wd.mymodlue.modle.bean.UpdateArchivesBean;
 import com.wd.mymodlue.modle.bean.UserArchivesBean;
@@ -572,6 +574,7 @@ public class IModel implements IViewContract.IModel {
                 .subscribe(new CommonObserver<UserArchivesPictureBean>() {
                     @Override
                     public void onNext(UserArchivesPictureBean userArchivesPictureBean) {
+                        iModelCallback.onSuccessTwo(userArchivesPictureBean);
 
                     }
 
@@ -711,6 +714,40 @@ public class IModel implements IViewContract.IModel {
                     public void onError(Throwable e) {
                         iModelCallback.onFail(e.toString());
 
+                    }
+                });
+    }
+
+    @Override
+    public void getMySickCircleList(Map<String, Object> map, Map<String, Object> oap, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).getMySickCircleList(map,oap)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<MySickCircleListBean>() {
+                    @Override
+                    public void onNext(MySickCircleListBean mySickCircleListBean) {
+                        iModelCallback.onSuccess(mySickCircleListBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
+                    }
+                });
+    }
+
+    @Override
+    public void getMySickCircleCommentList(Map<String, Object> map, Map<String, Object> oap, IModelCallback iModelCallback) {
+        RetrofitManager.getInstance().create(Api.class).getMySickCircleCommentList(map,oap)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<MySickCircleCommentListBean>() {
+                    @Override
+                    public void onNext(MySickCircleCommentListBean mySickCircleCommentListBean) {
+                        iModelCallback.onSuccessOne(mySickCircleCommentListBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModelCallback.onFail(e.toString());
                     }
                 });
     }

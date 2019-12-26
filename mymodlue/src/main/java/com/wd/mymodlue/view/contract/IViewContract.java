@@ -101,6 +101,13 @@ public interface IViewContract {
         //删除购买健康课堂视频
         void ondeleteVideoBuy(Map<String,Object> map,int videoId);
 
+        //我的病友圈
+        void getMySickCircleList(Map<String,Object> map,Map<String,Object> oap);
+
+
+        //查询我的病友圈帖子的评论列表
+        void getMySickCircleCommentList(Map<String,Object> map,Map<String,Object> oap);
+
 
     }
 
@@ -181,6 +188,10 @@ public interface IViewContract {
         void onVideoBuyList(Map<String, Object> map,Map<String, Object> oap, IModelCallback iModelCallback);
 //    删除购买健康课堂视频
         void ondeleteVideoBuy(Map<String, Object> map,int videoId, IModelCallback iModelCallback);
+//    我的病友圈
+        void getMySickCircleList(Map<String, Object> map,Map<String, Object> oap, IModelCallback iModelCallback);
+//    查询我的病友圈帖子的评论列表
+        void getMySickCircleCommentList(Map<String, Object> map,Map<String, Object> oap, IModelCallback iModelCallback);
 
         interface IModelCallback{
             void onSuccess(Object obj);

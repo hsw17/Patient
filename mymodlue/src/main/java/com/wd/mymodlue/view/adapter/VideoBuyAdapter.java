@@ -48,7 +48,7 @@ public class VideoBuyAdapter extends XRecyclerView.Adapter<VideoBuyAdapter.Movie
 
     @Override
     public void onBindViewHolder(@NonNull final MovieViewHolder movieViewHolder, final int i) {
-        movieViewHolder.IjkView.setUrl(result.get(i).original);
+        movieViewHolder.IjkView.setUrl(result.get(i).originalUrl);
         movieViewHolder.texttitle.setText(result.get(i).title);
 
 

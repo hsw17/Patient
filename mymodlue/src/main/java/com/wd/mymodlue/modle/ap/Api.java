@@ -13,6 +13,8 @@ import com.wd.mymodlue.modle.bean.HealthTestBean;
 import com.wd.mymodlue.modle.bean.HealthinformationBean;
 import com.wd.mymodlue.modle.bean.HistoryBean;
 import com.wd.mymodlue.modle.bean.LoginBean;
+import com.wd.mymodlue.modle.bean.MySickCircleCommentListBean;
+import com.wd.mymodlue.modle.bean.MySickCircleListBean;
 import com.wd.mymodlue.modle.bean.NewslistBean;
 import com.wd.mymodlue.modle.bean.UpdateArchivesBean;
 import com.wd.mymodlue.modle.bean.UserArchivesBean;
@@ -198,5 +200,12 @@ public interface Api {
     //删除购买健康课堂视频
     @DELETE("health/user/verify/v1/deleteVideoBuy")
     Observable<UserBean> ondeleteVideoBuy(@HeaderMap Map<String,Object> map, @Query("videoId") int videoId);
+//  我的病友圈
+    @GET("health/user/sickCircle/verify/v1/findMySickCircleList")
+    Observable<MySickCircleListBean> getMySickCircleList(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+//  查询我的病友圈帖子的评论列表
+    @GET("health/user/sickCircle/verify/v1/findMySickCircleCommentList")
+    Observable<MySickCircleCommentListBean> getMySickCircleCommentList(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
 
 }

@@ -79,4 +79,6 @@ dependencies {
     implementation project(path: ':mymainmodule')
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+    implementation project(path: ':ocr_library')
+    implementation files('libs\\ocr-sdk.jar')
 }

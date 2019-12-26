@@ -12,7 +12,7 @@ import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.wd.mymodlue.R;
 import com.wd.mymodlue.R2;
-import com.wd.mymodlue.modle.bean.UserSickCollectionListBean;
+import com.wd.mymodlue.modle.bean.MySickCircleListBean;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
 
@@ -60,7 +60,7 @@ public class PatientsCircleActivity extends BaseActivity<Persenter> implements I
         Map<String, Object> oap = new HashMap<>();
         oap.put("page", 1);
         oap.put("count", 10);
-        presenter.onSickCollectionList(map,oap);
+        presenter.getMySickCircleList(map,oap);
 //        返回
         fanhui.setOnClickListener(new CustomClickListener() {
             @Override
@@ -79,10 +79,10 @@ public class PatientsCircleActivity extends BaseActivity<Persenter> implements I
 
     @Override
     public void onSuccess(Object obj) {
-        UserSickCollectionListBean userSickCollectionListBean= (UserSickCollectionListBean) obj;
-        if ("0000".equals(userSickCollectionListBean.status)) {
-            ToastUtils.show(userSickCollectionListBean.message);
-            List<UserSickCollectionListBean.ResultBean> result = userSickCollectionListBean.result;
+        MySickCircleListBean mySickCircleListBean= (MySickCircleListBean) obj;
+        if ("0000".equals(mySickCircleListBean.getStatus())) {
+            ToastUtils.show(mySickCircleListBean.getMessage());
+            List<MySickCircleListBean.ResultBean> result = mySickCircleListBean.getResult();
             if (result.size()==0) {
                 recordLinearLayout.setVisibility(View.VISIBLE);
                 return;
@@ -90,7 +90,7 @@ public class PatientsCircleActivity extends BaseActivity<Persenter> implements I
 
             }
         }else {
-            ToastUtils.show(userSickCollectionListBean.message);
+            ToastUtils.show(mySickCircleListBean.getMessage());
         }
     }
 
