@@ -293,11 +293,24 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
 
             }
         });
-//        my_information_Certification_a
+//        身份证
         myInformationCertificationA.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
                 Intent intent = new Intent("com.hl.CertificActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//        银行卡
+        myInformationBankcardA.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.BankActivity");
                 startActivity(intent);
             }
 
