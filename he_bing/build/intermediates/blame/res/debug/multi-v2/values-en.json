@@ -1,0 +1,60 @@
+{
+    "logs": [
+        {
+            "outputFile": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\4f71272b883fb07876ac3e1acf8a569a\\jetified-BaseRecyclerViewAdapterHelper-2.9.30\\res\\values-en\\values-en.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,105,162",
+                        "endColumns": "49,56,46",
+                        "endOffsets": "100,157,204"
+                    },
+                    "to": {
+                        "startLines": "10,11,12",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "641,691,748",
+                        "endColumns": "49,56,46",
+                        "endOffsets": "686,743,790"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\43a15b26d2bef84003dee78d01022cc4\\jetified-dkplayer-ui-2.5.5\\res\\values-en\\values-en.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,133,184,235",
+                        "endColumns": "77,50,50,54",
+                        "endOffsets": "128,179,230,285"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,8",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "219,297,348,452",
+                        "endColumns": "77,50,50,54",
+                        "endOffsets": "292,343,394,502"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\3e856bbd94445508fb97401c55ac2579\\jetified-dkplayer-java-2.5.5\\res\\values-en\\values-en.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,123,219,272",
+                        "endColumns": "67,95,52,133",
+                        "endOffsets": "118,214,267,401"
+                    },
+                    "to": {
+                        "startLines": "2,3,7,9",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,123,399,507",
+                        "endColumns": "67,95,52,133",
+                        "endOffsets": "118,214,447,636"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,187 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.wd.he_home"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+8-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="27" />
+9-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml
+10    <!-- for mta statistics, not necessary -->
+11    <!-- 写入权限 -->
+12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 读取权限 -->
+12-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:6:5-81
+12-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:6:22-78
+13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 联网权限 -->
+13-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:7:5-80
+13-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:7:22-77
+14    <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络判断权限 -->
+14-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:8:5-67
+14-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:8:22-64
+15    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> -->
+16    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+17    <!-- <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> -->
+18    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+19    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 用于进行网络定位 -->
+19-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:13:5-76
+19-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:13:22-73
+20    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+20-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:14:5-81
+20-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:14:22-78
+21    <uses-permission android:name="group:android.permission-group.LOCATION" />
+21-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:15:5-79
+21-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:15:22-76
+22    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 微信登录权限 -->
+22-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:16:5-79
+22-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:16:22-76
+23    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+23-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:17:5-75
+23-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:17:22-72
+24
+25    <!-- 读取媒体文件 -->
+26    <uses-permission android:name="com.android.providers.media.MediaProvider" />
+26-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:11:5-81
+26-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:11:22-78
+27    <uses-permission android:name="android.permission.CAMERA" />
+27-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:14:5-65
+27-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:14:22-62
+28    <uses-permission android:name="android.permission.WRITE_SETTINGS" /> <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+28-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-14:47
+28-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-57
+29    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+29-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-79
+29-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:22-76
+30    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 用于申请调用A-GPS模块 -->
+30-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:5-76
+30-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:22-73
+31    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" /> <!-- 用于申请获取蓝牙信息进行室内定位 -->
+31-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-89
+31-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:22-86
+32    <uses-permission android:name="android.permission.BLUETOOTH" />
+32-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:5-68
+32-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:22-65
+33    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+33-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:5-74
+33-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:22-71
+34    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+34-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-79
+34-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:22-76
+35    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+35-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-79
+35-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:22-76
+36    <uses-permission android:name="android.permission.VIBRATE" />
+36-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:5-66
+36-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:22-63
+37    <uses-permission android:name="android.permission.ACCEPT_HANDOVER" />
+37-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:30:5-74
+37-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:30:22-71
+38    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+38-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:5-76
+38-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:22-73
+39    <uses-permission android:name="android.permission.PERMISSIONS_STORAGE" />
+39-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:36:5-78
+39-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:36:22-75
+40    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+40-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-79
+40-->[:mvplibrary] F:\ShiXunOneFanYanLong\liuhejiankang\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:22-76
+41
+42    <application
+42-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:19:5-36:19
+43        android:name="com.bwie.mvplibrary.app.App"
+43-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:20:9-51
+44        android:allowBackup="true"
+44-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:21:9-35
+45        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+45-->[androidx.core:core:1.1.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\5b303f488f030c796774cca3b720b4a7\core-1.1.0\AndroidManifest.xml:24:18-86
+46        android:debuggable="true"
+47        android:icon="@mipmap/ic_launcher"
+47-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:22:9-43
+48        android:label="@string/app_name"
+48-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:23:9-41
+49        android:roundIcon="@mipmap/ic_launcher_round"
+49-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:24:9-54
+50        android:supportsRtl="true"
+50-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:25:9-35
+51        android:testOnly="true"
+52        android:theme="@style/AppTheme" >
+52-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:26:9-40
+53        <activity android:name="com.wd.he_bing.view.ReleaseCirclesActivity" />
+53-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:27:9-74
+53-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:27:19-62
+54        <activity android:name="com.wd.he_bing.view.CPatientCircleDetailsActivity" />
+54-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:28:9-72
+54-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:28:19-69
+55        <activity android:name="com.wd.he_bing.view.MainActivity" >
+55-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:29:9-35:20
+55-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:29:19-52
+56            <intent-filter>
+56-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:30:13-34:29
+57                <action android:name="android.intent.action.MAIN" />
+57-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:31:17-69
+57-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:31:25-66
+58
+59                <category android:name="android.intent.category.LAUNCHER" />
+59-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:33:17-77
+59-->F:\ShiXunOneFanYanLong\liuhejiankang\Patient\he_bing\src\main\AndroidManifest.xml:33:27-74
+60            </intent-filter>
+61        </activity>
+62        <activity
+62-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:22:9-24:72
+63            android:name="com.ypx.imagepicker.activity.crop.MultiImageCropActivity"
+63-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:23:13-84
+64            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+64-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:24:13-69
+65        <activity
+65-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:25:9-27:43
+66            android:name="com.ypx.imagepicker.activity.preview.MultiImagePreviewActivity"
+66-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:26:13-90
+67            android:multiprocess="true" />
+67-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:27:13-40
+68        <activity
+68-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:28:9-30:43
+69            android:name="com.ypx.imagepicker.activity.singlecrop.SingleCropActivity"
+69-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:29:13-86
+70            android:multiprocess="true" />
+70-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:30:13-40
+71        <activity
+71-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:31:9-33:43
+72            android:name="com.ypx.imagepicker.activity.multi.MultiImagePickerActivity"
+72-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:32:13-87
+73            android:multiprocess="true" />
+73-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:33:13-40
+74
+75        <provider
+75-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:35:9-43:20
+76            android:name="com.ypx.imagepicker.utils.PickerFileProvider"
+76-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:36:13-72
+77            android:authorities="com.wd.he_home.picker.fileprovider"
+77-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:37:13-71
+78            android:exported="false"
+78-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:38:13-37
+79            android:grantUriPermissions="true" >
+79-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:39:13-47
+80            <meta-data
+80-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:40:13-42:61
+81                android:name="android.support.FILE_PROVIDER_PATHS"
+81-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:41:17-67
+82                android:resource="@xml/picker_file_paths" />
+82-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fe936c331b18cfc8a897915ba9bfc4b4\androidx-3.0.1\AndroidManifest.xml:42:17-58
+83        </provider>
+84
+85        <activity
+85-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\574ad05860f4af4fdcfdbfba537f6128\jetified-zxing-library-2.2\AndroidManifest.xml:12:9-17:63
+86            android:name="com.uuzuche.lib_zxing.activity.CaptureActivity"
+86-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\574ad05860f4af4fdcfdbfba537f6128\jetified-zxing-library-2.2\AndroidManifest.xml:13:13-74
+87            android:configChanges="orientation|keyboardHidden"
+87-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\574ad05860f4af4fdcfdbfba537f6128\jetified-zxing-library-2.2\AndroidManifest.xml:14:13-63
+88            android:screenOrientation="portrait"
+88-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\574ad05860f4af4fdcfdbfba537f6128\jetified-zxing-library-2.2\AndroidManifest.xml:15:13-49
+89            android:theme="@style/Theme.AppCompat.NoActionBar"
+89-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\574ad05860f4af4fdcfdbfba537f6128\jetified-zxing-library-2.2\AndroidManifest.xml:16:13-63
+90            android:windowSoftInputMode="stateAlwaysHidden" />
+90-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\574ad05860f4af4fdcfdbfba537f6128\jetified-zxing-library-2.2\AndroidManifest.xml:17:13-60
+91    </application>
+92
+93</manifest>
