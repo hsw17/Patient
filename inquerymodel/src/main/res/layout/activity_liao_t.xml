@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.LiaoTActivity"
+    android:background="#c2c2c2"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="8dp" >
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:id="@+id/lv_chat_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#0000"
+            android:dividerHeight="8dp"
+            android:scrollbars="none" >
+        </com.jcodecraeer.xrecyclerview.XRecyclerView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#ccc"
+        android:paddingLeft="30px"
+        android:paddingRight="30px">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/yy_details_img"
+                android:layout_width="80px"
+                android:layout_marginTop="20px"
+                android:layout_height="80px"
+                android:layout_marginLeft="20px"
+                android:background="@mipmap/common_icon_voice_n"
+                />
+            <ImageView
+                android:id="@+id/yy_jianpan_img"
+                android:layout_width="80px"
+                android:visibility="gone"
+                android:layout_marginTop="20px"
+                android:layout_height="80px"
+                android:layout_marginLeft="20px"
+                android:background="@mipmap/common_icon_attention_large_n"
+                />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/framelayout"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+        </FrameLayout>
+        <EditText
+            android:id="@+id/edit_sendmessage_zyj"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="请输入..."/>
+        <ImageView
+            android:id="@+id/bq_details_img"
+            android:layout_width="80px"
+            android:layout_marginTop="20px"
+            android:layout_height="80px"
+            android:layout_marginLeft="20px"
+            android:background="@mipmap/common_icon_expression_n"
+            />
+        <ImageView
+            android:id="@+id/but_send"
+            android:layout_width="80px"
+            android:layout_marginTop="20px"
+            android:layout_height="80px"
+            android:layout_marginLeft="20px"
+            android:background="@mipmap/common_icon_send_n"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

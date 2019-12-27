@@ -37,6 +37,8 @@ public class App extends Application {
 
         regToWx();
         ZXingLibrary.initDisplayOpinion ( this );
+
+
     }
     private void regToWx() {
         // 通过WXAPIFactory工厂，获取IWXAPI的实例

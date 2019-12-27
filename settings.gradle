@@ -1,3 +1,4 @@
 include ':app', ':mvplibrary', ':mymainmodule', ':he_home', ':mymodlue', ':videomodule', ':he_bing'
 include ':app', ':mvplibrary', ':mymainmodule', ':he_home', ':mymodlue', ':videomodule', ':ocr_library'
+include ':app', ':mvplibrary', ':mymainmodule', ':he_home', ':mymodlue', ':videomodule', ':inquerymodel'
 rootProject.name='Partig'
