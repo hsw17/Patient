@@ -128,17 +128,16 @@ public class InqueryActivity extends BaseActivity<DoctroInfoPresenter> implement
         guanzhu.setOnClickListener ( new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Toast.makeText ( InqueryActivity.this, "1", Toast.LENGTH_SHORT ).show ();
-                if(followFlag==2){
-                    Map<String,String> headerMap = new HashMap<> (  );
+                if (followFlag==2){
+                    Map<String,Object> headerMap = new HashMap<> (  );
                     headerMap.put ( "userId","434" );
-                    headerMap.put ( "sessionId","1577327626255434" );
-                    presenter.followdoctor ( headerMap,doctorId1 );
+                    headerMap.put ( "sessionId","1577361626313434" );
+                    presenter.followdoctor ( headerMap,Integer.parseInt ( doctorId ) );
                 }else if (followFlag==1){
-                    Map<String,String> headerMap = new HashMap<> (  );
+                    Map<String,Object> headerMap = new HashMap<> (  );
                     headerMap.put ( "userId","434" );
-                    headerMap.put ( "sessinoId","1577327626255434" );
-                    presenter.canceldoctor ( headerMap,doctorId1);
+                    headerMap.put ( "sessionId","1577361626313434" );
+                    presenter.canceldoctor ( headerMap,Integer.parseInt ( doctorId ) );
                 }
             }
         } );
@@ -220,10 +219,11 @@ public class InqueryActivity extends BaseActivity<DoctroInfoPresenter> implement
     public void success(EndInquiryBean endInquiryBean) {
         String message = endInquiryBean.getMessage ();
         Toast.makeText ( this, message, Toast.LENGTH_SHORT ).show ();
-//        Map<String,Object> headerMap = new HashMap<> (  );
-//        headerMap.put ( "userId","434" );
-//        headerMap.put ( "sessionId","1577327626255434" );
-//        presenter.doctorinfo (headerMap, Integer.parseInt ( doctorId ) );
+        Map<String,Object> headerMap = new HashMap<> (  );
+        headerMap.put ( "userId","434" );
+        headerMap.put ( "sessionId","1577361626313434" );
+        presenter.doctorinfo (headerMap, Integer.parseInt ( doctorId ) );
+
     }
 
     @Override

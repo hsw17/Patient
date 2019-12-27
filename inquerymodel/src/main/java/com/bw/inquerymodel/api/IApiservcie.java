@@ -54,8 +54,8 @@ public interface IApiservcie {
     Observable<RecordListBean> recordlist(@HeaderMap Map<String,Object> headerMap, @QueryMap Map<String,Object> queryMap);
     //关注医生
     @POST("health/user/inquiry/verify/v1/followDoctor")
-    Observable<EndInquiryBean> followdoctor(@HeaderMap Map<String,String> headerMap,@Query ( "doctorId" ) int doctorId);
+    Observable<EndInquiryBean> followdoctor(@HeaderMap Map<String,Object> headerMap,@Query ( "doctorId" ) int doctorId);
     //取消关注医生
     @DELETE("health/user/inquiry/verify/v1/cancelFollow")
-    Observable<EndInquiryBean> canceldoctor(@HeaderMap Map<String,String> headerMap,@Query ( "doctorId" ) int doctorId);
+    Observable<EndInquiryBean> canceldoctor(@HeaderMap Map<String,Object> headerMap,@Query ( "doctorId" ) int doctorId);
 }

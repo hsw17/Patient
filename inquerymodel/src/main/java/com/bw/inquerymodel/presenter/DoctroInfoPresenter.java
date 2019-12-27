@@ -33,7 +33,7 @@ public class DoctroInfoPresenter extends BasePresenter<DoctroInfoContract.IMainV
     }
 
     @Override
-    public void followdoctor(Map<String, String> headerMap, int doctorId) {
+    public void followdoctor(Map<String, Object> headerMap, int doctorId) {
         docTorInfoModel.followdoctor ( headerMap, doctorId, new DoctroInfoContract.IModel.FollowdoctorCallBack () {
             @Override
             public void backData(EndInquiryBean endInquiryBean) {
@@ -48,8 +48,8 @@ public class DoctroInfoPresenter extends BasePresenter<DoctroInfoContract.IMainV
     }
 
     @Override
-    public void canceldoctor(Map<String, String> headerMap, int doctorId) {
-        docTorInfoModel.canceldoctor ( headerMap, doctorId, new DoctroInfoContract.IModel.FollowdoctorCallBack () {
+    public void canceldoctor(Map<String, Object> headerMap, int doctorId) {
+        docTorInfoModel.canceldoctor ( headerMap, doctorId, new DoctroInfoContract.IModel.CanceldoctorCallBack () {
             @Override
             public void backData(EndInquiryBean endInquiryBean) {
                 getView ().success ( endInquiryBean );

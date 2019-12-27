@@ -22,8 +22,8 @@ public interface DoctroInfoContract {
 
     interface IModel{
         void doctorinfo(Map<String,Object> headerMap,int doctorId,DoctorinfoCallBack callback);
-        void followdoctor(Map<String,String> headerMap,int doctorId,FollowdoctorCallBack callback);
-        void canceldoctor(Map<String,String> headerMap,int doctorId,FollowdoctorCallBack callback);
+        void followdoctor(Map<String,Object> headerMap,int doctorId,FollowdoctorCallBack callback);
+        void canceldoctor(Map<String,Object> headerMap,int doctorId,CanceldoctorCallBack callback);
 
         interface DoctorinfoCallBack{
             void backData(DoctroinfoBean doctroinfoBean);
@@ -34,14 +34,19 @@ public interface DoctroInfoContract {
             void backData(EndInquiryBean endInquiryBean);
             void fuilerror(String e);
         }
+
+        interface CanceldoctorCallBack{
+            void backData(EndInquiryBean endInquiryBean);
+            void fuilerror(String e);
+        }
     }
 
 
 
     interface IPresenter{
         void doctorinfo(Map<String,Object> headerMap,int doctorId);
-        void followdoctor(Map<String,String> headerMap,int doctorId);
-        void canceldoctor(Map<String,String> headerMap,int doctorId);
+        void followdoctor(Map<String,Object> headerMap,int doctorId);
+        void canceldoctor(Map<String,Object> headerMap,int doctorId);
 
     }
 }

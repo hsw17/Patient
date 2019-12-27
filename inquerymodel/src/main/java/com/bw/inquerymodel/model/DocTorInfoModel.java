@@ -42,7 +42,7 @@ public class DocTorInfoModel implements DoctroInfoContract.IModel {
     }
 
     @Override
-    public void followdoctor(Map<String, String> headerMap, int doctorId, FollowdoctorCallBack callback) {
+    public void followdoctor(Map<String, Object> headerMap, int doctorId, FollowdoctorCallBack callback) {
         iApiservcie.followdoctor ( headerMap,doctorId )
                 .compose ( CommonSchedulers.io2main () )
                 .subscribe ( new CommonObserver<EndInquiryBean> () {
@@ -59,19 +59,18 @@ public class DocTorInfoModel implements DoctroInfoContract.IModel {
     }
 
     @Override
-    public void canceldoctor(Map<String, String> headerMap, int doctorId, FollowdoctorCallBack callback) {
-         iApiservcie.canceldoctor ( headerMap,doctorId )
-                 .compose ( CommonSchedulers.io2main () )
-                 .subscribe ( new CommonObserver<EndInquiryBean> () {
-                     @Override
-                     public void onNext(EndInquiryBean endInquiryBean) {
-                         callback.backData ( endInquiryBean );
-                     }
+    public void canceldoctor(Map<String, Object> headerMap, int doctorId, CanceldoctorCallBack callback) {
+        iApiservcie.canceldoctor ( headerMap,doctorId ).compose ( CommonSchedulers.io2main () )
+                .subscribe ( new CommonObserver<EndInquiryBean> () {
+                    @Override
+                    public void onNext(EndInquiryBean endInquiryBean) {
+                        callback.backData ( endInquiryBean );
+                    }
 
-                     @Override
-                     public void onError(Throwable e) {
+                    @Override
+                    public void onError(Throwable e) {
                         callback.fuilerror ( e.getMessage () );
-                     }
-                 } );
+                    }
+                } );
     }
 }
