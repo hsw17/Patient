@@ -10,9 +10,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.PwdAndEmail;
@@ -23,52 +23,52 @@ import com.wd.mymainmodule.modle.bean.UserBean;
 import com.wd.mymainmodule.persenter.Persenter;
 import com.wd.mymainmodule.rsacoder.RsaCoder;
 import com.wd.mymainmodule.view.contract.IViewContract;
+import com.wd.mymainmodule.R2;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
 public class RegisterActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
 
-    @BindView(R.id.register_edit_email)
+    @BindView(R2.id.register_edit_email)
     EditText registerEditEmail;
-    @BindView(R.id.register_edit_code)
+    @BindView(R2.id.register_edit_code)
     EditText registerEditCode;
-    @BindView(R.id.register_edit_false)
+    @BindView(R2.id.register_edit_false)
     ImageView registerEditFalse;
-    @BindView(R.id.register_edit_true)
+    @BindView(R2.id.register_edit_true)
     ImageView registerEditTrue;
-    @BindView(R.id.register_edit_pwd)
+    @BindView(R2.id.register_edit_pwd)
     EditText registerEditPwd;
-    @BindView(R.id.register_edit_hine)
+    @BindView(R2.id.register_edit_hine)
     ToggleButton registerEditHine;
-    @BindView(R.id.register_edit_false1)
+    @BindView(R2.id.register_edit_false1)
     ImageView registerEditFalse1;
-    @BindView(R.id.register_edit_true1)
+    @BindView(R2.id.register_edit_true1)
     ImageView registerEditTrue1;
-    @BindView(R.id.register_edit_pwdl)
+    @BindView(R2.id.register_edit_pwdl)
     EditText registerEditPwdl;
-    @BindView(R.id.register_edit_hine1)
+    @BindView(R2.id.register_edit_hine1)
     ToggleButton registerEditHine1;
-    @BindView(R.id.register_edit_invitationCode)
+    @BindView(R2.id.register_edit_invitationCode)
     EditText registerEditInvitationCode;
-    @BindView(R.id.register_edit_xuan)
+    @BindView(R2.id.register_edit_xuan)
     TextView registerEditXuan;
-    @BindView(R.id.register_edit_register)
+    @BindView(R2.id.register_edit_register)
     Button registerEditRegister;
-    @BindView(R.id.relate_view)
+    @BindView(R2.id.relate_view)
     RelativeLayout relateView;
-    @BindView(R.id.register_button_code)
+    @BindView(R2.id.register_button_code)
     Button registerButtonCode;
     private SPUtils login;
     private String password;
 
     @Override
     protected int bindLayout() {
-        return R.layout.activity_register;
+        return R.layout.activity_register_module;
     }
 
     @Override

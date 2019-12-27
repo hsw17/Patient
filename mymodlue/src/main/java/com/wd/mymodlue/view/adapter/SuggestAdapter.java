@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.UserCommentListBean;
 
 import java.text.SimpleDateFormat;
@@ -61,17 +62,17 @@ public class SuggestAdapter extends XRecyclerView.Adapter<SuggestAdapter.MovieVi
 
 
     public class MovieViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.wallet_image_view)
+        @BindView(R2.id.wallet_image_view)
         SimpleDraweeView walletImageView;
-        @BindView(R.id.wallet_text_name)
+        @BindView(R2.id.wallet_text_name)
         TextView walletTextName;
-        @BindView(R.id.wallet_text_title)
+        @BindView(R2.id.wallet_text_title)
         TextView walletTextTitle;
-        @BindView(R.id.wallet_text_bing)
+        @BindView(R2.id.wallet_text_bing)
         TextView walletTextBing;
-        @BindView(R.id.wallet_text_time)
+        @BindView(R2.id.wallet_text_time)
         TextView walletTextTime;
-        @BindView(R.id.wallet_text_jian)
+        @BindView(R2.id.wallet_text_jian)
         TextView walletTextJian;
 
         public MovieViewHolder(@NonNull View itemView) {

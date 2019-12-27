@@ -1,5 +1,6 @@
 package com.wd.mymodlue.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,6 +13,7 @@ import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.UserCommentListBean;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.adapter.SuggestAdapter;
@@ -29,14 +31,14 @@ import butterknife.ButterKnife;
 
 public class SuggestActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
-    @BindView(R.id.head_details_back)
+    @BindView(R2.id.head_details_back)
     ImageView headDetailsBack;
-    @BindView(R.id.head_text_name)
+    @BindView(R2.id.head_text_name)
     TextView headTextName;
 
-    @BindView(R.id.record_linear_layout)
+    @BindView(R2.id.record_linear_layout)
     LinearLayout recordLinearLayout;
-    @BindView(R.id.suggest_list_view)
+    @BindView(R2.id.suggest_list_view)
     RecyclerView suggestListView;
     private Map<String, Object> map;
     private Map<String, Object> oap;
@@ -63,14 +65,16 @@ public class SuggestActivity extends BaseActivity<Persenter> implements IViewCon
         int id = (int) login.getSharedPreference("id", 0);
         String sessionId = (String) login.getSharedPreference("sessionId", "");
         map = new HashMap<>();
-        map.put("userId", 434);
-        map.put("sessionId", "1576494766784434");
+        map.put("userId", id);
+        map.put("sessionId", sessionId);
         oap = new HashMap<>();
         oap.put("page", 1);
         oap.put("count", 10);
         headDetailsBack.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
+                Intent intent=new Intent(SuggestActivity.this,My_ModuleMainActivity.class);
+                startActivity(intent);
                 finish();
             }
 

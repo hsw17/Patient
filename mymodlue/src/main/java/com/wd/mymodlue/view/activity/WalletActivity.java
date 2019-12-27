@@ -1,5 +1,6 @@
 package com.wd.mymodlue.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,6 +12,7 @@ import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.UserConsumptionRecordListBean;
 import com.wd.mymodlue.modle.bean.UserWalletBean;
 import com.wd.mymodlue.persenter.Persenter;
@@ -28,17 +30,17 @@ import butterknife.ButterKnife;
 
 public class WalletActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
-    @BindView(R.id.head_details_back)
+    @BindView(R2.id.head_details_back)
     ImageView headDetailsBack;
-    @BindView(R.id.head_text_name)
+    @BindView(R2.id.head_text_name)
     TextView headTextName;
-    @BindView(R.id.wall_text_price)
+    @BindView(R2.id.wall_text_price)
     TextView wallTextPrice;
-    @BindView(R.id.wall_button_left)
+    @BindView(R2.id.wall_button_left)
     Button wallButtonLeft;
-    @BindView(R.id.wall_button_right)
+    @BindView(R2.id.wall_button_right)
     Button wallButtonRight;
-    @BindView(R.id.wall_list_view)
+    @BindView(R2.id.wall_list_view)
     RecyclerView wallListView;
     private Map<String, Object> map;
     private Map<String, Object> oap;
@@ -64,8 +66,8 @@ public class WalletActivity extends BaseActivity<Persenter> implements IViewCont
         int id = (int) login.getSharedPreference("id", 0);
         String sessionId = (String) login.getSharedPreference("sessionId", "");
         map = new HashMap<>();
-        map.put("userId", 434);
-        map.put("sessionId", "1576494766784434");
+        map.put("userId", id);
+        map.put("sessionId", sessionId);
         oap = new HashMap<>();
         oap.put("page", 1);
         oap.put("count", 10);
@@ -77,6 +79,8 @@ public class WalletActivity extends BaseActivity<Persenter> implements IViewCont
         headDetailsBack.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
+                Intent intent=new Intent(WalletActivity.this,My_ModuleMainActivity.class);
+                startActivity(intent);
                 finish();
             }
 
@@ -91,7 +95,12 @@ public class WalletActivity extends BaseActivity<Persenter> implements IViewCont
         UserWalletBean userWalletBean= (UserWalletBean) obj;
         if ("0000".equals(userWalletBean.status)) {
             int result = userWalletBean.result;
-            wallTextPrice.setText(result+"");
+
+            if (result>9999) {
+                wallTextPrice.setText(999+"+");
+            }else {
+                wallTextPrice.setText(result+"");
+            }
         }else {
             ToastUtils.show(userWalletBean.message);
         }

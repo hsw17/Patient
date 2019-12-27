@@ -1,22 +1,47 @@
 package com.wd.mymodlue.modle.ap;
 
 
+import com.wd.mymodlue.modle.bean.AddArchivesBean;
+import com.wd.mymodlue.modle.bean.CollectionListBean;
+import com.wd.mymodlue.modle.bean.CurrencyNoticeListBean;
+import com.wd.mymodlue.modle.bean.CurrentInquiryRecordBean;
+import com.wd.mymodlue.modle.bean.DeleteArchivesBean;
+import com.wd.mymodlue.modle.bean.DoctorEvaluateBean;
+import com.wd.mymodlue.modle.bean.GIfListBean;
 import com.wd.mymodlue.modle.bean.HeadPicBean;
 import com.wd.mymodlue.modle.bean.HealthTestBean;
+import com.wd.mymodlue.modle.bean.HealthinformationBean;
+import com.wd.mymodlue.modle.bean.HistoryBean;
 import com.wd.mymodlue.modle.bean.LoginBean;
+import com.wd.mymodlue.modle.bean.MySickCircleCommentListBean;
+import com.wd.mymodlue.modle.bean.MySickCircleListBean;
+import com.wd.mymodlue.modle.bean.NewslistBean;
+import com.wd.mymodlue.modle.bean.UpdateArchivesBean;
+import com.wd.mymodlue.modle.bean.UserArchivesBean;
+import com.wd.mymodlue.modle.bean.UserArchivesPictureBean;
 import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.modle.bean.UserCommentListBean;
 import com.wd.mymodlue.modle.bean.UserConsumptionRecordListBean;
+import com.wd.mymodlue.modle.bean.UserDoctorFollowBean;
+import com.wd.mymodlue.modle.bean.UserSickCollectionListBean;
 import com.wd.mymodlue.modle.bean.UserSignBean;
 import com.wd.mymodlue.modle.bean.UserTaskListBean;
 import com.wd.mymodlue.modle.bean.UserWalletBean;
+import com.wd.mymodlue.modle.bean.VideoBuyBean;
+import com.wd.mymodlue.modle.bean.VideoCollectBean;
 
+import java.util.List;
 import java.util.Map;
 
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
+import retrofit2.http.Body;
+import retrofit2.http.DELETE;
+import retrofit2.http.FieldMap;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.HeaderMap;
+import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -82,7 +107,109 @@ public interface Api {
 
     //修改密码
     @PUT("health/user/verify/v1/updateUserPwd")
-    Observable<UserBean> onUpdateUserPwd(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+    Observable<UserBean> onUpdateUserPwd(@HeaderMap Map<String,Object> map, @QueryMap Map<String,String> oap);
 
+    //修改用户昵称
+    @PUT("health/user/verify/v1/modifyNickName")
+    Observable<UserBean> onModifyNickName(@HeaderMap Map<String,Object> map, @Query("nickName") String nickName);
 
+    //修改用户性别
+    @PUT("health/user/verify/v1/updateUserSex")
+    Observable<UserBean> onUpdateUserSex(@HeaderMap Map<String,Object> map, @Query("sex") int sex);
+
+    //查询用户关注医生列表
+    @GET("health/user/verify/v1/findUserDoctorFollowList")
+    Observable<UserDoctorFollowBean> onUserDoctorFollowList(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+    //取消关注医生
+    @GET("health/user/inquiry/verify/v1/cancelFollow")
+    Observable<UserBean> onCancelFollow(@HeaderMap Map<String,Object> map, @Query("doctorId") int doctorId);
+
+    //完善用户信息
+    @PUT("health/user/verify/v1/perfectUserInfo")
+    Observable<UserBean> onPerfectUserInfo(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+    //用户查看当前问诊
+    @GET("health/user/inquiry/verify/v1/findCurrentInquiryRecord")
+    Observable<CurrentInquiryRecordBean> onInquiryRecord(@HeaderMap Map<String,Object> map);
+
+    //结束问诊
+    @PUT("health/user/inquiry/verify/v1/endInquiry")
+    Observable<UserBean> onEndInquiry(@HeaderMap Map<String,Object> map,@Query("recordId") int recordId);
+
+    //根据资讯板块查询资讯列表
+    @GET("health/share/information/v1/findInformationList")
+    Observable<NewslistBean> onjiankangzixun(@QueryMap Map<String,Object> oap);
+    //查看历史问诊
+    @GET("health/user/inquiry/verify/v1/findHistoryInquiryRecord")
+    Observable<HistoryBean> onHistoryInquiryRecord(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+    //查询问诊评价详情
+    @GET("health/user/inquiry/verify/v1/findDoctorEvaluate")
+    Observable<DoctorEvaluateBean> onDoctorEvaluate(@HeaderMap Map<String,Object> map, @Query("recordId") int recordId);
+
+    //查询用户收藏病友圈列表
+    @GET("health/user/verify/v1/findUserSickCollectionList")
+    Observable<CollectionListBean> onCollectionList(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+    //取消病友圈收藏
+    @DELETE("health/user/verify/v1/cancelSickCollection")
+    Observable<UserBean> onSickCollection(@HeaderMap Map<String,Object> map, @Query("sickCircleId") int sickCircleId);
+
+    //我的档案
+    //查看自己的档案
+    @GET("health/user/verify/v1/findUserArchives")
+    Observable<UserArchivesBean> onGetarchives(@HeaderMap Map<String,Object> map);
+    //删除档案
+    @DELETE("health/user/verify/v1/deleteUserArchives")
+    Observable<DeleteArchivesBean> onGetdeleteUserArchives(@HeaderMap Map<String,Object> map, @Query("archivesId") int archivesId);
+    //用户修改档案
+    @PUT("health/user/verify/v1/updateUserArchives")
+    Observable<UpdateArchivesBean> onGetupdateUserArchives(@HeaderMap Map<String,Object> map, @Body Map<String,Object> oap);
+    //用户添加档案
+    @POST("health/user/verify/v1/addUserArchives")
+    Observable<AddArchivesBean> onGetaddUserArchives(@HeaderMap Map<String,Object> map, @Body Map<String,Object> oap);
+    //用户档案上传图片
+    @Multipart
+    @POST("health/user/verify/v1/uploadArchivesPicture")
+    Observable<UserArchivesPictureBean> onGetpicture(@HeaderMap Map<String,Object> map, @Part List<MultipartBody.Part> picture);
+
+    //用户收藏健康课堂视频列表
+    @GET("health/user/verify/v1/findVideoCollectionList")
+    Observable<VideoCollectBean> onVideoCollectionList(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+    //查询用户收藏病友圈列表
+    @GET("health/user/verify/v1/findUserSickCollectionList")
+    Observable<UserSickCollectionListBean> onSickCollectionList(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+    //查询礼物列表
+    @GET("health/user/inquiry/v1/findGiftList")
+    Observable<GIfListBean> onGiftList();
+
+    //查询礼物列表
+    @GET("health/user/inquiry/verify/v1/handselGift")
+    Observable<UserBean> onHandselGift(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+    //用户取消视频收藏
+    @DELETE("health/user/verify/v1/cancelVideoCollection")
+    Observable<UserBean> onVideoCollection(@HeaderMap Map<String,Object> map, @Query("videoId") int videoId);
+
+    //查询用户购买视频列表
+    @GET("health/user/verify/v1/findUserVideoBuyList")
+    Observable<VideoBuyBean> onVideoBuyList(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+    //删除购买健康课堂视频
+    @DELETE("health/user/verify/v1/deleteVideoBuy")
+    Observable<UserBean> ondeleteVideoBuy(@HeaderMap Map<String,Object> map, @Query("videoId") int videoId);
+//  我的病友圈
+    @GET("health/user/sickCircle/verify/v1/findMySickCircleList")
+    Observable<MySickCircleListBean> getMySickCircleList(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+
+//  查询我的病友圈帖子的评论列表
+    @GET("health/user/sickCircle/verify/v1/findMySickCircleCommentList")
+    Observable<MySickCircleCommentListBean> getMySickCircleCommentList(@HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> oap);
+//绑定身份证
+@Headers({"Content-Type: application/json","Accept: application/json"})
+@POST("health/user/verify/v1/bindUserIdCard")
+Observable<UserBean> doUserIdCard(@HeaderMap Map<String,Object> map, @Body Map<String,Object> BodyMap);
 }

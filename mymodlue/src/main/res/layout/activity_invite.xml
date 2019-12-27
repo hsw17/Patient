@@ -6,6 +6,18 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".view.activity.INviteActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
     <RelativeLayout
         android:id="@+id/relay_layout"
         android:layout_marginTop="@dimen/dp_30"
@@ -127,10 +139,13 @@
                 android:id="@+id/invite_button_friend"
                 android:background="@drawable/login_shape_c"
                 android:layout_marginTop="@dimen/dp_46"
+                android:layout_marginBottom="@dimen/dp_10"
                 android:layout_gravity="center"
                 android:layout_width="@dimen/dp_230"
                 android:layout_height="@dimen/dp_36"/>
         </LinearLayout>
 
     </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

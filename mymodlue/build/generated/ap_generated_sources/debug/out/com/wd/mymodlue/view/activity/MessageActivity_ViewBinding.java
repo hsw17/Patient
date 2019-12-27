@@ -57,6 +57,7 @@ public class MessageActivity_ViewBinding implements Unbinder {
     target.butPhoto = Utils.findRequiredViewAsType(source, R.id.but_photo, "field 'butPhoto'", Button.class);
     target.butFinish = Utils.findRequiredViewAsType(source, R.id.but_finish, "field 'butFinish'", Button.class);
     target.linearGone = Utils.findRequiredViewAsType(source, R.id.linear_gone, "field 'linearGone'", LinearLayout.class);
+    target.myInformationGenderl = Utils.findRequiredViewAsType(source, R.id.my_information_genderl, "field 'myInformationGenderl'", ImageView.class);
   }
 
   @Override
@@ -95,5 +96,6 @@ public class MessageActivity_ViewBinding implements Unbinder {
     target.butPhoto = null;
     target.butFinish = null;
     target.linearGone = null;
+    target.myInformationGenderl = null;
   }
 }

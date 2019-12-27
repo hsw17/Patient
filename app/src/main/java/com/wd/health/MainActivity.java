@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.wd.mymodlue.R2;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -12,17 +15,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
-
-
-    @BindView(R.id.text_view)
-    TextView textView;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-        textView.setText("@八维移动智能系1704A第五组");
+        textView= findViewById(R.id.text_view);
+
+//        textView.setText("@八维移动智能系1704A第五组");
 //        3秒跳转
         final Intent intent = new Intent();
 //        设置跳转方法
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                startActivity(intent);
+                ARouter.getInstance().build("/mymodlue/activity").navigation();
             }
         };
         timer.schedule(task, 3000);

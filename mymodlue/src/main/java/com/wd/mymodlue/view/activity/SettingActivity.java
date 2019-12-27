@@ -11,8 +11,11 @@ import android.widget.TextView;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.DataCleanManager;
+import com.bwie.mvplibrary.utils.SPUtils;
+import com.bwie.mvplibrary.utils.ToastUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
 
@@ -22,39 +25,43 @@ import butterknife.ButterKnife;
 
 public class SettingActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
-    @BindView(R.id.head_details_back)
+    @BindView(R2.id.head_details_back)
     ImageView headDetailsBack;
-    @BindView(R.id.head_text_name)
+    @BindView(R2.id.head_text_name)
     TextView headTextName;
-    @BindView(R.id.relay_layout)
+    @BindView(R2.id.relay_layout)
     RelativeLayout relayLayout;
-    @BindView(R.id.setting_image_view)
+    @BindView(R2.id.setting_image_view)
     SimpleDraweeView settingImageView;
-    @BindView(R.id.setting_text_name)
+    @BindView(R2.id.setting_text_name)
     TextView settingTextName;
-    @BindView(R.id.setting_image_name)
+    @BindView(R2.id.setting_image_name)
     LinearLayout settingImageName;
-    @BindView(R.id.setting_image_pwd)
+    @BindView(R2.id.setting_image_pwd)
     RelativeLayout settingImagePwd;
-    @BindView(R.id.setting_text_clear)
+    @BindView(R2.id.setting_text_clear)
     TextView settingTextClear;
-    @BindView(R.id.setting_image_clear)
+    @BindView(R2.id.setting_image_clear)
     RelativeLayout settingImageClear;
-    @BindView(R.id.setting_image_ping_lian)
+    @BindView(R2.id.setting_image_ping_lian)
     RelativeLayout settingImagePingLian;
-    @BindView(R.id.setting_image_new_app)
+    @BindView(R2.id.setting_image_new_app)
     RelativeLayout settingImageNewApp;
-    @BindView(R.id.setting_image_ping_help)
+    @BindView(R2.id.setting_image_ping_help)
     RelativeLayout settingImagePingHelp;
-    @BindView(R.id.setting_image_my)
+    @BindView(R2.id.setting_image_my)
     RelativeLayout settingImageMy;
-    @BindView(R.id.setting_image_new_invite)
+    @BindView(R2.id.setting_image_new_invite)
     RelativeLayout settingImageNewInvite;
-    @BindView(R.id.setting_image_login)
+    @BindView(R2.id.setting_image_login)
     RelativeLayout settingImageLogin;
-    @BindView(R.id.setting_image_layout)
+    @BindView(R2.id.setting_image_layout)
     RelativeLayout settingImageLayout;
-
+    private int id;
+    private String sessionId;
+    private SPUtils login;
+    private String nickName;
+    private String headPic;
     @Override
     protected int bindLayout() {
         return R.layout.activity_setting;
@@ -72,7 +79,31 @@ public class SettingActivity extends BaseActivity<Persenter> implements IViewCon
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
-//        个人信息
+        ToastUtils.init(this);
+        login = new SPUtils(this, "login");
+        id = (int) login.getSharedPreference("id", 0);
+        sessionId = (String) login.getSharedPreference("sessionId", "");
+        nickName = (String) login.getSharedPreference("nickName", "");
+        headPic = (String) login.getSharedPreference("headPic", "");
+          if (id!=0){
+            settingImageView.setImageURI(headPic);
+            settingTextName.setText(nickName);
+         }
+//          返回
+        headDetailsBack.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent(SettingActivity.this,My_ModuleMainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+        //        个人信息
         settingImageLayout.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
@@ -104,17 +135,15 @@ public class SettingActivity extends BaseActivity<Persenter> implements IViewCon
             protected void onSingleClick() {
                 //                清除缓存
                 DataCleanManager.clearAllCache(SettingActivity.this);
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            Thread.sleep(100);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        settingTextClear.postInvalidate();
-                    }
-                }).start();
+                //        获取缓冲数量
+                try {
+//            获取文件大小
+                    String totalCacheSize = DataCleanManager.getTotalCacheSize(SettingActivity.this);
+                    settingTextClear.setText(totalCacheSize);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
             @Override

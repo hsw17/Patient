@@ -1,6 +1,20 @@
 apply plugin: 'com.android.library'
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('H:\\healthy\\Patient\\mvplibrary\\health.keystore')
+            keyAlias = 'health'
+            storePassword '123456'
+            keyPassword '123456'
+        }
+        release {
+            storeFile file('H:\\healthy\\Patient\\mvplibrary\\health.keystore')
+            storePassword '123456'
+            keyAlias = 'health'
+            keyPassword '123456'
+        }
+    }
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
 
@@ -12,19 +26,19 @@ android {
         versionName rootProject.ext.android["versionName"]
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //Arouter路由配置
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [moduleName: project.getName()]
-                includeCompileClasspath = true
+                arguments = [ moduleName : project.getName() ]
             }
         }
-        //兼容10.0
-        compileOptions {
-            sourceCompatibility JavaVersion.VERSION_1_8
-            targetCompatibility JavaVersion.VERSION_1_8
-        }
-    }
 
+    }
+    //兼容10.0
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -62,6 +76,7 @@ dependencies {
     api rootProject.ext.dependencies["converter-scalars"]
     api rootProject.ext.dependencies["okhttp3"]
     api rootProject.ext.dependencies["gson"]
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 
     api rootProject.ext.dependencies["dagger2"]
     api rootProject.ext.dependencies["rxjava2"]
@@ -69,11 +84,22 @@ dependencies {
     api rootProject.ext.dependencies["rxandroid"]
     api rootProject.ext.dependencies["rxjava"]
     api rootProject.ext.dependencies["autolayout"]
-    api rootProject.ext.dependencies["butterknife"]
-    api rootProject.ext.dependencies["butterknife-apt"]
-    api rootProject.ext.dependencies["arouter-compiler"]
-    api rootProject.ext.dependencies["arouter-api"]
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+    implementation 'com.alibaba:arouter-api:1.3.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+    //    # 必选，可兼容市面上绝大部分设备
+    implementation 'com.github.dueeeke.dkplayer:dkplayer-java:2.5.5'
+    implementation 'com.github.dueeeke.dkplayer:dkplayer-armv7a:2.5.5'
 
+//    # 可选，用于兼容一些其他的CPU架构
+    implementation 'com.github.dueeeke.dkplayer:dkplayer-armv5:2.5.5'
+    implementation 'com.github.dueeeke.dkplayer:dkplayer-arm64:2.5.5'
+    implementation 'com.github.dueeeke.dkplayer:dkplayer-x86:2.5.5'
+    implementation 'com.github.dueeeke.dkplayer:dkplayer-x86_64:2.5.5'
+
+//    # 可选，里面包含StandardVideoController的实现
+    implementation 'com.github.dueeeke.dkplayer:dkplayer-ui:2.5.5'
 //  frace
     api rootProject.ext.dependencies["fresco"]
     api rootProject.ext.dependencies["fresco-base"]
@@ -92,7 +118,4 @@ dependencies {
     api rootProject.ext.dependencies["dkplayer-x86"]
     api rootProject.ext.dependencies["dkplayer-x86_64"]
     api rootProject.ext.dependencies["dkplayer-ui"]
-
-
-
 }

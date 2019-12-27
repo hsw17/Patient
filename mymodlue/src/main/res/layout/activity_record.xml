@@ -29,44 +29,212 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dp_22" />
     </RelativeLayout>
-    <LinearLayout
-        android:layout_marginTop="@dimen/dp_10"
-        android:background="#F2F2F2"
+    <View
+        android:id="@+id/vvv"
+        android:layout_marginTop="20dp"
+        android:background="#dddddd"
+        android:layout_width="fill_parent"
+        android:layout_height="10sp"/>
+<RelativeLayout
+    android:id="@+id/my_archives_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_4">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/record_linear_layout"
-        android:layout_marginTop="@dimen/dp_150"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:background="@mipmap/no_message"
-            android:layout_width="@dimen/dp_126"
-            android:layout_height="@dimen/dp_135"/>
-        <TextView
-            android:textStyle="bold"
-            android:gravity="center"
-            android:text="您还没有档案哦"
-            android:layout_marginTop="@dimen/dp_30"
-            android:textSize="@dimen/sp_14"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/my_archives_relat"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <Button
-        android:id="@+id/record_button_add"
-        android:layout_marginTop="@dimen/dp_170"
-        android:textColor="#fff"
-        android:textSize="@dimen/sp_16"
-        android:text="添加"
-        android:layout_marginRight="@dimen/dp_30"
-        android:layout_marginLeft="@dimen/dp_30"
-        android:background="@drawable/login_shape_c"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></Button>
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/my_archives_linear"
+                android:background="#ffffff"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="[主要症状]"
+                    android:textColor="#3087ea"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/text_bingzheng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="面神经炎"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:text="[现病史]"
+                    android:textColor="#3087ea"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/text_neike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="周围性神经炎"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:text="[既往病史]"
+                    android:textColor="#3087ea"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/text_xiangqing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="周围性神经炎"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:text="[治疗经历]"
+                    android:textColor="#3087ea"
+                    android:textSize="16sp" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/text_tiantan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:text="北京天坛医院" />
+
+                    <TextView
+                        android:id="@+id/text_riqi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:text="时间" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/text_jingli"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="每天进行针扎按摩"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:text="[相关图片]"
+                    android:textColor="#3087ea"
+                    android:textSize="16sp" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/info_img"
+                    android:layout_width="320dp"
+                    android:layout_height="144dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    />
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_below="@id/my_archives_linear"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_marginLeft="60dp"
+                    android:id="@+id/button_delete"
+                    android:background="@drawable/login_shape_u"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"
+                    android:text="删除"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_34"/>
+                <Button
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="60dp"
+                    android:id="@+id/button_bianji"
+                    android:background="@drawable/login_shape_c"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"
+                    android:text="编辑"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_34"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/record_linear_layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_marginTop="@dimen/dp_150"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:background="@mipmap/no_message"
+                    android:layout_width="@dimen/dp_126"
+                    android:layout_height="@dimen/dp_135"/>
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="您还没有档案哦"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:textSize="@dimen/sp_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/record_button_add"
+                android:layout_marginTop="@dimen/dp_170"
+                android:textColor="#fff"
+                android:textSize="@dimen/sp_16"
+                android:text="添加"
+                android:layout_marginRight="@dimen/dp_30"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:background="@drawable/login_shape_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></Button>
+        </LinearLayout>
+
+</RelativeLayout>
+
 </LinearLayout>

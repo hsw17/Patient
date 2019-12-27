@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.CompileActivity">
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_30"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_height="@dimen/dp_24">
+
+        <ImageView
+            android:id="@+id/head_details_back"
+            android:layout_width="@dimen/dp_16"
+            android:layout_centerVertical="true"
+            android:layout_height="@dimen/dp_16"
+            android:src="@mipmap/common_icon_back_black_n" />
+        <TextView
+            android:textStyle="bold"
+            android:text="我的档案"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/sp_16"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_22" />
+    </RelativeLayout>
+    <View
+        android:id="@+id/vvv"
+        android:layout_marginTop="20dp"
+        android:background="#dddddd"
+        android:layout_width="fill_parent"
+        android:layout_height="10sp"/>
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="24dp">
+
+                <LinearLayout
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="[主要病症]"
+                        android:textColor="#3087ea"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/diseaseMain"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="10dp"
+                        android:background="@null"
+                        android:ems="10"
+                        android:focusable="true"
+                        android:hint="请输入您的主要病症"
+                        android:inputType="text"
+                        android:textColorHint="#999999"
+                        android:textSize="12sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#F2F2F2"></View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/line1"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="[现病史]"
+                        android:textColor="#3087ea"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/diseaseNow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="10dp"
+                        android:background="@null"
+                        android:ems="10"
+                        android:focusable="true"
+                        android:hint="请详细输入您的当前病状"
+                        android:inputType="text"
+                        android:textColorHint="#999999"
+                        android:textSize="12sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#F2F2F2"></View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lin2"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="[既往病史]"
+                        android:textColor="#3087ea"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/diseaseBefore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="10dp"
+                        android:background="@null"
+                        android:ems="10"
+                        android:focusable="true"
+                        android:hint="请输入您的既往病史"
+                        android:inputType="text"
+                        android:textColorHint="#999999"
+                        android:textSize="12sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#F2F2F2"></View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lin3"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="[最近一次医疗经历]"
+                        android:textColor="#3087ea"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/treatmentHospitalRecent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="10dp"
+                        android:background="@null"
+                        android:ems="10"
+                        android:focusable="true"
+                        android:hint="请输入医院名称"
+                        android:inputType="text"
+                        android:textColorHint="#999999"
+                        android:textSize="12sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#F2F2F2"></View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lin4"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/startTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="请选择治疗开始时间"
+                            android:textColor="#333333"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_toLeftOf="@id/img_startTime"
+                            android:id="@+id/edit_starttime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="开始时间"
+                            android:textColor="#333333"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/img_startTime"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="8dp"
+                            android:background="@mipmap/circle_icon_drop_down_n" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#F2F2F2"></View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lin5"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/endTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/end"
+                            android:layout_toLeftOf="@id/img_endTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="结束时间"
+                            android:textColor="#333333"
+                            android:textSize="12sp" />
+                        <TextView
+                            android:id="@+id/edit_endtime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="请选择治疗结束时间"
+                            android:textColor="#333333"
+                            android:textSize="12sp" />
+                        <ImageView
+                            android:id="@+id/img_endTime"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="8dp"
+                            android:background="@mipmap/circle_icon_drop_down_n" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#F2F2F2"></View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lin6"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/treatmentProcess"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:background="@null"
+                        android:ems="10"
+                        android:focusable="true"
+                        android:hint="请输入医疗过程"
+                        android:inputType="text"
+                        android:textColorHint="#999999"
+                        android:textSize="12sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#F2F2F2"></View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lin7"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="[相关图片]"
+                        android:textColor="#3087ea"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#f2f2f2"
+                        android:gravity="center_vertical"
+                        android:text="最多可添加6张图片；长按为图片排序" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/bo_image_list"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                        <ImageView
+                            android:id="@+id/add_image"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@mipmap/add"
+                            />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:background="@drawable/login_shape_d"
+                        android:id="@+id/addFiles"
+                        android:layout_width="match_parent"
+                        android:layout_height="39dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="16dp"
+                        android:text="保存"
+                        android:textColor="#ffffff"
+                        android:textSize="14sp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:id="@+id/linear_gone"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:textSize="@dimen/sp_14"
+                        android:text="拍摄"
+                        android:id="@+id/but_shoot"
+                        android:background="@drawable/login_shape_j"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <Button
+                        android:layout_marginTop="@dimen/dp_3"
+                        android:textSize="@dimen/sp_14"
+                        android:background="@drawable/login_shape_j"
+                        android:text="从手机相册选择"
+                        android:id="@+id/but_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <LinearLayout
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <Button
+                            android:layout_marginTop="@dimen/dp_3"
+                            android:textSize="@dimen/sp_14"
+                            android:text="取消"
+                            android:background="@drawable/login_shape_j"
+
+                            android:id="@+id/but_finish"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

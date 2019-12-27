@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_marginRight="@dimen/dp_20"
+    android:layout_marginLeft="@dimen/dp_20"
+    android:layout_marginTop="@dimen/dp_10"
+    android:id="@+id/lin_list_tm"
+    android:background="@drawable/login_shape_a"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/simpl_image_view"
+        android:background="@mipmap/boy"
+        android:layout_width="@dimen/dp_116"
+        android:layout_height="@dimen/dp_140">
+
+    </com.facebook.drawee.view.SimpleDraweeView>
+
+    <RelativeLayout
+        android:layout_marginLeft="@dimen/dp_10"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/dp_5"
+            android:id="@+id/linear_out"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/simpl_text_name"
+                android:text="小面膜"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/simpl_text_zhiwei"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:text="小面膜"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="@dimen/dp_10"
+
+            android:layout_below="@id/linear_out"
+            android:id="@+id/linear_two"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/simpl_text_yiyuang"
+                android:text="问诊时间"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginLeft="@dimen/dp_20"
+                android:id="@+id/simpl_text_time"
+                android:text="小面膜"
+                android:textColor="#333333"
+                android:textSize="@dimen/sp_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="@dimen/dp_30"
+            android:layout_below="@id/linear_two"
+            android:id="@+id/linear_tre"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/simpl_button_histry"
+                android:textColor="#fff"
+                android:textSize="@dimen/sp_12"
+                android:text="查询问诊记录"
+                android:background="@drawable/login_shape_d"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_34"/>
+
+            <Button
+                android:layout_marginLeft="@dimen/dp_20"
+                android:id="@+id/simpl_button_evaluate"
+                android:textColor="#fff"
+                android:textSize="@dimen/sp_12"
+                android:text="去评价"
+                android:background="@drawable/login_shape_d"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_34"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

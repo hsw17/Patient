@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:text=" @八维移动智能系1704A第五组"
         android:layout_marginBottom="@dimen/dp_30"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

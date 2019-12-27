@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wd.mymodlue">
+
+    <application
+        android:name="com.bwie.mvplibrary.app.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".view.activity.BankActivity">
+            <intent-filter>
+                <action android:name="com.hl.BankActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.CertificActivity">
+            <intent-filter>
+                <action android:name="com.hl.CertificActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.SuccessActivity">
+            <intent-filter>
+                <action android:name="com.hl.SuccessActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.CompileActivity">
+            <intent-filter>
+                <action android:name="com.hl.CompileActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.HistoryActivity">
+            <intent-filter>
+                <action android:name="com.hl.HistoryActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.PatientsCircleActivity">
+            <intent-filter>
+                <action android:name="com.hl.PatientsCircleActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.CollectActivity">
+            <intent-filter>
+                <action android:name="com.hl.CollectActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.InquiryActivity">
+            <intent-filter>
+                <action android:name="com.hl.InquiryActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.FeatureActivity">
+            <intent-filter>
+                <action android:name="com.hl.FeatureActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.GenderActivity">
+            <intent-filter>
+                <action android:name="com.hl.GenderActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.NicknameActivity">
+            <intent-filter>
+                <action android:name="com.hl.NicknameActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.PwdActivity">
+            <intent-filter>
+                <action android:name="com.hl.PwdActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.MessageActivity">
+            <intent-filter>
+                <action android:name="com.hl.MessageActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.BrightnessActivity">
+            <intent-filter>
+                <action android:name="com.hl.BrightnessActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.INviteActivity">
+            <intent-filter>
+                <action android:name="com.hl.INviteActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.SettingActivity">
+            <intent-filter>
+                <action android:name="com.hl.SettingActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.SuggestActivity">
+            <intent-filter>
+                <action android:name="com.hl.SuggestActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.WalletActivity">
+            <intent-filter>
+                <action android:name="com.hl.WalletActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.TaskActivity">
+            <intent-filter>
+                <action android:name="com.hl.TaskActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.VideoActivity">
+            <intent-filter>
+                <action android:name="com.hl.VideoActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.AttentionActivity">
+            <intent-filter>
+                <action android:name="com.hl.AttentionActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.RecordActivity">
+            <intent-filter>
+                <action android:name="com.hl.RecordActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.My_ModuleMainActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+    </application>
+
+</manifest>

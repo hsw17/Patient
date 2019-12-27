@@ -1,5 +1,10 @@
 package com.wd.mymodlue.view.activity;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.WindowManager;
@@ -11,22 +16,28 @@ import android.widget.TextView;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
 
+import androidx.core.app.ActivityCompat;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class BrightnessActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
-    @BindView(R.id.head_details_back)
+    @BindView(R2.id.head_details_back)
     ImageView headDetailsBack;
-    @BindView(R.id.head_text_name)
+    @BindView(R2.id.head_text_name)
     TextView headTextName;
-    @BindView(R.id.relay_layout)
+    @BindView(R2.id.relay_layout)
     RelativeLayout relayLayout;
-    @BindView(R.id.screen_seekbar)
+    @BindView(R2.id.screen_seekbar)
     SeekBar screenSeekbar;
+    private static String[] PERMISSIONS_STORAGE = {
+            android.Manifest.permission.READ_EXTERNAL_STORAGE,
+            android.Manifest.permission.WRITE_EXTERNAL_STORAGE};    //请求状态码
+    private static int REQUEST_PERMISSION_CODE = 2;
 
     @Override
     protected int bindLayout() {
@@ -42,19 +53,8 @@ public class BrightnessActivity extends BaseActivity<Persenter> implements IView
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
-//        返回
-        headDetailsBack.setOnClickListener(new CustomClickListener() {
-            @Override
-            protected void onSingleClick() {
-                finish();
-            }
 
-            @Override
-            protected void onFastClick() {
-
-            }
-        });
-//        设置屏幕亮度
+        //        设置屏幕亮度
         screenSeekbar.setMax(255);
         int normal = Settings.System.getInt(getContentResolver(),
                 Settings.System.SCREEN_BRIGHTNESS, 255);
@@ -77,29 +77,58 @@ public class BrightnessActivity extends BaseActivity<Persenter> implements IView
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress,
                                           boolean fromUser) {
-                int tmpInt = progress;
-                // 当进度小于80时，设置成80，防止太黑看不见的后果。
-                if (tmpInt < 80) {
-                    tmpInt = 80;
-                }
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    //如果当前平台版本大于23平台
+                    if (!Settings.System.canWrite(BrightnessActivity.this)) {
+                        //如果没有修改系统的权限这请求修改系统的权限
+                        Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
+                        intent.setData(Uri.parse("package:" + getPackageName()));
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivityForResult(intent, 0);
+                    } else {
+                        //有了权限，你要做什么呢？具体的动作
 
-                // 根据当前进度改变亮度
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.SCREEN_BRIGHTNESS, progress);
-                tmpInt = Settings.System.getInt(getContentResolver(),
-                        Settings.System.SCREEN_BRIGHTNESS, -1);
-                WindowManager.LayoutParams wl = getWindow().getAttributes();
+                        int tmpInt = progress;
+                        // 当进度小于80时，设置成80，防止太黑看不见的后果。
+                        if (tmpInt < 80) {
+                            tmpInt = 80;
+                        }
 
-                float tmpFloat = (float) tmpInt / 255;
-                if (tmpFloat > 0 && tmpFloat <= 1) {
-                    wl.screenBrightness = tmpFloat;
+                        // 根据当前进度改变亮度
+                        Settings.System.putInt(getContentResolver(),
+                                Settings.System.SCREEN_BRIGHTNESS, progress);
+                        tmpInt = Settings.System.getInt(getContentResolver(),
+                                Settings.System.SCREEN_BRIGHTNESS, -1);
+                        WindowManager.LayoutParams wl = getWindow().getAttributes();
+
+                        float tmpFloat = (float) tmpInt / 255;
+                        if (tmpFloat > 0 && tmpFloat <= 1) {
+                            wl.screenBrightness = tmpFloat;
+                        }
+                        getWindow().setAttributes(wl);
+                    }
+
                 }
-                getWindow().setAttributes(wl);
+            }
+        });
+//        返回
+        headDetailsBack.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                finish();
+            }
+
+            @Override
+            protected void onFastClick() {
 
             }
         });
 
+
     }
+
+
+
     @Override
     public void onSuccess(Object obj) {
 

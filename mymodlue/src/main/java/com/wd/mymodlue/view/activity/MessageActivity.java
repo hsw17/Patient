@@ -16,12 +16,15 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bwie.mvplibrary.app.App;
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
+import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.HeadPicBean;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
@@ -40,69 +43,77 @@ import butterknife.ButterKnife;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-
+@Route(path = "/mymodlue/emactivity")
 public class MessageActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
     //需要的权限数组 读/写/相机
     private static String[] PERMISSIONS_STORAGE = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
-    @BindView(R.id.fanhui)
+    @BindView(R2.id.fanhui)
     ImageView fanhui;
-    @BindView(R.id.my_information_Avatar)
+    @BindView(R2.id.my_information_Avatar)
     SimpleDraweeView myInformationAvatar;
-    @BindView(R.id.my_information_Avatar_a)
+    @BindView(R2.id.my_information_Avatar_a)
     RelativeLayout myInformationAvatarA;
-    @BindView(R.id.my_information_name)
+    @BindView(R2.id.my_information_name)
     TextView myInformationName;
-    @BindView(R.id.a2)
+    @BindView(R2.id.a2)
     ImageView a2;
-    @BindView(R.id.my_information_name_a)
+    @BindView(R2.id.my_information_name_a)
     RelativeLayout myInformationNameA;
-    @BindView(R.id.my_information_gender)
+    @BindView(R2.id.my_information_gender)
     ImageView myInformationGender;
-    @BindView(R.id.b1)
+
+    @BindView(R2.id.b1)
     ImageView b1;
-    @BindView(R.id.my_information_gender_a)
+    @BindView(R2.id.my_information_gender_a)
     RelativeLayout myInformationGenderA;
-    @BindView(R.id.my_information_height)
+    @BindView(R2.id.my_information_height)
     TextView myInformationHeight;
-    @BindView(R.id.my_information_bodyweight)
+    @BindView(R2.id.my_information_bodyweight)
     TextView myInformationBodyweight;
-    @BindView(R.id.my_information_age)
+    @BindView(R2.id.my_information_age)
     TextView myInformationAge;
-    @BindView(R.id.b2)
+    @BindView(R2.id.b2)
     ImageView b2;
-    @BindView(R.id.my_information_Sign)
+    @BindView(R2.id.my_information_Sign)
     RelativeLayout myInformationSign;
-    @BindView(R.id.my_information_mailbox)
+    @BindView(R2.id.my_information_mailbox)
     TextView myInformationMailbox;
-    @BindView(R.id.my_information_mailbox_a)
+    @BindView(R2.id.my_information_mailbox_a)
     RelativeLayout myInformationMailboxA;
-    @BindView(R.id.my_information_weixin)
+    @BindView(R2.id.my_information_weixin)
     TextView myInformationWeixin;
-    @BindView(R.id.c2)
+    @BindView(R2.id.c2)
     ImageView c2;
-    @BindView(R.id.my_information_weixin_a)
+    @BindView(R2.id.my_information_weixin_a)
     RelativeLayout myInformationWeixinA;
-    @BindView(R.id.my_information_Certification)
+    @BindView(R2.id.my_information_Certification)
     TextView myInformationCertification;
-    @BindView(R.id.d1)
+    @BindView(R2.id.d1)
     ImageView d1;
-    @BindView(R.id.my_information_Certification_a)
+    @BindView(R2.id.my_information_Certification_a)
     RelativeLayout myInformationCertificationA;
-    @BindView(R.id.my_information_Bankcard)
+    @BindView(R2.id.my_information_Bankcard)
     TextView myInformationBankcard;
-    @BindView(R.id.d2)
+    @BindView(R2.id.d2)
     ImageView d2;
-    @BindView(R.id.my_information_Bankcard_a)
+    @BindView(R2.id.my_information_Bankcard_a)
     RelativeLayout myInformationBankcardA;
-    @BindView(R.id.but_shoot)
+    @BindView(R2.id.but_shoot)
     Button butShoot;
-    @BindView(R.id.but_photo)
+    @BindView(R2.id.but_photo)
     Button butPhoto;
-    @BindView(R.id.but_finish)
+    @BindView(R2.id.but_finish)
     Button butFinish;
-    @BindView(R.id.linear_gone)
+    @BindView(R2.id.linear_gone)
     LinearLayout linearGone;
+    @BindView(R2.id.my_information_genderl)
+    ImageView myInformationGenderl;
+    private int id;
+    private String sessionId;
+    private SPUtils login;
+    private String nickName;
+    private String headPic;
 
     @Override
     protected int bindLayout() {
@@ -120,10 +131,50 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
         ToastUtils.init(this);
+        //        获取存储内容
+        login = new SPUtils(this, "login");
+        id = (int) login.getSharedPreference("id", 0);
+        sessionId = (String) login.getSharedPreference("sessionId", "");
+        nickName = (String) login.getSharedPreference("nickName", "");
+        headPic = (String) login.getSharedPreference("headPic", "");
+        String email = (String) login.getSharedPreference("email", "");
+        int sex = (int) login.getSharedPreference("sex", 0);
+        int age = (int) login.getSharedPreference("age", 0);
+        int height = (int) login.getSharedPreference("height", 0);
+        int weight = (int) login.getSharedPreference("weight", 0);
+        int whetherBingWeChat = (int) login.getSharedPreference("whetherBingWeChat", 0);
+//        设置头像名字
+        if (id != 0) {
+            myInformationAvatar.setImageURI(headPic);
+            myInformationName.setText(nickName);
+            myInformationHeight.setText(height + "cm");
+            myInformationBodyweight.setText(weight + "kg");
+            myInformationAge.setText(age + "");
+            if (sex == 2) {
+                myInformationGender.setVisibility(View.VISIBLE);
+                myInformationGenderl.setVisibility(View.GONE);
+
+            }
+            if (sex == 1) {
+                myInformationGender.setVisibility(View.GONE);
+                myInformationGenderl.setVisibility(View.VISIBLE);
+            }
+            if (email != null) {
+                myInformationMailbox.setText(email);
+            }
+            if (whetherBingWeChat == 1) {
+                myInformationWeixin.setText("已绑定");
+            } else if (whetherBingWeChat == 2) {
+                myInformationWeixin.setText("去绑定");
+
+            }
+        }
 //          返回
         fanhui.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
+                Intent intent = new Intent("com.hl.SettingActivity");
+                startActivity(intent);
                 finish();
             }
 
@@ -151,12 +202,12 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
             @Override
             protected void onSingleClick() {
                 //检查是否已经获得相机的权限
-                if(verifyPermissions(MessageActivity.this,PERMISSIONS_STORAGE[2]) == 0){
+                if (verifyPermissions(MessageActivity.this, PERMISSIONS_STORAGE[2]) == 0) {
                     ActivityCompat.requestPermissions(MessageActivity.this, PERMISSIONS_STORAGE, 3);
-                }else{
+                } else {
                     //已经有权限
-                    Intent intent = new Intent ( MediaStore.ACTION_IMAGE_CAPTURE );
-                    startActivityForResult ( intent,101 );
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(intent, 101);
                 }
             }
 
@@ -171,7 +222,7 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
             protected void onSingleClick() {
                 Intent intent = new Intent(Intent.ACTION_PICK);  //跳转到 ACTION_IMAGE_CAPTURE
                 intent.setType("image/*");
-                startActivityForResult(intent,100);
+                startActivityForResult(intent, 100);
             }
 
             @Override
@@ -191,21 +242,99 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
 
             }
         });
+//        修改昵称
+        myInformationNameA.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent = new Intent("com.hl.NicknameActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//        修改性别
+        myInformationGenderA.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent = new Intent("com.hl.GenderActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//      体征
+        myInformationSign.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent = new Intent("com.hl.FeatureActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//        邮箱
+        myInformationMailbox.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                ARouter.getInstance().build("/mymainmodule/emailctivity").navigation();
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//        身份证
+        myInformationCertificationA.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent = new Intent("com.hl.CertificActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//        银行卡
+        myInformationBankcardA.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.BankActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
     }
+
     @Override
-    protected void onActivityResult(int requestCode, int resultCode,Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Map<String,Object> map = new HashMap<>();
-        map.put("userId",434);
-        map.put("sessionId","1576494766784434");
+        Map<String, Object> map = new HashMap<>();
+        map.put("userId", id);
+        map.put("sessionId", sessionId);
         //判断返回码不等于0
         if (requestCode != RESULT_CANCELED) {
             //读取返回码
             switch (requestCode) {
                 case 100:   //相册返回的数据（相册的返回码）
-                    if (data!=null) {
+                    if (data != null) {
                         Uri uri01 = data.getData();
-                        if (uri01!=null) {
+                        if (uri01 != null) {
                             Log.i("aaa", "onActivityResult: " + uri01);
                             String[] str = {MediaStore.Images.Media.DATA};
 //                    游标
@@ -226,7 +355,7 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
                             presenter.onloadHeadPic(map, formData);
                             linearGone.setVisibility(View.GONE);
                         }
-                    }else{
+                    } else {
                         linearGone.setVisibility(View.GONE);
 
                         return;
@@ -234,8 +363,9 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
 
                     break;
                 case 101:  //相机返回的数据（相机的返回码）
-                    if (data!=null) {
+                    if (data != null) {
                         try {
+
                             Bitmap bitmap = data.getParcelableExtra("data");
                             if (bitmap != null) {
                                 File file1 = saveBitmapFile(bitmap);
@@ -252,7 +382,7 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                    }else{
+                    } else {
                         linearGone.setVisibility(View.GONE);
                         return;
                     }
@@ -263,8 +393,8 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
 
     public File saveBitmapFile(Bitmap bitmap) {
         String timeStamp = String.valueOf(new Date().getTime());
-        File  file = new File( Environment.getExternalStorageDirectory() +
-                File.separator + timeStamp+".jpg");
+        File file = new File(Environment.getExternalStorageDirectory() +
+                File.separator + timeStamp + ".jpg");
         try {
             BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file));
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
@@ -275,13 +405,16 @@ public class MessageActivity extends BaseActivity<Persenter> implements IViewCon
         }
         return file;
     }
+
     @Override
     public void onSuccess(Object obj) {
-        HeadPicBean headPicBean= (HeadPicBean) obj;
+        HeadPicBean headPicBean = (HeadPicBean) obj;
         if ("0000".equals(headPicBean.status)) {
             ToastUtils.show(headPicBean.message);
             myInformationAvatar.setImageURI(headPicBean.result);
-        }else {
+            login.SharedPreferenceput("headPic", headPicBean.result);
+
+        } else {
             ToastUtils.show(headPicBean.message);
         }
     }

@@ -1,22 +1,26 @@
-apply plugin: 'com.android.application'
-
+if (Boolean.valueOf(rootProject.ext.isModule)) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
 
 
     defaultConfig {
-        applicationId "com.wd.mymodlue"
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
+        //Arouter路由配置
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [moduleName: project.getName()]
-                includeCompileClasspath = true
             }
         }
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -32,11 +36,33 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    if (Boolean.valueOf(rootProject.ext.isModule)) {
+        //组件模式下设置applicationId
+        applicationId "com.wd.mymodlue"
+    }
+
+    /*
+       * java插件引入了一个概念叫做SourceSets，通过修改SourceSets中的属性，
+       * 可以指定哪些源文件（或文件夹下的源文件）要被编译，
+       * 哪些源文件要被排除。
+       * */
+    sourceSets {
+        main {
+            if (Boolean.valueOf(rootProject.ext.isModule)) {//apk
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/library/AndroidManifest.xml'
+                java {
+                    //library模式下，排除java/debug文件夹下的所有文件
+                    exclude '*module'
+                }
+            }
+        }
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.google.android.material:material:1.0.0'
@@ -45,7 +71,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    api rootProject.ext.dependencies["arouter-api"]
+    implementation 'com.alibaba:arouter-api:1.3.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     api rootProject.ext.dependencies["xrecyclerview"]
     implementation project(path: ':mvplibrary')
+    implementation project(path: ':mymainmodule')
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+    implementation project(path: ':ocr_library')
+    implementation files('libs\\ocr-sdk.jar')
 }

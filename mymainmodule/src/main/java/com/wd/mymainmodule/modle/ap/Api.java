@@ -9,6 +9,7 @@ import java.util.Map;
 import io.reactivex.Observable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.HeaderMap;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Query;
@@ -34,5 +35,10 @@ public interface Api {
 //  重置用户密码（忘记密码用）
     @PUT("health/user/v1/resetUserPwd")
     Observable<UserBean> doUserPwd(@QueryMap Map<String,Object> map);
+
+//  完善邮箱（微信注册用户使用）
+
+    @PUT("health/user/verify/v1/perfectEmail")
+    Observable<UserBean> doEmail(@HeaderMap Map<String,Object> omp, @Query("email") String email);
 
 }

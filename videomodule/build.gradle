@@ -15,17 +15,13 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        //Arouter路由配置
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [moduleName: project.getName()]
-                includeCompileClasspath = true
+                arguments = [ moduleName : project.getName() ]
             }
         }
-        //兼容10.0
-        compileOptions {
-            sourceCompatibility JavaVersion.VERSION_1_8
-            targetCompatibility JavaVersion.VERSION_1_8
-        }
+
     }
 
     buildTypes {
@@ -34,7 +30,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    //兼容10.0
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -59,10 +59,11 @@ dependencies {
 
 //    # 可选，里面包含StandardVideoController的实现
     implementation 'com.github.dueeeke.dkplayer:dkplayer-ui:2.5.5'
-
+    implementation 'com.alibaba:arouter-api:1.3.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     api rootProject.ext.dependencies["recyclerview-v7"]
     api rootProject.ext.dependencies["design"]
-    api rootProject.ext.dependencies["butterknife"]
-    api rootProject.ext.dependencies["butterknife-apt"]
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     api rootProject.ext.dependencies["glide"]
 }

@@ -17,6 +17,7 @@ import com.bwie.mvplibrary.utils.ToastUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.HealthTestBean;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
@@ -30,21 +31,21 @@ import butterknife.ButterKnife;
 public class INviteActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
 
-    @BindView(R.id.head_details_back)
+    @BindView(R2.id.head_details_back)
     ImageView headDetailsBack;
-    @BindView(R.id.head_text_name)
+    @BindView(R2.id.head_text_name)
     TextView headTextName;
-    @BindView(R.id.relay_layout)
+    @BindView(R2.id.relay_layout)
     RelativeLayout relayLayout;
-    @BindView(R.id.invite_edit_code)
+    @BindView(R2.id.invite_edit_code)
     TextView inviteEditCode;
-    @BindView(R.id.invite_button_code)
+    @BindView(R2.id.invite_button_code)
     LinearLayout inviteButtonCode;
-    @BindView(R.id.invite_simpl_view)
+    @BindView(R2.id.invite_simpl_view)
     ImageView inviteSimplView;
-    @BindView(R.id.invite_button_friend)
+    @BindView(R2.id.invite_button_friend)
     Button inviteButtonFriend;
-    @BindView(R.id.invite_text_code)
+    @BindView(R2.id.invite_text_code)
     TextView inviteTextCode;
     private Map<String, Object> map;
 
@@ -69,8 +70,8 @@ public class INviteActivity extends BaseActivity<Persenter> implements IViewCont
         int id = (int) login.getSharedPreference("id", 0);
         String sessionId = (String) login.getSharedPreference("sessionId", "");
         map = new HashMap<>();
-        map.put("userId", 434);
-        map.put("sessionId", "1576494766784434");
+        map.put("userId", id);
+        map.put("sessionId", sessionId);
         presenter.doUserInvitation(map);
 //       复制邀请码
         inviteTextCode.setOnClickListener(new CustomClickListener() {

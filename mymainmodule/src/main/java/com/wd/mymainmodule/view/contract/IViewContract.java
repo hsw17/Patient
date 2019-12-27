@@ -30,6 +30,8 @@ public interface IViewContract {
         void doRegister(Map<String,Object> map);
         //重置用户密码（忘记密码用）
         void doUserPwd(Map<String,Object> map);
+        //完善邮箱（微信注册用户使用）
+        void doEmail(Map<String,Object> oap,String email);
     }
 
     //M层
@@ -42,6 +44,8 @@ public interface IViewContract {
         void doRegister(Map<String,Object> map, IModelCallback iModelCallback);
 //        重置用户密码（忘记密码用）
         void doUserPwd(Map<String,Object> map, IModelCallback iModelCallback);
+//        完善邮箱（微信注册用户使用）
+        void doEmail(Map<String,Object> oap,String email, IModelCallback iModelCallback);
         interface IModelCallback{
             void onSuccess(Object obj);
             void onSuccessOne(Object one);
