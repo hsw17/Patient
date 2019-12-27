@@ -13,14 +13,17 @@ android {
         versionName rootProject.ext.android["versionName"]
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-        //Arouter路由配置
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [ moduleName : project.getName() ]
+                arguments = [moduleName: project.getName()]
+                includeCompileClasspath = true
             }
         }
-
+        //兼容10.0
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
     }
 
     buildTypes {
@@ -29,14 +32,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    //兼容10.0
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
     //新加
     allprojects {
-
         repositories {
             maven { url "https://jitpack.io" }
         }
@@ -52,7 +49,6 @@ android {
         }
     }
 }
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -64,8 +60,8 @@ dependencies {
     //recyclerview
     api rootProject.ext.dependencies["rxjava2"]
     api rootProject.ext.dependencies["rxjava"]
-    implementation 'com.jakewharton:butterknife:10.2.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+    api rootProject.ext.dependencies["butterknife"]
+    api rootProject.ext.dependencies["butterknife-apt"]
     api rootProject.ext.dependencies["retrofit"]
     api rootProject.ext.dependencies["eretrofit-convertr-gson"]
     api rootProject.ext.dependencies["retrofit-adapter-rxjava"]

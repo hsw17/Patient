@@ -13,7 +13,6 @@ import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.wd.mymodlue.R;
 import com.wd.mymodlue.R2;
-import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.modle.bean.UserDoctorFollowBean;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.adapter.AttenttionAdapter;
@@ -63,16 +62,16 @@ public class AttentionActivity extends BaseActivity<Persenter> implements IViewC
         map = new HashMap<>();
         map.put("userId", id);
         map.put("sessionId", sessionId);
-        Map<String,Object> oap = new HashMap<>();
+        Map<String, Object> oap = new HashMap<>();
         oap.put("page", 1);
         oap.put("count", 10);
-        presenter.onUserDoctorFollowList(map,oap);
+        presenter.onUserDoctorFollowList(map, oap);
 
 //        返回
         headDetailsBack.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
-                Intent intent=new Intent(AttentionActivity.this,My_ModuleMainActivity.class);
+                Intent intent = new Intent(AttentionActivity.this, My_ModuleMainActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -83,24 +82,25 @@ public class AttentionActivity extends BaseActivity<Persenter> implements IViewC
             }
         });
     }
+
     @Override
     public void onSuccess(Object obj) {
-        UserDoctorFollowBean userDoctorFollowBean= (UserDoctorFollowBean) obj;
+        UserDoctorFollowBean userDoctorFollowBean = (UserDoctorFollowBean) obj;
         if ("0000".equals(userDoctorFollowBean.status)) {
 
             List<UserDoctorFollowBean.ResultBean> result = userDoctorFollowBean.result;
-            if (result.size()==0){
+            if (result.size() == 0) {
                 recordLinearLayout.setVisibility(View.VISIBLE);
                 return;
-            }else{
+            } else {
                 recordLinearLayout.setVisibility(View.GONE);
-                AttenttionAdapter attenttionAdapter=new AttenttionAdapter(result);
+                AttenttionAdapter attenttionAdapter = new AttenttionAdapter(result);
                 recordListView.setLayoutManager(new LinearLayoutManager(this));
                 recordListView.setAdapter(attenttionAdapter);
                 attenttionAdapter.setAreaView(new AttenttionAdapter.AreaView() {
                     @Override
                     public void onCurress(int id) {
-                        presenter.onCancelFollow(map,id);
+                        presenter.onCancelFollow(map, id);
                     }
 
                     @Override
@@ -109,7 +109,7 @@ public class AttentionActivity extends BaseActivity<Persenter> implements IViewC
                     }
                 });
             }
-        }else {
+        } else {
             ToastUtils.show(userDoctorFollowBean.message);
         }
 
@@ -117,12 +117,7 @@ public class AttentionActivity extends BaseActivity<Persenter> implements IViewC
 
     @Override
     public void onSuccessOne(Object one) {
-        UserBean userBean= (UserBean) one;
-        if ("0000".equals(userBean.status)) {
-            ToastUtils.show(userBean.message);
-        }else {
-            ToastUtils.show(userBean.message);
-        }
+
     }
 
     @Override
@@ -144,6 +139,4 @@ public class AttentionActivity extends BaseActivity<Persenter> implements IViewC
     public void onFail(String str) {
 
     }
-
-
 }

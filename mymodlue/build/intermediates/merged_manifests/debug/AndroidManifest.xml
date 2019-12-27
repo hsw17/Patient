@@ -52,28 +52,36 @@
             </intent-filter>
         </activity>
         <activity android:name="com.wd.mymodlue.view.activity.FeatureActivity" >
+        <activity android:name="com.wd.mymodlue.view.activity.PwdActivity" >
             <intent-filter>
+                <action android:name="com.hl.PwdActivity" />
                 <action android:name="com.hl.FeatureActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name="com.wd.mymodlue.view.activity.GenderActivity" >
+        <activity android:name="com.wd.mymodlue.view.activity.MessageActivity" >
             <intent-filter>
                 <action android:name="com.hl.GenderActivity" />
+                <action android:name="com.hl.MessageActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name="com.wd.mymodlue.view.activity.BrightnessActivity" >
         <activity android:name="com.wd.mymodlue.view.activity.NicknameActivity" >
             <intent-filter>
                 <action android:name="com.hl.NicknameActivity" />
+                <action android:name="com.hl.BrightnessActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name="com.wd.mymodlue.view.activity.INviteActivity" >
         <activity android:name="com.wd.mymodlue.view.activity.PwdActivity" >
             <intent-filter>
+                <action android:name="com.hl.INviteActivity" />
                 <action android:name="com.hl.PwdActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />

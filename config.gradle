@@ -102,6 +102,5 @@ ext {
             "dkplayer-x86_64"             : 'com.github.dueeeke.dkplayer:dkplayer-x86_64:2.5.5',
             //    # 可选，里面包含StandardVideoController的实现
             "dkplayer-ui"             : 'com.github.dueeeke.dkplayer:dkplayer-ui:2.5.5',
-
     ]
 }

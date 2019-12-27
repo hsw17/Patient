@@ -37,12 +37,13 @@ public class Healthbeauty_Fragment extends BaseFragment<HomePresenter> implement
     @Override
     protected void initData() {
         super.initData();
-        fpresenter.HomePresenterZiXunLieBiao("4", "2", "5");
+
     }
     @Override
     protected void initView() {
         super.initView();
         zixunRecycler = getActivity().findViewById(R.id.yangsheng_recycler);
+        fpresenter.HomePresenterZiXunLieBiao("4", "2", "5");
     }
     @Override
     public void HomeViewSuccess(Object obj) {

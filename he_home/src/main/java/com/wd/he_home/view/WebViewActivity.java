@@ -16,7 +16,6 @@ import com.wd.he_home.presenter.HomePresenter;
 
 public class WebViewActivity extends BaseActivity<HomePresenter> implements HomeContract.HomeView {
 
-
     private WebView webView;
 
     @Override

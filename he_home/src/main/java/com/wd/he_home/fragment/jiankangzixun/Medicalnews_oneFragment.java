@@ -32,12 +32,13 @@ public class Medicalnews_oneFragment extends BaseFragment<HomePresenter> impleme
     @Override
     protected void initData() {
         super.initData();
-        fpresenter.HomePresenterZiXunLieBiao("3", "2", "5");
+
     }
     @Override
     protected void initView() {
         super.initView();
         zixunRecycler = getActivity().findViewById(R.id.yiliao_recycler);
+        fpresenter.HomePresenterZiXunLieBiao("3", "2", "5");
     }
     @Override
     public void HomeViewSuccess(Object obj) {
