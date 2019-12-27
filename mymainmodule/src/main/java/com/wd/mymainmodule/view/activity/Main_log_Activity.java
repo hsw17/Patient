@@ -170,11 +170,11 @@ public class Main_log_Activity extends BaseActivity<Persenter> implements IViewC
         loginButtonWx.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
-                SendAuth.Req req = new SendAuth.Req();
-                req.scope = "snsapi_userinfo";
-                req.state = "wechat_sdk_demo_test";
-                App.api.sendReq(req);
-                finish();
+//                SendAuth.Req req = new SendAuth.Req();
+//                req.scope = "snsapi_userinfo";
+//                req.state = "wechat_sdk_demo_test";
+//                App.api.sendReq(req);
+//                finish();
             }
 
             @Override

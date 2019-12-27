@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
+
 import com.wd.mymodlue.R;
 import com.wd.mymodlue.R2;
 import com.wd.mymodlue.persenter.Persenter;

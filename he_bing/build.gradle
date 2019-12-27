@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
@@ -62,8 +62,8 @@ dependencies {
     //recyclerview
     api rootProject.ext.dependencies["rxjava2"]
     api rootProject.ext.dependencies["rxjava"]
-    api rootProject.ext.dependencies["butterknife"]
-    api rootProject.ext.dependencies["butterknife-apt"]
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     api rootProject.ext.dependencies["retrofit"]
     api rootProject.ext.dependencies["eretrofit-convertr-gson"]
     api rootProject.ext.dependencies["retrofit-adapter-rxjava"]
@@ -78,7 +78,6 @@ dependencies {
     api rootProject.ext.dependencies["flowlayout-lib"]
     api rootProject.ext.dependencies["ViewAdapterHelper"]
     implementation 'com.ypx.yimagepicker:androidx:3.0.1'
-    apply plugin: 'com.jakewharton.butterknife'
     implementation  'com.github.bumptech.glide:glide:4.9.0'
 
     implementation 'com.github.bumptech.glide:compiler:4.9.0'

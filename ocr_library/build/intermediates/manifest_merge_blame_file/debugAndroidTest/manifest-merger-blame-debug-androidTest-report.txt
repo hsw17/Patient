@@ -3,24 +3,24 @@
 3    package="com.baidu.ocr.ui.test" >
 4
 5    <uses-sdk
-5-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3973048519052576909.xml:5:5-74
+5-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger734941644138464515.xml:5:5-74
 6        android:minSdkVersion="26"
-6-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3973048519052576909.xml:5:15-41
+6-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger734941644138464515.xml:5:15-41
 7        android:targetSdkVersion="27" />
-7-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3973048519052576909.xml:5:42-71
+7-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger734941644138464515.xml:5:42-71
 8
 9    <instrumentation
-9-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3973048519052576909.xml:11:5-15:71
+9-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger734941644138464515.xml:11:5-15:71
 10        android:name="android.support.test.runner.AndroidJUnitRunner"
-10-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3973048519052576909.xml:11:22-83
+10-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger734941644138464515.xml:11:22-83
 11        android:functionalTest="false"
-11-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3973048519052576909.xml:14:22-52
+11-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger734941644138464515.xml:14:22-52
 12        android:handleProfiling="false"
-12-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3973048519052576909.xml:13:22-53
+12-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger734941644138464515.xml:13:22-53
 13        android:label="Tests for com.baidu.ocr.ui.test"
-13-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3973048519052576909.xml:15:22-69
+13-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger734941644138464515.xml:15:22-69
 14        android:targetPackage="com.baidu.ocr.ui.test" />
-14-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3973048519052576909.xml:12:22-67
+14-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger734941644138464515.xml:12:22-67
 15
 16    <uses-permission android:name="android.permission.CAMERA" />
 16-->[__tested_artifact__::ocr_library] H:\healthy\Patient\ocr_library\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-65
@@ -47,13 +47,13 @@
 24-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:24:22-69
 25
 26    <application
-26-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3973048519052576909.xml:7:5-9:19
+26-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger734941644138464515.xml:7:5-9:19
 27        android:allowBackup="true"
 27-->[__tested_artifact__::ocr_library] H:\healthy\Patient\ocr_library\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:9-35
 28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 28-->[androidx.core:core:1.1.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\78f41c6946dea7ca97f5ff6ef8b6a433\core-1.1.0\AndroidManifest.xml:24:18-86
 29        android:debuggable="true"
-29-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3973048519052576909.xml:7:18-43
+29-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger734941644138464515.xml:7:18-43
 30        android:icon="@mipmap/ic_launcher"
 30-->[__tested_artifact__::ocr_library] H:\healthy\Patient\ocr_library\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:9-43
 31        android:label="@string/app_name"
@@ -67,8 +67,8 @@
 35        android:vmSafeMode="true" >
 35-->[__tested_artifact__::ocr_library] H:\healthy\Patient\ocr_library\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:9-34
 36        <uses-library android:name="android.test.runner" />
-36-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3973048519052576909.xml:8:9-60
-36-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3973048519052576909.xml:8:23-57
+36-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger734941644138464515.xml:8:9-60
+36-->H:\healthy\Patient\ocr_library\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger734941644138464515.xml:8:23-57
 37
 38        <activity
 38-->[__tested_artifact__::ocr_library] H:\healthy\Patient\ocr_library\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:9-31:80
