@@ -204,6 +204,9 @@ public class VideoFragmentRegimen extends BaseFragment<IPresenter> implements Co
         pouse = getActivity ().findViewById ( R.id.pouse );
         goumai = getActivity ().findViewById ( R.id.goumai );
         buynumber = getActivity ().findViewById ( R.id.buynumber );
+        FloatingActionButton shouchangs = getActivity ().findViewById ( R.id.shouchangs );
+        FloatingActionButton pays = getActivity ().findViewById ( R.id.pays );
+        FloatingActionButton danmus = getActivity ().findViewById ( R.id.danmus );
     }
 
 
