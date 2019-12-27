@@ -3,7 +3,7 @@ package com.wd.mymodlue.view.activity;
 
 
 import com.bwie.mvplibrary.base.BaseActivity;
-import com.wd.mymodlue.R;
+
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
 
