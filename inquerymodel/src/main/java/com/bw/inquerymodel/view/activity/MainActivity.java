@@ -16,10 +16,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bw.inquerymodel.R;
+
 import com.bw.inquerymodel.bean.CurrentBean;
 import com.bw.inquerymodel.bean.DepartmentBean;
 import com.bw.inquerymodel.bean.DoctorListBean;
 import com.bw.inquerymodel.bean.EndInquiryBean;
+
 import com.bw.inquerymodel.bean.ResultBean;
 import com.bw.inquerymodel.contract.DocTorContract;
 import com.bw.inquerymodel.presenter.IPresenter;

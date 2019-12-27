@@ -35,7 +35,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_2"
-        android:background="@drawable/textline">
+        android:background="#999999">
 
     </TextView>
 
@@ -59,7 +59,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_1"
-        android:background="@drawable/textline">
+        android:background="#999999">
 
     </TextView>
 
