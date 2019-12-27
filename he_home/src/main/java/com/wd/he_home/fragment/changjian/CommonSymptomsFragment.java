@@ -7,6 +7,7 @@ package com.wd.he_home.fragment.changjian;
  */
 
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -33,7 +34,7 @@ import butterknife.OnClick;
  **/
 public class CommonSymptomsFragment extends BaseFragment<HomePresenter> implements HomeContract.HomeView {
 
-    private RecyclerView commonsOneRecycler,commonsTwoRecycler;
+    private RecyclerView commonsOneRecycler, commonsTwoRecycler;
     private CommonSymptomsAdapter commonSymptomsAdapter;
 
     @Override
@@ -44,7 +45,6 @@ public class CommonSymptomsFragment extends BaseFragment<HomePresenter> implemen
     @Override
     protected HomePresenter setPresenter() {
         return new HomePresenter();
-
     }
 
     @Override
@@ -54,11 +54,12 @@ public class CommonSymptomsFragment extends BaseFragment<HomePresenter> implemen
         commonsTwoRecycler = getActivity().findViewById(R.id.commons_two_recycler);
         //科室
         fpresenter.HomePresenterChaXunKeShi();
+        fpresenter.HomePresenterDuiYingBingZheng("7");
     }
 
     @Override
     public void HomeViewSuccess(Object obj) {
-        if (obj instanceof  EnquirySectionBean){
+        if (obj instanceof EnquirySectionBean) {
             //常见病症选择科室
             EnquirySectionBean enquirySectionBean = (EnquirySectionBean) obj;
             List<EnquirySectionBean.ResultBean> result = enquirySectionBean.getResult();
@@ -69,13 +70,13 @@ public class CommonSymptomsFragment extends BaseFragment<HomePresenter> implemen
             commonsOneRecycler.setAdapter(commonSymptomsAdapter);
             commonSymptomsAdapter.onGetClickItem(new CommonSymptomsAdapter.getClickItem() {
                 @Override
-                public void ClickItem(String departmentId) {
-                    //直接请求接口
-                    fpresenter.HomePresenterDuiYingBingZheng(departmentId);
+                public void ClickItem(String id, String position) {
+                    fpresenter.HomePresenterDuiYingBingZheng(id);
+                    commonSymptomsAdapter.setmPosition(Integer.parseInt(position));
+                    commonSymptomsAdapter.notifyDataSetChanged();
                 }
             });
-
-        }else if (obj instanceof CorrespondingsymptomsBean){
+        } else if (obj instanceof CorrespondingsymptomsBean) {
             //根据科室查询对应的症状
             CorrespondingsymptomsBean correspondingsymptomsBean = (CorrespondingsymptomsBean) obj;
             List<CorrespondingsymptomsBean.ResultBean> result = correspondingsymptomsBean.getResult();
@@ -85,9 +86,9 @@ public class CommonSymptomsFragment extends BaseFragment<HomePresenter> implemen
             commonsTwoRecycler.setAdapter(correspondingsymptomsAdapter);
         }
     }
+
     @Override
     public void HomeViewError(String e) {
-
     }
 
     @OnClick({R.id.commons_one_recycler, R.id.commons_two_recycler})

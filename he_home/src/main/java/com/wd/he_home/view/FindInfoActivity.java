@@ -43,14 +43,28 @@ public class FindInfoActivity extends BaseActivity<HomePresenter> implements Hom
         super.initView();
         image_fanhui = findViewById(R.id.image_fanhui);
         webView = findViewById(R.id.find_webview);
-
     }
-
     @Override
     protected void initData() {
         super.initData();
         intent = getIntent();
         in_id = intent.getStringExtra("in_id");
+        WebSettings settings = webView.getSettings();
+        webView.getSettings().setJavaScriptEnabled(true);
+        settings.setJavaScriptEnabled(true);
+        //支持自动适配
+        settings.setUseWideViewPort(true);
+        settings.setLoadWithOverviewMode(true);
+        settings.setSupportZoom(true);  //支持放大缩小
+        settings.setBuiltInZoomControls(true); //显示缩放按钮
+        // settings.setBlockNetworkImage(true);// 把图片加载放在最后来加载渲染
+        settings.setAllowFileAccess(true); // 允许访问文件
+        settings.setSaveFormData(true);
+        settings.setGeolocationEnabled(true);
+        settings.setDomStorageEnabled(true);
+        settings.setJavaScriptCanOpenWindowsAutomatically(true);/// 支持通过JS打开新窗口
+        settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+        settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         presenter.HomePresenterZiXunXiangQing("432","1576543952843432",in_id);
         //点击销毁
         image_fanhui.setOnClickListener(new View.OnClickListener() {

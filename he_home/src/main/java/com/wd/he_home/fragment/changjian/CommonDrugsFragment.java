@@ -1,5 +1,10 @@
 package com.wd.he_home.fragment.changjian;
 
+import android.content.Intent;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,6 +28,8 @@ import java.util.List;
  */
 public class CommonDrugsFragment extends BaseFragment<HomePresenter> implements HomeContract.HomeView {
     private RecyclerView commond_recycler, commond_recycler_one;
+    private LinearLayout comm;
+    private CommonDrugsAdapter commonDrugsAdapter;
 
     @Override
     protected int bindLayout() {
@@ -37,11 +44,14 @@ public class CommonDrugsFragment extends BaseFragment<HomePresenter> implements 
     @Override
     protected void initData() {
         super.initData();
+        Intent intent = getActivity().getIntent();
+        intent.getIntExtra("two", 1);
+        comm = getActivity().findViewById(R.id.comm);
         commond_recycler = getActivity().findViewById(R.id.commond_recycler);
         commond_recycler_one = getActivity().findViewById(R.id.commond_recycler_one);
         fpresenter.HomePresenterYaoPinFenLei();
+        fpresenter.HomePresenterYaoPinLieBiao("1", "1", "100");
     }
-
     @Override
     public void HomeViewSuccess(Object obj) {
         if (obj instanceof DrugClassificationBean) {
@@ -51,15 +61,25 @@ public class CommonDrugsFragment extends BaseFragment<HomePresenter> implements 
             //这是线程管理
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context());
             commond_recycler.setLayoutManager(linearLayoutManager);
-            CommonDrugsAdapter commonDrugsAdapter = new CommonDrugsAdapter(context(), result);
+            commonDrugsAdapter = new CommonDrugsAdapter(context(), result);
             commond_recycler.setAdapter(commonDrugsAdapter);
             //接口回调获取Id进行显示
             commonDrugsAdapter.setOnClick(new CommonDrugsAdapter.OnClickItem() {
                 @Override
-                public void getOnClickItem(String drugsCategoryId) {
-                    fpresenter.HomePresenterYaoPinLieBiao(drugsCategoryId, "1", "100");
+                public void getOnClickItem(String id, int position) {
+                    Toast.makeText(getActivity(), id, Toast.LENGTH_SHORT).show();
+                    fpresenter.HomePresenterYaoPinLieBiao(id, "1", "100");
+                    commonDrugsAdapter.setmPosition(position);
+                    commonDrugsAdapter.notifyDataSetChanged();
                 }
             });
+        /*  commonDrugsAdapter.setOnClick(new CommonDrugsAdapter.OnClickItem() {
+              @Override
+              public void getOnClickItem(String id) {
+                  fpresenter.HomePresenterYaoPinLieBiao("1", "1", "100");
+                  commonDrugsAdapter.notifyDataSetChanged();
+              }
+          });*/
         } else if (obj instanceof DrugListBean) {
             //药品列表
             DrugListBean drugListBean = (DrugListBean) obj;
@@ -71,7 +91,6 @@ public class CommonDrugsFragment extends BaseFragment<HomePresenter> implements 
             DrugsListAdapter drugsListAdapter = new DrugsListAdapter(context(), result);
             commond_recycler_one.setAdapter(drugsListAdapter);
         }
-
     }
 
     @Override
