@@ -2177,64 +2177,6 @@ int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_attention 0x7f0b001c
-<<<<<<<<< Temporary merge branch 1
-int layout activity_invite 0x7f0b001d
-int layout activity_main 0x7f0b001e
-int layout activity_record 0x7f0b001f
-int layout activity_setting 0x7f0b0020
-int layout activity_suggest 0x7f0b0021
-int layout activity_task 0x7f0b0022
-int layout activity_video 0x7f0b0023
-int layout activity_wallet 0x7f0b0024
-int layout camera 0x7f0b0025
-int layout custom_dialog 0x7f0b0026
-int layout design_bottom_navigation_item 0x7f0b0027
-int layout design_bottom_sheet_dialog 0x7f0b0028
-int layout design_layout_snackbar 0x7f0b0029
-int layout design_layout_snackbar_include 0x7f0b002a
-int layout design_layout_tab_icon 0x7f0b002b
-int layout design_layout_tab_text 0x7f0b002c
-int layout design_menu_item_action_area 0x7f0b002d
-int layout design_navigation_item 0x7f0b002e
-int layout design_navigation_item_header 0x7f0b002f
-int layout design_navigation_item_separator 0x7f0b0030
-int layout design_navigation_item_subheader 0x7f0b0031
-int layout design_navigation_menu 0x7f0b0032
-int layout design_navigation_menu_item 0x7f0b0033
-int layout design_text_input_password_icon 0x7f0b0034
-int layout dkplayer_layout_center_window 0x7f0b0035
-int layout dkplayer_layout_standard_controller 0x7f0b0036
-int layout dkplayer_layout_status_view 0x7f0b0037
-int layout fragment_capture 0x7f0b0038
-int layout item_area 0x7f0b0039
-int layout item_sugint 0x7f0b003a
-int layout item_wallot 0x7f0b003b
-int layout listview_footer 0x7f0b003c
-int layout listview_header 0x7f0b003d
-int layout mtrl_layout_snackbar 0x7f0b003e
-int layout mtrl_layout_snackbar_include 0x7f0b003f
-int layout notification_action 0x7f0b0040
-int layout notification_action_tombstone 0x7f0b0041
-int layout notification_media_action 0x7f0b0042
-int layout notification_media_cancel_action 0x7f0b0043
-int layout notification_template_big_media 0x7f0b0044
-int layout notification_template_big_media_custom 0x7f0b0045
-int layout notification_template_big_media_narrow 0x7f0b0046
-int layout notification_template_big_media_narrow_custom 0x7f0b0047
-int layout notification_template_custom_big 0x7f0b0048
-int layout notification_template_icon_group 0x7f0b0049
-int layout notification_template_lines_media 0x7f0b004a
-int layout notification_template_media 0x7f0b004b
-int layout notification_template_media_custom 0x7f0b004c
-int layout notification_template_part_chronometer 0x7f0b004d
-int layout notification_template_part_time 0x7f0b004e
-int layout pull_to_refresh_head 0x7f0b004f
-int layout quick_view_load_more 0x7f0b0050
-int layout select_dialog_item_material 0x7f0b0051
-int layout select_dialog_multichoice_material 0x7f0b0052
-int layout select_dialog_singlechoice_material 0x7f0b0053
-int layout support_simple_spinner_dropdown_item 0x7f0b0054
-=========
 int layout activity_brightness 0x7f0b001d
 int layout activity_invite 0x7f0b001e
 int layout activity_main 0x7f0b001f
@@ -2294,7 +2236,6 @@ int layout select_dialog_item_material 0x7f0b0054
 int layout select_dialog_multichoice_material 0x7f0b0055
 int layout select_dialog_singlechoice_material 0x7f0b0056
 int layout support_simple_spinner_dropdown_item 0x7f0b0057
->>>>>>>>> Temporary merge branch 2
 int mipmap add 0x7f0c0000
 int mipmap arrow 0x7f0c0001
 int mipmap bank_card 0x7f0c0002
@@ -2448,25 +2389,6 @@ int mipmap orthopedics 0x7f0c0095
 int mipmap otolaryngology 0x7f0c0096
 int mipmap pediatrics 0x7f0c0097
 int mipmap psychiatry 0x7f0c0098
-<<<<<<<<< Temporary merge branch 1
-int mipmap recorded_message 0x7f0c0099
-int mipmap register_icon_invitatiion_code_n 0x7f0c009a
-int mipmap register_icon_verification_code_n 0x7f0c009b
-int mipmap reward 0x7f0c009c
-int mipmap selected 0x7f0c009d
-int mipmap selsct 0x7f0c009e
-int mipmap setting_icon_deep_color_sun_n 0x7f0c009f
-int mipmap setting_icon_light_color_sun_n 0x7f0c00a0
-int mipmap slider 0x7f0c00a1
-int mipmap start_page 0x7f0c00a2
-int mipmap system_information 0x7f0c00a3
-int mipmap the_bottom_bar 0x7f0c00a4
-int mipmap the_current_inquiry 0x7f0c00a5
-int mipmap the_slide_gesture 0x7f0c00a6
-int mipmap user_bg 0x7f0c00a7
-int mipmap wallet_icon 0x7f0c00a8
-int mipmap wallet_icon_clock_n 0x7f0c00a9
-=========
 int mipmap qwe 0x7f0c0099
 int mipmap recorded_message 0x7f0c009a
 int mipmap register_icon_invitatiion_code_n 0x7f0c009b
@@ -2485,7 +2407,6 @@ int mipmap the_slide_gesture 0x7f0c00a7
 int mipmap user_bg 0x7f0c00a8
 int mipmap wallet_icon 0x7f0c00a9
 int mipmap wallet_icon_clock_n 0x7f0c00aa
->>>>>>>>> Temporary merge branch 2
 int raw beep 0x7f0d0000
 int string abc_action_bar_home_description 0x7f0e0000
 int string abc_action_bar_up_description 0x7f0e0001

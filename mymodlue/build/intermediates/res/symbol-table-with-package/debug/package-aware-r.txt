@@ -1799,7 +1799,6 @@ id coordinator
 id curr_time
 id custom
 id customPanel
-<<<<<<< HEAD
 id d1
 id d2
 id decode
