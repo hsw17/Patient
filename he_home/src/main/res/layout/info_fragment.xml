@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout_in"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="320dp"
+                android:layout_height="260dp"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img"
+                android:layout_marginLeft="39dp"
+                android:layout_marginTop="9dp"
+                android:text="曾小贤"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/work"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="13dp"
+                android:layout_toRightOf="@id/name"
+                android:text="副主任医师"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/name"
+                android:layout_marginLeft="39dp"
+                android:layout_marginTop="10dp"
+                android:text="东升有福啊大大"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/good"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/address"
+                android:layout_marginLeft="39dp"
+                android:layout_marginTop="10dp"
+                android:text="好评率 98%"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/address"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@id/good"
+                android:text="服务患者数 396"
+                android:textSize="10sp" />
+
+            <ImageView
+                android:id="@+id/more"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_below="@id/img"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="26dp"
+                android:layout_marginRight="50dp"
+                android:src="@mipmap/common_icon_more_n" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/number"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="18dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/money"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="500h/次" />
+
+                <Button
+                    android:id="@+id/btn_go"
+                    android:layout_width="98dp"
+                    android:layout_height="40dp"
+                    android:background="@color/blue"
+                    android:text="问诊咨询"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp">
+
+            <ImageView
+                android:id="@+id/up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:src="@mipmap/common_list_previous_n" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recy"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp" />
+
+            <ImageView
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
+                android:src="@mipmap/common_information_next_n" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="第1页"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

@@ -11,6 +11,7 @@ import com.wd.he_home.bean.BannerBean;
 import com.wd.he_home.bean.ConditionDetailsBean;
 import com.wd.he_home.bean.ConsultationDetailsBean;
 import com.wd.he_home.bean.CorrespondingsymptomsBean;
+import com.wd.he_home.bean.DoctorlistBean;
 import com.wd.he_home.bean.DrugClassificationBean;
 import com.wd.he_home.bean.DrugDetailsBean;
 import com.wd.he_home.bean.DrugListBean;
@@ -252,5 +253,26 @@ public class HomeModel implements HomeContract.HomeModel {
                 homeModelCallBack.HomeViewError(e.getMessage());
                 }
             });
+    }
+
+
+
+    //查询医生列表
+    @Override
+    public void HomeModelYiShengLieBiaoData(String deptId, String condition, String sortBy, int page, String count, HomeModelCallBack homeModelCallBack) {
+        RetrofitManager.getInstance().create(ApiServer.class)
+                .yishengliebiao(deptId,condition,sortBy,page,count)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<DoctorlistBean>() {
+                    @Override
+                    public void onNext(DoctorlistBean doctorlistBean) {
+                        homeModelCallBack.HomeViewSuccess(doctorlistBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                    homeModelCallBack.HomeViewError(e.getMessage());
+                    }
+                });
     }
 }

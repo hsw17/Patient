@@ -1,8 +1,11 @@
 package com.wd.he_home.view;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -43,6 +46,7 @@ public class CommonActivity extends BaseActivity<HomePresenter> implements HomeC
     protected int bindLayout() {
         return R.layout.activity_common;
     }
+
     @Override
     protected HomePresenter setPresenter() {
         return new HomePresenter();
@@ -54,18 +58,18 @@ public class CommonActivity extends BaseActivity<HomePresenter> implements HomeC
         editText = findViewById(R.id.comm_edit_shu);
         commonVp = findViewById(R.id.common_vp);
         CommonTables = findViewById(R.id.common_tables);
+        editText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CommonActivity.this, SearchPageActivity.class));
+            }
+        });
         strings = new ArrayList<>();
         strings.add("常见病症");
         strings.add("常见药品");
         fragments = new ArrayList<>();
         fragments.add(new CommonSymptomsFragment());
         fragments.add(new CommonDrugsFragment());
-        editText.setFocusable(true);
-        editText.setFocusableInTouchMode(true);
-        editText.requestFocus();
-
-        editText.clearFocus();//失去焦点
-        editText.requestFocus();//获取焦点
         //设置适配器
         commonVp.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @NonNull
@@ -87,6 +91,13 @@ public class CommonActivity extends BaseActivity<HomePresenter> implements HomeC
         });
         //设置联动
         CommonTables.setupWithViewPager(commonVp);
+        Intent intent = getIntent();
+        int one = Integer.parseInt(intent.getStringExtra("one"));
+        if (one == 0) {
+            CommonTables.getTabAt(0).select();
+        } else if (one == 1) {
+            CommonTables.getTabAt(1).select();
+        }
     }
 
     @Override

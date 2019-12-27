@@ -7,6 +7,7 @@ import com.wd.he_home.bean.BannerBean;
 import com.wd.he_home.bean.ConditionDetailsBean;
 import com.wd.he_home.bean.ConsultationDetailsBean;
 import com.wd.he_home.bean.CorrespondingsymptomsBean;
+import com.wd.he_home.bean.DoctorlistBean;
 import com.wd.he_home.bean.DrugClassificationBean;
 import com.wd.he_home.bean.DrugDetailsBean;
 import com.wd.he_home.bean.DrugListBean;
@@ -60,6 +61,7 @@ public class HomePresenter extends BasePresenter<HomeContract.HomeView> implemen
             @Override
             public void HomeViewSuccess(Object obj) {
                 EnquirySectionBean enquirySectionBean = (EnquirySectionBean) obj;
+                Log.d("qq", "HomeViewSuccess: "+enquirySectionBean.getMessage());
                 getView().HomeViewSuccess(enquirySectionBean);
             }
 
@@ -238,6 +240,23 @@ public class HomePresenter extends BasePresenter<HomeContract.HomeView> implemen
             public void HomeViewSuccess(Object obj) {
                 PopularSearchesBean popularSearchesBean  = (PopularSearchesBean) obj;
                 getView().HomeViewSuccess(popularSearchesBean);
+            }
+
+            @Override
+            public void HomeViewError(String e) {
+            getView().HomeViewError(e);
+            }
+        });
+    }
+
+    //查看医生列表
+    @Override
+    public void HomePresenterYiShengLieBiao(String deptId, String condition, String sortBy, int page, String count) {
+        homeModel.HomeModelYiShengLieBiaoData(deptId, condition, sortBy, page, count, new HomeContract.HomeModel.HomeModelCallBack() {
+            @Override
+            public void HomeViewSuccess(Object obj) {
+                DoctorlistBean doctorlistBean = (DoctorlistBean) obj;
+                getView().HomeViewSuccess(doctorlistBean);
             }
 
             @Override

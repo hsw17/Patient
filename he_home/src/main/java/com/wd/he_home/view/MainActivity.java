@@ -2,6 +2,7 @@ package com.wd.he_home.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -28,11 +29,13 @@ import com.wd.he_home.bean.BannerBean;
 import com.wd.he_home.bean.EnquirySectionBean;
 import com.wd.he_home.comtract.HomeContract;
 import com.wd.he_home.fragment.HealthHighlightsFragment;
+import com.wd.he_home.fragment.changjian.CommonDrugsFragment;
 import com.wd.he_home.fragment.jiankangzixun.Fitnessweightloss_Fragment;
 import com.wd.he_home.fragment.jiankangzixun.Healthbeauty_Fragment;
 import com.wd.he_home.fragment.jiankangzixun.MedicalnewsFragment;
 import com.wd.he_home.fragment.jiankangzixun.Medicalnews_oneFragment;
 import com.wd.he_home.presenter.HomePresenter;
+import com.wd.he_home.util.vp.CustomScrollViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,6 +75,8 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
     private List<Fragment> fragments;
     private BannerBean bannerBean;
     private XBanner homeXbannerTop;
+    private CustomScrollViewPager customScrollViewPager;
+    private Intent intent;
 
     @Override
     protected int bindLayout() {
@@ -142,6 +147,8 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
 
     }
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -160,10 +167,14 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
                 break;
             case R.id.disease_img:
                 //跳转到常见病症
-                startActivity(new Intent(MainActivity.this, CommonActivity.class));
+                Intent intent = new Intent(MainActivity.this, CommonActivity.class);
+                intent.putExtra("one",0+"");
+                startActivity(intent);
                 break;
             case R.id.drugs_img:
-                startActivity(new Intent(MainActivity.this, CommonActivity.class));
+                intent = new Intent(MainActivity.this, CommonActivity.class);
+                intent.putExtra("one",1+"");
+                startActivity(intent);
                 break;
             case R.id.home_inquiry:
                 break;
@@ -177,7 +188,6 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
                 break;
         }
     }
-
     @Override
     public void HomeViewSuccess(Object obj) {
         //轮播图
@@ -218,10 +228,10 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
             enquirySectionAdapter.getEnqiryClick(new EnquirySectionAdapter.setEnqiryClick() {
                 @Override
                 public void setOnClick(String position) {
-                    //挑战到问诊咨询
+                   /* //挑战到问诊咨询
                     Intent intent = new Intent(MainActivity.this,ConsultationActivity.class);
-                    intent.putExtra("position",position);
-                    startActivity(intent);
+                   // intent.putExtra("position",position);
+                    startActivity(intent);*/
                 }
             });
 
@@ -233,7 +243,6 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
                 NewslistAdapter newslistAdapter = new NewslistAdapter(result, context());
             }*/
     }
-
     @Override
     public void HomeViewError(String e) {
     }

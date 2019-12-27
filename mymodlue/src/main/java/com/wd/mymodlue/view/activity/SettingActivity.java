@@ -1,15 +1,6 @@
 package com.wd.mymodlue.view.activity;
 
 
-import androidx.appcompat.app.AppCompatActivity;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
-import android.os.Bundle;
-
-import com.bwie.mvplibrary.base.BaseActivity;
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -19,18 +10,17 @@ import android.widget.TextView;
 
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
+import com.bwie.mvplibrary.utils.DataCleanManager;
 import com.facebook.drawee.view.SimpleDraweeView;
-
 import com.wd.mymodlue.R;
 import com.wd.mymodlue.persenter.Persenter;
 import com.wd.mymodlue.view.contract.IViewContract;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 public class SettingActivity extends BaseActivity<Persenter> implements IViewContract.IView {
-
-
-
-
 
     @BindView(R.id.head_details_back)
     ImageView headDetailsBack;
@@ -45,7 +35,7 @@ public class SettingActivity extends BaseActivity<Persenter> implements IViewCon
     @BindView(R.id.setting_image_name)
     LinearLayout settingImageName;
     @BindView(R.id.setting_image_pwd)
-    LinearLayout settingImagePwd;
+    RelativeLayout settingImagePwd;
     @BindView(R.id.setting_text_clear)
     TextView settingTextClear;
     @BindView(R.id.setting_image_clear)
@@ -62,6 +52,8 @@ public class SettingActivity extends BaseActivity<Persenter> implements IViewCon
     RelativeLayout settingImageNewInvite;
     @BindView(R.id.setting_image_login)
     RelativeLayout settingImageLogin;
+    @BindView(R.id.setting_image_layout)
+    RelativeLayout settingImageLayout;
 
     @Override
     protected int bindLayout() {
@@ -80,11 +72,83 @@ public class SettingActivity extends BaseActivity<Persenter> implements IViewCon
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
+//        个人信息
+        settingImageLayout.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.MessageActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
 //        邀请好友
         settingImageNewInvite.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
-                Intent intent=new Intent("com.hl.INviteActivity");
+                Intent intent = new Intent("com.hl.INviteActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//        清除缓存
+        settingImageClear.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                //                清除缓存
+                DataCleanManager.clearAllCache(SettingActivity.this);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(100);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        settingTextClear.postInvalidate();
+                    }
+                }).start();
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//        获取缓冲数量
+        try {
+//            获取文件大小
+            String totalCacheSize = DataCleanManager.getTotalCacheSize(this);
+            settingTextClear.setText(totalCacheSize);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+//        设置屏幕亮度
+        settingImagePingLian.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent = new Intent("com.hl.BrightnessActivity");
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+//        修改密码
+        settingImagePwd.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+                Intent intent=new Intent("com.hl.PwdActivity");
                 startActivity(intent);
             }
 

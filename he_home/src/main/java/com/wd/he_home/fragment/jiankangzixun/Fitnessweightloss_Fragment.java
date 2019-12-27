@@ -43,13 +43,14 @@ public class Fitnessweightloss_Fragment extends BaseFragment<HomePresenter> impl
     @Override
     protected void initData() {
         super.initData();
-        fpresenter.HomePresenterZiXunLieBiao("5", "2", "5");
+
     }
 
     @Override
     protected void initView() {
         super.initView();
         zixunRecycler = getActivity().findViewById(R.id.zixun_recycler);
+        fpresenter.HomePresenterZiXunLieBiao("5", "2", "5");
     }
 
     @Override

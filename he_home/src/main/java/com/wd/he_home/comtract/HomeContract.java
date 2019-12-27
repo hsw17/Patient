@@ -41,6 +41,8 @@ public interface HomeContract {
         void HomeModelShouYeSouSuoData(String keyWord,HomeModelCallBack homeModelCallBack);
         //热门搜索
         void HomeModelReMenSouSuoData(HomeModelCallBack homeModelCallBack);
+        //查询医生列表
+        void HomeModelYiShengLieBiaoData(String deptId,String condition,String sortBy,int page,String count,HomeModelCallBack homeModelCallBack);
         //接口回调
         interface HomeModelCallBack{
             void HomeViewSuccess(Object obj);
@@ -74,6 +76,7 @@ public interface HomeContract {
         void HomePresenterShouYeSouSuo(String keyWord);
         //热门搜索
         void HomePresenterReMenSouSuo();
-
+        //查询医生列表
+        void HomePresenterYiShengLieBiao(String deptId,String condition,String sortBy,int page,String count);
     }
 }

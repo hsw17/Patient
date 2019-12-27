@@ -1,8 +1,10 @@
 package com.wd.mymodlue.view.activity;
 
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -13,6 +15,7 @@ import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.uuzuche.lib_zxing.activity.CodeUtils;
 import com.wd.mymodlue.R;
 import com.wd.mymodlue.modle.bean.HealthTestBean;
 import com.wd.mymodlue.persenter.Persenter;
@@ -34,13 +37,15 @@ public class INviteActivity extends BaseActivity<Persenter> implements IViewCont
     @BindView(R.id.relay_layout)
     RelativeLayout relayLayout;
     @BindView(R.id.invite_edit_code)
-    EditText inviteEditCode;
+    TextView inviteEditCode;
     @BindView(R.id.invite_button_code)
     LinearLayout inviteButtonCode;
     @BindView(R.id.invite_simpl_view)
-    SimpleDraweeView inviteSimplView;
+    ImageView inviteSimplView;
     @BindView(R.id.invite_button_friend)
     Button inviteButtonFriend;
+    @BindView(R.id.invite_text_code)
+    TextView inviteTextCode;
     private Map<String, Object> map;
 
     @Override
@@ -52,6 +57,7 @@ public class INviteActivity extends BaseActivity<Persenter> implements IViewCont
     protected Persenter setPresenter() {
         return new Persenter();
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,10 +72,14 @@ public class INviteActivity extends BaseActivity<Persenter> implements IViewCont
         map.put("userId", 434);
         map.put("sessionId", "1576494766784434");
         presenter.doUserInvitation(map);
-        inviteButtonFriend.setOnClickListener(new CustomClickListener() {
+//       复制邀请码
+        inviteTextCode.setOnClickListener(new CustomClickListener() {
             @Override
             protected void onSingleClick() {
-                
+                ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+// 将文本内容放到系统剪贴板里。
+                cm.setText(inviteEditCode.getText());
+                ToastUtils.show( "复制成功");
             }
 
             @Override
@@ -77,14 +87,32 @@ public class INviteActivity extends BaseActivity<Persenter> implements IViewCont
 
             }
         });
+//        邀请好友
+        inviteButtonFriend.setOnClickListener(new CustomClickListener() {
+            @Override
+            protected void onSingleClick() {
+
+            }
+
+            @Override
+            protected void onFastClick() {
+
+            }
+        });
+
     }
+
     @Override
     public void onSuccess(Object obj) {
-        HealthTestBean healthTestBean= (HealthTestBean) obj;
-        if ("0000".equals(healthTestBean.result)) {
-            String status = healthTestBean.status;
+        HealthTestBean healthTestBean = (HealthTestBean) obj;
+        if ("0000".equals(healthTestBean.status)) {
+            String status = healthTestBean.result;
             inviteEditCode.setText(status);
-        }else{
+            //        生成二维码
+            Bitmap bitmap = CodeUtils.createImage ( status, 300, 300, null );
+            inviteSimplView.setImageBitmap ( bitmap );
+        } else {
+            ToastUtils.show(healthTestBean.message);
             inviteEditCode.setText("");
         }
     }

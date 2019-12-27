@@ -6,6 +6,8 @@ import com.wd.mymodlue.view.contract.IViewContract;
 
 import java.util.Map;
 
+import okhttp3.MultipartBody;
+
 
 /**
  * date:2019/12/13
@@ -361,6 +363,76 @@ public class Persenter extends BasePresenter<IViewContract.IView> implements IVi
     @Override
     public void doUserInvitation(Map<String, Object> map) {
         iModel.doUserInvitation(map, new IViewContract.IModel.IModelCallback() {
+            @Override
+            public void onSuccess(Object obj) {
+                getView().onSuccess(obj);
+            }
+
+            @Override
+            public void onSuccessOne(Object one) {
+
+            }
+
+            @Override
+            public void onSuccessTwo(Object two) {
+
+            }
+
+            @Override
+            public void onSuccessThree(Object three) {
+
+            }
+
+            @Override
+            public void onSuccessFour(Object four) {
+
+            }
+
+            @Override
+            public void onFail(String str) {
+                getView().onFail(str);
+            }
+        });
+    }
+
+    @Override
+    public void onloadHeadPic(Map<String, Object> map, MultipartBody.Part image) {
+        iModel.onloadHeadPic(map, image, new IViewContract.IModel.IModelCallback() {
+            @Override
+            public void onSuccess(Object obj) {
+                getView().onSuccess(obj);
+            }
+
+            @Override
+            public void onSuccessOne(Object one) {
+
+            }
+
+            @Override
+            public void onSuccessTwo(Object two) {
+
+            }
+
+            @Override
+            public void onSuccessThree(Object three) {
+
+            }
+
+            @Override
+            public void onSuccessFour(Object four) {
+
+            }
+
+            @Override
+            public void onFail(String str) {
+                getView().onFail(str);
+            }
+        });
+    }
+
+    @Override
+    public void onUpdateUserPwd(Map<String, Object> map, Map<String, Object> oap) {
+        iModel.onUpdateUserPwd(map, oap, new IViewContract.IModel.IModelCallback() {
             @Override
             public void onSuccess(Object obj) {
                 getView().onSuccess(obj);

@@ -5,6 +5,7 @@ import com.wd.he_home.bean.BannerBean;
 import com.wd.he_home.bean.ConditionDetailsBean;
 import com.wd.he_home.bean.ConsultationDetailsBean;
 import com.wd.he_home.bean.CorrespondingsymptomsBean;
+import com.wd.he_home.bean.DoctorlistBean;
 import com.wd.he_home.bean.DrugClassificationBean;
 import com.wd.he_home.bean.DrugDetailsBean;
 import com.wd.he_home.bean.DrugListBean;
@@ -79,4 +80,8 @@ public interface ApiServer {
     //http://172.17.8.100/health/share/v1/popularSearch
     @GET("health/share/v1/popularSearch")
     Observable<PopularSearchesBean> remensousuo();
+    //查询医生列表
+    //http://172.17.8.100/health/user/inquiry/v1/findDoctorList
+    @GET("health/user/inquiry/v1/findDoctorList")
+    Observable<DoctorlistBean> yishengliebiao(@Query("deptId")String deptId,@Query("condition")String condition,@Query("sortBy")String sortBy,@Query("page")int page,@Query("count")String count);
 }
