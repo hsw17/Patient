@@ -17,6 +17,7 @@ import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wd.mymodlue.R;
+
 import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.persenter.Persenter;

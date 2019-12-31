@@ -29,6 +29,7 @@ import com.wd.mymodlue.modle.bean.UserTaskListBean;
 import com.wd.mymodlue.modle.bean.UserWalletBean;
 import com.wd.mymodlue.modle.bean.VideoBuyBean;
 import com.wd.mymodlue.modle.bean.VideoCollectBean;
+import com.wd.mymodlue.view.activity.UpdateUserArchivesActivity;
 
 import java.util.List;
 import java.util.Map;
@@ -164,15 +165,18 @@ public interface Api {
     @DELETE("health/user/verify/v1/deleteUserArchives")
     Observable<DeleteArchivesBean> onGetdeleteUserArchives(@HeaderMap Map<String,Object> map, @Query("archivesId") int archivesId);
     //用户修改档案
+    @Headers({"Content-Type: application/json","Accept: application/json"})
     @PUT("health/user/verify/v1/updateUserArchives")
     Observable<UpdateArchivesBean> onGetupdateUserArchives(@HeaderMap Map<String,Object> map, @Body Map<String,Object> oap);
     //用户添加档案
+    @Headers({"Content-Type: application/json","Accept: application/json"})
     @POST("health/user/verify/v1/addUserArchives")
     Observable<AddArchivesBean> onGetaddUserArchives(@HeaderMap Map<String,Object> map, @Body Map<String,Object> oap);
     //用户档案上传图片
     @Multipart
     @POST("health/user/verify/v1/uploadArchivesPicture")
     Observable<UserArchivesPictureBean> onGetpicture(@HeaderMap Map<String,Object> map, @Part List<MultipartBody.Part> picture);
+
 
     //用户收藏健康课堂视频列表
     @GET("health/user/verify/v1/findVideoCollectionList")

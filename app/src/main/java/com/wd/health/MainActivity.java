@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         timer.schedule(task, 3000);
+        finish();
     }
 
 

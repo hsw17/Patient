@@ -2423,6 +2423,7 @@ layout activity_setting
 layout activity_success
 layout activity_suggest
 layout activity_task
+layout activity_update_user_archives
 layout activity_video
 layout activity_wallet
 layout bd_ocr_activity_camera

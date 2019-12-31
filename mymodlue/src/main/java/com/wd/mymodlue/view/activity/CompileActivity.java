@@ -28,6 +28,7 @@ import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.wd.mymodlue.R;
 import com.wd.mymodlue.R2;
+import com.wd.mymodlue.modle.bean.AddArchivesBean;
 import com.wd.mymodlue.modle.bean.UpdateArchivesBean;
 import com.wd.mymodlue.modle.bean.UserArchivesPictureBean;
 import com.wd.mymodlue.persenter.Persenter;
@@ -192,7 +193,7 @@ public class CompileActivity extends BaseActivity<Persenter> implements IViewCon
                 oap.put("treatmentStartTime", startte);
                 oap.put("treatmentEndTime", endte);
                 presenter.onGetpicture(map,picture);
-                presenter.onGetupdateUserArchives(map,oap);
+                presenter.onGetaddUserArchives(map,oap);
             }
         });
 
@@ -426,7 +427,7 @@ public class CompileActivity extends BaseActivity<Persenter> implements IViewCon
 
     @Override
     public void onSuccess(Object obj) {
-        UpdateArchivesBean updateArchivesBean= (UpdateArchivesBean) obj;
+       /* UpdateArchivesBean updateArchivesBean= (UpdateArchivesBean) obj;
         if ("0000".equals(updateArchivesBean.getStatus())) {
 //            ToastUtils.show(updateArchivesBean.getMessage());
 //            Intent intent=new Intent("com.hl.SuccessActivity");
@@ -434,6 +435,16 @@ public class CompileActivity extends BaseActivity<Persenter> implements IViewCon
 //            sendBroadcast(intent);
         }else {
             ToastUtils.show(updateArchivesBean.getMessage());
+        }*/
+        AddArchivesBean addArchivesBean = (AddArchivesBean) obj;
+        if ("0000".equals(addArchivesBean.getStatus())) {
+//            ToastUtils.show(updateArchivesBean.getMessage());
+//            Intent intent=new Intent("com.hl.SuccessActivity");
+//            intent.putExtra("idl",id1);
+//            sendBroadcast(intent);
+            finish();
+        }else {
+            ToastUtils.show(addArchivesBean.getMessage());
         }
     }
 
