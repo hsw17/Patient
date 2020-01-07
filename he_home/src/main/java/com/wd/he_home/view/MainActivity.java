@@ -87,6 +87,7 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
     protected HomePresenter setPresenter() {
         return new HomePresenter();
     }
+
     @Override
     protected void initData() {
         super.initData();
@@ -148,7 +149,6 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
     }
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -168,12 +168,12 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
             case R.id.disease_img:
                 //跳转到常见病症
                 Intent intent = new Intent(MainActivity.this, CommonActivity.class);
-                intent.putExtra("one",0+"");
+                intent.putExtra("one", 0 + "");
                 startActivity(intent);
                 break;
             case R.id.drugs_img:
                 intent = new Intent(MainActivity.this, CommonActivity.class);
-                intent.putExtra("one",1+"");
+                intent.putExtra("one", 1 + "");
                 startActivity(intent);
                 break;
             case R.id.home_inquiry:
@@ -188,6 +188,7 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
                 break;
         }
     }
+
     @Override
     public void HomeViewSuccess(Object obj) {
         //轮播图
@@ -209,6 +210,7 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
             //点击跳转新的页面
             homeXbannerTop.setOnItemClickListener(new XBanner.OnItemClickListener() {
                 private Intent intent;
+
                 @Override
                 public void onItemClick(XBanner banner, int position) {
                     intent = new Intent(context(), WebViewActivity.class);
@@ -243,6 +245,7 @@ public class MainActivity extends BaseActivity<HomePresenter> implements HomeCon
                 NewslistAdapter newslistAdapter = new NewslistAdapter(result, context());
             }*/
     }
+
     @Override
     public void HomeViewError(String e) {
     }

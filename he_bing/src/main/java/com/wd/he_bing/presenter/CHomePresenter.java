@@ -3,13 +3,16 @@ package com.wd.he_bing.presenter;
 import com.bwie.mvplibrary.base.BasePresenter;
 import com.wd.he_bing.bean.AdoptcircleofPatientsBean;
 import com.wd.he_bing.bean.CDepartmentlistBean;
+import com.wd.he_bing.bean.CFaBiaoPingLunBean;
 import com.wd.he_bing.bean.CGenJuKeShiBean;
 import com.wd.he_bing.bean.CListBean;
 import com.wd.he_bing.bean.CMyPatientCircle;
 import com.wd.he_bing.bean.CPatientCircleBean;
 import com.wd.he_bing.bean.CPatientCircleDetailsBean;
 import com.wd.he_bing.bean.CPostopinionBean;
+import com.wd.he_bing.bean.CZuoRenWuBean;
 import com.wd.he_bing.bean.KeywordsBean;
+import com.wd.he_bing.bean.LoginBean;
 import com.wd.he_bing.bean.PatientCirclePostsBean;
 import com.wd.he_bing.bean.PatientCircleReviewBean;
 import com.wd.he_bing.bean.PostPatientCircleBean;
@@ -254,6 +257,57 @@ public class CHomePresenter extends BasePresenter<CHomeContract.CHomeView> imple
             @Override
             public void CHomeViewError(String e) {
                 getView().CHomeViewError(e);
+            }
+        });
+    }
+
+    //病友圈发表评论
+    @Override
+    public void CHomePresenterFaBiaoPingLun(String userId, String sessionId, String sickCircleId, String content) {
+        cHomeModel.CHomeModelFaBiaoPingLunData(userId, sessionId, sickCircleId, content, new CHomeContract.CHomeModel.CHomeModelCallBack() {
+            @Override
+            public void CHomeViewSuccess(Object obj) {
+                CFaBiaoPingLunBean cFaBiaoPingLunBean = (CFaBiaoPingLunBean) obj;
+                getView().CHomeViewSuccess(cFaBiaoPingLunBean);
+            }
+
+            @Override
+            public void CHomeViewError(String e) {
+            getView().CHomeViewError(e);
+            }
+        });
+    }
+
+    //登录
+    @Override
+    public void CHomePresenterLogin(String email, String pwd) {
+        cHomeModel.CHomeModelLoginData(email, pwd, new CHomeContract.CHomeModel.CHomeModelCallBack() {
+            @Override
+            public void CHomeViewSuccess(Object obj) {
+                LoginBean loginBean = (LoginBean) obj;
+                getView().CHomeViewSuccess(loginBean);
+            }
+
+            @Override
+            public void CHomeViewError(String e) {
+                getView().CHomeViewError(e);
+            }
+        });
+    }
+
+    //做任务
+    @Override
+    public void CHomePresenterZuoRenWu(String userId, String sessionId, String taskId) {
+        cHomeModel.CHomeModelZuoRenWuData(userId, sessionId, taskId, new CHomeContract.CHomeModel.CHomeModelCallBack() {
+            @Override
+            public void CHomeViewSuccess(Object obj) {
+                CZuoRenWuBean cZuoRenWuBean = (CZuoRenWuBean) obj;
+                getView().CHomeViewSuccess(cZuoRenWuBean);
+            }
+
+            @Override
+            public void CHomeViewError(String e) {
+            getView().CHomeViewError(e);
             }
         });
     }

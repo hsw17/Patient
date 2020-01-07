@@ -4,12 +4,12 @@
         "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-hdpi-v4\\common_button_descending_s.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4_common_button_share_n.png.flat",
-        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xxhdpi-v4\\common_button_share_n.png"
-    },
-    {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4_common_button_share_n.png.flat",
+        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xxhdpi-v4\\common_button_share_n.png"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\color_mtrl_btn_ripple_color.xml.flat",
@@ -20,12 +20,12 @@
         "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xhdpi-v4\\my_wallet_background.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\layout_a_layout_pic_select.xml.flat",
-        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\src\\main\\res\\layout\\a_layout_pic_select.xml"
-    },
-    {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4_common_icon_send_n.png.flat",
         "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-hdpi-v4\\common_icon_send_n.png"
+    },
+    {
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\layout_a_layout_pic_select.xml.flat",
+        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\src\\main\\res\\layout\\a_layout_pic_select.xml"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\layout_picker_item_imagegrid.xml.flat",
@@ -56,20 +56,20 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4_register_icon_invitatiion_code_n.png.flat",
-        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xhdpi-v4\\register_icon_invitatiion_code_n.png"
-    },
-    {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4_invitation_bg.png.flat",
         "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xhdpi-v4\\invitation_bg.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4_register_icon_invitatiion_code_n.png.flat",
+        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xhdpi-v4\\register_icon_invitatiion_code_n.png"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4_common_icon_disagree_n.png.flat",
         "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xhdpi-v4\\common_icon_disagree_n.png"
+    },
+    {
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4_common_icon_expression_n.png.flat",
@@ -116,24 +116,24 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable\\abc_switch_thumb_material.xml"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4_common_icon_girl_n.png.flat",
-        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xxhdpi-v4\\common_icon_girl_n.png"
-    },
-    {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4_common_icon_comment_large_n.png.flat",
         "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xhdpi-v4\\common_icon_comment_large_n.png"
+    },
+    {
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4_common_icon_girl_n.png.flat",
+        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xxhdpi-v4\\common_icon_girl_n.png"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4_common_icon_drop_down_n.png.flat",
-        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xxhdpi-v4\\common_icon_drop_down_n.png"
-    },
-    {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4_the_slide_gesture.png.flat",
         "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xxhdpi-v4\\the_slide_gesture.png"
+    },
+    {
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4_common_icon_drop_down_n.png.flat",
+        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xxhdpi-v4\\common_icon_drop_down_n.png"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4_pricker_drop_down_checked.png.flat",
@@ -144,12 +144,12 @@
         "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-hdpi-v4\\certificate.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
-    },
-    {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable_dkplayer_shape_stardard_controller_bottom_bg.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\43a15b26d2bef84003dee78d01022cc4\\jetified-dkplayer-ui-2.5.5\\res\\drawable\\dkplayer_shape_stardard_controller_bottom_bg.xml"
+    },
+    {
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4_selected.png.flat",
@@ -160,16 +160,16 @@
         "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-hdpi-v4\\common_icon_on_slippery_n.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4_common_icon_comment_small_n.png.flat",
-        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-hdpi-v4\\common_icon_comment_small_n.png"
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4_common_icon_close_grey_n.png.flat",
+        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xxhdpi-v4\\common_icon_close_grey_n.png"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable_gray_radius.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\9adc6feccaf26999bb59d4a3fcb4dc96\\jetified-banner-1.4.10\\res\\drawable\\gray_radius.xml"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4_common_icon_close_grey_n.png.flat",
-        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xxhdpi-v4\\common_icon_close_grey_n.png"
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4_common_icon_comment_small_n.png.flat",
+        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-hdpi-v4\\common_icon_comment_small_n.png"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_design_ic_visibility_off.png.flat",
@@ -280,36 +280,36 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\43a15b26d2bef84003dee78d01022cc4\\jetified-dkplayer-ui-2.5.5\\res\\drawable-xxxhdpi-v4\\dkplayer_ic_action_battery_20.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\5b303f488f030c796774cca3b720b4a7\\core-1.1.0\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
-    },
-    {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_snackbar_include.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\b920ddb8bc035d598e46b5b919d0411a\\material-1.0.0\\res\\layout\\design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\5b303f488f030c796774cca3b720b4a7\\core-1.1.0\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4_guide_pages_one.png.flat",
         "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xhdpi-v4\\guide_pages_one.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
-    },
-    {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4_circle_icon_drop_down_n.png.flat",
         "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xxhdpi-v4\\circle_icon_drop_down_n.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4_login_icon_show_password.png.flat",
-        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-hdpi-v4\\login_icon_show_password.png"
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4_guide_pages_one.png.flat",
+        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-hdpi-v4\\guide_pages_one.png"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4_guide_pages_one.png.flat",
-        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-hdpi-v4\\guide_pages_one.png"
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4_login_icon_show_password.png.flat",
+        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-hdpi-v4\\login_icon_show_password.png"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_menu_item.xml.flat",
@@ -400,12 +400,12 @@
         "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xxhdpi-v4\\common_tab_home_s.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_dkplayer_ic_action_fast_rewind.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\3e856bbd94445508fb97401c55ac2579\\jetified-dkplayer-java-2.5.5\\res\\drawable-mdpi-v4\\dkplayer_ic_action_fast_rewind.png"
-    },
-    {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4_common_nav_message_black_n.png.flat",
         "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xhdpi-v4\\common_nav_message_black_n.png"
+    },
+    {
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_dkplayer_ic_action_fast_rewind.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\3e856bbd94445508fb97401c55ac2579\\jetified-dkplayer-java-2.5.5\\res\\drawable-mdpi-v4\\dkplayer_ic_action_fast_rewind.png"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
@@ -500,16 +500,16 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\43a15b26d2bef84003dee78d01022cc4\\jetified-dkplayer-ui-2.5.5\\res\\drawable-xhdpi-v4\\dkplayer_ic_action_lock_outline.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4_common_icon_close_live_commenting_n.png.flat",
-        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xhdpi-v4\\common_icon_close_live_commenting_n.png"
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4_guide_pages_five.png.flat",
+        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xhdpi-v4\\guide_pages_five.png"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4_guide_pages_five.png.flat",
-        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xhdpi-v4\\guide_pages_five.png"
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4_common_icon_close_live_commenting_n.png.flat",
+        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xhdpi-v4\\common_icon_close_live_commenting_n.png"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4_picker_icon_unselect.png.flat",
@@ -556,12 +556,12 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable_abc_textfield_search_material.xml.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable\\abc_textfield_search_material.xml"
-    },
-    {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable_abc_textfield_search_material.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4_boy.png.flat",
@@ -696,12 +696,12 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\color\\abc_hint_foreground_material_light.xml"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_popup_background_mtrl_mult.9.png"
-    },
-    {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable_dkplayer_shape_play_bg.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\43a15b26d2bef84003dee78d01022cc4\\jetified-dkplayer-ui-2.5.5\\res\\drawable\\dkplayer_shape_play_bg.xml"
+    },
+    {
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\layout_picker_image_grid_item.xml.flat",
@@ -716,12 +716,12 @@
         "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xxhdpi-v4\\the_current_inquiry.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\anim_dkplayer_anim_alpha_in.xml.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\43a15b26d2bef84003dee78d01022cc4\\jetified-dkplayer-ui-2.5.5\\res\\anim\\dkplayer_anim_alpha_in.xml"
-    },
-    {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\5b303f488f030c796774cca3b720b4a7\\core-1.1.0\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\anim_dkplayer_anim_alpha_in.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\43a15b26d2bef84003dee78d01022cc4\\jetified-dkplayer-ui-2.5.5\\res\\anim\\dkplayer_anim_alpha_in.xml"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
@@ -748,20 +748,20 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4_reward.png.flat",
-        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xhdpi-v4\\reward.png"
-    },
-    {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4_fell_gesture.png.flat",
-        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xxhdpi-v4\\fell_gesture.png"
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\anim_btn_checkbox_to_checked_icon_null_animation.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\anim\\btn_checkbox_to_checked_icon_null_animation.xml"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_dkplayer_ic_action_battery_50.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\43a15b26d2bef84003dee78d01022cc4\\jetified-dkplayer-ui-2.5.5\\res\\drawable-xxxhdpi-v4\\dkplayer_ic_action_battery_50.png"
     },
     {
-        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\anim_btn_checkbox_to_checked_icon_null_animation.xml.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\anim\\btn_checkbox_to_checked_icon_null_animation.xml"
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4_fell_gesture.png.flat",
+        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xxhdpi-v4\\fell_gesture.png"
+    },
+    {
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4_reward.png.flat",
+        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-xhdpi-v4\\reward.png"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4_selsct.png.flat",
@@ -3428,6 +3428,10 @@
         "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\mvplibrary\\build\\intermediates\\packaged_res\\debug\\mipmap-hdpi-v4\\my_icon_file_n.png"
     },
     {
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_png.png.flat",
+        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\src\\main\\res\\mipmap-mdpi\\png.png"
+    },
+    {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\anim_abc_shrink_fade_out_from_bottom.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\757a4a558099c3fee9f8121057dee486\\appcompat-1.1.0\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
@@ -3694,6 +3698,10 @@
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_dkplayer_ic_action_volume_up.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\3e856bbd94445508fb97401c55ac2579\\jetified-dkplayer-java-2.5.5\\res\\drawable-xhdpi-v4\\dkplayer_ic_action_volume_up.png"
+    },
+    {
+        "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\anim_anim_pop.xml.flat",
+        "source": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\src\\main\\res\\anim\\anim_pop.xml"
     },
     {
         "merged": "F:\\ShiXunOneFanYanLong\\liuhejiankang\\Patient\\he_bing\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4_bank_card_front.png.flat",

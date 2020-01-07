@@ -83,7 +83,6 @@ ext {
             "constraint-layout"      : 'com.android.support.constraint:constraint-layout:1.1.0',//约束性布局
             "test:runner"            : 'com.android.support.test:runner:1.0.2',//测试依赖，新建项目时会默认添加，一般不建议添加
             "espresso-core"          : 'com.android.support.test.espresso:espresso-core:3.0.2',//测试依赖，新建项目时会默认添加，一般不建议添加
-
 //            frace
             "fresco"                  : 'com.facebook.fresco:fresco:0.14.1',
             "fresco-base"             : 'com.facebook.fresco:animated-base-support:0.14.1',

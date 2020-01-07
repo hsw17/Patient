@@ -2,6 +2,7 @@ package com.wd.he_bing.view;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -24,6 +25,7 @@ import com.wd.he_bing.R2;
 import com.wd.he_bing.bean.CPatientCircleDetailsBean;
 import com.wd.he_bing.contract.CHomeContract;
 import com.wd.he_bing.presenter.CHomePresenter;
+import com.wd.he_bing.utils.DateUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -84,13 +86,13 @@ public class CPatientCircleDetailsActivity extends BaseActivity<CHomePresenter> 
     ImageView cPatientActivityIvIntentReleaseSickCircle;
     @BindView(R2.id.c_patient_activity_relative_release_sickCircle)
     RelativeLayout cPatientActivityRelativeReleaseSickCircle;
-
+    private String mima;
+    private String zhanghao;
 
     @Override
     protected void initView() {
         super.initView();
     }
-
     @Override
     protected int bindLayout() {
         return R.layout.activity_cpatient_circle_details;
@@ -100,16 +102,19 @@ public class CPatientCircleDetailsActivity extends BaseActivity<CHomePresenter> 
     protected void initData() {
         super.initData();
         ButterKnife.bind(this);
+        //获取SP存储
+        SharedPreferences login = getSharedPreferences("login", MODE_PRIVATE);
+        zhanghao = login.getString("zhang", "");
+        mima = login.getString("mi", "");
         //设置在activity启动的时候输入法默认是不开启的
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
-        presenter.CHomePresenterBingYouQuanXiangQing("432", "1577170010986432", id);
-
+        presenter.CHomePresenterBingYouQuanXiangQing(zhanghao, mima, id);
         cPatientActivityIvContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              //  mPresenter.onCircleComment(sickCircleId, userId + "", sessionId, 15, 1);
+                presenter.CHomePresenterBingYouQuanTieZiData(zhanghao, mima, "1", "15", "1");
                 cPatientActivityIvContent.setVisibility(View.VISIBLE);
                 cPatientActivityIvIntentReleaseSickCircle.setVisibility(View.GONE);
             }
@@ -125,16 +130,14 @@ public class CPatientCircleDetailsActivity extends BaseActivity<CHomePresenter> 
                 imm.hideSoftInputFromWindow(cPatientActivityEtContent.getWindowToken(), 0);
             }
         });
-
         cPatientActivityIvContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // presenter.CHomePresenterFaBuBingYouQuan(sickCircleId, userId + "", sessionId, 15, 1);
                 cPatientActivityRelativeContent.setVisibility(View.VISIBLE);
                 cPatientActivityRelativeReleaseSickCircle.setVisibility(View.GONE);
             }
         });
-        cPatientActivityIvCancel.setOnClickListener(new View.OnClickListener() {
+     /*   cPatientActivityIvCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -144,7 +147,7 @@ public class CPatientCircleDetailsActivity extends BaseActivity<CHomePresenter> 
                         Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(cPatientActivityEtContent.getWindowToken(), 0);
             }
-        });
+        });*/
         //评论
         cPatientActivityIvSendContent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,17 +157,15 @@ public class CPatientCircleDetailsActivity extends BaseActivity<CHomePresenter> 
                     Toast.makeText(CPatientCircleDetailsActivity.this, "输入的内容不能为空!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-               // Log.i("TAG", "onClick: " + "sickCircleId:" + sickCircleId);
-                //mPresenter.onComment(sickCircleId, userId + "", sessionId, et_content);
+                // Log.i("TAG", "onClick: " + "sickCircleId:" + sickCircleId);
+                presenter.CHomePresenterFaBiaoGuanDianData(zhanghao, mima,"1",et_content);
             }
         });
     }
-
     @Override
     protected CHomePresenter setPresenter() {
         return new CHomePresenter();
     }
-
     @Override
     public void CHomeViewSuccess(Object obj) {
         if (obj instanceof CPatientCircleDetailsBean) {
@@ -178,9 +179,9 @@ public class CPatientCircleDetailsActivity extends BaseActivity<CHomePresenter> 
             cPatientActivityTvTreatmentProcess.setText(result.getTreatmentProcess() + "");
             long treatmentStartTime = result.getTreatmentStartTime();
             long treatmentEndTime = result.getTreatmentEndTime();
-            // String endTimes = DateUtils.times(treatmentEndTime);
-            //String startTimes = DateUtils.times(treatmentStartTime);
-            //c_patient_activity_tv_treatment_time.setText(startTimes + "----" + endTimes);
+            String endTimes = DateUtils.times(treatmentEndTime);
+            String startTimes = DateUtils.times(treatmentStartTime);
+            cPatientActivityTvTreatmentTime.setText(startTimes + "----" + endTimes);
             Glide.with(this).load(result.getPicture())
                     .placeholder(R.mipmap.none_comment)
                     .error(R.mipmap.none_comment)
@@ -188,17 +189,8 @@ public class CPatientCircleDetailsActivity extends BaseActivity<CHomePresenter> 
             cPatientActivityTvCollectionNum.setText(result.getCollectionNum() + "");
         }
     }
-
     @Override
     public void CHomeViewError(String e) {
-
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-
     }
 
     @OnClick({R.id.c_patient_iv_user_head_pic, R.id.c_patient_activity_tv_title, R.id.c_patient_iv_user_message, R.id.c_patient_relative_titlebar, R.id.c_patient_activity_tv_adoptNickName, R.id.c_patient_activity_tv_disease, R.id.c_patient_activity_tv_department, R.id.c_patient_activity_tv_detail, R.id.c_patient_activity_tv_treatment_time, R.id.c_patient_activity_tv_treatmentProcess, R.id.c_patient_activity_iv_picture, R.id.c_patient_activity_tv_commentNum, R.id.c_patient_activity_iv_content, R.id.c_patient_activity_tv_collectionNum, R.id.c_img_HeadPic, R.id.c_name_NickName, R.id.c_time_adoptTime, R.id.c_text_adoptComment, R.id.c_adoptFlag, R.id.c_recycler_sick_circle_comment_list, R.id.c_patient_activity_iv_cancel, R.id.c_patient_activity_et_content, R.id.c_patient_activity_iv_send_content, R.id.c_patient_activity_relative_content, R.id.c_patient_activity_iv_intent_release_sickCircle, R.id.c_patient_activity_relative_release_sickCircle})
@@ -230,7 +222,6 @@ public class CPatientCircleDetailsActivity extends BaseActivity<CHomePresenter> 
                 break;
             //对话框点击
             case R.id.c_patient_activity_iv_content:
-
                 break;
             case R.id.c_patient_activity_tv_collectionNum:
                 break;

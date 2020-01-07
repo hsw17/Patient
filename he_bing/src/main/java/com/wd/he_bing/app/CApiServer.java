@@ -2,13 +2,16 @@ package com.wd.he_bing.app;
 
 import com.wd.he_bing.bean.AdoptcircleofPatientsBean;
 import com.wd.he_bing.bean.CDepartmentlistBean;
+import com.wd.he_bing.bean.CFaBiaoPingLunBean;
 import com.wd.he_bing.bean.CGenJuKeShiBean;
 import com.wd.he_bing.bean.CListBean;
 import com.wd.he_bing.bean.CMyPatientCircle;
 import com.wd.he_bing.bean.CPatientCircleBean;
 import com.wd.he_bing.bean.CPatientCircleDetailsBean;
 import com.wd.he_bing.bean.CPostopinionBean;
+import com.wd.he_bing.bean.CZuoRenWuBean;
 import com.wd.he_bing.bean.KeywordsBean;
+import com.wd.he_bing.bean.LoginBean;
 import com.wd.he_bing.bean.PatientCirclePostsBean;
 import com.wd.he_bing.bean.PatientCircleReviewBean;
 import com.wd.he_bing.bean.PostPatientCircleBean;
@@ -85,7 +88,6 @@ public interface CApiServer {
     @GET("health/user/sickCircle/verify/v1/findMySickCircleCommentList")
     Observable<PatientCirclePostsBean> bingyouquantiezi(@Header("userId") String userId, @Header("sessionId") String sessionId, @Query("sickCircleId") String sickCircleId, @Query("page") String page, @Query("count") String count);
 
-
     //发布病友圈
     //http://172.17.8.100/health/user/sickCircle/verify/v1/publishSickCircle
     @Multipart
@@ -96,13 +98,31 @@ public interface CApiServer {
     //http://172.17.8.100/health/user/sickCircle/verify/v1/uploadSickCirclePicture
     @Multipart
     @POST("health/user/sickCircle/verify/v1/uploadSickCirclePicture")
-    Observable<UploadImageBean> shangchuangtupian(@Field("userId") String userId,
-                                                  @Field("sessionId") String sessionId,
-                                                  @Field("sickCircleId") String sickCircleId,
+    Observable<UploadImageBean> shangchuangtupian(@Header("userId") String userId,
+                                                  @Header("sessionId") String sessionId,
+                                                  @Query("sickCircleId") String sickCircleId,
                                                   @Part List<MultipartBody.Part> part);
 
     //根据科室查询对应病症
     //http://172.17.8.100/health/share/knowledgeBase/v1/findDiseaseCategory
     @GET("health/share/knowledgeBase/v1/findDiseaseCategory")
-    Observable<CGenJuKeShiBean> genjukeshichaxun(@Query("departmentId")String departmentId);
+    Observable<CGenJuKeShiBean> genjukeshichaxun(@Query("departmentId") String departmentId);
+
+    //发表评论
+    //http://172.17.8.100/health/user/sickCircle/verify/v1/publishComment
+    @Multipart
+    @POST("health/user/sickCircle/verify/v1/publishComment")
+    Observable<CFaBiaoPingLunBean> fabiaopinglun(@Header("userId") String userId, @Header("sessionId") String sessionId, @Query("sickCircleId") String sickCircleId, @Query("content") String content);
+
+    //登录
+    //http://172.17.8.100/health/user/v1/login
+    @Multipart
+    @POST("health/user/v1/login")
+    Observable<LoginBean> denglu(@Query("email") String email, @Query("pwd") String pwd);
+
+    //做任务
+    //http://172.17.8.100/health/user/verify/v1/doTask
+    @Multipart
+    @POST("health/user/verify/v1/doTask")
+    Observable<CZuoRenWuBean>zuorenwu(@Header("userId") String userId, @Header("sessionId") String sessionId,@Query("taskId")String taskId);
 }

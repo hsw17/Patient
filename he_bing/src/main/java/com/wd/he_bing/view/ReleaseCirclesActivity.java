@@ -2,6 +2,7 @@ package com.wd.he_bing.view;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -26,6 +27,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,6 +48,7 @@ import com.ypx.imagepicker.bean.ImageItem;
 import com.ypx.imagepicker.data.OnImagePickCompleteListener;
 import com.ypx.imagepicker.presenter.IPickerPresenter;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -56,7 +59,9 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import okhttp3.MediaType;
 import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 
 public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> implements CHomeContract.CHomeView {
     Calendar calendar = Calendar.getInstance(Locale.CHINA);
@@ -105,8 +110,6 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
     @BindView(R.id.release_circle_linear_sick_circle)
     LinearLayout releaseCircleLinearSickCircle;
 
-    private int userId;
-    private String sessionId;
     private RecyclerView popup_recycler_department;
     private PopupWindow popupWindow;
     private String id;
@@ -115,8 +118,10 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
     private PopupWindow popWindowDisease;
     private int sickCircleId;
     private GridLayout mGridLayout;
-
+    private List<MultipartBody.Part> parts = new ArrayList<>();
     private ArrayList<ImageItem> picList = new ArrayList<>();
+    private String zhang;
+    private String mi;
 
 
     @Override
@@ -196,7 +201,6 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
         releaseCircleIvEndTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ReleaseCirclesActivity.this, "4444", Toast.LENGTH_SHORT).show();
                 final AlertDialog.Builder builder = new AlertDialog.Builder(ReleaseCirclesActivity.this);
                 final View view = (LinearLayout) getLayoutInflater().inflate(R.layout.dialog_date, null);
                 final DatePicker datePicker = (DatePicker) view.findViewById(R.id.date_picker);
@@ -234,9 +238,9 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
         releaseCircleIvChooseDepartment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 //查询科室列表
-                presenter.CHomePresenterKeShiLieBiao();
-                Toast.makeText(ReleaseCirclesActivity.this, "1111", Toast.LENGTH_SHORT).show();
+                initPopuWindows(view);
             }
         });
         //对应病症
@@ -244,21 +248,20 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
             @Override
             public void onClick(View v) {
                 //根据科室查询对应病症
-                presenter.CHomePresenterChaXunBingZheng(id + "");
-                Toast.makeText(ReleaseCirclesActivity.this, "2222", Toast.LENGTH_SHORT).show();
-
+                initPopWindowDisease(v);
+            /*    presenter.CHomePresenterChaXunBingZheng(id + "");
+                Toast.makeText(ReleaseCirclesActivity.this, "2222", Toast.LENGTH_SHORT).show();*/
             }
         });
     }
 
-
-    private void initPopWindowDisease(List<CGenJuKeShiBean.ResultBean> result) {
+    private void initPopWindowDisease(View v) {
         View view = LayoutInflater.from(this).inflate(R.layout.item_popip_disease, null, false);
         popup_recycler_disease = view.findViewById(R.id.popup_recycler_disease);
         //1.构造一个PopupWindow，参数依次是加载的View，宽高
         popWindowDisease = new PopupWindow(view,
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
-
+        popWindowDisease.setAnimationStyle(R.anim.anim_pop);  //设置加载动画
         //这些为了点击非PopupWindow区域，PopupWindow会消失的，如果没有下面的
         //代码的话，你会发现，当你把PopupWindow显示出来了，无论你按多少次后退键
         //PopupWindow并不会关闭，而且退不出程序，加上下述代码可以解决这个问题
@@ -271,30 +274,18 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
                 // 拦截后 PopupWindow的onTouchEvent不被调用，这样点击外部区域无法dismiss
             }
         });
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        IllnessAdapter illnessAdapter = new IllnessAdapter(result, this);
-        popup_recycler_disease.setLayoutManager(linearLayoutManager);
-        popup_recycler_disease.setAdapter(illnessAdapter);
-        illnessAdapter.setSetOnItemClicks(new IllnessAdapter.SetOnItemClicks() {
-            @Override
-            public void setOnItems(int i) {
-                String name = result.get(i).getName();
-                releaseCircleTvChooseDisease.setText(name + "");
-                popWindowDisease.dismiss();
-            }
-        });
         popWindowDisease.setBackgroundDrawable(new ColorDrawable(0x00000000));    //要为popWindow设置一个背景才有效
         //设置popupWindow显示的位置，参数依次是参照View，x轴的偏移量，y轴的偏移量
-        popWindowDisease.showAsDropDown(view, 50, 0);
+        popWindowDisease.showAsDropDown(v, 50, 0);
 
-
+        presenter.CHomePresenterChaXunBingZheng(id);
     }
 
-    private void initPopuWindows(List<CDepartmentlistBean.ResultBean> result) {
-        View view = LayoutInflater.from(this).inflate(R.layout.item_popip_department, null, false);
-        popup_recycler_department = view.findViewById(R.id.popup_recycler_department);
+    private void initPopuWindows(View view) {
+        View view1 = LayoutInflater.from(this).inflate(R.layout.item_popip_department, null, false);
+        popup_recycler_department = view1.findViewById(R.id.popup_recycler_department);
         //1.构造一个PopupWindow，参数依次是加载的View，宽高
-        popupWindow = new PopupWindow(view,
+        popupWindow = new PopupWindow(view1,
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
         //这些为了点击非PopupWindow区域，PopupWindow会消失的，如果没有下面的
         //代码的话，你会发现，当你把PopupWindow显示出来了，无论你按多少次后退键
@@ -308,26 +299,16 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
                 // 拦截后 PopupWindow的onTouchEvent不被调用，这样点击外部区域无法dismiss
             }
         });
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        ConsultationTwoAdapter consultationTwoAdapter = new ConsultationTwoAdapter(result, this);
-        popup_recycler_department.setLayoutManager(linearLayoutManager);
-        popup_recycler_department.setAdapter(consultationTwoAdapter);
-        consultationTwoAdapter.setSetOnItemClickListen(new ConsultationTwoAdapter.SetOnItemClickListen() {
-            @Override
-            public void setOnItemClik(int i) {
-                id = result.get(i).getId();
-                releaseCircleTvChooseDepartment.setText(result.get(i).getDepartmentName());
-                Toast.makeText(ReleaseCirclesActivity.this, result.get(i).getDepartmentName(), Toast.LENGTH_SHORT).show();
-                popupWindow.dismiss();
-            }
-        });
-
         popupWindow.setBackgroundDrawable(new ColorDrawable(0x00000000));    //要为popWindow设置一个背景才有效
         //设置popupWindow显示的位置，参数依次是参照View，x轴的偏移量，y轴的偏移量
         popupWindow.showAsDropDown(view, 50, 0);
+        presenter.CHomePresenterKeShiLieBiao();
     }
 
     private void initDate() {
+        SharedPreferences login = getSharedPreferences("login", MODE_PRIVATE);
+        zhang = login.getString("zhang", "");
+        mi = login.getString("mi", "");
     /*    userId = (int) SpUtils.get(this, Constant.Sp_userId, 0);
         sessionId = (String) SpUtils.get(this, Constant.Sp_sessionId, "");*/
         //点击发布圈子
@@ -390,7 +371,6 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
                     Toast.makeText(ReleaseCirclesActivity.this, "治疗过程描述", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
                 Map<String, Object> map = new HashMap<>();
                 map.put("title", title);
                 map.put("departmentId", id);
@@ -401,9 +381,8 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
                 map.put("treatmentEndTime", treatmentEndTime);
                 map.put("treatmentProcess", treatmentProcess);
                 map.put("amount", 0);
-
                 //调发布圈子接口
-                presenter.CHomePresenterFaBuBingYouQuan(userId + "", sessionId, map);
+                presenter.CHomePresenterFaBuBingYouQuan(zhang + "", mi, map);
             }
         });
     }
@@ -413,30 +392,53 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
         if (obj instanceof CDepartmentlistBean) {
             CDepartmentlistBean cDepartmentlistBean = (CDepartmentlistBean) obj;
             List<CDepartmentlistBean.ResultBean> result = cDepartmentlistBean.getResult();
-            initPopuWindows(result);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+            ConsultationTwoAdapter consultationTwoAdapter = new ConsultationTwoAdapter(result, this);
+            popup_recycler_department.setLayoutManager(linearLayoutManager);
+            popup_recycler_department.setAdapter(consultationTwoAdapter);
+            consultationTwoAdapter.setSetOnItemClickListen(new ConsultationTwoAdapter.SetOnItemClickListen() {
+                @Override
+                public void setOnItemClik(int i) {
+                    id = result.get(i).getId();
+                    releaseCircleTvChooseDepartment.setText(result.get(i).getDepartmentName());
+                    Toast.makeText(ReleaseCirclesActivity.this, result.get(i).getDepartmentName(), Toast.LENGTH_SHORT).show();
+                    popupWindow.dismiss();
+                }
+            });
         } else if (obj instanceof CGenJuKeShiBean) {
             CGenJuKeShiBean cGenJuKeShiBean = (CGenJuKeShiBean) obj;
             List<CGenJuKeShiBean.ResultBean> result = cGenJuKeShiBean.getResult();
-            initPopWindowDisease(result);
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
+            IllnessAdapter illnessAdapter = new IllnessAdapter(result, this);
+            popup_recycler_disease.setLayoutManager(gridLayoutManager);
+            popup_recycler_disease.setAdapter(illnessAdapter);
+            illnessAdapter.setSetOnItemClicks(new IllnessAdapter.SetOnItemClicks() {
+                @Override
+                public void setOnItems(int i) {
+                    String name = result.get(i).getName();
+                    releaseCircleTvChooseDisease.setText(name + "");
+                    popWindowDisease.dismiss();
+                }
+            });
         } else if (obj instanceof PostPatientCircleBean) {
             PostPatientCircleBean postPatientCircleBean = (PostPatientCircleBean) obj;
             if (postPatientCircleBean.getStatus().equals("0000")) {
                 Toast.makeText(this, postPatientCircleBean.getMessage(), Toast.LENGTH_SHORT).show();
                 sickCircleId = postPatientCircleBean.getResult();
                 Log.i("sickCircleId", "publishSuccess: " + "sickCircleId" + sickCircleId);
-              /*  if (picture != null) {
-                    presenter.onPicture(userId + "", sessionId, sickCircleId, picture);
+                if (picture != null) {
+                    //上传图片
+                    presenter.CHomePresenterShangChuanTuPian(zhang, mi, "sickCircleId", picture);
                 } else {
                     //做任务
-                    presenter.onDoTask(userId + "", sessionId, 1003);
+                    presenter.CHomePresenterZuoRenWu(zhang, mi, "1003");
                     finish();
-                }*/
+                }
                 notifyAll();
             } else {
                 Toast.makeText(this, postPatientCircleBean.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
-
     }
 
     @Override
@@ -521,20 +523,6 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
     }
 
     private void startPick() {
-//        ImagePicker.provideMediaSets(this, MimeType.ofAll(), new MediaSetsDataSource.MediaSetProvider() {
-//            @Override
-//            public void providerMediaSets(ArrayList<ImageSet> imageSets) {
-//                Log.e("startPick", "providerMediaSets: " + imageSets.size());
-//            }
-//        });
-
-//        ImagePicker.provideAllMediaItems(this, getMimeTypes(), new MediaItemsDataSource.MediaItemProvider() {
-//            @Override
-//            public void providerMediaItems(ArrayList<ImageItem> imageItems, ImageSet allVideoSet) {
-//                Log.e("startPick", "providerMediaSets: " + imageItems.size());
-//            }
-//        });
-
         pick(6 - picList.size());
     }
 
@@ -551,7 +539,6 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
             }
         });
     }
-
     private void pick(int count) {
         final IPickerPresenter presenter = true ? new WeChatPresenter() : new CustomImgPickerPresenter();
         ImagePicker.withMulti(presenter)//指定presenter
@@ -572,132 +559,17 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
                     @Override
                     public void onImagePickComplete(ArrayList<ImageItem> items) {
                         //处理回调回来的图片信息，主线程
+                        //处理回调回来的图片信息，主线程
                         picList.addAll(items);
-                        refreshGridLayout();
+                        String path = items.get(0).path;
+                        if (path != null) {
+                            File file = new File(path);
+                            RequestBody requestBody = MultipartBody.create(MediaType.parse("image/*"), file);
+                            MultipartBody.Part part = MultipartBody.Part.createFormData("picture", file.getName(), requestBody);
+                            parts.add(part);
+                            refreshGridLayout();
+                        }
                     }
                 });
     }
-
-
-
-   /* @OnClick({R.id.release_sickCircle_iv_user_head_pic, R.id.patient_iv_user_message, R.id.release_circle_et_title, R.id.release_circle_tv_choose_department, R.id.release_circle_iv_choose_department, R.id.release_circle_tv_choose_disease, R.id.release_circle_iv_choose_disease, R.id.release_circle_et_detail, R.id.release_circle_et_treatmentHospital, R.id.release_circle_tv_startTime, R.id.release_circle_iv_startTime, R.id.release_circle_tv_endTime, R.id.release_circle_iv_endTime, R.id.release_circle_et_treatmentProcess, R.id.release_circle_iv_upload_Picture, R.id.release_circle_iv_delete_Picture, R.id.swit, R.id.button_hbi3, R.id.aaa, R.id.xuanshangedu_linear, R.id.release_circle_btn_publish, R.id.release_circle_linear_sick_circle})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.release_sickCircle_iv_user_head_pic:
-                break;
-            case R.id.patient_iv_user_message:
-                break;
-            case R.id.release_circle_et_title:
-                break;
-            case R.id.release_circle_tv_choose_department:
-                break;
-            case R.id.release_circle_iv_choose_department:
-                //查询科室列表
-                presenter.CHomePresenterKeShiLieBiao();
-                Toast.makeText(ReleaseCirclesActivity.this, "1111", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.release_circle_tv_choose_disease:
-                break;
-            case R.id.release_circle_iv_choose_disease:
-                presenter.CHomePresenterChaXunBingZheng(id + "");
-                Toast.makeText(ReleaseCirclesActivity.this, "2222", Toast.LENGTH_SHORT).show();
-
-                break;
-            case R.id.release_circle_et_detail:
-                break;
-            case R.id.release_circle_et_treatmentHospital:
-                break;
-            case R.id.release_circle_tv_startTime:
-                break;
-            case R.id.release_circle_iv_startTime:
-                final AlertDialog.Builder builder = new AlertDialog.Builder(ReleaseCirclesActivity.this);
-                final View view1 =  getLayoutInflater().inflate(R.layout.dialog_date, null);
-                final DatePicker datePicker = (DatePicker) view1.findViewById(R.id.date_picker);
-                //设置日期简略显示 否则详细显示 包括:星期\周
-                datePicker.setCalendarViewShown(false);
-                //初始化当前日期
-                calendar.setTimeInMillis(System.currentTimeMillis());
-                datePicker.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
-                        calendar.get(Calendar.DAY_OF_MONTH), null);
-                //设置date布局
-                builder.setView(view);
-
-                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //日期格式
-                        StringBuffer sb = new StringBuffer();
-                        sb.append(String.format("%d-%02d-%02d",
-                                datePicker.getYear(),
-                                datePicker.getMonth() + 1,
-                                datePicker.getDayOfMonth()));
-                        releaseCircleTvStartTime.setText(sb);
-                        dialog.cancel();
-                    }
-                });
-                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                builder.create().show();
-                break;
-            case R.id.release_circle_tv_endTime:
-                break;
-            case R.id.release_circle_iv_endTime:
-                final AlertDialog.Builder builder2 = new AlertDialog.Builder(ReleaseCirclesActivity.this);
-                final View view2 = (LinearLayout) getLayoutInflater().inflate(R.layout.dialog_date, null);
-                final DatePicker datePicker2 = (DatePicker) view2.findViewById(R.id.date_picker);
-                //设置日期简略显示 否则详细显示 包括:星期\周
-                datePicker2.setCalendarViewShown(false);
-                //初始化当前日期
-                calendar.setTimeInMillis(System.currentTimeMillis());
-                datePicker2.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
-                        calendar.get(Calendar.DAY_OF_MONTH), null);
-                //设置date布局
-                builder2.setView(view2);
-
-                builder2.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //日期格式
-                        StringBuffer sb = new StringBuffer();
-                        sb.append(String.format("%d-%02d-%02d",
-                                datePicker2.getYear(),
-                                datePicker2.getMonth() + 1,
-                                datePicker2.getDayOfMonth()));
-                        releaseCircleTvEndTime.setText(sb);
-                        dialog.cancel();
-                    }
-                });
-                builder2.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                builder2.create().show();
-                break;
-            case R.id.release_circle_et_treatmentProcess:
-                break;
-            case R.id.release_circle_iv_upload_Picture:
-                break;
-            case R.id.release_circle_iv_delete_Picture:
-                break;
-            case R.id.swit:
-                break;
-            case R.id.button_hbi3:
-                break;
-            case R.id.aaa:
-                break;
-            case R.id.xuanshangedu_linear:
-                break;
-            case R.id.release_circle_btn_publish:
-
-                break;
-            case R.id.release_circle_linear_sick_circle:
-                break;
-        }
-    }*/
 }

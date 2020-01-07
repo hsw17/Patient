@@ -6,13 +6,16 @@ import com.bwie.mvplibrary.utils.RetrofitManager;
 import com.wd.he_bing.app.CApiServer;
 import com.wd.he_bing.bean.AdoptcircleofPatientsBean;
 import com.wd.he_bing.bean.CDepartmentlistBean;
+import com.wd.he_bing.bean.CFaBiaoPingLunBean;
 import com.wd.he_bing.bean.CGenJuKeShiBean;
 import com.wd.he_bing.bean.CListBean;
 import com.wd.he_bing.bean.CMyPatientCircle;
 import com.wd.he_bing.bean.CPatientCircleBean;
 import com.wd.he_bing.bean.CPatientCircleDetailsBean;
 import com.wd.he_bing.bean.CPostopinionBean;
+import com.wd.he_bing.bean.CZuoRenWuBean;
 import com.wd.he_bing.bean.KeywordsBean;
+import com.wd.he_bing.bean.LoginBean;
 import com.wd.he_bing.bean.PatientCirclePostsBean;
 import com.wd.he_bing.bean.PatientCircleReviewBean;
 import com.wd.he_bing.bean.PostPatientCircleBean;
@@ -274,6 +277,63 @@ public class CHomeModel implements CHomeContract.CHomeModel {
                     @Override
                     public void onError(Throwable e) {
                     CHomeModelCallBack.CHomeViewError(e.getMessage());
+                    }
+                });
+    }
+
+    //病友圈发表评论
+    @Override
+    public void CHomeModelFaBiaoPingLunData(String userId, String sessionId, String sickCircleId, String content, CHomeModelCallBack cHomeModelCallBack) {
+        RetrofitManager.getInstance().create(CApiServer.class)
+                .fabiaopinglun(userId,sessionId,sickCircleId,content)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<CFaBiaoPingLunBean>() {
+                    @Override
+                    public void onNext(CFaBiaoPingLunBean cFaBiaoPingLunBean) {
+                        cHomeModelCallBack.CHomeViewSuccess(cFaBiaoPingLunBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                cHomeModelCallBack.CHomeViewError(e.getMessage());
+                    }
+                });
+    }
+
+    //登录
+    @Override
+    public void CHomeModelLoginData(String email, String pwd, CHomeModelCallBack cHomeModelCallBack) {
+        RetrofitManager.getInstance().create(CApiServer.class)
+                .denglu(email,pwd)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<LoginBean>() {
+                    @Override
+                    public void onNext(LoginBean loginBean) {
+                        cHomeModelCallBack.CHomeViewSuccess(loginBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        cHomeModelCallBack.CHomeViewError(e.getMessage());
+                    }
+                });
+    }
+
+    //做任务
+    @Override
+    public void CHomeModelZuoRenWuData(String userId, String sessionId, String taskId, CHomeModelCallBack cHomeModelCallBack) {
+        RetrofitManager.getInstance().create(CApiServer.class)
+                .zuorenwu(userId,sessionId,taskId)
+                .compose(CommonSchedulers.io2main())
+                .subscribe(new CommonObserver<CZuoRenWuBean>() {
+                    @Override
+                    public void onNext(CZuoRenWuBean cZuoRenWuBean) {
+                        cHomeModelCallBack.CHomeViewSuccess(cZuoRenWuBean);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        cHomeModelCallBack.CHomeViewError(e.getMessage());
                     }
                 });
     }
