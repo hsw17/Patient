@@ -1,5 +1,15 @@
 package com.wd.mymodlue.view.activity;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -20,7 +30,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.bwie.mvplibrary.utils.CustomClickListener;
@@ -46,17 +55,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import androidx.core.app.ActivityCompat;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
-
-public class CompileActivity extends BaseActivity<Persenter> implements IViewContract.IView {
+public class UpdateUserArchivesActivity extends BaseActivity<Persenter> implements IViewContract.IView {
 
     //需要的权限数组 读/写/相机
     private static String[] PERMISSIONS_STORAGE = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
@@ -106,7 +105,7 @@ public class CompileActivity extends BaseActivity<Persenter> implements IViewCon
     List<String> list=new ArrayList<>();
     @Override
     protected int bindLayout() {
-        return R.layout.activity_compile;
+        return R.layout.activity_update_user_archives;
     }
 
     @Override
@@ -185,6 +184,7 @@ public class CompileActivity extends BaseActivity<Persenter> implements IViewCon
                 String startte = edit_starttime.getText().toString().trim();
                 String endte = end.getText().toString().trim();
                 Map<String, Object> oap = new HashMap<>();
+                oap.put("archivesId", id1);
                 oap.put("diseaseMain", main);
                 oap.put("diseaseNow", now);
                 oap.put("diseaseBefore", before);
@@ -193,7 +193,7 @@ public class CompileActivity extends BaseActivity<Persenter> implements IViewCon
                 oap.put("treatmentStartTime", startte);
                 oap.put("treatmentEndTime", endte);
                 presenter.onGetpicture(map,picture);
-                presenter.onGetaddUserArchives(map,oap);
+                presenter.onGetupdateUserArchives(map,oap);
             }
         });
 
@@ -203,7 +203,7 @@ public class CompileActivity extends BaseActivity<Persenter> implements IViewCon
         img_startTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final AlertDialog.Builder builder = new AlertDialog.Builder(CompileActivity.this);
+                final AlertDialog.Builder builder = new AlertDialog.Builder(UpdateUserArchivesActivity.this);
                 final View view = (LinearLayout) getLayoutInflater().inflate(R.layout.dialog_date, null);
                 final DatePicker datePicker = (DatePicker) view.findViewById(R.id.date_picker);
                 //设置日期简略显示 否则详细显示 包括:星期\周
@@ -242,7 +242,7 @@ public class CompileActivity extends BaseActivity<Persenter> implements IViewCon
         img_endTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final AlertDialog.Builder builder = new AlertDialog.Builder(CompileActivity.this);
+                final AlertDialog.Builder builder = new AlertDialog.Builder(UpdateUserArchivesActivity.this);
                 final View view = (LinearLayout) getLayoutInflater().inflate(R.layout.dialog_date, null);
                 final DatePicker datePicker = (DatePicker) view.findViewById(R.id.date_picker);
                 //设置日期简略显示 否则详细显示 包括:星期\周
@@ -300,8 +300,8 @@ public class CompileActivity extends BaseActivity<Persenter> implements IViewCon
                 @Override
                 protected void onSingleClick() {
                     //检查是否已经获得相机的权限
-                    if (verifyPermissions(CompileActivity.this, PERMISSIONS_STORAGE[2]) == 0) {
-                        ActivityCompat.requestPermissions(CompileActivity.this, PERMISSIONS_STORAGE, 3);
+                    if (verifyPermissions(UpdateUserArchivesActivity.this, PERMISSIONS_STORAGE[2]) == 0) {
+                        ActivityCompat.requestPermissions(UpdateUserArchivesActivity.this, PERMISSIONS_STORAGE, 3);
                     } else {
                         //已经有权限
                         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -436,15 +436,15 @@ public class CompileActivity extends BaseActivity<Persenter> implements IViewCon
         }else {
             ToastUtils.show(updateArchivesBean.getMessage());
         }*/
-        AddArchivesBean addArchivesBean = (AddArchivesBean) obj;
-        if ("0000".equals(addArchivesBean.getStatus())) {
+        UpdateArchivesBean updateArchivesBean = (UpdateArchivesBean) obj;
+        if ("0000".equals(updateArchivesBean.getStatus())) {
 //            ToastUtils.show(updateArchivesBean.getMessage());
 //            Intent intent=new Intent("com.hl.SuccessActivity");
 //            intent.putExtra("idl",id1);
 //            sendBroadcast(intent);
             finish();
         }else {
-            ToastUtils.show(addArchivesBean.getMessage());
+            ToastUtils.show(updateArchivesBean.getMessage());
         }
     }
 
@@ -477,7 +477,5 @@ public class CompileActivity extends BaseActivity<Persenter> implements IViewCon
     public void onFail(String str) {
 
     }
-
-
 
 }
