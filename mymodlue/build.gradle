@@ -9,6 +9,10 @@ android {
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
 
     defaultConfig {
+        if (Boolean.valueOf(rootProject.ext.isModule)) {
+            //组件模式下设置applicationId
+            applicationId "com.wd.mymodlue"
+        }
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
@@ -33,10 +37,6 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-    }
-    if (Boolean.valueOf(rootProject.ext.isModule)) {
-        //组件模式下设置applicationId
-        applicationId "com.wd.mymodlue"
     }
     /*
        * java插件引入了一个概念叫做SourceSets，通过修改SourceSets中的属性，
@@ -72,7 +72,7 @@ dependencies {
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     api rootProject.ext.dependencies["xrecyclerview"]
     implementation project(path: ':mvplibrary')
-    implementation project(path: ':mymainmodule')
+//    implementation project(path: ':mymainmodule')
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     implementation project(path: ':ocr_library')

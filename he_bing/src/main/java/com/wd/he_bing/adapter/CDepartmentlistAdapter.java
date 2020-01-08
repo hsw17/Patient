@@ -34,17 +34,16 @@ public class CDepartmentlistAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof CDepartHolder) {
             ((CDepartHolder) holder).cdepatr_name.setText(list.get(position).getDepartmentName());
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
+            ((CDepartHolder) holder).cdepart_linear.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     String id = list.get(position).getId();
-                    setOnClick.OnClick(id, position + "");
+                    setOnClick.OnClick(id, position +"");
                     notifyDataSetChanged();
                 }
             });
         }
     }
-
     @Override
     public int getItemCount() {
         return list.size();
@@ -62,7 +61,6 @@ public class CDepartmentlistAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
         }
     }
-
     public setOnClick setOnClick;
 
     public void getOnClick(setOnClick setOnClick) {
@@ -72,13 +70,12 @@ public class CDepartmentlistAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     public interface setOnClick {
         void OnClick(String id, String position);
     }
-    private int mPosition;
+    private String  mPosition;
 
-    public int getmPosition() {
+    public String getmPosition() {
         return mPosition;
     }
-
-    public void setmPosition(int mPosition) {
+    public void setmPosition(String mPosition) {
         this.mPosition = mPosition;
     }
 }

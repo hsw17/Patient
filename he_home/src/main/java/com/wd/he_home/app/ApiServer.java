@@ -52,36 +52,44 @@ public interface ApiServer {
     //http://172.17.8.100/health/share/knowledgeBase/v1/findDiseaseCategory
     @GET("health/share/knowledgeBase/v1/findDiseaseCategory")
     Observable<CorrespondingsymptomsBean> duiyingbingzheng(@Query("departmentId") String departmentId);
+
     //药品科目分类列表查询
     //http://172.17.8.100/health/share/knowledgeBase/v1/findDrugsCategoryList
     @GET("health/share/knowledgeBase/v1/findDrugsCategoryList")
     Observable<DrugClassificationBean> yaopinfenlei();
+
     //查询药品列表
     //http://172.17.8.100/health/share/knowledgeBase/v1/findDrugsKnowledgeList
     @GET("health/share/knowledgeBase/v1/findDrugsKnowledgeList")
-    Observable<DrugListBean> yaopinliebiao(@Query("drugsCategoryId")String drugsCategoryId,@Query("page")String page,@Query("count")String count);
+    Observable<DrugListBean> yaopinliebiao(@Query("drugsCategoryId") String drugsCategoryId, @Query("page") String page, @Query("count") String count);
+
     //查询病状详情
     //http://172.17.8.100/health/share/knowledgeBase/v1/findDiseaseKnowledge
     @GET("health/share/knowledgeBase/v1/findDiseaseKnowledge")
-    Observable<ConditionDetailsBean> bingzhuangxiangqiang(@Query("id")String id);
+    Observable<ConditionDetailsBean> bingzhuangxiangqiang(@Query("id") String id);
+
     //查询常见药品详情
     //http://172.17.8.100/health/share/knowledgeBase/v1/findDrugsKnowledge
     @GET("health/share/knowledgeBase/v1/findDrugsKnowledge")
-    Observable<DrugDetailsBean> yaopinxiangqing(@Query("id")String id);
+    Observable<DrugDetailsBean> yaopinxiangqing(@Query("id") String id);
+
     //咨询详情
     //http://172.17.8.100/health/share/information/v1/findInformation
     @GET("health/share/information/v1/findInformation")
-    Observable<ConsultationDetailsBean> zixunxiangqing(@Header("userId")String userId,@Header("sessionId")String sessionId,@Query("infoId")String infoId);
+    Observable<ConsultationDetailsBean> zixunxiangqing(@Header("userId") String userId, @Header("sessionId") String sessionId, @Query("infoId") String infoId);
+
     //首页搜索
     //http://172.17.8.100/health/share/v1/homePageSearch
     @GET("health/share/v1/homePageSearch")
-    Observable<HomeSearchBean> shouyesousuo(@Query("keyWord")String keyWord);
+    Observable<HomeSearchBean> shouyesousuo(@Query("keyWord") String keyWord);
+
     //热门搜索
     //http://172.17.8.100/health/share/v1/popularSearch
     @GET("health/share/v1/popularSearch")
     Observable<PopularSearchesBean> remensousuo();
+
     //查询医生列表
     //http://172.17.8.100/health/user/inquiry/v1/findDoctorList
     @GET("health/user/inquiry/v1/findDoctorList")
-    Observable<DoctorlistBean> yishengliebiao(@Query("deptId")String deptId,@Query("condition")String condition,@Query("sortBy")String sortBy,@Query("page")int page,@Query("count")String count);
+    Observable<DoctorlistBean> yishengliebiao(@Query("deptId") String deptId, @Query("condition") String condition, @Query("sortBy") String sortBy, @Query("page") int page, @Query("count") String count);
 }

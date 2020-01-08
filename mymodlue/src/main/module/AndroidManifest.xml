@@ -17,7 +17,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        android:theme="@style/Base.CardView">
         <activity android:name=".view.activity.CertificActivity">
             <intent-filter>
                 <action android:name="com.hl.CertificActivity" />

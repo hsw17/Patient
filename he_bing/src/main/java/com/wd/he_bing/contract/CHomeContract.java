@@ -51,13 +51,24 @@ public interface CHomeContract {
 
         //查询我的病友圈帖子的评论列表
         void CHomeModelBingYouQuanTieZiData(String userId, String sessionId, String sickCircleId, String page, String count, CHomeModelCallBack cHomeModelCallBack);
+
         // //发布病友圈
-        void CHomeModelFaBuBingYouQuanData(String userId, String sessionId, Map<String, Object> map,CHomeModelCallBack cHomeModelCallBack);
-       //上传图片
-        void CHomeModelShangChuanTuPianData(String userId, String sessionId, String sickCircleId, List<MultipartBody.Part> part,CHomeModelCallBack cHomeModelCallBack);
+        void CHomeModelFaBuBingYouQuanData(String userId, String sessionId, Map<String, Object> map, CHomeModelCallBack cHomeModelCallBack);
+
+        //上传图片
+        void CHomeModelShangChuanTuPianData(String userId, String sessionId, String sickCircleId, List<MultipartBody.Part> part, CHomeModelCallBack cHomeModelCallBack);
+
         //根据科室查询病症
-        void CHomeModelChaXunBingZhengData(String departmentId,CHomeModelCallBack CHomeModelCallBack);
-         //接口回调
+        void CHomeModelChaXunBingZhengData(String departmentId, CHomeModelCallBack CHomeModelCallBack);
+
+        //病友圈发表评论
+        void CHomeModelFaBiaoPingLunData(String userId, String sessionId, String sickCircleId, String content, CHomeModelCallBack cHomeModelCallBack);
+
+        //登录
+        void CHomeModelLoginData(String email,String pwd,CHomeModelCallBack cHomeModelCallBack);
+        //做任务
+        void CHomeModelZuoRenWuData(String userId, String sessionId, String taskId,CHomeModelCallBack cHomeModelCallBack );
+        //接口回调
         interface CHomeModelCallBack {
             void CHomeViewSuccess(Object obj);
 
@@ -96,11 +107,21 @@ public interface CHomeContract {
 
         //查询我的病友圈帖子的评论列表
         void CHomePresenterBingYouQuanTieZiData(String userId, String sessionId, String sickCircleId, String page, String count);
+
         //发布病友圈
         void CHomePresenterFaBuBingYouQuan(String userId, String sessionId, Map<String, Object> map);
+
         //上传图片
         void CHomePresenterShangChuanTuPian(String userId, String sessionId, String sickCircleId, List<MultipartBody.Part> part);
+
         //根据科室查询病症
         void CHomePresenterChaXunBingZheng(String departmentId);
+
+        //病友圈发表评论
+        void CHomePresenterFaBiaoPingLun(String userId, String sessionId, String sickCircleId, String content);
+        //登录
+        void CHomePresenterLogin(String email,String pwd);
+        //做任务
+        void CHomePresenterZuoRenWu(String userId, String sessionId, String taskId);
     }
 }

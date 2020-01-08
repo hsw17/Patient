@@ -10,7 +10,10 @@ android {
 
 
     defaultConfig {
-
+        if (Boolean.valueOf(rootProject.ext.isModule)) {
+            //组件模式下设置applicationId
+            applicationId "com.wd.videomodule"
+        }
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
@@ -38,11 +41,6 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    if (Boolean.valueOf(rootProject.ext.isModule)) {
-        //组件模式下设置applicationId
-        applicationId "com.wd.videomodule"
     }
 
     /*
