@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.wd.mymodlue.R2;
+
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 //
 //            }
 //        });
-        finish();
     }
 
 
