@@ -1,0 +1,226 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.wd.he_bing.test" >
+4
+5    <uses-sdk
+5-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8016892470121051463.xml:5:5-74
+6        android:minSdkVersion="26"
+6-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8016892470121051463.xml:5:15-41
+7        android:targetSdkVersion="27" />
+7-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8016892470121051463.xml:5:42-71
+8
+9    <instrumentation
+9-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8016892470121051463.xml:11:5-15:69
+10        android:name="androidx.test.runner.AndroidJUnitRunner"
+10-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8016892470121051463.xml:11:22-76
+11        android:functionalTest="false"
+11-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8016892470121051463.xml:14:22-52
+12        android:handleProfiling="false"
+12-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8016892470121051463.xml:13:22-53
+13        android:label="Tests for com.wd.he_bing.test"
+13-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8016892470121051463.xml:15:22-67
+14        android:targetPackage="com.wd.he_bing.test" />
+14-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8016892470121051463.xml:12:22-65
+15
+16    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+16-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-14:47
+16-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-57
+17    <uses-permission android:name="android.permission.CAMERA" />
+17-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-65
+17-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:22-62
+18    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 用于访问GPS定位 -->
+18-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:5-81
+18-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:22-78
+19    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+19-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:5-79
+19-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:22-76
+20    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+20-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-79
+20-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:22-76
+21    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+21-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:5-76
+21-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:22-73
+22    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 用于访问网络，网络定位需要上网 -->
+22-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:5-76
+22-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:22-73
+23    <uses-permission android:name="android.permission.INTERNET" /> <!-- 用于读取手机当前的状态 -->
+23-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:5-67
+23-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:22-64
+24    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据 -->
+24-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:5-75
+24-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:22-72
+25    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 用于申请调用A-GPS模块 -->
+25-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:5-81
+25-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:22-78
+26    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" /> <!-- 用于申请获取蓝牙信息进行室内定位 -->
+26-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-89
+26-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:22-86
+27    <uses-permission android:name="android.permission.BLUETOOTH" />
+27-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:5-68
+27-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:22-65
+28    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+28-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:5-74
+28-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:22-71
+29    <uses-permission android:name="android.permission.VIBRATE" />
+29-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:5-66
+29-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:22-63
+30    <uses-permission android:name="android.permission.ACCEPT_HANDOVER" />
+30-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:5-74
+30-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:22-71
+31    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+31-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:5-80
+31-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:22-77
+32    <uses-permission android:name="android.permission.PERMISSIONS_STORAGE" />
+32-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:30:5-78
+32-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:30:22-75
+33    <uses-permission android:name="group:android.permission-group.LOCATION" /> <!-- 读取媒体文件 -->
+33-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:31:5-79
+33-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:31:22-76
+34    <uses-permission android:name="com.android.providers.media.MediaProvider" />
+34-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:11:5-81
+34-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:11:22-78
+35    <uses-permission android:name="android.permission.REORDER_TASKS" />
+35-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:24:5-72
+35-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:24:22-69
+36
+37    <application
+37-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8016892470121051463.xml:7:5-9:19
+38        android:name="com.bwie.mvplibrary.app.App"
+38-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-51
+39        android:allowBackup="true"
+39-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-35
+40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+40-->[androidx.core:core:1.1.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\78f41c6946dea7ca97f5ff6ef8b6a433\core-1.1.0\AndroidManifest.xml:24:18-86
+41        android:debuggable="true"
+41-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8016892470121051463.xml:7:18-43
+42        android:icon="@mipmap/ic_launcher"
+42-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:9-43
+43        android:label="@string/app_name"
+43-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:9-41
+44        android:roundIcon="@mipmap/ic_launcher_round"
+44-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:9-54
+45        android:supportsRtl="true"
+45-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:9-35
+46        android:theme="@style/AppTheme" >
+46-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:9-40
+47        <uses-library android:name="android.test.runner" />
+47-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8016892470121051463.xml:8:9-60
+47-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8016892470121051463.xml:8:23-57
+48
+49        <activity android:name="com.wd.he_bing.view.ReleaseCirclesActivity" />
+49-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:9-79
+49-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:19-76
+50        <activity android:name="com.wd.he_bing.view.CPatientCircleDetailsActivity" />
+50-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:9-86
+50-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:19-83
+51        <activity android:name="com.wd.he_bing.view.MainBingActivity" >
+51-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:9-27:20
+51-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:19-70
+52            <intent-filter>
+52-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:13-26:29
+53                <action android:name="android.intent.action.MAIN" />
+53-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:17-69
+53-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:25-66
+54
+55                <category android:name="android.intent.category.LAUNCHER" />
+55-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:17-77
+55-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:27-74
+56            </intent-filter>
+57        </activity>
+58        <activity
+58-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:22:9-24:72
+59            android:name="com.ypx.imagepicker.activity.crop.MultiImageCropActivity"
+59-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:23:13-84
+60            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+60-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:24:13-69
+61        <activity
+61-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:25:9-27:43
+62            android:name="com.ypx.imagepicker.activity.preview.MultiImagePreviewActivity"
+62-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:26:13-90
+63            android:multiprocess="true" />
+63-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:27:13-40
+64        <activity
+64-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:28:9-30:43
+65            android:name="com.ypx.imagepicker.activity.singlecrop.SingleCropActivity"
+65-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:29:13-86
+66            android:multiprocess="true" />
+66-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:30:13-40
+67        <activity
+67-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:31:9-33:43
+68            android:name="com.ypx.imagepicker.activity.multi.MultiImagePickerActivity"
+68-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:32:13-87
+69            android:multiprocess="true" />
+69-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:33:13-40
+70
+71        <provider
+71-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:35:9-43:20
+72            android:name="com.ypx.imagepicker.utils.PickerFileProvider"
+72-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:36:13-72
+73            android:authorities="com.wd.he_bing.test.picker.fileprovider"
+73-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:37:13-71
+74            android:exported="false"
+74-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:38:13-37
+75            android:grantUriPermissions="true" >
+75-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:39:13-47
+76            <meta-data
+76-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:40:13-42:61
+77                android:name="android.support.FILE_PROVIDER_PATHS"
+77-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:41:17-67
+78                android:resource="@xml/picker_file_paths" />
+78-->[com.ypx.yimagepicker:androidx:3.0.1] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\a2e606af25c64451943b196047621677\androidx-3.0.1\AndroidManifest.xml:42:17-58
+79        </provider>
+80
+81        <activity
+81-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:12:9-17:63
+82            android:name="com.uuzuche.lib_zxing.activity.CaptureActivity"
+82-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:13:13-74
+83            android:configChanges="orientation|keyboardHidden"
+83-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:14:13-63
+84            android:screenOrientation="portrait"
+84-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:15:13-49
+85            android:theme="@style/Theme.AppCompat.NoActionBar"
+85-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:16:13-63
+86            android:windowSoftInputMode="stateAlwaysHidden" />
+86-->[cn.yipianfengye.android:zxing-library:2.2] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\f43c8d46db5bb5f28f2ca20610e8266d\jetified-zxing-library-2.2\AndroidManifest.xml:17:13-60
+87        <activity
+87-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:27:9-33:20
+88            android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
+88-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:28:13-99
+89            android:theme="@android:style/Theme" >
+89-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:29:13-49
+90            <intent-filter>
+90-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:30:13-32:29
+91                <action android:name="android.intent.action.MAIN" />
+91-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:17-69
+91-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:25-66
+92            </intent-filter>
+93        </activity>
+94        <activity
+94-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:34:9-40:20
+95            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity"
+95-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:35:13-95
+96            android:theme="@android:style/Theme" >
+96-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:36:13-49
+97            <intent-filter>
+97-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:30:13-32:29
+98                <action android:name="android.intent.action.MAIN" />
+98-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:17-69
+98-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:25-66
+99            </intent-filter>
+100        </activity>
+101        <activity
+101-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:41:9-47:20
+102            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
+102-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:42:13-103
+103            android:theme="@android:style/Theme.Dialog" >
+103-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:43:13-56
+104            <intent-filter>
+104-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:30:13-32:29
+105                <action android:name="android.intent.action.MAIN" />
+105-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:17-69
+105-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:25-66
+106            </intent-filter>
+107        </activity>
+108    </application>
+109
+110</manifest>

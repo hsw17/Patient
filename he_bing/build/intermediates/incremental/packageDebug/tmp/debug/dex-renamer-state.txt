@@ -1,0 +1,10 @@
+#Wed Jan 08 19:39:14 GMT+08:00 2020
+path.2=classes_0.dex
+path.1=classes.dex
+path.0=classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+base.2=D\:\\helth\\Patient\\he_bing\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_0.dex
+base.1=D\:\\helth\\Patient\\he_bing\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.0=D\:\\helth\\Patient\\he_bing\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
