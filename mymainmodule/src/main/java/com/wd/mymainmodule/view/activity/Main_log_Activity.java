@@ -244,7 +244,6 @@ public class Main_log_Activity extends BaseActivity<Persenter> implements IViewC
             finish();
         } else {
             ToastUtils.show(loginBean.message);
-
         }
     }
 
@@ -272,6 +271,4 @@ public class Main_log_Activity extends BaseActivity<Persenter> implements IViewC
     public void onFail(String str) {
 
     }
-
-
 }
