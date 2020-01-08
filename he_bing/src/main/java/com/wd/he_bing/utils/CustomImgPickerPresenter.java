@@ -35,6 +35,7 @@ import com.ypx.imagepicker.views.wx.WXTitleBar;
 
 import java.util.ArrayList;
 
+
 /**
  * Description: 自定义样式,目前mars就采用此样式
  * <p>

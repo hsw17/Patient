@@ -38,7 +38,7 @@ import com.bw.videomodule.bean.VideolistBean;
 import com.bw.videomodule.presenter.IPresenter;
 import com.bw.videomodule.utils.TikTokController;
 import com.bw.videomodule.utils.ViewPagerLayoutManager;
-import com.bw.videomodule.view.activity.MainActivity;
+
 import com.bw.videomodule.view.adapter.TikTokAdapter;
 import com.bw.videomodule.view.weight.CenteredImageSpan;
 import com.bw.videomodule.view.weight.DanmukuVideoView;

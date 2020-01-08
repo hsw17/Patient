@@ -326,7 +326,6 @@ public class DateUtils {
             mydate = cd.get(Calendar.DAY_OF_WEEK);
             // 获取指定日期转换成星期几
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         if (mydate == 1) {
@@ -381,7 +380,7 @@ public class DateUtils {
             mydate = cd.get(Calendar.DAY_OF_WEEK);
             // 获取指定日期转换成星期几
         } catch (Exception e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
         if (mydate == 1) {
@@ -431,7 +430,6 @@ public class DateUtils {
             mydate = cd.get(Calendar.DAY_OF_WEEK);
             // 获取指定日期转换成星期几
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         if (mydate == 1) {
@@ -470,7 +468,6 @@ public class DateUtils {
             mydate = cd.get(Calendar.DAY_OF_WEEK);
             // 获取指定日期转换成星期几
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         if (mydate == 1) {

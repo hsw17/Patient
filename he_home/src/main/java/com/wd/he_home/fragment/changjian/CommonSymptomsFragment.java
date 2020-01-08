@@ -91,13 +91,11 @@ public class CommonSymptomsFragment extends BaseFragment<HomePresenter> implemen
     public void HomeViewError(String e) {
     }
 
-    @OnClick({R.id.commons_one_recycler, R.id.commons_two_recycler})
+
     public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.commons_one_recycler:
-                break;
-            case R.id.commons_two_recycler:
-                break;
+        int id = view.getId();
+        if (id == R.id.commons_one_recycler) {
+        } else if (id == R.id.commons_two_recycler) {
         }
     }
 }

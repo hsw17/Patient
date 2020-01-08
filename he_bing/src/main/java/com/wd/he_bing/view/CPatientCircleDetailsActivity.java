@@ -201,66 +201,36 @@ public class CPatientCircleDetailsActivity extends BaseActivity<CHomePresenter> 
 
     }
 
-    @OnClick({R.id.c_patient_iv_user_head_pic, R.id.c_patient_activity_tv_title, R.id.c_patient_iv_user_message, R.id.c_patient_relative_titlebar, R.id.c_patient_activity_tv_adoptNickName, R.id.c_patient_activity_tv_disease, R.id.c_patient_activity_tv_department, R.id.c_patient_activity_tv_detail, R.id.c_patient_activity_tv_treatment_time, R.id.c_patient_activity_tv_treatmentProcess, R.id.c_patient_activity_iv_picture, R.id.c_patient_activity_tv_commentNum, R.id.c_patient_activity_iv_content, R.id.c_patient_activity_tv_collectionNum, R.id.c_img_HeadPic, R.id.c_name_NickName, R.id.c_time_adoptTime, R.id.c_text_adoptComment, R.id.c_adoptFlag, R.id.c_recycler_sick_circle_comment_list, R.id.c_patient_activity_iv_cancel, R.id.c_patient_activity_et_content, R.id.c_patient_activity_iv_send_content, R.id.c_patient_activity_relative_content, R.id.c_patient_activity_iv_intent_release_sickCircle, R.id.c_patient_activity_relative_release_sickCircle})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.c_patient_iv_user_head_pic:
-                break;
-            case R.id.c_patient_activity_tv_title:
-                break;
-            case R.id.c_patient_iv_user_message:
-                break;
-            case R.id.c_patient_relative_titlebar:
-                break;
-            case R.id.c_patient_activity_tv_adoptNickName:
-                break;
-            case R.id.c_patient_activity_tv_disease:
-                break;
-            case R.id.c_patient_activity_tv_department:
-                break;
-            case R.id.c_patient_activity_tv_detail:
-                break;
-            case R.id.c_patient_activity_tv_treatment_time:
-                break;
-            case R.id.c_patient_activity_tv_treatmentProcess:
-                break;
-            case R.id.c_patient_activity_iv_picture:
-                break;
-            case R.id.c_patient_activity_tv_commentNum:
-                break;
-            //对话框点击
-            case R.id.c_patient_activity_iv_content:
-
-                break;
-            case R.id.c_patient_activity_tv_collectionNum:
-                break;
-            case R.id.c_img_HeadPic:
-                break;
-            case R.id.c_name_NickName:
-                break;
-            case R.id.c_time_adoptTime:
-                break;
-            case R.id.c_text_adoptComment:
-                break;
-            case R.id.c_adoptFlag:
-                break;
-            case R.id.c_recycler_sick_circle_comment_list:
-                break;
-            //图标
-            case R.id.c_patient_activity_iv_cancel:
-                break;
-            case R.id.c_patient_activity_et_content:
-                break;
-            case R.id.c_patient_activity_iv_send_content:
-                break;
-            case R.id.c_patient_activity_relative_content:
-                break;
-            case R.id.c_patient_activity_iv_intent_release_sickCircle:
-                Intent intent1 = new Intent(CPatientCircleDetailsActivity.this, ReleaseCirclesActivity.class);
-                startActivity(intent1);
-                break;
-            case R.id.c_patient_activity_relative_release_sickCircle:
-                break;
-        }
+  public void onViewClicked(View view) {
+      int id = view.getId();
+      if (id == R.id.c_patient_iv_user_head_pic) {
+      } else if (id == R.id.c_patient_activity_tv_title) {
+      } else if (id == R.id.c_patient_iv_user_message) {
+      } else if (id == R.id.c_patient_relative_titlebar) {
+      } else if (id == R.id.c_patient_activity_tv_adoptNickName) {
+      } else if (id == R.id.c_patient_activity_tv_disease) {
+      } else if (id == R.id.c_patient_activity_tv_department) {
+      } else if (id == R.id.c_patient_activity_tv_detail) {
+      } else if (id == R.id.c_patient_activity_tv_treatment_time) {
+      } else if (id == R.id.c_patient_activity_tv_treatmentProcess) {
+      } else if (id == R.id.c_patient_activity_iv_picture) {
+      } else if (id == R.id.c_patient_activity_tv_commentNum) {//对话框点击
+      } else if (id == R.id.c_patient_activity_iv_content) {
+      } else if (id == R.id.c_patient_activity_tv_collectionNum) {
+      } else if (id == R.id.c_img_HeadPic) {
+      } else if (id == R.id.c_name_NickName) {
+      } else if (id == R.id.c_time_adoptTime) {
+      } else if (id == R.id.c_text_adoptComment) {
+      } else if (id == R.id.c_adoptFlag) {
+      } else if (id == R.id.c_recycler_sick_circle_comment_list) {//图标
+      } else if (id == R.id.c_patient_activity_iv_cancel) {
+      } else if (id == R.id.c_patient_activity_et_content) {
+      } else if (id == R.id.c_patient_activity_iv_send_content) {
+      } else if (id == R.id.c_patient_activity_relative_content) {
+      } else if (id == R.id.c_patient_activity_iv_intent_release_sickCircle) {
+          Intent intent1 = new Intent(CPatientCircleDetailsActivity.this, ReleaseCirclesActivity.class);
+          startActivity(intent1);
+      } else if (id == R.id.c_patient_activity_relative_release_sickCircle) {
+      }
     }
 }

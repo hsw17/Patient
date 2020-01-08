@@ -19,6 +19,7 @@ android {
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [moduleName: project.getName()]
+                includeCompileClasspath = true
             }
         }
 

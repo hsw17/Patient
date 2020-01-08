@@ -10,6 +10,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.wd.he_home.R;
 import com.wd.he_home.bean.ConsultationDetailsBean;

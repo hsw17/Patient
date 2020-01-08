@@ -30,6 +30,7 @@ android {
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [ moduleName : project.getName() ]
+                includeCompileClasspath = true
             }
         }
 
@@ -78,9 +79,20 @@ dependencies {
     api rootProject.ext.dependencies["gson"]
 
     api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    implementation 'com.alibaba:arouter-api:1.3.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+    implementation 'com.ypx.yimagepicker:androidx:3.0.1'
 
+
+    implementation  'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'com.github.bumptech.glide:compiler:4.9.0'
     api rootProject.ext.dependencies["dagger2"]
     api rootProject.ext.dependencies["rxjava2"]
+    api rootProject.ext.dependencies["banner"]
+    api rootProject.ext.dependencies["glide"]
+    api rootProject.ext.dependencies["XBanner"]
+    api rootProject.ext.dependencies["tablelayout"]
+    api rootProject.ext.dependencies["table"]
 //    implementation rootProject.ext.dependencies["dagger2-apt-compiler"]
     api rootProject.ext.dependencies["rxandroid"]
     api rootProject.ext.dependencies["rxjava"]
@@ -119,4 +131,6 @@ dependencies {
     api rootProject.ext.dependencies["dkplayer-x86"]
     api rootProject.ext.dependencies["dkplayer-x86_64"]
     api rootProject.ext.dependencies["dkplayer-ui"]
+    api rootProject.ext.dependencies["recyclerview-v7"]
+
 }

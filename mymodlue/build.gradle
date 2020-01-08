@@ -13,16 +13,16 @@ android {
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
+
         //Arouter路由配置
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [moduleName: project.getName()]
+                includeCompileClasspath = true
             }
         }
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -34,12 +34,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     if (Boolean.valueOf(rootProject.ext.isModule)) {
         //组件模式下设置applicationId
         applicationId "com.wd.mymodlue"
     }
-
     /*
        * java插件引入了一个概念叫做SourceSets，通过修改SourceSets中的属性，
        * 可以指定哪些源文件（或文件夹下的源文件）要被编译，

@@ -28,6 +28,7 @@ import com.ypx.imagepicker.views.base.PreviewControllerView;
 
 import java.util.ArrayList;
 
+
 public class CustomPreviewControllerView extends PreviewControllerView {
     private RelativeLayout mTitleBar;
     private ImageView mBackImg;

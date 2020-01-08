@@ -32,6 +32,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.wd.he_bing.R;
+import com.wd.he_bing.R2;
 import com.wd.he_bing.adapter.ConsultationTwoAdapter;
 import com.wd.he_bing.adapter.IllnessAdapter;
 import com.wd.he_bing.bean.CDepartmentlistBean;
@@ -55,54 +56,53 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import okhttp3.MultipartBody;
 
 public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> implements CHomeContract.CHomeView {
     Calendar calendar = Calendar.getInstance(Locale.CHINA);
-    @BindView(R.id.release_sickCircle_iv_user_head_pic)
+    @BindView(R2.id.release_sickCircle_iv_user_head_pic)
     ImageView releaseSickCircleIvUserHeadPic;
-    @BindView(R.id.patient_iv_user_message)
+    @BindView(R2.id.patient_iv_user_message)
     ImageView patientIvUserMessage;
-    @BindView(R.id.release_circle_et_title)
+    @BindView(R2.id.release_circle_et_title)
     EditText releaseCircleEtTitle;
-    @BindView(R.id.release_circle_tv_choose_department)
+    @BindView(R2.id.release_circle_tv_choose_department)
     TextView releaseCircleTvChooseDepartment;
-    @BindView(R.id.release_circle_iv_choose_department)
+    @BindView(R2.id.release_circle_iv_choose_department)
     RelativeLayout releaseCircleIvChooseDepartment;
-    @BindView(R.id.release_circle_tv_choose_disease)
+    @BindView(R2.id.release_circle_tv_choose_disease)
     TextView releaseCircleTvChooseDisease;
-    @BindView(R.id.release_circle_iv_choose_disease)
+    @BindView(R2.id.release_circle_iv_choose_disease)
     RelativeLayout releaseCircleIvChooseDisease;
-    @BindView(R.id.release_circle_et_detail)
+    @BindView(R2.id.release_circle_et_detail)
     EditText releaseCircleEtDetail;
-    @BindView(R.id.release_circle_et_treatmentHospital)
+    @BindView(R2.id.release_circle_et_treatmentHospital)
     EditText releaseCircleEtTreatmentHospital;
-    @BindView(R.id.release_circle_tv_startTime)
+    @BindView(R2.id.release_circle_tv_startTime)
     TextView releaseCircleTvStartTime;
-    @BindView(R.id.release_circle_iv_startTime)
+    @BindView(R2.id.release_circle_iv_startTime)
     RelativeLayout releaseCircleIvStartTime;
-    @BindView(R.id.release_circle_tv_endTime)
+    @BindView(R2.id.release_circle_tv_endTime)
     TextView releaseCircleTvEndTime;
-    @BindView(R.id.release_circle_iv_endTime)
+    @BindView(R2.id.release_circle_iv_endTime)
     RelativeLayout releaseCircleIvEndTime;
-    @BindView(R.id.release_circle_et_treatmentProcess)
+    @BindView(R2.id.release_circle_et_treatmentProcess)
     EditText releaseCircleEtTreatmentProcess;
-    @BindView(R.id.release_circle_iv_upload_Picture)
+    @BindView(R2.id.release_circle_iv_upload_Picture)
     GridLayout releaseCircleIvUploadPicture;
-    @BindView(R.id.release_circle_iv_delete_Picture)
+    @BindView(R2.id.release_circle_iv_delete_Picture)
     ImageView releaseCircleIvDeletePicture;
-    @BindView(R.id.swit)
+    @BindView(R2.id.swit)
     Switch swit;
-    @BindView(R.id.button_hbi3)
+    @BindView(R2.id.button_hbi3)
     Button buttonHbi3;
-    @BindView(R.id.aaa)
+    @BindView(R2.id.aaa)
     TextView aaa;
-    @BindView(R.id.xuanshangedu_linear)
+    @BindView(R2.id.xuanshangedu_linear)
     LinearLayout xuanshangeduLinear;
-    @BindView(R.id.release_circle_btn_publish)
+    @BindView(R2.id.release_circle_btn_publish)
     Button releaseCircleBtnPublish;
-    @BindView(R.id.release_circle_linear_sick_circle)
+    @BindView(R2.id.release_circle_linear_sick_circle)
     LinearLayout releaseCircleLinearSickCircle;
 
     private int userId;
@@ -160,7 +160,7 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
             public void onClick(View v) {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(ReleaseCirclesActivity.this);
                 final View view = (LinearLayout) getLayoutInflater().inflate(R.layout.dialog_date, null);
-                final DatePicker datePicker = (DatePicker) view.findViewById(R.id.date_picker);
+                final DatePicker datePicker = (DatePicker) view.findViewById(R2.id.date_picker);
                 //设置日期简略显示 否则详细显示 包括:星期\周
                 datePicker.setCalendarViewShown(false);
                 //初始化当前日期
@@ -199,7 +199,7 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
                 Toast.makeText(ReleaseCirclesActivity.this, "4444", Toast.LENGTH_SHORT).show();
                 final AlertDialog.Builder builder = new AlertDialog.Builder(ReleaseCirclesActivity.this);
                 final View view = (LinearLayout) getLayoutInflater().inflate(R.layout.dialog_date, null);
-                final DatePicker datePicker = (DatePicker) view.findViewById(R.id.date_picker);
+                final DatePicker datePicker = (DatePicker) view.findViewById(R2.id.date_picker);
                 //设置日期简略显示 否则详细显示 包括:星期\周
                 datePicker.setCalendarViewShown(false);
                 //初始化当前日期
@@ -254,7 +254,7 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
 
     private void initPopWindowDisease(List<CGenJuKeShiBean.ResultBean> result) {
         View view = LayoutInflater.from(this).inflate(R.layout.item_popip_disease, null, false);
-        popup_recycler_disease = view.findViewById(R.id.popup_recycler_disease);
+        popup_recycler_disease = view.findViewById(R2.id.popup_recycler_disease);
         //1.构造一个PopupWindow，参数依次是加载的View，宽高
         popWindowDisease = new PopupWindow(view,
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
@@ -292,7 +292,7 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
 
     private void initPopuWindows(List<CDepartmentlistBean.ResultBean> result) {
         View view = LayoutInflater.from(this).inflate(R.layout.item_popip_department, null, false);
-        popup_recycler_department = view.findViewById(R.id.popup_recycler_department);
+        popup_recycler_department = view.findViewById(R2.id.popup_recycler_department);
         //1.构造一个PopupWindow，参数依次是加载的View，宽高
         popupWindow = new PopupWindow(view,
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
@@ -580,39 +580,39 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
 
 
 
-   /* @OnClick({R.id.release_sickCircle_iv_user_head_pic, R.id.patient_iv_user_message, R.id.release_circle_et_title, R.id.release_circle_tv_choose_department, R.id.release_circle_iv_choose_department, R.id.release_circle_tv_choose_disease, R.id.release_circle_iv_choose_disease, R.id.release_circle_et_detail, R.id.release_circle_et_treatmentHospital, R.id.release_circle_tv_startTime, R.id.release_circle_iv_startTime, R.id.release_circle_tv_endTime, R.id.release_circle_iv_endTime, R.id.release_circle_et_treatmentProcess, R.id.release_circle_iv_upload_Picture, R.id.release_circle_iv_delete_Picture, R.id.swit, R.id.button_hbi3, R.id.aaa, R.id.xuanshangedu_linear, R.id.release_circle_btn_publish, R.id.release_circle_linear_sick_circle})
+   /* @OnClick({R2.id.release_sickCircle_iv_user_head_pic, R2.id.patient_iv_user_message, R2.id.release_circle_et_title, R2.id.release_circle_tv_choose_department, R2.id.release_circle_iv_choose_department, R2.id.release_circle_tv_choose_disease, R2.id.release_circle_iv_choose_disease, R2.id.release_circle_et_detail, R2.id.release_circle_et_treatmentHospital, R2.id.release_circle_tv_startTime, R2.id.release_circle_iv_startTime, R2.id.release_circle_tv_endTime, R2.id.release_circle_iv_endTime, R2.id.release_circle_et_treatmentProcess, R2.id.release_circle_iv_upload_Picture, R2.id.release_circle_iv_delete_Picture, R2.id.swit, R2.id.button_hbi3, R2.id.aaa, R2.id.xuanshangedu_linear, R2.id.release_circle_btn_publish, R2.id.release_circle_linear_sick_circle})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.release_sickCircle_iv_user_head_pic:
+            case R2.id.release_sickCircle_iv_user_head_pic:
                 break;
-            case R.id.patient_iv_user_message:
+            case R2.id.patient_iv_user_message:
                 break;
-            case R.id.release_circle_et_title:
+            case R2.id.release_circle_et_title:
                 break;
-            case R.id.release_circle_tv_choose_department:
+            case R2.id.release_circle_tv_choose_department:
                 break;
-            case R.id.release_circle_iv_choose_department:
+            case R2.id.release_circle_iv_choose_department:
                 //查询科室列表
                 presenter.CHomePresenterKeShiLieBiao();
                 Toast.makeText(ReleaseCirclesActivity.this, "1111", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.release_circle_tv_choose_disease:
+            case R2.id.release_circle_tv_choose_disease:
                 break;
-            case R.id.release_circle_iv_choose_disease:
+            case R2.id.release_circle_iv_choose_disease:
                 presenter.CHomePresenterChaXunBingZheng(id + "");
                 Toast.makeText(ReleaseCirclesActivity.this, "2222", Toast.LENGTH_SHORT).show();
 
                 break;
-            case R.id.release_circle_et_detail:
+            case R2.id.release_circle_et_detail:
                 break;
-            case R.id.release_circle_et_treatmentHospital:
+            case R2.id.release_circle_et_treatmentHospital:
                 break;
-            case R.id.release_circle_tv_startTime:
+            case R2.id.release_circle_tv_startTime:
                 break;
-            case R.id.release_circle_iv_startTime:
+            case R2.id.release_circle_iv_startTime:
                 final AlertDialog.Builder builder = new AlertDialog.Builder(ReleaseCirclesActivity.this);
                 final View view1 =  getLayoutInflater().inflate(R.layout.dialog_date, null);
-                final DatePicker datePicker = (DatePicker) view1.findViewById(R.id.date_picker);
+                final DatePicker datePicker = (DatePicker) view1.findViewById(R2.id.date_picker);
                 //设置日期简略显示 否则详细显示 包括:星期\周
                 datePicker.setCalendarViewShown(false);
                 //初始化当前日期
@@ -643,12 +643,12 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
                 });
                 builder.create().show();
                 break;
-            case R.id.release_circle_tv_endTime:
+            case R2.id.release_circle_tv_endTime:
                 break;
-            case R.id.release_circle_iv_endTime:
+            case R2.id.release_circle_iv_endTime:
                 final AlertDialog.Builder builder2 = new AlertDialog.Builder(ReleaseCirclesActivity.this);
                 final View view2 = (LinearLayout) getLayoutInflater().inflate(R.layout.dialog_date, null);
-                final DatePicker datePicker2 = (DatePicker) view2.findViewById(R.id.date_picker);
+                final DatePicker datePicker2 = (DatePicker) view2.findViewById(R2.id.date_picker);
                 //设置日期简略显示 否则详细显示 包括:星期\周
                 datePicker2.setCalendarViewShown(false);
                 //初始化当前日期
@@ -679,24 +679,24 @@ public class ReleaseCirclesActivity extends BaseActivity<CHomePresenter> impleme
                 });
                 builder2.create().show();
                 break;
-            case R.id.release_circle_et_treatmentProcess:
+            case R2.id.release_circle_et_treatmentProcess:
                 break;
-            case R.id.release_circle_iv_upload_Picture:
+            case R2.id.release_circle_iv_upload_Picture:
                 break;
-            case R.id.release_circle_iv_delete_Picture:
+            case R2.id.release_circle_iv_delete_Picture:
                 break;
-            case R.id.swit:
+            case R2.id.swit:
                 break;
-            case R.id.button_hbi3:
+            case R2.id.button_hbi3:
                 break;
-            case R.id.aaa:
+            case R2.id.aaa:
                 break;
-            case R.id.xuanshangedu_linear:
+            case R2.id.xuanshangedu_linear:
                 break;
-            case R.id.release_circle_btn_publish:
+            case R2.id.release_circle_btn_publish:
 
                 break;
-            case R.id.release_circle_linear_sick_circle:
+            case R2.id.release_circle_linear_sick_circle:
                 break;
         }
     }*/

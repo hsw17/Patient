@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.InqueryMainActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_80">
+
+        <ImageView
+            android:layout_width="@dimen/dp_45"
+            android:layout_height="@dimen/dp_45"
+            android:src="@mipmap/boy"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_centerVertical="true">
+        </ImageView>
+
+        <ImageView
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_35"
+            android:src="@mipmap/common_nav_message_black_n"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_centerVertical="true">
+        </ImageView>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_2"
+        android:background="#999999">
+
+    </TextView>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/dtablayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_36"
+        app:tabIndicatorHeight="0dp"
+        app:tabMode="scrollable"
+        app:tabBackground="@null"
+        app:tabGravity="center"
+        app:tabPaddingStart="@dimen/dp_12"
+        app:tabPaddingEnd="@dimen/dp_8"
+        app:tabMaxWidth="@dimen/dp_200"
+        app:tabMinWidth="@dimen/dp_20"
+        app:tabTextColor="#999999"
+        app:tabSelectedTextColor="@color/blicke"
+        style="@style/TabLayoutTextSizeA">
+    </com.google.android.material.tabs.TabLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="#999999">
+
+    </TextView>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablouy"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_36"
+        style="@style/TabLayoutTextSizeB"
+        app:tabTextColor="#333333">
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_330"
+        android:layout_marginTop="@dimen/dp_16">
+
+        <RelativeLayout
+            android:layout_width="@dimen/dp_300"
+            android:layout_height="@dimen/dp_350"
+            android:layout_centerInParent="true"
+            android:background="@drawable/releatshape">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/doctor_simple"
+                android:layout_width="@dimen/dp_170"
+                android:layout_height="@dimen/dp_200"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_1"/>
+
+            <LinearLayout
+                android:id="@+id/liner1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/doctor_simple"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/dp_7">
+                <TextView
+                    android:id="@+id/docname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周杰伦"
+                    android:textSize="@dimen/sp_14"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:textColor="#333333"/>
+
+                <TextView
+                    android:id="@+id/zhiwei"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="主治医生"
+                    android:textSize="@dimen/sp_10"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:textColor="#333333"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/relat1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_24"
+                android:layout_below="@id/liner1"
+                android:layout_marginTop="@dimen/dp_7">
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="东升福建保健医院"
+                    android:textSize="@dimen/sp_12"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_centerVertical="true"
+                    android:textColor="#333333"/>
+
+                <ImageView
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_30"
+                    android:src="@mipmap/common_icon_more_n"
+                    />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/liner2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relat1"
+                android:layout_marginTop="@dimen/dp_7">
+
+                <TextView
+                     android:id="@+id/haoping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周杰伦"
+                    android:textSize="@dimen/sp_12"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:textColor="#333333"/>
+
+                <TextView
+                    android:id="@+id/huanmber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="主治医生"
+                    android:textSize="@dimen/sp_10"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:textColor="#333333"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_below="@id/liner2"
+                android:layout_marginTop="@dimen/dp_8">
+
+                <TextView
+                    android:id="@+id/servciePrcie"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="match_parent"
+                    android:text="500H币/1次"
+                    android:background="#fff"
+                    android:textSize="@dimen/sp_16"
+                    android:layout_marginLeft="@dimen/dp_2"
+                    android:gravity="center"/>
+
+                <Button
+                    android:id="@+id/zixun"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="#75609B"
+                    android:text="立即咨询"
+                    android:layout_marginRight="@dimen/dp_1"
+                    android:layout_marginBottom="@dimen/dp_1"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/doctor_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_18"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_30">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

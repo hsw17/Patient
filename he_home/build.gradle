@@ -1,50 +1,56 @@
-apply plugin: 'com.android.application'
+if (Boolean.valueOf(rootProject.ext.isModule)) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
 apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
-
-
     defaultConfig {
-        applicationId "com.wd.he_home"
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //Arouter路由配置
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [moduleName: project.getName()]
                 includeCompileClasspath = true
             }
         }
-        //兼容10.0
-        compileOptions {
-            sourceCompatibility JavaVersion.VERSION_1_8
-            targetCompatibility JavaVersion.VERSION_1_8
-        }
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    //新加
-    allprojects {
-        repositories {
-            maven { url "https://jitpack.io" }
-        }
+//兼容版本
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
-    configurations.all {
-        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-            def requested = details.requested
-            if (requested.group == 'com.android.support') {
-                if (!requested.name.startsWith("multidex")) {
-                    details.useVersion '28.0.0'
+    if (Boolean.valueOf(rootProject.ext.isModule)) {
+        //组件模式下设置applicationId
+        applicationId "com.wd.he_home"
+    }
+    /*
+     * java插件引入了一个概念叫做SourceSets，通过修改SourceSets中的属性，
+     * 可以指定哪些源文件（或文件夹下的源文件）要被编译，
+     * 哪些源文件要被排除。
+     * */
+    sourceSets {
+        main {
+            if (Boolean.valueOf(rootProject.ext.isModule)) {//apk
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/library/AndroidManifest.xml'
+                java {
+                    //library模式下，排除java/debug文件夹下的所有文件
+                    exclude '*module'
                 }
             }
         }
@@ -63,26 +69,8 @@ dependencies {
     api rootProject.ext.dependencies["rxjava"]
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
-    api rootProject.ext.dependencies["retrofit"]
-    api rootProject.ext.dependencies["eretrofit-convertr-gson"]
-    api rootProject.ext.dependencies["retrofit-adapter-rxjava"]
-    api rootProject.ext.dependencies["converter-scalars"]
-    api rootProject.ext.dependencies["okhttp3"]
-    api rootProject.ext.dependencies["gson"]
-    api rootProject.ext.dependencies["banner"]
-    api rootProject.ext.dependencies["glide"]
-    api rootProject.ext.dependencies["XBanner"]
-    api rootProject.ext.dependencies["tablelayout"]
-    api rootProject.ext.dependencies["table"]
-    api rootProject.ext.dependencies["flowlayout-lib"]
-    api rootProject.ext.dependencies["ViewAdapterHelper"]
     api project(path: ':mvplibrary')
+    implementation project(path: ':he_bing')
     implementation 'com.alibaba:arouter-api:1.3.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
-/*    //流失布局
-    implementation 'com.hyman:flowlayout-lib:1.1.2'
-
-    //快速适配
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'*/
-
 }

@@ -116,13 +116,11 @@ public class CommonActivity extends BaseActivity<HomePresenter> implements HomeC
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.common_tables, R.id.common_vp})
+
     public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.common_tables:
-                break;
-            case R.id.common_vp:
-                break;
+        int id = view.getId();
+        if (id == R.id.common_tables) {
+        } else if (id == R.id.common_vp) {
         }
     }
 }
