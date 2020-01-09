@@ -3,24 +3,24 @@
 3    package="com.wd.he_bing.test" >
 4
 5    <uses-sdk
-5-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger591098374789260018.xml:5:5-74
+5-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger304751652507933722.xml:5:5-74
 6        android:minSdkVersion="26"
-6-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger591098374789260018.xml:5:15-41
+6-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger304751652507933722.xml:5:15-41
 7        android:targetSdkVersion="27" />
-7-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger591098374789260018.xml:5:42-71
+7-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger304751652507933722.xml:5:42-71
 8
 9    <instrumentation
-9-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger591098374789260018.xml:11:5-15:69
+9-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger304751652507933722.xml:11:5-15:69
 10        android:name="androidx.test.runner.AndroidJUnitRunner"
-10-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger591098374789260018.xml:11:22-76
+10-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger304751652507933722.xml:11:22-76
 11        android:functionalTest="false"
-11-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger591098374789260018.xml:14:22-52
+11-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger304751652507933722.xml:14:22-52
 12        android:handleProfiling="false"
-12-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger591098374789260018.xml:13:22-53
+12-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger304751652507933722.xml:13:22-53
 13        android:label="Tests for com.wd.he_bing.test"
-13-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger591098374789260018.xml:15:22-67
+13-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger304751652507933722.xml:15:22-67
 14        android:targetPackage="com.wd.he_bing.test" />
-14-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger591098374789260018.xml:12:22-65
+14-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger304751652507933722.xml:12:22-65
 15
 16    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 16-->[:mvplibrary] D:\helth\Patient\mvplibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-14:47
@@ -84,7 +84,7 @@
 35-->[androidx.test:core:1.2.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\75112c0958631aa41352f92234e06bb0\core-1.2.0\AndroidManifest.xml:24:22-69
 36
 37    <application
-37-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger591098374789260018.xml:7:5-9:19
+37-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger304751652507933722.xml:7:5-9:19
 38        android:name="com.bwie.mvplibrary.app.App"
 38-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-51
 39        android:allowBackup="true"
@@ -92,7 +92,7 @@
 40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 40-->[androidx.core:core:1.1.0] C:\Users\盗\.gradle\caches\transforms-2\files-2.1\78f41c6946dea7ca97f5ff6ef8b6a433\core-1.1.0\AndroidManifest.xml:24:18-86
 41        android:debuggable="true"
-41-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger591098374789260018.xml:7:18-43
+41-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger304751652507933722.xml:7:18-43
 42        android:icon="@mipmap/ic_launcher"
 42-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:9-43
 43        android:label="@string/app_name"
@@ -104,8 +104,8 @@
 46        android:theme="@style/AppTheme" >
 46-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:9-40
 47        <uses-library android:name="android.test.runner" />
-47-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger591098374789260018.xml:8:9-60
-47-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger591098374789260018.xml:8:23-57
+47-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger304751652507933722.xml:8:9-60
+47-->D:\helth\Patient\he_bing\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger304751652507933722.xml:8:23-57
 48
 49        <activity android:name="com.wd.he_bing.view.ReleaseCirclesActivity" />
 49-->[__tested_artifact__::he_bing] D:\helth\Patient\he_bing\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:9-79
