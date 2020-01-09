@@ -4,12 +4,14 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.bwie.mvplibrary.base.BaseActivity;
 import com.wd.he_home.R;
 import com.wd.he_home.R2;
 import com.wd.he_home.adapter.ViewAdapter;
 import com.wd.he_home.comtract.HomeContract;
+import com.wd.he_home.fragment.HomeFragment;
 import com.wd.he_home.presenter.HomePresenter;
 
 import java.util.ArrayList;
@@ -19,7 +21,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+@Route(path = "/hehome/activity")
 public class ButtonActivity extends BaseActivity<HomePresenter> implements HomeContract.HomeView {
 
 
@@ -63,9 +65,9 @@ public class ButtonActivity extends BaseActivity<HomePresenter> implements HomeC
         Fragment fragment_video = (Fragment) ARouter.getInstance().build("/fragment_video/fragment").navigation();
 
 
-//        list.add();
-        list.add(fragment_circle);
-        list.add(fragment_video);
+        list.add(new HomeFragment());
+//        list.add(fragment_circle);
+//        list.add(fragment_video);
         rlist.add(relativeLayoutHome);
         rlist.add(relativeLayoutCircle);
         rlist.add(relativeLayoutVideo);

@@ -1,5 +1,5 @@
 ext {
-    isModule = true
+    isModule = false
     //有重用的地方写在这里面，保证代码一致
     android = [compileSdkVersion       : 29,
                buildToolsVersion       : "29.0.2",

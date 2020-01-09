@@ -52,7 +52,7 @@ import butterknife.OnClick;
  * @time（时间）: 8:21
  * @author（作者）: Liuhe
  **/
-@Route(path = "/hehome/activity")
+//@Route(path = "/hehome/activity")
 public class MainHomeActivity extends BaseActivity<HomePresenter> implements HomeContract.HomeView {
     private NestedScrollView nestedScrollView;
     private EditText edit_shu;
