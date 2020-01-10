@@ -11,8 +11,9 @@ import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.dueeeke.videoplayer.player.IjkVideoView;
-import com.wd.mymainmodule.R2;
+
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.UserBean;
 import com.wd.mymodlue.modle.bean.VideoBuyBean;
 import com.wd.mymodlue.modle.bean.VideoCollectBean;

@@ -48,8 +48,6 @@ public class HomePresenter extends BasePresenter<HomeContract.HomeView> implemen
             public void HomeViewError(String e) {
                 getView().HomeViewError(e);
             }
-
-
         });
     }
 
@@ -69,8 +67,6 @@ public class HomePresenter extends BasePresenter<HomeContract.HomeView> implemen
             public void HomeViewError(String e) {
                 getView().HomeViewError(e);
             }
-
-
         });
 
     }
@@ -89,7 +85,6 @@ public class HomePresenter extends BasePresenter<HomeContract.HomeView> implemen
             public void HomeViewError(String e) {
                 getView().HomeViewError(e);
             }
-
         });
     }
 

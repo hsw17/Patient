@@ -73,4 +73,5 @@ dependencies {
     implementation project(path: ':he_bing')
     implementation 'com.alibaba:arouter-api:1.3.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+    implementation project(path: ':mymodlue')
 }

@@ -14,8 +14,9 @@ import com.bwie.mvplibrary.utils.CustomClickListener;
 import com.bwie.mvplibrary.utils.SPUtils;
 import com.bwie.mvplibrary.utils.ToastUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.wd.mymainmodule.R2;
+
 import com.wd.mymodlue.R;
+import com.wd.mymodlue.R2;
 import com.wd.mymodlue.modle.bean.DeleteArchivesBean;
 import com.wd.mymodlue.modle.bean.UserArchivesBean;
 import com.wd.mymodlue.persenter.Persenter;
